@@ -154,6 +154,7 @@ export default function RevealSlide() {
               
               <div className="mt-8 text-center">
                 <Button 
+                  id="register-button"
                   onClick={() => setShowRegistrationForm(true)}
                   className="bg-gradient-to-r from-corp-burnt-orange to-corp-magenta hover:bg-corp-magenta/90 text-white font-bold py-4 px-10 text-xl shadow-lg shadow-corp-burnt-orange/40 uppercase tracking-widest pulse-glow animate-pulse"
                   size="lg"

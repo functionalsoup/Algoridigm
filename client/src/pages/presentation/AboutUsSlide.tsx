@@ -16,11 +16,13 @@ export default function AboutUsSlide() {
       goToSlide(3);
       // Then set a timeout to click the register button
       setTimeout(() => {
-        const registerBtn = document.querySelector('#reveal-slide .bg-corp-magenta');
+        const registerBtn = document.querySelector('#register-button');
         if (registerBtn) {
           (registerBtn as HTMLButtonElement).click();
+        } else {
+          console.log('Register button not found');
         }
-      }, 300);
+      }, 500);
     }, 500);
   };
   
