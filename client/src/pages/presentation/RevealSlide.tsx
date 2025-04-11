@@ -64,8 +64,8 @@ export default function RevealSlide() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            <h3 className="text-2xl font-display font-semibold mb-4 text-corp-magenta">Join Us for Machinal</h3>
-            <p className="mb-6">We're beginning the process of devising an adaptation of Sophie Treadwell's Machinal. We need Actor/Performers, Designers, Techs, Visual Artists, and more! All skill and experience levels are welcome.</p>
+            <h3 className="text-2xl font-display font-semibold mb-4 text-corp-magenta">Join Us for ALGORIDIGM</h3>
+            <p className="mb-6">We're beginning the process of devising an adaptation of Sophie Treadwell's expressionist masterpiece MACHINAL! We need Actor/Performers, Designers, Techs, Visual Artists, and more! All skill and experience levels are welcome. Innovation and collaboration are required.</p>
             
             <div className="flex flex-col md:flex-row gap-8">
               <div className="md:w-1/2">
@@ -107,11 +107,11 @@ export default function RevealSlide() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-corp-magenta mr-2">→</span>
-                    <span>Multiple roles available</span>
+                    <span>Multiple roles and positions available</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-corp-magenta mr-2">→</span>
-                    <span>Rehearsals begin June 15th</span>
+                    <span>Flexible scheduling: we have lives but we make it work</span>
                   </li>
                 </ul>
               </div>
