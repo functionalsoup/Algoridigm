@@ -91,7 +91,7 @@ export default function CEOSlide() {
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.4 }}
             >
-              <p className="italic text-lg opacity-80">"The future isn't about what machines can do for us—it's about what we become together. J-AI isn't just an achievement in technology, it's the next evolutionary step."</p>
+              <p className="italic text-lg opacity-80">"Humanity's destiny isn't just waiting for us in the stars—we're going to build it ourselves. J-AI isn't just disruptive technology, it's the fork in the evolutionary road that will make us a multi-planetary species with immortal consciousness."</p>
             </motion.div>
             
             <motion.div
@@ -99,8 +99,8 @@ export default function CEOSlide() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6 }}
             >
-              <h3 className="text-2xl font-display font-semibold mb-4 text-corp-cyan">Visionary Leadership</h3>
-              <p className="mb-4">George H. Jones founded J-Tech Industries in 2032 with a singular vision: to create machine intelligence that transcends conventional AI limitations. His pioneering work in quantum neural networks and consciousness mapping has revolutionized our understanding of artificial cognition.</p>
+              <h3 className="text-2xl font-display font-semibold mb-4 text-corp-cyan">Relentless Innovation</h3>
+              <p className="mb-4">George H. Jones abandoned a promising academic career to found J-Tech Industries in 2032. His controversial approach to quantum neural networks and consciousness mapping has divided the scientific community while attracting billions in venture capital.</p>
             </motion.div>
             
             <motion.div
@@ -112,33 +112,25 @@ export default function CEOSlide() {
               <ul className="space-y-2">
                 <li className="flex items-start">
                   <span className="text-corp-magenta mr-2">→</span>
-                  <span>Nobel Prize in Computational Neuroscience (2041)</span>
+                  <span>Time Person of the Year (2041)</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-corp-magenta mr-2">→</span>
-                  <span>Pioneered Quantum Consciousness Theory</span>
+                  <span>Pioneered Autonomous Colony Systems on Mars</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-corp-magenta mr-2">→</span>
-                  <span>Author of "Beyond Human: The Ethical Integration of Machine Minds"</span>
+                  <span>Author of "Extinction or Transcendence: Why We Must Become Post-Human"</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-corp-magenta mr-2">→</span>
-                  <span>Led development of the first successful mind-machine interface</span>
+                  <span>Launched first commercial neural lace after self-experimenting with prototypes</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-corp-magenta mr-2">→</span>
+                  <span>Known for working 20-hour days and sleeping on the factory floor</span>
                 </li>
               </ul>
-            </motion.div>
-            
-            <motion.div 
-              className="mt-8 rounded-lg bg-corp-bg p-4 border border-corp-blue/20"
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 1 }}
-            >
-              <h4 className="text-xl font-display font-semibold mb-2 text-corp-magenta">Education & Background</h4>
-              <p className="text-sm opacity-80">Ph.D. in Quantum Computing, MIT (2029)<br/>
-              M.S. in Neuroscience, Stanford University (2025)<br/>
-              Former Research Director at Global Minds Institute</p>
             </motion.div>
           </div>
         </div>
