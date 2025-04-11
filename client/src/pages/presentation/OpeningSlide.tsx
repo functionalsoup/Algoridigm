@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { usePresentationContext } from "@/lib/presentationContext";
-import Logo from "@/components/presentation/Logo";
+import { JTechLogo } from "@/components/presentation/JTechLogo";
 import NavigationButton from "@/components/presentation/NavigationButton";
 import { BackgroundParticles } from "@/components/presentation/BackgroundElements";
 import Timer from "@/components/presentation/Timer";
@@ -29,50 +29,37 @@ export default function OpeningSlide() {
         <BackgroundParticles count={30} />
       </div>
       
-      <Logo />
+      <motion.div 
+        className="mb-8"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <JTechLogo size="large" animated={true} />
+      </motion.div>
       
-      <motion.h1
-        className="text-5xl md:text-7xl font-display font-bold mb-4 relative"
+      <motion.div
+        className="text-center mb-4 scanline"
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.3 }}
-        data-text="ALGORIDIGM"
       >
-        <span className="glitch relative z-10 inline-block">ALGORIDIGM</span>
-        
-        <motion.span
-          className="absolute inset-0 text-corp-cyan opacity-0"
-          animate={{
-            x: [0, -2, 0, 2, 0],
-            opacity: [0, 0.3, 0, 0.3, 0],
-          }}
-          transition={{
-            duration: 0.3,
-            repeat: Infinity,
-            repeatType: "loop",
-            repeatDelay: 5,
-          }}
+        <h1 
+          className="text-5xl md:text-7xl font-display font-bold mb-2 tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-corp-cyan via-white to-corp-magenta relative"
+          data-text="ALGORIDIGM"
         >
-          ALGORIDIGM
-        </motion.span>
+          <span className="glitch" data-text="ALGORIDIGM">ALGORIDIGM</span>
+        </h1>
         
-        <motion.span
-          className="absolute inset-0 text-corp-magenta opacity-0"
-          animate={{
-            x: [0, 2, 0, -2, 0],
-            opacity: [0, 0.3, 0, 0.3, 0],
-          }}
-          transition={{
-            duration: 0.3,
-            repeat: Infinity,
-            repeatType: "loop",
-            repeatDelay: 5,
-            delay: 0.15,
-          }}
+        <motion.div 
+          className="text-xs md:text-sm tracking-[0.5em] font-code text-corp-cyan opacity-70 uppercase"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.7 }}
+          transition={{ delay: 0.8 }}
         >
-          ALGORIDIGM
-        </motion.span>
-      </motion.h1>
+          Advanced Learning Generative Oracle
+        </motion.div>
+      </motion.div>
       
       <motion.p
         className="text-xl md:text-2xl mb-12 text-corp-cyan opacity-80"
