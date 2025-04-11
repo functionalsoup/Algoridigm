@@ -30,7 +30,7 @@ export function PresentationLayout({
   return (
     <motion.div
       ref={containerRef}
-      className="slide p-16 relative w-full h-full"
+      className="slide p-8 md:p-16 relative w-full h-full overflow-auto"
       initial={{ opacity: 0 }}
       animate={{ opacity: isActive ? 1 : 0 }}
       exit={{ opacity: 0 }}

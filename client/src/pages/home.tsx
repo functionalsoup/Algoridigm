@@ -20,14 +20,23 @@ export default function Home() {
         const target = e.target as HTMLElement;
         if (target.closest('.next-button')) {
           e.preventDefault();
+          e.stopPropagation();
+          
+          // Show the transition effect
           setShowRevealTransition(true);
           
+          // After a short delay, show the reveal slide content
           setTimeout(() => {
             setIsRevealing(true);
+            // Move to the next slide
             setTimeout(() => {
               setShowRevealTransition(false);
+              // This actually updates the slide number
+              setTimeout(() => {
+                usePresentationContext().goToSlide(3);
+              }, 100);
             }, 2000);
-          }, 0);
+          }, 300);
         }
       };
       
@@ -37,14 +46,16 @@ export default function Home() {
   }, [currentSlide, isRevealing]);
   
   return (
-    <div className="presentation-container relative w-screen h-screen overflow-hidden bg-corp-dark">
-      <AnimatePresence mode="wait">
-        {currentSlide === 0 && <OpeningSlide key="opening" />}
-        {currentSlide === 1 && <TechnologySlide key="technology" />}
-        {currentSlide === 2 && <CEOSlide key="ceo" />}
-        {(currentSlide === 3 || isRevealing) && <RevealSlide key="reveal" />}
-        {currentSlide === 4 && <AboutUsSlide key="about" />}
-      </AnimatePresence>
+    <div className="presentation-container relative w-full min-h-screen bg-corp-dark">
+      <div className="absolute inset-0">
+        <AnimatePresence mode="wait">
+          {currentSlide === 0 && <OpeningSlide key="opening" />}
+          {currentSlide === 1 && <TechnologySlide key="technology" />}
+          {currentSlide === 2 && <CEOSlide key="ceo" />}
+          {(currentSlide === 3 || isRevealing) && <RevealSlide key="reveal" />}
+          {currentSlide === 4 && <AboutUsSlide key="about" />}
+        </AnimatePresence>
+      </div>
       
       <RevealTransition isRevealing={showRevealTransition} />
       
