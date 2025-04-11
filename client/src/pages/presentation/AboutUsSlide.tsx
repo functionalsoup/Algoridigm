@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import PresentationLayout from "@/components/presentation/PresentationLayout";
+import { usePresentationContext } from "@/lib/presentationContext";
 
 export default function AboutUsSlide() {
+  const { goToSlide } = usePresentationContext();
+  
   return (
     <PresentationLayout slideNumber={4} showNextButton={false}>
       <motion.div
@@ -76,14 +79,24 @@ export default function AboutUsSlide() {
         </div>
         
         <div className="text-center">
-          <motion.a
-            href="mailto:functional_soup@outlook.com"
-            className="inline-block bg-transparent border-2 border-corp-cyan text-corp-cyan hover:bg-corp-cyan hover:text-corp-dark px-8 py-3 rounded-md text-lg font-bold transition-all duration-300 transform hover:scale-105 mb-4"
+          <motion.button
+            onClick={() => {
+              // Navigate back to slide 3 (Reveal slide)
+              goToSlide(3);
+              // Then set a timeout to click the register button
+              setTimeout(() => {
+                const registerBtn = document.querySelector('#reveal-slide .bg-corp-magenta');
+                if (registerBtn) {
+                  (registerBtn as HTMLButtonElement).click();
+                }
+              }, 800);
+            }}
+            className="inline-block bg-corp-magenta text-white hover:bg-corp-magenta/90 px-8 py-3 rounded-md text-lg font-bold transition-all duration-300 transform hover:scale-105 mb-4 shadow-lg shadow-corp-magenta/30 animate-pulse"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Contact Us
-          </motion.a>
+            REGISTER NOW
+          </motion.button>
           <p className="opacity-70">Join us in this ongoing endeavor of collective creation.</p>
         </div>
       </motion.div>

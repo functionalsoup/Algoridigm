@@ -13,6 +13,7 @@ export default function RevealSlide() {
   return (
     <PresentationLayout slideNumber={3} showNextButton={false}>
       <motion.div
+        id="reveal-slide"
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -120,10 +121,10 @@ export default function RevealSlide() {
             <div className="mt-8 text-center">
               <Button 
                 onClick={() => setShowRegistrationForm(true)}
-                className="bg-corp-cyan hover:bg-corp-cyan/80 text-black font-semibold py-2 px-6 text-lg"
+                className="bg-corp-magenta hover:bg-corp-magenta/90 text-white font-bold py-3 px-8 text-lg shadow-lg shadow-corp-magenta/30 animate-pulse"
                 size="lg"
               >
-                Register for the Workshop
+                REGISTER NOW
               </Button>
               <p className="mt-4 text-sm opacity-80">
                 Join our collaborative theatre-making experience!
