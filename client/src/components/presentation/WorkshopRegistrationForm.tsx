@@ -107,10 +107,12 @@ export function WorkshopRegistrationForm() {
                   <FormControl>
                     <Input 
                       placeholder="Your name" 
-                      {...field}
-                      className="bg-transparent border-corp-magenta/40 focus:border-corp-magenta"
-                      onChange={field.onChange}
-                      value={field.value}
+                      id="name-input"
+                      name="name"
+                      type="text"
+                      className="bg-transparent border-corp-magenta/40 focus:border-corp-magenta text-white"
+                      onChange={(e) => field.onChange(e.target.value)}
+                      value={field.value || ''}
                     />
                   </FormControl>
                   <FormMessage />
@@ -128,10 +130,11 @@ export function WorkshopRegistrationForm() {
                     <Input 
                       type="email" 
                       placeholder="Your email address" 
-                      {...field}
-                      className="bg-transparent border-corp-magenta/40 focus:border-corp-magenta"
-                      onChange={field.onChange}
-                      value={field.value}
+                      id="email-input"
+                      name="email"
+                      className="bg-transparent border-corp-magenta/40 focus:border-corp-magenta text-white"
+                      onChange={(e) => field.onChange(e.target.value)}
+                      value={field.value || ''}
                     />
                   </FormControl>
                   <FormMessage />
@@ -150,9 +153,11 @@ export function WorkshopRegistrationForm() {
                   <FormControl>
                     <Input 
                       placeholder="Your phone number" 
-                      {...field}
-                      className="bg-transparent border-corp-magenta/40 focus:border-corp-magenta"
-                      onChange={field.onChange}
+                      id="phone-input"
+                      name="phone"
+                      type="tel"
+                      className="bg-transparent border-corp-magenta/40 focus:border-corp-magenta text-white"
+                      onChange={(e) => field.onChange(e.target.value)}
                       value={field.value || ""} 
                     />
                   </FormControl>
@@ -227,8 +232,10 @@ export function WorkshopRegistrationForm() {
                 <FormControl>
                   <Textarea 
                     placeholder="Briefly describe your relevant experience" 
-                    {...field} 
-                    className="bg-transparent border-corp-magenta/40 focus:border-corp-magenta min-h-[80px]"
+                    id="experience-textarea"
+                    name="experience"
+                    className="bg-transparent border-corp-magenta/40 focus:border-corp-magenta min-h-[80px] text-white"
+                    onChange={(e) => field.onChange(e.target.value)}
                     value={field.value || ""} 
                   />
                 </FormControl>
