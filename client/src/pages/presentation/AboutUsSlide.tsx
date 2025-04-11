@@ -1,15 +1,46 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import PresentationLayout from "@/components/presentation/PresentationLayout";
 import { usePresentationContext } from "@/lib/presentationContext";
+import PresentationLayout from "@/components/presentation/PresentationLayout";
+import { Button } from "@/components/ui/button";
+import { HiMail } from "react-icons/hi";
 
 export default function AboutUsSlide() {
   const { goToSlide } = usePresentationContext();
+  const [animateOut, setAnimateOut] = useState(false);
+  const [showContactTooltip, setShowContactTooltip] = useState(false);
+  
+  const handleRegisterClick = () => {
+    setAnimateOut(true);
+    setTimeout(() => {
+      goToSlide(3);
+      // Then set a timeout to click the register button
+      setTimeout(() => {
+        const registerBtn = document.querySelector('#reveal-slide .bg-corp-magenta');
+        if (registerBtn) {
+          (registerBtn as HTMLButtonElement).click();
+        }
+      }, 300);
+    }, 500);
+  };
   
   return (
     <PresentationLayout slideNumber={4} showNextButton={false}>
       <motion.div
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        key="about-slide-content"
+        initial={{ 
+          y: 20, 
+          opacity: 0,
+        }}
+        animate={{ 
+          y: 0, 
+          opacity: 1,
+        }}
+        exit={{ 
+          y: -20, 
+          opacity: 0,
+        }}
+        className={`transition-colors duration-500 ${animateOut ? 'bg-corp-burnt-orange bg-opacity-10' : ''}`}
         transition={{ duration: 0.5 }}
       >
         <h2 className="text-4xl md:text-6xl font-display font-bold mb-6 text-center">
@@ -80,17 +111,7 @@ export default function AboutUsSlide() {
         
         <div className="text-center">
           <motion.button
-            onClick={() => {
-              // Navigate back to slide 3 (Reveal slide)
-              goToSlide(3);
-              // Then set a timeout to click the register button
-              setTimeout(() => {
-                const registerBtn = document.querySelector('#reveal-slide .bg-corp-magenta');
-                if (registerBtn) {
-                  (registerBtn as HTMLButtonElement).click();
-                }
-              }, 800);
-            }}
+            onClick={handleRegisterClick}
             className="inline-block bg-corp-magenta text-white hover:bg-corp-magenta/90 px-8 py-3 rounded-md text-lg font-bold transition-all duration-300 transform hover:scale-105 mb-4 shadow-lg shadow-corp-magenta/30 animate-pulse"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -98,6 +119,36 @@ export default function AboutUsSlide() {
             REGISTER NOW
           </motion.button>
           <p className="opacity-70">Join us in this ongoing endeavor of collective creation.</p>
+        </div>
+        
+        {/* Contact Us Small Button */}
+        <div className="absolute bottom-4 right-4">
+          <div className="relative">
+            <Button
+              size="sm"
+              variant="outline"
+              className="border-corp-burnt-orange text-corp-burnt-orange hover:bg-corp-burnt-orange/10 rounded-full flex items-center gap-1"
+              onMouseEnter={() => setShowContactTooltip(true)}
+              onMouseLeave={() => setShowContactTooltip(false)}
+              onClick={() => {
+                window.location.href = "mailto:contact@functionalsoup.com";
+              }}
+            >
+              <HiMail className="w-4 h-4" />
+              <span className="text-xs">Contact</span>
+            </Button>
+            
+            {showContactTooltip && (
+              <motion.div 
+                className="absolute bottom-full right-0 mb-2 bg-corp-bg border border-corp-burnt-orange text-white p-2 rounded text-xs w-48"
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 5 }}
+              >
+                Click to email us at contact@functionalsoup.com
+              </motion.div>
+            )}
+          </div>
         </div>
       </motion.div>
     </PresentationLayout>
