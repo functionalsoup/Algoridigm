@@ -13,16 +13,7 @@ export default function AboutUsSlide() {
   const handleRegisterClick = () => {
     setAnimateOut(true);
     setTimeout(() => {
-      goToSlide(3);
-      // Then set a timeout to click the register button
-      setTimeout(() => {
-        const registerBtn = document.querySelector('#register-button');
-        if (registerBtn) {
-          (registerBtn as HTMLButtonElement).click();
-        } else {
-          console.log('Register button not found');
-        }
-      }, 500);
+      window.location.href = "/register";
     }, 500);
   };
   

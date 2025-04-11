@@ -1,14 +1,12 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { usePresentationContext } from "@/lib/presentationContext";
 import PresentationLayout from "@/components/presentation/PresentationLayout";
 import NavigationButton from "@/components/presentation/NavigationButton";
-import { WorkshopRegistrationForm } from "@/components/presentation/WorkshopRegistrationForm";
 import { Button } from "@/components/ui/button";
 
 export default function RevealSlide() {
   const { goToSlide } = usePresentationContext();
-  const [showRegistrationForm, setShowRegistrationForm] = useState(false);
   const [animateOut, setAnimateOut] = useState(false);
   
   const handleAboutClick = () => {
@@ -155,7 +153,7 @@ export default function RevealSlide() {
               <div className="mt-8 text-center">
                 <Button 
                   id="register-button"
-                  onClick={() => setShowRegistrationForm(true)}
+                  onClick={() => window.location.href = "/register"}
                   className="bg-gradient-to-r from-corp-burnt-orange to-corp-magenta hover:bg-corp-magenta/90 text-white font-bold py-4 px-10 text-xl shadow-lg shadow-corp-burnt-orange/40 uppercase tracking-widest pulse-glow animate-pulse"
                   size="lg"
                 >
