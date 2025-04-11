@@ -1,75 +1,55 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
-import { insertWorkshopRegistrationSchema } from "@shared/schema";
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-
-// Extend the insert schema with validation rules
-const formSchema = insertWorkshopRegistrationSchema.extend({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
-  phone: z.string().optional(),
-  role: z.string().min(1, "Please select a primary role"),
-  secondaryRole: z.string().optional(),
-  experience: z.string().optional(),
-  availability: z.string().optional(),
-  message: z.string().optional(),
-});
-
-type FormValues = z.infer<typeof formSchema>;
 
 export function WorkshopRegistrationForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const { toast } = useToast();
-  
-  const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      role: "",
-      secondaryRole: "",
-      experience: "",
-      availability: "",
-      message: "",
-    },
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    role: "actor",
+    secondaryRole: "",
+    experience: "",
+    availability: "",
+    message: ""
   });
+  const { toast } = useToast();
+  const [isPending, setIsPending] = useState(false);
   
-  const { mutate, isPending } = useMutation({
-    mutationFn: async (data: FormValues) => {
-      return await apiRequest("POST", "/api/workshop-registration", data);
-    },
-    onSuccess: () => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+  
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsPending(true);
+    
+    try {
+      await apiRequest("POST", "/api/workshop-registration", formData);
       toast({
         title: "Registration Successful!",
         description: "Thank you for registering for our workshop. We'll be in touch soon!",
         variant: "default",
       });
       setIsSubmitted(true);
-    },
-    onError: (error) => {
+    } catch (error) {
       toast({
         title: "Registration Failed",
         description: "There was a problem submitting your registration. Please try again.",
         variant: "destructive",
       });
       console.error("Registration error:", error);
-    },
-  });
-  
-  function onSubmit(data: FormValues) {
-    mutate(data);
-  }
+    } finally {
+      setIsPending(false);
+    }
+  };
   
   if (isSubmitted) {
     return (
@@ -95,204 +75,140 @@ export function WorkshopRegistrationForm() {
     >
       <h3 className="text-xl font-display font-semibold mb-4 text-corp-magenta">Register for the Workshop</h3>
       
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <FormField
-              control={form.control}
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="form-group">
+            <label htmlFor="name" className="block text-sm font-medium mb-1">Name</label>
+            <input
+              type="text"
+              id="name"
               name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Name</FormLabel>
-                  <FormControl>
-                    <Input 
-                      placeholder="Your name" 
-                      id="name-input"
-                      name="name"
-                      type="text"
-                      className="bg-transparent border-corp-magenta/40 focus:border-corp-magenta text-white"
-                      onChange={(e) => field.onChange(e.target.value)}
-                      value={field.value || ''}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
+              className="w-full p-2 bg-transparent border border-corp-magenta/40 focus:border-corp-magenta rounded-md text-white"
+              placeholder="Your name"
+              value={formData.name}
+              onChange={handleInputChange}
+              required
             />
-            
-            <FormField
-              control={form.control}
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="email" className="block text-sm font-medium mb-1">Email</label>
+            <input
+              type="email"
+              id="email"
               name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input 
-                      type="email" 
-                      placeholder="Your email address" 
-                      id="email-input"
-                      name="email"
-                      className="bg-transparent border-corp-magenta/40 focus:border-corp-magenta text-white"
-                      onChange={(e) => field.onChange(e.target.value)}
-                      value={field.value || ''}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
+              className="w-full p-2 bg-transparent border border-corp-magenta/40 focus:border-corp-magenta rounded-md text-white"
+              placeholder="Your email address"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
             />
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <FormField
-              control={form.control}
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="form-group">
+            <label htmlFor="phone" className="block text-sm font-medium mb-1">Phone (optional)</label>
+            <input
+              type="tel"
+              id="phone"
               name="phone"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Phone (optional)</FormLabel>
-                  <FormControl>
-                    <Input 
-                      placeholder="Your phone number" 
-                      id="phone-input"
-                      name="phone"
-                      type="tel"
-                      className="bg-transparent border-corp-magenta/40 focus:border-corp-magenta text-white"
-                      onChange={(e) => field.onChange(e.target.value)}
-                      value={field.value || ""} 
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
+              className="w-full p-2 bg-transparent border border-corp-magenta/40 focus:border-corp-magenta rounded-md text-white"
+              placeholder="Your phone number"
+              value={formData.phone}
+              onChange={handleInputChange}
             />
-            
-            <FormField
-              control={form.control}
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="role" className="block text-sm font-medium mb-1">Primary Role</label>
+            <select
+              id="role"
               name="role"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Primary Role</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value || undefined}>
-                    <FormControl>
-                      <SelectTrigger className="bg-transparent border-corp-magenta/40 focus:border-corp-magenta">
-                        <SelectValue placeholder="Select primary role" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      <SelectItem value="actor">Actor/Performer</SelectItem>
-                      <SelectItem value="designer">Designer</SelectItem>
-                      <SelectItem value="tech">Technical Crew</SelectItem>
-                      <SelectItem value="artist">Visual Artist</SelectItem>
-                      <SelectItem value="writer">Writer/Dramaturg</SelectItem>
-                      <SelectItem value="director">Director</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-          
-          <FormField
-            control={form.control}
-            name="secondaryRole"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Secondary Role (optional)</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value || undefined}>
-                  <FormControl>
-                    <SelectTrigger className="bg-transparent border-corp-magenta/40 focus:border-corp-magenta">
-                      <SelectValue placeholder="Select secondary role if interested" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    <SelectItem value="actor">Actor/Performer</SelectItem>
-                    <SelectItem value="designer">Designer</SelectItem>
-                    <SelectItem value="tech">Technical Crew</SelectItem>
-                    <SelectItem value="artist">Visual Artist</SelectItem>
-                    <SelectItem value="writer">Writer/Dramaturg</SelectItem>
-                    <SelectItem value="director">Director</SelectItem>
-                    <SelectItem value="production">Production Manager</SelectItem>
-                    <SelectItem value="stage">Stage Manager</SelectItem>
-                    <SelectItem value="none">None - Just Primary Role</SelectItem>
-                  </SelectContent>
-                </Select>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          
-          <FormField
-            control={form.control}
-            name="experience"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Experience</FormLabel>
-                <FormControl>
-                  <Textarea 
-                    placeholder="Briefly describe your relevant experience" 
-                    id="experience-textarea"
-                    name="experience"
-                    className="bg-transparent border-corp-magenta/40 focus:border-corp-magenta min-h-[80px] text-white"
-                    onChange={(e) => field.onChange(e.target.value)}
-                    value={field.value || ""} 
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          
-          <FormField
-            control={form.control}
-            name="availability"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Summer Availability</FormLabel>
-                <FormControl>
-                  <Textarea 
-                    placeholder="Please describe your availability during summer" 
-                    {...field} 
-                    className="bg-transparent border-corp-magenta/40 focus:border-corp-magenta min-h-[80px]"
-                    value={field.value || ""} 
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          
-          <FormField
-            control={form.control}
-            name="message"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Additional Information (optional)</FormLabel>
-                <FormControl>
-                  <Textarea 
-                    placeholder="Anything else you'd like to share" 
-                    {...field} 
-                    className="bg-transparent border-corp-magenta/40 focus:border-corp-magenta min-h-[80px]"
-                    value={field.value || ""} 
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          
-          <div className="flex justify-center mt-6">
-            <Button 
-              type="submit" 
-              disabled={isPending}
-              className="bg-corp-cyan hover:bg-corp-cyan/80 text-black font-semibold py-2 px-6"
+              className="w-full p-2 bg-corp-bg border border-corp-magenta/40 focus:border-corp-magenta rounded-md text-white"
+              value={formData.role}
+              onChange={handleInputChange}
+              required
             >
-              {isPending ? "Submitting..." : "Submit Registration"}
-            </Button>
+              <option value="actor">Actor/Performer</option>
+              <option value="designer">Designer</option>
+              <option value="tech">Technical Crew</option>
+              <option value="artist">Visual Artist</option>
+              <option value="writer">Writer/Dramaturg</option>
+              <option value="director">Director</option>
+              <option value="other">Other</option>
+            </select>
           </div>
-        </form>
-      </Form>
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="secondaryRole" className="block text-sm font-medium mb-1">Secondary Role (optional)</label>
+          <select
+            id="secondaryRole"
+            name="secondaryRole"
+            className="w-full p-2 bg-corp-bg border border-corp-magenta/40 focus:border-corp-magenta rounded-md text-white"
+            value={formData.secondaryRole}
+            onChange={handleInputChange}
+          >
+            <option value="">Select secondary role (optional)</option>
+            <option value="actor">Actor/Performer</option>
+            <option value="designer">Designer</option>
+            <option value="tech">Technical Crew</option>
+            <option value="artist">Visual Artist</option>
+            <option value="writer">Writer/Dramaturg</option>
+            <option value="director">Director</option>
+            <option value="production">Production Manager</option>
+            <option value="stage">Stage Manager</option>
+            <option value="none">None - Just Primary Role</option>
+          </select>
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="experience" className="block text-sm font-medium mb-1">Experience</label>
+          <textarea
+            id="experience"
+            name="experience"
+            className="w-full p-2 bg-transparent border border-corp-magenta/40 focus:border-corp-magenta rounded-md text-white min-h-[80px]"
+            placeholder="Briefly describe your relevant experience"
+            value={formData.experience}
+            onChange={handleInputChange}
+          ></textarea>
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="availability" className="block text-sm font-medium mb-1">Summer Availability</label>
+          <textarea
+            id="availability"
+            name="availability"
+            className="w-full p-2 bg-transparent border border-corp-magenta/40 focus:border-corp-magenta rounded-md text-white min-h-[80px]"
+            placeholder="Please describe your availability during summer"
+            value={formData.availability}
+            onChange={handleInputChange}
+          ></textarea>
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="message" className="block text-sm font-medium mb-1">Additional Information (optional)</label>
+          <textarea
+            id="message"
+            name="message"
+            className="w-full p-2 bg-transparent border border-corp-magenta/40 focus:border-corp-magenta rounded-md text-white min-h-[80px]"
+            placeholder="Anything else you'd like to share"
+            value={formData.message}
+            onChange={handleInputChange}
+          ></textarea>
+        </div>
+        
+        <div className="flex justify-center mt-6">
+          <Button 
+            type="submit" 
+            disabled={isPending}
+            className="bg-corp-cyan hover:bg-corp-cyan/80 text-black font-semibold py-2 px-6"
+          >
+            {isPending ? "Submitting..." : "Submit Registration"}
+          </Button>
+        </div>
+      </form>
     </motion.div>
   );
 }
