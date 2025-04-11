@@ -31,17 +31,20 @@ export default function AboutUsSlide() {
         initial={{ 
           y: 20, 
           opacity: 0,
+          filter: "brightness(1.2) hue-rotate(15deg)"
         }}
         animate={{ 
           y: 0, 
           opacity: 1,
+          filter: "brightness(1) hue-rotate(0deg)"
         }}
         exit={{ 
           y: -20, 
           opacity: 0,
+          filter: "brightness(1.5) hue-rotate(30deg)"
         }}
-        className={`transition-colors duration-500 ${animateOut ? 'bg-corp-burnt-orange bg-opacity-10' : ''}`}
-        transition={{ duration: 0.5 }}
+        className={`transition-all duration-500 ${animateOut ? 'bg-corp-burnt-orange bg-opacity-10' : ''}`}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <h2 className="text-4xl md:text-6xl font-display font-bold mb-6 text-center">
           Functional Soup: A Collective Creation
@@ -112,11 +115,14 @@ export default function AboutUsSlide() {
         <div className="text-center">
           <motion.button
             onClick={handleRegisterClick}
-            className="inline-block bg-corp-magenta text-white hover:bg-corp-magenta/90 px-8 py-3 rounded-md text-lg font-bold transition-all duration-300 transform hover:scale-105 mb-4 shadow-lg shadow-corp-magenta/30 animate-pulse"
-            whileHover={{ scale: 1.05 }}
+            className="inline-block bg-gradient-to-r from-corp-burnt-orange to-corp-magenta text-white hover:opacity-90 px-10 py-4 rounded-md text-lg font-bold uppercase tracking-widest transition-all duration-300 transform hover:scale-105 mb-4 shadow-lg shadow-corp-burnt-orange/40 pulse-glow"
+            whileHover={{ 
+              scale: 1.05,
+              boxShadow: "0 0 30px rgba(255, 77, 0, 0.5)"
+            }}
             whileTap={{ scale: 0.95 }}
           >
-            REGISTER NOW
+            Register Now
           </motion.button>
           <p className="opacity-70">Join us in this ongoing endeavor of collective creation.</p>
         </div>

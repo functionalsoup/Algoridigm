@@ -81,7 +81,7 @@ export default function RevealSlide() {
           Summer Devised Theatre Workshop
         </motion.h3>
         
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="sync">
           {!showRegistrationForm ? (
             <motion.div 
               className="bg-corp-bg tech-panel rounded-lg border border-corp-cyan/40 p-8 mb-10 data-stream"
@@ -155,10 +155,10 @@ export default function RevealSlide() {
               <div className="mt-8 text-center">
                 <Button 
                   onClick={() => setShowRegistrationForm(true)}
-                  className="bg-corp-magenta hover:bg-corp-magenta/90 text-white font-bold py-3 px-8 text-lg shadow-lg shadow-corp-magenta/30 animate-pulse"
+                  className="bg-gradient-to-r from-corp-burnt-orange to-corp-magenta hover:bg-corp-magenta/90 text-white font-bold py-4 px-10 text-xl shadow-lg shadow-corp-burnt-orange/40 uppercase tracking-widest pulse-glow animate-pulse"
                   size="lg"
                 >
-                  REGISTER NOW
+                  Register Now
                 </Button>
                 <p className="mt-4 text-sm opacity-80">
                   Join our collaborative theatre-making experience!
