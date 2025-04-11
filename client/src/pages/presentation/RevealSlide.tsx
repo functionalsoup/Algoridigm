@@ -151,7 +151,7 @@ export default function RevealSlide() {
           )}
           {!showRegistrationForm && (
             <NavigationButton onClick={() => goToSlide(4)} variant="about">
-              About J-Tech Collective
+              Meet the J-Tech Team
             </NavigationButton>
           )}
         </motion.div>
