@@ -9,18 +9,24 @@ import AboutUsSlide from "./presentation/AboutUsSlide";
 import RevealTransition from "@/components/presentation/RevealTransition";
 
 export default function Home() {
-  const { currentSlide } = usePresentationContext();
+  const { currentSlide, goToSlide } = usePresentationContext();
   const [isRevealing, setIsRevealing] = useState(false);
   const [showRevealTransition, setShowRevealTransition] = useState(false);
   
   // Handle the reveal transition when moving from slide 2 to 3
   useEffect(() => {
     if (currentSlide === 2 && !isRevealing) {
+      const presentationContext = usePresentationContext();
+      
       const handler = (e: MouseEvent) => {
         const target = e.target as HTMLElement;
-        if (target.closest('.next-button')) {
+        const nextButton = target.closest('.next-button') || target.closest('[data-variant="next"]');
+        
+        if (nextButton) {
           e.preventDefault();
           e.stopPropagation();
+          
+          console.log("Next button clicked on CEO slide - starting transition");
           
           // Show the transition effect
           setShowRevealTransition(true);
@@ -28,20 +34,24 @@ export default function Home() {
           // After a short delay, show the reveal slide content
           setTimeout(() => {
             setIsRevealing(true);
+            
             // Move to the next slide
             setTimeout(() => {
               setShowRevealTransition(false);
+              
               // This actually updates the slide number
               setTimeout(() => {
-                usePresentationContext().goToSlide(3);
+                // Use our context reference directly
+                presentationContext.goToSlide(3);
               }, 100);
             }, 2000);
           }, 300);
         }
       };
       
-      document.addEventListener('click', handler);
-      return () => document.removeEventListener('click', handler);
+      // Add click event to the entire document to catch button clicks
+      document.addEventListener('click', handler, true);
+      return () => document.removeEventListener('click', handler, true);
     }
   }, [currentSlide, isRevealing]);
   

@@ -28,8 +28,9 @@ export function NavigationButton({ onClick, children, variant, disabled = false 
     <Button
       onClick={onClick}
       disabled={disabled}
-      className={`bg-transparent transition-all ${getStyles()}`}
+      className={`bg-transparent transition-all ${getStyles()} ${variant === "next" ? "next-button" : variant === "prev" ? "prev-button" : ""}`}
       variant="ghost"
+      data-variant={variant}
     >
       {children}
     </Button>
