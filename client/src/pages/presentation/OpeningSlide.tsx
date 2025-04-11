@@ -79,18 +79,32 @@ export default function OpeningSlide() {
         {/* ALGORIDIGM */}
         <motion.div
           className="text-center mb-20"
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 0, scale: 0.97 }}
           animate={{ 
-            opacity: showTitle ? 1 : 0
+            opacity: showTitle ? 1 : 0,
+            scale: showTitle ? 1 : 0.97
           }}
           transition={{ 
-            duration: 3,
-            ease: [0.22, 1, 0.36, 1]
+            duration: 2.5,
+            ease: "easeOut"
           }}
         >
-          <h1 className="text-6xl md:text-8xl xl:text-9xl font-display font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-corp-cyan via-white to-corp-magenta">
-            <span className="relative inline-block">ALGORIDIGM</span>
+          <h1 className="text-6xl md:text-8xl xl:text-9xl font-display font-bold tracking-wider">
+            <span className="text-shadow-glow relative inline-block text-white">ALGORIDIGM</span>
           </h1>
+          
+          {/* Underline effect */}
+          <motion.div 
+            className="h-0.5 w-0 bg-gradient-to-r from-corp-cyan to-corp-magenta mx-auto mt-2"
+            animate={{ 
+              width: showTitle ? "80%" : "0%"
+            }}
+            transition={{
+              duration: 1.5,
+              delay: 0.7,
+              ease: "easeInOut"
+            }}
+          />
         </motion.div>
         
         {/* BEGIN BUTTON */}
