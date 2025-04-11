@@ -25,8 +25,8 @@ export default function OpeningSlide() {
         <Timer />
       </div>
       
-      <div className="absolute inset-0 pointer-events-none">
-        <BackgroundParticles count={30} />
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <BackgroundParticles count={60} pattern="mandala" colors="cyan-magenta" />
       </div>
       
       <motion.div 
@@ -61,14 +61,20 @@ export default function OpeningSlide() {
         </motion.div>
       </motion.div>
       
-      <motion.p
-        className="text-xl md:text-2xl mb-12 text-corp-cyan opacity-80"
+      <motion.div
+        className="mb-12 tech-panel px-6 py-4 max-w-xl mx-auto text-center"
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.5 }}
       >
-        J-Tech Industries
-      </motion.p>
+        <div className="text-xl md:text-2xl text-corp-cyan font-code mb-2">
+          J-TECH INDUSTRIES
+        </div>
+        <div className="text-sm opacity-80 data-stream terminal-text">
+          Pioneering the integration of algorithmic cognitive architecture
+          <br />and human artistic expression since 2025.
+        </div>
+      </motion.div>
       
       <motion.div
         initial={{ y: 20, opacity: 0 }}
