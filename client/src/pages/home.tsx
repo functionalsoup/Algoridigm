@@ -16,8 +16,7 @@ export default function Home() {
   // Handle the reveal transition when moving from slide 2 to 3
   useEffect(() => {
     if (currentSlide === 2 && !isRevealing) {
-      const presentationContext = usePresentationContext();
-      
+      // Create handler for the next button click
       const handler = (e: MouseEvent) => {
         const target = e.target as HTMLElement;
         const nextButton = target.closest('.next-button') || target.closest('[data-variant="next"]');
@@ -41,8 +40,8 @@ export default function Home() {
               
               // This actually updates the slide number
               setTimeout(() => {
-                // Use our context reference directly
-                presentationContext.goToSlide(3);
+                // Use the goToSlide from the outer scope
+                goToSlide(3);
               }, 100);
             }, 2000);
           }, 300);
@@ -53,7 +52,7 @@ export default function Home() {
       document.addEventListener('click', handler, true);
       return () => document.removeEventListener('click', handler, true);
     }
-  }, [currentSlide, isRevealing]);
+  }, [currentSlide, isRevealing, goToSlide]);
   
   return (
     <div className="presentation-container relative w-full min-h-screen bg-corp-dark">
