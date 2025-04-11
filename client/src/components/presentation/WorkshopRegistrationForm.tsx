@@ -105,7 +105,13 @@ export function WorkshopRegistrationForm() {
                 <FormItem>
                   <FormLabel>Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="Your name" {...field} />
+                    <Input 
+                      placeholder="Your name" 
+                      {...field}
+                      className="bg-transparent border-corp-magenta/40 focus:border-corp-magenta"
+                      onChange={field.onChange}
+                      value={field.value}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -119,7 +125,14 @@ export function WorkshopRegistrationForm() {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input type="email" placeholder="Your email address" {...field} />
+                    <Input 
+                      type="email" 
+                      placeholder="Your email address" 
+                      {...field}
+                      className="bg-transparent border-corp-magenta/40 focus:border-corp-magenta"
+                      onChange={field.onChange}
+                      value={field.value}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -137,7 +150,9 @@ export function WorkshopRegistrationForm() {
                   <FormControl>
                     <Input 
                       placeholder="Your phone number" 
-                      {...field} 
+                      {...field}
+                      className="bg-transparent border-corp-magenta/40 focus:border-corp-magenta"
+                      onChange={field.onChange}
                       value={field.value || ""} 
                     />
                   </FormControl>
@@ -154,7 +169,7 @@ export function WorkshopRegistrationForm() {
                   <FormLabel>Primary Role</FormLabel>
                   <Select onValueChange={field.onChange} defaultValue={field.value || undefined}>
                     <FormControl>
-                      <SelectTrigger>
+                      <SelectTrigger className="bg-transparent border-corp-magenta/40 focus:border-corp-magenta">
                         <SelectValue placeholder="Select primary role" />
                       </SelectTrigger>
                     </FormControl>
@@ -182,7 +197,7 @@ export function WorkshopRegistrationForm() {
                 <FormLabel>Secondary Role (optional)</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value || undefined}>
                   <FormControl>
-                    <SelectTrigger>
+                    <SelectTrigger className="bg-transparent border-corp-magenta/40 focus:border-corp-magenta">
                       <SelectValue placeholder="Select secondary role if interested" />
                     </SelectTrigger>
                   </FormControl>
@@ -213,6 +228,7 @@ export function WorkshopRegistrationForm() {
                   <Textarea 
                     placeholder="Briefly describe your relevant experience" 
                     {...field} 
+                    className="bg-transparent border-corp-magenta/40 focus:border-corp-magenta min-h-[80px]"
                     value={field.value || ""} 
                   />
                 </FormControl>
@@ -231,6 +247,7 @@ export function WorkshopRegistrationForm() {
                   <Textarea 
                     placeholder="Please describe your availability during summer" 
                     {...field} 
+                    className="bg-transparent border-corp-magenta/40 focus:border-corp-magenta min-h-[80px]"
                     value={field.value || ""} 
                   />
                 </FormControl>
@@ -249,6 +266,7 @@ export function WorkshopRegistrationForm() {
                   <Textarea 
                     placeholder="Anything else you'd like to share" 
                     {...field} 
+                    className="bg-transparent border-corp-magenta/40 focus:border-corp-magenta min-h-[80px]"
                     value={field.value || ""} 
                   />
                 </FormControl>
