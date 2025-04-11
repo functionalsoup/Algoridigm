@@ -59,7 +59,8 @@ export const workshopRegistrations = pgTable("workshop_registrations", {
   name: text("name").notNull(),
   email: text("email").notNull(),
   phone: text("phone"),
-  role: text("role"), // 'actor', 'designer', 'tech', etc.
+  role: text("role").notNull(), // Primary role - 'actor', 'designer', 'tech', etc.
+  secondaryRole: text("secondary_role"), // Secondary role (optional)
   experience: text("experience"),
   availability: text("availability"),
   message: text("message"),
@@ -137,6 +138,7 @@ export const insertWorkshopRegistrationSchema = createInsertSchema(workshopRegis
   email: true,
   phone: true,
   role: true,
+  secondaryRole: true,
   experience: true,
   availability: true,
   message: true,

@@ -89,7 +89,7 @@ export default function RevealSlide() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-corp-magenta mr-2">→</span>
-                    <span>All other creative collaborators</span>
+                    <span>Writers & Dramaturgs</span>
                   </li>
                 </ul>
               </div>
@@ -107,11 +107,11 @@ export default function RevealSlide() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-corp-magenta mr-2">→</span>
-                    <span>Please include summer availability</span>
+                    <span>Multiple roles available</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-corp-magenta mr-2">→</span>
-                    <span>Submit resume or statement of interest</span>
+                    <span>Rehearsals begin June 15th</span>
                   </li>
                 </ul>
               </div>
@@ -120,18 +120,13 @@ export default function RevealSlide() {
             <div className="mt-8 text-center">
               <Button 
                 onClick={() => setShowRegistrationForm(true)}
-                className="bg-corp-cyan hover:bg-corp-cyan/80 text-black font-semibold py-2 px-6"
+                className="bg-corp-cyan hover:bg-corp-cyan/80 text-black font-semibold py-2 px-6 text-lg"
+                size="lg"
               >
-                Register Now
+                Register for the Workshop
               </Button>
               <p className="mt-4 text-sm opacity-80">
-                Or contact us directly at{" "}
-                <a 
-                  href="mailto:functional_soup@outlook.com" 
-                  className="text-corp-cyan hover:text-corp-magenta transition-colors"
-                >
-                  functional_soup@outlook.com
-                </a>
+                Join our collaborative theatre-making experience!
               </p>
             </div>
           </motion.div>
@@ -154,9 +149,11 @@ export default function RevealSlide() {
               Back to Information
             </Button>
           )}
-          <NavigationButton onClick={() => goToSlide(4)} variant="about">
-            About Us
-          </NavigationButton>
+          {!showRegistrationForm && (
+            <NavigationButton onClick={() => goToSlide(4)} variant="about">
+              About J-Tech Collective
+            </NavigationButton>
+          )}
         </motion.div>
       </motion.div>
     </PresentationLayout>

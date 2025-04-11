@@ -18,7 +18,8 @@ const formSchema = insertWorkshopRegistrationSchema.extend({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
   phone: z.string().optional(),
-  role: z.string().optional(),
+  role: z.string().min(1, "Please select a primary role"),
+  secondaryRole: z.string().optional(),
   experience: z.string().optional(),
   availability: z.string().optional(),
   message: z.string().optional(),
@@ -37,6 +38,7 @@ export function WorkshopRegistrationForm() {
       email: "",
       phone: "",
       role: "",
+      secondaryRole: "",
       experience: "",
       availability: "",
       message: "",
@@ -149,11 +151,11 @@ export function WorkshopRegistrationForm() {
               name="role"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Role</FormLabel>
+                  <FormLabel>Primary Role</FormLabel>
                   <Select onValueChange={field.onChange} defaultValue={field.value || undefined}>
                     <FormControl>
                       <SelectTrigger>
-                        <SelectValue placeholder="Select a role" />
+                        <SelectValue placeholder="Select primary role" />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
@@ -161,6 +163,8 @@ export function WorkshopRegistrationForm() {
                       <SelectItem value="designer">Designer</SelectItem>
                       <SelectItem value="tech">Technical Crew</SelectItem>
                       <SelectItem value="artist">Visual Artist</SelectItem>
+                      <SelectItem value="writer">Writer/Dramaturg</SelectItem>
+                      <SelectItem value="director">Director</SelectItem>
                       <SelectItem value="other">Other</SelectItem>
                     </SelectContent>
                   </Select>
@@ -169,6 +173,35 @@ export function WorkshopRegistrationForm() {
               )}
             />
           </div>
+          
+          <FormField
+            control={form.control}
+            name="secondaryRole"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Secondary Role (optional)</FormLabel>
+                <Select onValueChange={field.onChange} defaultValue={field.value || undefined}>
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select secondary role if interested" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value="actor">Actor/Performer</SelectItem>
+                    <SelectItem value="designer">Designer</SelectItem>
+                    <SelectItem value="tech">Technical Crew</SelectItem>
+                    <SelectItem value="artist">Visual Artist</SelectItem>
+                    <SelectItem value="writer">Writer/Dramaturg</SelectItem>
+                    <SelectItem value="director">Director</SelectItem>
+                    <SelectItem value="production">Production Manager</SelectItem>
+                    <SelectItem value="stage">Stage Manager</SelectItem>
+                    <SelectItem value="none">None - Just Primary Role</SelectItem>
+                  </SelectContent>
+                </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
           
           <FormField
             control={form.control}
