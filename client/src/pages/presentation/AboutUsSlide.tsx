@@ -105,7 +105,7 @@ export default function AboutUsSlide() {
           </div>
         </div>
         
-        <div className="text-center">
+        <div className="text-center mt-10 mb-12">
           <motion.button
             onClick={handleRegisterClick}
             className="inline-block bg-gradient-to-r from-corp-burnt-orange to-corp-magenta text-white hover:opacity-90 px-10 py-4 rounded-md text-lg font-bold uppercase tracking-widest transition-all duration-300 transform hover:scale-105 mb-4 shadow-lg shadow-corp-burnt-orange/40 pulse-glow"
@@ -117,16 +117,16 @@ export default function AboutUsSlide() {
           >
             Register Now
           </motion.button>
-          <p className="opacity-70">Join us in this ongoing endeavor of collective creation.</p>
+          <p className="opacity-70 mt-4 mb-2">Join us in this ongoing endeavor of collective creation.</p>
         </div>
         
         {/* Contact Us Small Button */}
-        <div className="absolute bottom-4 right-4">
+        <div className="absolute bottom-20 sm:bottom-4 right-4 z-20">
           <div className="relative">
             <Button
               size="sm"
               variant="outline"
-              className="border-corp-burnt-orange text-corp-burnt-orange hover:bg-corp-burnt-orange/10 rounded-full flex items-center gap-1"
+              className="border-corp-burnt-orange text-corp-burnt-orange hover:bg-corp-burnt-orange/10 rounded-full flex items-center gap-1 shadow-md"
               onMouseEnter={() => setShowContactTooltip(true)}
               onMouseLeave={() => setShowContactTooltip(false)}
               onClick={() => {

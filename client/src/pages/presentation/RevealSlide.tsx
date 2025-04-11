@@ -164,7 +164,7 @@ export default function RevealSlide() {
         </motion.div>
         
         <motion.div 
-          className="text-center mt-8"
+          className="text-center mt-10 mb-8"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5 }}

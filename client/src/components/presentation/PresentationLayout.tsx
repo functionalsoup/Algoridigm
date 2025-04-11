@@ -61,27 +61,28 @@ export function PresentationLayout({
       </div>
 
       <div className="flex justify-between mt-12 max-w-5xl mx-auto">
-        {showPrevButton && (
-          <NavigationButton
-            onClick={() => goToSlide(slideNumber - 1)}
-            disabled={slideNumber <= 1}
-            variant="prev"
-          >
-            Previous
-          </NavigationButton>
-        )}
+        <div>
+          {showPrevButton && (
+            <NavigationButton
+              onClick={() => goToSlide(slideNumber - 1)}
+              disabled={slideNumber <= 1}
+              variant="prev"
+            >
+              Previous
+            </NavigationButton>
+          )}
+        </div>
         
-        {/* Spacer for when there's only one button */}
-        {showPrevButton && !showNextButton && <div></div>}
-        
-        {showNextButton && (
-          <NavigationButton
-            onClick={() => goToSlide(slideNumber + 1)}
-            variant="next"
-          >
-            Next
-          </NavigationButton>
-        )}
+        <div>
+          {showNextButton && (
+            <NavigationButton
+              onClick={() => goToSlide(slideNumber + 1)}
+              variant="next"
+            >
+              Next
+            </NavigationButton>
+          )}
+        </div>
       </div>
     </motion.div>
   );
