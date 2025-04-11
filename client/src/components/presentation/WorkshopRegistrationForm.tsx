@@ -45,13 +45,7 @@ export function WorkshopRegistrationForm() {
   
   const { mutate, isPending } = useMutation({
     mutationFn: async (data: FormValues) => {
-      return await apiRequest("/api/workshop-registration", {
-        method: "POST",
-        headers: { 
-          'Content-Type': 'application/json' 
-        },
-        body: JSON.stringify(data),
-      });
+      return await apiRequest("POST", "/api/workshop-registration", data);
     },
     onSuccess: () => {
       toast({
