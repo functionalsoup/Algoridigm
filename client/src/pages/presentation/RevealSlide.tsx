@@ -1,10 +1,14 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { usePresentationContext } from "@/lib/presentationContext";
 import PresentationLayout from "@/components/presentation/PresentationLayout";
 import NavigationButton from "@/components/presentation/NavigationButton";
+import { WorkshopRegistrationForm } from "@/components/presentation/WorkshopRegistrationForm";
+import { Button } from "@/components/ui/button";
 
 export default function RevealSlide() {
   const { goToSlide } = usePresentationContext();
+  const [showRegistrationForm, setShowRegistrationForm] = useState(false);
   
   return (
     <PresentationLayout slideNumber={3} showNextButton={false}>
@@ -53,82 +57,103 @@ export default function RevealSlide() {
           Summer Devised Theatre Workshop
         </h3>
         
-        <motion.div 
-          className="bg-corp-bg rounded-lg border border-corp-magenta/40 p-8 mb-10"
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.3 }}
-        >
-          <h3 className="text-2xl font-display font-semibold mb-4 text-corp-magenta">Join Us for Machinal</h3>
-          <p className="mb-6">We're beginning the process of devising an adaptation of Sophie Treadwell's Machinal. We need Actor/Performers, Designers, Techs, Visual Artists, and more! All skill and experience levels are welcome.</p>
-          
-          <div className="flex flex-col md:flex-row gap-8">
-            <div className="md:w-1/2">
-              <h4 className="text-xl font-display font-semibold mb-2 text-corp-cyan">What We Need</h4>
-              <ul className="space-y-2">
-                <li className="flex items-start">
-                  <span className="text-corp-magenta mr-2">→</span>
-                  <span>Actors & Performers</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-corp-magenta mr-2">→</span>
-                  <span>Designers (set, costume, light, sound)</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-corp-magenta mr-2">→</span>
-                  <span>Technical crew</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-corp-magenta mr-2">→</span>
-                  <span>Visual artists</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-corp-magenta mr-2">→</span>
-                  <span>All other creative collaborators</span>
-                </li>
-              </ul>
+        {!showRegistrationForm ? (
+          <motion.div 
+            className="bg-corp-bg rounded-lg border border-corp-magenta/40 p-8 mb-10"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            <h3 className="text-2xl font-display font-semibold mb-4 text-corp-magenta">Join Us for Machinal</h3>
+            <p className="mb-6">We're beginning the process of devising an adaptation of Sophie Treadwell's Machinal. We need Actor/Performers, Designers, Techs, Visual Artists, and more! All skill and experience levels are welcome.</p>
+            
+            <div className="flex flex-col md:flex-row gap-8">
+              <div className="md:w-1/2">
+                <h4 className="text-xl font-display font-semibold mb-2 text-corp-cyan">What We Need</h4>
+                <ul className="space-y-2">
+                  <li className="flex items-start">
+                    <span className="text-corp-magenta mr-2">→</span>
+                    <span>Actors & Performers</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-corp-magenta mr-2">→</span>
+                    <span>Designers (set, costume, light, sound)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-corp-magenta mr-2">→</span>
+                    <span>Technical crew</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-corp-magenta mr-2">→</span>
+                    <span>Visual artists</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-corp-magenta mr-2">→</span>
+                    <span>All other creative collaborators</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="md:w-1/2">
+                <h4 className="text-xl font-display font-semibold mb-2 text-corp-cyan">Important Details</h4>
+                <ul className="space-y-2">
+                  <li className="flex items-start">
+                    <span className="text-corp-magenta mr-2">→</span>
+                    <span>18+ only due to mature themes</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-corp-magenta mr-2">→</span>
+                    <span>All experience levels welcome</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-corp-magenta mr-2">→</span>
+                    <span>Please include summer availability</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-corp-magenta mr-2">→</span>
+                    <span>Submit resume or statement of interest</span>
+                  </li>
+                </ul>
+              </div>
             </div>
             
-            <div className="md:w-1/2">
-              <h4 className="text-xl font-display font-semibold mb-2 text-corp-cyan">Important Details</h4>
-              <ul className="space-y-2">
-                <li className="flex items-start">
-                  <span className="text-corp-magenta mr-2">→</span>
-                  <span>18+ only due to mature themes</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-corp-magenta mr-2">→</span>
-                  <span>All experience levels welcome</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-corp-magenta mr-2">→</span>
-                  <span>Please include summer availability</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-corp-magenta mr-2">→</span>
-                  <span>Submit resume or statement of interest</span>
-                </li>
-              </ul>
+            <div className="mt-8 text-center">
+              <Button 
+                onClick={() => setShowRegistrationForm(true)}
+                className="bg-corp-cyan hover:bg-corp-cyan/80 text-black font-semibold py-2 px-6"
+              >
+                Register Now
+              </Button>
+              <p className="mt-4 text-sm opacity-80">
+                Or contact us directly at{" "}
+                <a 
+                  href="mailto:functional_soup@outlook.com" 
+                  className="text-corp-cyan hover:text-corp-magenta transition-colors"
+                >
+                  functional_soup@outlook.com
+                </a>
+              </p>
             </div>
-          </div>
-          
-          <div className="mt-8 text-center">
-            <p className="mb-4">Send your information to:</p>
-            <a 
-              href="mailto:functional_soup@outlook.com" 
-              className="text-2xl text-corp-cyan hover:text-corp-magenta transition-colors"
-            >
-              functional_soup@outlook.com
-            </a>
-          </div>
-        </motion.div>
+          </motion.div>
+        ) : (
+          <WorkshopRegistrationForm />
+        )}
         
         <motion.div 
-          className="text-center"
+          className="text-center mt-8"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5 }}
         >
+          {showRegistrationForm && (
+            <Button 
+              onClick={() => setShowRegistrationForm(false)}
+              variant="outline"
+              className="mr-4 border-corp-magenta text-corp-magenta hover:bg-corp-magenta/10"
+            >
+              Back to Information
+            </Button>
+          )}
           <NavigationButton onClick={() => goToSlide(4)} variant="about">
             About Us
           </NavigationButton>

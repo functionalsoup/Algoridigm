@@ -72,7 +72,7 @@ export class DatabaseStorage implements IStorage {
       query = query.where(eq(presentations.isPublic, options.isPublic));
     }
     
-    return await query;
+    return await query.execute();
   }
   
   async createPresentation(presentation: InsertPresentation): Promise<Presentation> {
@@ -93,7 +93,8 @@ export class DatabaseStorage implements IStorage {
     return await db.select()
       .from(slides)
       .where(eq(slides.presentationId, presentationId))
-      .orderBy(slides.orderIndex);
+      .orderBy(slides.orderIndex)
+      .execute();
   }
   
   async createSlide(slide: InsertSlide): Promise<Slide> {
@@ -114,7 +115,8 @@ export class DatabaseStorage implements IStorage {
     return await db.select()
       .from(visualElements)
       .where(eq(visualElements.slideId, slideId))
-      .orderBy(visualElements.orderIndex);
+      .orderBy(visualElements.orderIndex)
+      .execute();
   }
   
   async createVisualElement(element: InsertVisualElement): Promise<VisualElement> {
@@ -135,7 +137,7 @@ export class DatabaseStorage implements IStorage {
   }
   
   async getWorkshopRegistrations(): Promise<WorkshopRegistration[]> {
-    return await db.select().from(workshopRegistrations);
+    return await db.select().from(workshopRegistrations).execute();
   }
 }
 
