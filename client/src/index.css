@@ -220,6 +220,11 @@
     letter-spacing: 0.25em;
   }
   
+  .text-shadow-subtle {
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5),
+                 0 0 20px rgba(0, 240, 255, 0.2);
+  }
+  
   .tech-panel {
     border: 1px solid rgba(0, 240, 255, 0.2);
     background: rgba(12, 12, 16, 0.7);

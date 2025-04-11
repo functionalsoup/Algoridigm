@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { usePresentationContext } from "@/lib/presentationContext";
-import { JTechLogo } from "@/components/presentation/JTechLogo";
 import NavigationButton from "@/components/presentation/NavigationButton";
 import { BackgroundParticles } from "@/components/presentation/BackgroundElements";
 import Timer from "@/components/presentation/Timer";
@@ -8,22 +7,19 @@ import { useState, useEffect } from "react";
 
 export default function OpeningSlide() {
   const { goToSlide, startTimer } = usePresentationContext();
-  const [showLogo, setShowLogo] = useState(false);
+  const [showCompanyName, setShowCompanyName] = useState(false);
   const [showTitle, setShowTitle] = useState(false);
-  const [showSubtitle, setShowSubtitle] = useState(false);
   const [showButton, setShowButton] = useState(false);
   
   useEffect(() => {
-    // Sequence the animations with increasing delays
-    const logoTimer = setTimeout(() => setShowLogo(true), 500);
-    const titleTimer = setTimeout(() => setShowTitle(true), 1500);
-    const subtitleTimer = setTimeout(() => setShowSubtitle(true), 2500);
-    const buttonTimer = setTimeout(() => setShowButton(true), 3500);
+    // Sequence the animations with precise timing
+    const companyTimer = setTimeout(() => setShowCompanyName(true), 1000);
+    const titleTimer = setTimeout(() => setShowTitle(true), 3000);
+    const buttonTimer = setTimeout(() => setShowButton(true), 5000);
     
     return () => {
-      clearTimeout(logoTimer);
+      clearTimeout(companyTimer);
       clearTimeout(titleTimer);
-      clearTimeout(subtitleTimer);
       clearTimeout(buttonTimer);
     };
   }, []);
@@ -35,73 +31,95 @@ export default function OpeningSlide() {
   
   return (
     <motion.div
-      className="slide flex flex-col items-center justify-center h-full relative"
+      className="slide flex flex-col items-center justify-center h-full relative bg-corp-dark"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 1.5 }}
     >
-      <div className="absolute top-6 right-6 opacity-50 hover:opacity-100 transition-opacity duration-300">
+      <div className="absolute top-6 right-6 opacity-30 hover:opacity-80 transition-opacity duration-500">
         <Timer />
       </div>
       
-      <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
-        <BackgroundParticles count={30} pattern="mandala" colors="cyan-magenta" />
+      <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-20">
+        <BackgroundParticles count={20} pattern="mandala" colors="cyan-magenta" />
       </div>
       
-      <div className="flex flex-col items-center justify-center h-full max-w-4xl mx-auto">
-        <motion.div 
-          className="mb-12"
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: showLogo ? 1 : 0.8, opacity: showLogo ? 1 : 0 }}
-          transition={{ duration: 2, ease: "easeOut" }}
-        >
-          <JTechLogo size="large" animated={true} />
-        </motion.div>
-        
+      <div className="flex flex-col items-center justify-center h-full max-w-4xl mx-auto px-4">
+        {/* J-TECH INDUSTRIES */}
         <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: showTitle ? 1 : 0 }}
-          transition={{ duration: 2, ease: "easeInOut" }}
+          className="mb-12 text-center"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ 
+            opacity: showCompanyName ? 1 : 0,
+            y: showCompanyName ? 0 : -10
+          }}
+          transition={{ 
+            duration: 2.5, 
+            ease: "easeOut"
+          }}
         >
-          <h1 
-            className="text-6xl md:text-8xl font-display font-bold mb-6 tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-corp-cyan via-white to-corp-magenta"
-          >
-            <span className="relative opacity-90 inline-block">ALGORIDIGM</span>
-          </h1>
+          <h2 className="text-3xl md:text-4xl font-code uppercase tracking-[0.3em] text-corp-cyan font-bold">
+            <span className="relative text-shadow-subtle">J-Tech Industries</span>
+          </h2>
           
           <motion.div 
-            className="text-sm md:text-base tracking-[0.3em] font-code text-corp-cyan opacity-0"
-            animate={{ opacity: showSubtitle ? 0.7 : 0 }}
-            transition={{ duration: 1.5, ease: "easeIn" }}
-          >
-            J-TECH INDUSTRIES
-          </motion.div>
+            className="h-0.5 w-0 bg-gradient-to-r from-transparent via-corp-cyan to-transparent mx-auto"
+            animate={{ 
+              width: showCompanyName ? "100%" : "0%"
+            }}
+            transition={{
+              duration: 2,
+              delay: 0.5,
+              ease: "easeInOut"
+            }}
+          />
         </motion.div>
         
+        {/* ALGORIDIGM */}
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          className="text-center mb-20"
+          initial={{ opacity: 0 }}
+          animate={{ 
+            opacity: showTitle ? 1 : 0
+          }}
+          transition={{ 
+            duration: 3,
+            ease: [0.22, 1, 0.36, 1]
+          }}
+        >
+          <h1 className="text-6xl md:text-8xl xl:text-9xl font-display font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-corp-cyan via-white to-corp-magenta">
+            <span className="relative inline-block">ALGORIDIGM</span>
+          </h1>
+        </motion.div>
+        
+        {/* BEGIN BUTTON */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
           animate={{ 
             opacity: showButton ? 1 : 0,
-            y: showButton ? 0 : 10
+            scale: showButton ? 1 : 0.95
           }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="mt-12"
+          transition={{ 
+            duration: 2,
+            ease: "easeOut"
+          }}
+          className="mt-16"
         >
           <motion.div
             animate={{ 
               boxShadow: showButton ? [
                 "0 0 0px rgba(0, 255, 255, 0)",
-                "0 0 30px rgba(0, 255, 255, 0.3)",
-                "0 0 5px rgba(0, 255, 255, 0.1)"
+                "0 0 40px rgba(0, 240, 255, 0.4)",
+                "0 0 10px rgba(0, 240, 255, 0.2)"
               ] : "0 0 0px rgba(0, 255, 255, 0)"
             }}
             transition={{
-              duration: 3,
+              duration: 4,
               repeat: Infinity,
               repeatType: "reverse",
-              ease: "easeInOut"
+              ease: "easeInOut",
+              delay: 1
             }}
           >
             <NavigationButton 
