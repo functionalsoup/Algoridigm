@@ -97,7 +97,7 @@ export default function OpeningSlide() {
           }}
           transition={{ 
             duration: 2.5,
-            ease: "easeOut"
+            ease: "easeInOut" // Changed from easeOut to easeInOut for smoother animation
           }}
         >
           {/* Background lighting effect that fades in behind the text */}
@@ -109,9 +109,9 @@ export default function OpeningSlide() {
               scale: showTitle ? 1.2 : 0.8
             }}
             transition={{
-              duration: 3,
+              duration: 4, // Increased duration from 3 to 4
               delay: 0.3,
-              ease: "easeOut"
+              ease: "easeInOut" // Changed from easeOut to easeInOut for smoother animation
             }}
           />
           
@@ -197,8 +197,8 @@ export default function OpeningSlide() {
             scale: showButton ? 1 : 0.95
           }}
           transition={{ 
-            duration: 2,
-            ease: "easeOut"
+            duration: 2.5, // Increased duration for smoother animation
+            ease: "easeInOut" // Changed to easeInOut for smoother animation
           }}
           className="mt-8 sm:mt-12 md:mt-16 relative"
         >

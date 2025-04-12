@@ -46,25 +46,26 @@ export function RotatingMandelaBackground({
           rotate: 0 
         }}
         animate={{ 
-          opacity: isActive ? opacity : 0, // Simple fade in to final opacity, no fluctuation
-          scale: isActive ? scale : shrink ? 8 : scale, // Simple scale to final size
+          opacity: isActive ? opacity : 0,
+          scale: isActive ? scale : shrink ? 8 : scale,
           rotate: rotateTo
         }}
         transition={{
           opacity: {
-            duration: 3, // Simple fade in duration
+            duration: 3,
             ease: "easeOut",
             delay: initialDelay
           },
           scale: {
-            duration: 3, // Simple scale transition
-            ease: "easeOut",
+            duration: shrink ? 5 : 3, // Longer duration for shrink animation to make it smoother
+            ease: shrink ? "easeInOut" : "easeOut", // Better easing for shrink animation
             delay: initialDelay
           },
           rotate: {
             duration,
             repeat: Infinity,
-            ease: "linear"
+            ease: "linear",
+            repeatType: "loop" // Ensure smooth rotation looping
           }
         }}
         style={{
