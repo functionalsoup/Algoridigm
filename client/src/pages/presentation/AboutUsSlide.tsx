@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { usePresentationContext } from "@/lib/presentationContext";
 import PresentationLayout from "@/components/presentation/PresentationLayout";
+import { RotatingMandelaBackground } from "@/components/presentation/RotatingMandelaBackground";
 import { Button } from "@/components/ui/button";
 import { HiMail } from "react-icons/hi";
 
@@ -19,6 +20,14 @@ export default function AboutUsSlide() {
   
   return (
     <PresentationLayout slideNumber={4} showNextButton={false}>
+      {/* Rotating Mandela background with fast clockwise rotation */}
+      <RotatingMandelaBackground 
+        direction="clockwise"
+        speed="fast"
+        scale={1.5}
+        opacity={0.08}
+        initialDelay={0.3}
+      />
       <motion.div
         key="about-slide-content"
         initial={{ 

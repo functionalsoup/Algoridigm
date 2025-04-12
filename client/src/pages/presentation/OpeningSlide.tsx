@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { usePresentationContext } from "@/lib/presentationContext";
 import NavigationButton from "@/components/presentation/NavigationButton";
 import { BackgroundParticles } from "@/components/presentation/BackgroundElements";
+import { RotatingMandelaBackground } from "@/components/presentation/RotatingMandelaBackground";
 import Timer from "@/components/presentation/Timer";
 import { useState, useEffect } from "react";
-import mandelaImage from "@assets/Algoridigm Mandela Psy 3.png";
 
 export default function OpeningSlide() {
   const { goToSlide, startTimer } = usePresentationContext();
@@ -116,55 +116,14 @@ export default function OpeningSlide() {
           />
           
           {/* Mandela Symbol that fills the page then shrinks */}
-          <motion.div 
-            className="fixed inset-0 flex items-center justify-center pointer-events-none overflow-hidden z-0"
-            initial={{ opacity: 0, scale: 8, rotate: 0 }}
-            animate={{ 
-              opacity: showTitle ? [0, 0.5, 0.35, 0.2] : 0,
-              scale: showTitle ? [8, 6, 4, 2] : 8, // Even larger start size and shrink more dramatically
-              rotate: 360
-            }}
-            transition={{
-              opacity: {
-                duration: 20, // Longer duration for slower effect
-                times: [0, 0.3, 0.6, 1],
-                ease: "easeInOut",
-                delay: 0.5
-              },
-              scale: {
-                duration: 20, // Match the opacity duration
-                times: [0, 0.3, 0.6, 1],
-                ease: "easeInOut"
-              },
-              rotate: {
-                duration: 20, // Slower rotation for more dramatic effect
-                repeat: Infinity,
-                ease: "linear"
-              }
-            }}
-            style={{
-              position: 'fixed',
-              top: 0,
-              left: 0,
-              width: '100vw',
-              height: '100vh',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              zIndex: 0
-            }}
-          >
-            <img 
-              src={mandelaImage} 
-              alt="Background Mandala" 
-              className="w-full h-full object-contain opacity-50"
-              style={{ 
-                maxWidth: '250vmin', 
-                maxHeight: '250vmin',
-                transformOrigin: 'center center'
-              }}
-            />
-          </motion.div>
+          <RotatingMandelaBackground 
+            direction="clockwise"
+            speed="medium"
+            opacity={0.2}
+            isActive={showTitle}
+            shrink={true}
+            initialDelay={0.5}
+          />
           
           <h1 className="text-6xl md:text-8xl xl:text-9xl font-display font-bold tracking-wider relative z-10">
             <motion.span 

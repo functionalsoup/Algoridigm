@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { usePresentationContext } from "@/lib/presentationContext";
 import PresentationLayout from "@/components/presentation/PresentationLayout";
 import NavigationButton from "@/components/presentation/NavigationButton";
+import { RotatingMandelaBackground } from "@/components/presentation/RotatingMandelaBackground";
 import { Button } from "@/components/ui/button";
 
 export default function RevealSlide() {
@@ -18,6 +19,15 @@ export default function RevealSlide() {
 
   return (
     <PresentationLayout slideNumber={3} showNextButton={false}>
+      {/* Rotating Mandela background with counterclockwise rotation */}
+      <RotatingMandelaBackground 
+        direction="counterclockwise"
+        speed="slow"
+        scale={2}
+        opacity={0.1}
+        initialDelay={0.5}
+      />
+      
       <motion.div
         id="reveal-slide"
         initial={{ opacity: 0 }}
