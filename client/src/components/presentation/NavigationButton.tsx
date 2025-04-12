@@ -19,7 +19,7 @@ export function NavigationButton({ onClick, children, variant, disabled = false 
       case "begin":
         return "bg-gradient-to-r from-corp-cyan via-corp-blue to-corp-magenta text-white font-bold px-6 sm:px-12 py-4 sm:py-5 text-xl sm:text-2xl uppercase tracking-wider sm:tracking-[0.5em] letter-spacing-wide text-shadow-glow";
       case "about":
-        return "inline-block bg-gradient-to-r from-corp-magenta via-corp-cyan to-corp-magenta text-white px-8 sm:px-10 py-4 sm:py-4 rounded-md text-lg sm:text-xl font-bold uppercase tracking-widest transition-all duration-300 border-2 border-corp-magenta/50 backdrop-blur-sm shadow-lg shadow-corp-magenta/40";
+        return "inline-block bg-gradient-to-r from-corp-magenta via-corp-cyan to-corp-magenta text-white px-8 sm:px-10 py-4 sm:py-4 rounded-md text-lg sm:text-xl font-bold uppercase tracking-widest transition-all duration-300 border-2 border-corp-cyan/50 backdrop-blur-sm shadow-lg shadow-corp-magenta/40";
       default:
         return "";
     }
@@ -48,6 +48,21 @@ export function NavigationButton({ onClick, children, variant, disabled = false 
       } : {}}
       whileTap={!disabled ? { scale: 0.95 } : {}}
       data-variant={variant}
+      animate={variant === "about" ? {
+        boxShadow: [
+          "0 0 15px rgba(255, 0, 245, 0.3), 0 0 5px rgba(0, 255, 255, 0.2)",
+          "0 0 25px rgba(255, 0, 245, 0.5), 0 0 15px rgba(0, 255, 255, 0.4)",
+          "0 0 15px rgba(255, 0, 245, 0.3), 0 0 5px rgba(0, 255, 255, 0.2)"
+        ]
+      } : {}}
+      transition={variant === "about" ? {
+        boxShadow: {
+          duration: 3,
+          repeat: Infinity,
+          repeatType: "reverse",
+          ease: "easeInOut"
+        }
+      } : {}}
     >
       {variant === "about" ? (
         <motion.span 
