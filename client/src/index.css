@@ -48,6 +48,23 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
     overflow-x: hidden;
+  }
+  
+  /* Mandela color scheme - derived from the Mandela symbol */
+  :root {
+    --corp-cyan: 180 100% 50%;       /* #00FFFF - Turquoise/Cyan */
+    --corp-green: 96 100% 50%;        /* #88FF00 - Lime Green */
+    --corp-orange: 36 100% 50%;       /* #FF8800 - Orange/Gold */
+    --corp-blue: 210 100% 40%;        /* #0066CC - Deep Blue */
+    
+    /* Additional complementary colors */
+    --corp-dark-cyan: 180 100% 30%;   /* #009999 - Darker Cyan */
+    --corp-dark-green: 96 100% 30%;   /* #527F00 - Darker Green */
+    --corp-dark-orange: 36 100% 30%;  /* #996633 - Darker Orange */
+    --corp-dark-blue: 210 100% 25%;   /* #003A75 - Darker Blue */
+  }
+  
+  body {
     overscroll-behavior: none;
   }
 }

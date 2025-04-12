@@ -1,9 +1,19 @@
 import { motion } from "framer-motion";
 import PresentationLayout from "@/components/presentation/PresentationLayout";
+import { RotatingMandelaBackground } from "@/components/presentation/RotatingMandelaBackground";
 
 export default function TechnologySlide() {
   return (
     <PresentationLayout slideNumber={1} showPrevButton={false}>
+      {/* Rotating Mandela background with counterclockwise rotation and medium speed */}
+      <RotatingMandelaBackground 
+        direction="counterclockwise"
+        speed="medium"
+        scale={1.8}
+        opacity={0.15}
+        initialDelay={0.2}
+      />
+      
       <motion.div
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
