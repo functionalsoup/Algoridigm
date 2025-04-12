@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import mandelaImage from "@assets/Algoridigm Mandela Psy 3.png";
-import { ReactNode } from "react";
+import { ReactNode, useState, useEffect } from "react";
 
 interface RotatingMandelaBackgroundProps {
   direction?: "clockwise" | "counterclockwise";
@@ -23,6 +23,18 @@ export function RotatingMandelaBackground({
   shrink = false,
   children
 }: RotatingMandelaBackgroundProps) {
+  // State to track if image is loaded
+  const [imageLoaded, setImageLoaded] = useState(false);
+  
+  // Preload the image before displaying it
+  useEffect(() => {
+    const img = new Image();
+    img.src = mandelaImage;
+    img.onload = () => {
+      setImageLoaded(true);
+    };
+  }, []);
+  
   // Map speed names to rotation durations (in seconds)
   const speedMap = {
     slow: 120, // Very slow rotation
@@ -33,8 +45,7 @@ export function RotatingMandelaBackground({
   // Calculate duration based on speed
   const duration = speedMap[speed];
   
-  // Simple animation approach - no state management required
-  // Just define a single continuous rotation animation
+  // Rotation keyframes
   const rotationKeyframes = direction === "clockwise" 
     ? [0, 360] // Clockwise rotation keyframes
     : [0, -360]; // Counter-clockwise rotation keyframes
@@ -42,6 +53,9 @@ export function RotatingMandelaBackground({
   // The scale animation properties
   const scaleStart = shrink ? 8 : scale;
   const scaleEnd = isActive ? scale : shrink ? 8 : scale;
+
+  // Don't render anything until the image is loaded
+  if (!imageLoaded) return <>{children}</>;
 
   return (
     <>
@@ -65,12 +79,11 @@ export function RotatingMandelaBackground({
             }
           }}
         >
-          {/* Continuous Rotation Animation - Separate from opacity/scale */}
+          {/* Continuous Rotation Animation */}
           <motion.div
             className="w-full h-full flex items-center justify-center"
-            animate={{ 
-              rotate: rotationKeyframes
-            }}
+            initial={{ rotate: 0 }} // Start at 0
+            animate={{ rotate: rotationKeyframes[1] }} // End at full rotation
             transition={{
               rotate: {
                 duration: duration,
