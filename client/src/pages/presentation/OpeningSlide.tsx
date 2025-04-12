@@ -81,7 +81,7 @@ export default function OpeningSlide() {
             initial={{ rotate: 0 }}
             animate={{ rotate: 360 }}
             transition={{
-              duration: 30,
+              duration: 25.5, // Increased speed by 15% (30 / 1.15 = 25.5)
               repeat: Infinity,
               ease: "linear"
             }}
@@ -133,6 +133,43 @@ export default function OpeningSlide() {
               ease: "easeOut"
             }}
           />
+          
+          {/* Growing Mandela Symbol behind ALGORIDIGM */}
+          <motion.div 
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 pointer-events-none z-0"
+            initial={{ opacity: 0, scale: 0.5, rotate: 0 }}
+            animate={{ 
+              opacity: showTitle ? [0.15, 0.25, 0.15] : 0,
+              scale: showTitle ? [1.0, 1.15, 1.0] : 0.5,
+              rotate: 360
+            }}
+            transition={{
+              opacity: {
+                duration: 5,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut",
+                delay: 0.5
+              },
+              scale: {
+                duration: 8,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut"
+              },
+              rotate: {
+                duration: 30,
+                repeat: Infinity,
+                ease: "linear"
+              }
+            }}
+          >
+            <img 
+              src={mandelaImage} 
+              alt="Background Mandala" 
+              className="w-full h-full object-contain opacity-30" 
+            />
+          </motion.div>
           
           <h1 className="text-6xl md:text-8xl xl:text-9xl font-display font-bold tracking-wider relative z-10">
             <motion.span 
