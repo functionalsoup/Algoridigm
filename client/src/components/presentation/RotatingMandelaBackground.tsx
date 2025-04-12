@@ -17,7 +17,7 @@ export function RotatingMandelaBackground({
   direction = "clockwise", 
   speed = "medium",
   scale = 2.5,
-  opacity = 0.15,
+  opacity = 0.25, // Increased opacity by 10%
   initialDelay = 0.5,
   isActive = true,
   shrink = false,
@@ -25,9 +25,9 @@ export function RotatingMandelaBackground({
 }: RotatingMandelaBackgroundProps) {
   // Map speed names to rotation durations (in seconds)
   const speedMap = {
-    slow: 45,
-    medium: 25,
-    fast: 12
+    slow: 36,   // 20% faster (original: 45)
+    medium: 20, // 20% faster (original: 25)
+    fast: 9.6   // 20% faster (original: 12)
   };
   
   // Calculate rotation based on direction
@@ -52,13 +52,13 @@ export function RotatingMandelaBackground({
         }}
         transition={{
           opacity: {
-            duration: shrink ? 20 : 3,
+            duration: shrink ? 16 : 2.4, // 20% faster (original values: 20 or 3)
             times: shrink ? [0, 0.3, 0.6, 1] : undefined,
             ease: "easeInOut",
             delay: initialDelay
           },
           scale: {
-            duration: shrink ? 20 : 3,
+            duration: shrink ? 16 : 2.4, // 20% faster (original values: 20 or 3)
             times: shrink ? [0, 0.3, 0.6, 1] : undefined,
             ease: "easeInOut",
             delay: initialDelay
