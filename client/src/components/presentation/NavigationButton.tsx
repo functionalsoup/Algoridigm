@@ -19,7 +19,7 @@ export function NavigationButton({ onClick, children, variant, disabled = false 
       case "begin":
         return "bg-gradient-to-r from-corp-cyan via-corp-blue to-corp-magenta text-white font-bold px-6 sm:px-12 py-4 sm:py-5 text-xl sm:text-2xl uppercase tracking-wider sm:tracking-[0.5em] letter-spacing-wide text-shadow-glow";
       case "about":
-        return "border-2 border-corp-magenta/80 text-corp-magenta neo-button bg-corp-magenta/20 px-8 py-4 text-lg font-bold uppercase tracking-wider";
+        return "inline-block bg-gradient-to-r from-corp-magenta via-corp-cyan to-corp-magenta text-white px-8 sm:px-10 py-4 sm:py-4 rounded-md text-lg sm:text-xl font-bold uppercase tracking-widest transition-all duration-300 border-2 border-corp-magenta/50 backdrop-blur-sm shadow-lg shadow-corp-magenta/40";
       default:
         return "";
     }
@@ -44,14 +44,35 @@ export function NavigationButton({ onClick, children, variant, disabled = false 
             ? "0 0 20px rgba(0, 240, 255, 0.4)"
             : variant === "prev"
               ? "0 0 15px rgba(0, 101, 255, 0.3)"
-              : "0 0 25px rgba(255, 0, 245, 0.6)"
+              : "0 0 40px rgba(255, 0, 245, 0.7), 0 0 20px rgba(0, 255, 255, 0.5)"
       } : {}}
       whileTap={!disabled ? { scale: 0.95 } : {}}
       data-variant={variant}
     >
-      <span className="relative z-10">
-        {children}
-      </span>
+      {variant === "about" ? (
+        <motion.span 
+          className="relative z-10"
+          animate={{
+            textShadow: [
+              "0 0 5px rgba(255, 255, 255, 0.5)",
+              "0 0 15px rgba(255, 0, 245, 0.8)",
+              "0 0 5px rgba(0, 255, 255, 0.5)"
+            ]
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "easeInOut"
+          }}
+        >
+          {children}
+        </motion.span>
+      ) : (
+        <span className="relative z-10">
+          {children}
+        </span>
+      )}
     </motion.button>
   );
 }
