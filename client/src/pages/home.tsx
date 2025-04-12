@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { usePresentationContext } from "@/lib/presentationContext";
 import OpeningSlide from "./presentation/OpeningSlide";
-import TechnologySlide from "./presentation/TechnologySlide";
-import CEOSlide from "./presentation/CEOSlide";
+import CombinedSlide from "./presentation/CombinedSlide";
 import RevealSlide from "./presentation/RevealSlide";
 import AboutUsSlide from "./presentation/AboutUsSlide";
 import RevealTransition from "@/components/presentation/RevealTransition";
@@ -13,9 +12,9 @@ export default function Home() {
   const [isRevealing, setIsRevealing] = useState(false);
   const [showRevealTransition, setShowRevealTransition] = useState(false);
   
-  // Handle the reveal transition when moving from slide 2 to 3
+  // Handle the reveal transition when moving from slide 1 to 2
   useEffect(() => {
-    if (currentSlide === 2 && !isRevealing) {
+    if (currentSlide === 1 && !isRevealing) {
       // Create handler for the next button click
       const handler = (e: MouseEvent) => {
         const target = e.target as HTMLElement;
@@ -25,7 +24,7 @@ export default function Home() {
           e.preventDefault();
           e.stopPropagation();
           
-          console.log("Next button clicked on CEO slide - starting transition");
+          console.log("Next button clicked on combined slide - starting transition");
           
           // Show the transition effect
           setShowRevealTransition(true);
@@ -41,7 +40,7 @@ export default function Home() {
               // This actually updates the slide number
               setTimeout(() => {
                 // Use the goToSlide from the outer scope
-                goToSlide(3);
+                goToSlide(2);
               }, 100);
             }, 2000);
           }, 300);
@@ -59,10 +58,9 @@ export default function Home() {
       <div className="absolute inset-0">
         <AnimatePresence mode="wait">
           {currentSlide === 0 && <OpeningSlide key="opening" />}
-          {currentSlide === 1 && <TechnologySlide key="technology" />}
-          {currentSlide === 2 && <CEOSlide key="ceo" />}
-          {(currentSlide === 3 || isRevealing) && <RevealSlide key="reveal" />}
-          {currentSlide === 4 && <AboutUsSlide key="about" />}
+          {currentSlide === 1 && <CombinedSlide key="combined" />}
+          {(currentSlide === 2 || isRevealing) && <RevealSlide key="reveal" />}
+          {currentSlide === 3 && <AboutUsSlide key="about" />}
         </AnimatePresence>
       </div>
       
