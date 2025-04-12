@@ -46,21 +46,19 @@ export function RotatingMandelaBackground({
           rotate: 0 
         }}
         animate={{ 
-          opacity: isActive ? shrink ? [0, 0.65, 0.5, opacity] : opacity : 0, // Increased transition opacity values by ~30%
-          scale: isActive ? shrink ? [8, 6, 4, scale] : scale : shrink ? 8 : scale,
+          opacity: isActive ? opacity : 0, // Simple fade in to final opacity, no fluctuation
+          scale: isActive ? scale : shrink ? 8 : scale, // Simple scale to final size
           rotate: rotateTo
         }}
         transition={{
           opacity: {
-            duration: shrink ? 16 : 2.4, // 20% faster (original values: 20 or 3)
-            times: shrink ? [0, 0.3, 0.6, 1] : undefined,
-            ease: "easeInOut",
+            duration: 3, // Simple fade in duration
+            ease: "easeOut",
             delay: initialDelay
           },
           scale: {
-            duration: shrink ? 16 : 2.4, // 20% faster (original values: 20 or 3)
-            times: shrink ? [0, 0.3, 0.6, 1] : undefined,
-            ease: "easeInOut",
+            duration: 3, // Simple scale transition
+            ease: "easeOut",
             delay: initialDelay
           },
           rotate: {
