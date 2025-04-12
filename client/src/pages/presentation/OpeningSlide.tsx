@@ -137,35 +137,51 @@ export default function OpeningSlide() {
           {/* Mandela Symbol that fills the page then shrinks */}
           <motion.div 
             className="fixed inset-0 flex items-center justify-center pointer-events-none overflow-hidden z-0"
-            initial={{ opacity: 0, scale: 2.5, rotate: 0 }}
+            initial={{ opacity: 0, scale: 8, rotate: 0 }}
             animate={{ 
-              opacity: showTitle ? [0, 0.25, 0.15, 0.1] : 0,
-              scale: showTitle ? [2.5, 2.0, 1.5, 0.8] : 2.5, // Start large and shrink
+              opacity: showTitle ? [0, 0.5, 0.35, 0.2] : 0,
+              scale: showTitle ? [8, 6, 4, 2] : 8, // Even larger start size and shrink more dramatically
               rotate: 360
             }}
             transition={{
               opacity: {
-                duration: 15,
+                duration: 20, // Longer duration for slower effect
                 times: [0, 0.3, 0.6, 1],
                 ease: "easeInOut",
                 delay: 0.5
               },
               scale: {
-                duration: 15,
+                duration: 20, // Match the opacity duration
                 times: [0, 0.3, 0.6, 1],
                 ease: "easeInOut"
               },
               rotate: {
-                duration: 25.5, // Matches the top Mandela rotation speed
+                duration: 20, // Slower rotation for more dramatic effect
                 repeat: Infinity,
                 ease: "linear"
               }
+            }}
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              width: '100vw',
+              height: '100vh',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              zIndex: 0
             }}
           >
             <img 
               src={mandelaImage} 
               alt="Background Mandala" 
-              className="min-w-[200%] min-h-[200%] object-contain opacity-20" 
+              className="w-full h-full object-contain opacity-50"
+              style={{ 
+                maxWidth: '250vmin', 
+                maxHeight: '250vmin',
+                transformOrigin: 'center center'
+              }}
             />
           </motion.div>
           
