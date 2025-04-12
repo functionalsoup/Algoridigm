@@ -29,51 +29,29 @@ export default function TechnologySlide() {
         >
           <motion.h2 
             className="text-4xl sm:text-5xl md:text-7xl font-display font-bold text-center overflow-visible relative"
-            initial={{ letterSpacing: "0.2em", y: 20 }}
-            animate={{ 
-              letterSpacing: "0.1em",
-              y: 0
-            }}
-            transition={{ duration: 2, ease: "easeOut" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
           >
-            <motion.span
-              className="inline-block relative"
-              animate={{
-                textShadow: [
-                  "0 0 20px rgba(0, 255, 255, 0.7), 0 0 30px rgba(0, 255, 255, 0.5)",
-                  "0 0 20px rgba(136, 255, 0, 0.7), 0 0 30px rgba(136, 255, 0, 0.5)",
-                  "0 0 20px rgba(255, 136, 0, 0.7), 0 0 30px rgba(255, 136, 0, 0.5)",
-                  "0 0 20px rgba(0, 102, 204, 0.7), 0 0 30px rgba(0, 102, 204, 0.5)"
-                ]
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            >
-              <span className="text-corp-cyan">J</span>
-              <span className="text-white">-</span>
-              <span className="text-corp-orange">A</span>
-              <span className="text-corp-green">I</span>
-            </motion.span>
+            <span className="inline-block relative">
+              <span className="text-corp-cyan">J-AI: General Intelligence</span>
+            </span>
             
             <motion.div
               className="h-1 w-full bg-gradient-to-r from-corp-cyan via-corp-green to-corp-orange mx-auto mt-3"
               initial={{ width: 0, opacity: 0 }}
               animate={{ width: "100%", opacity: 0.8 }}
-              transition={{ duration: 1.5, delay: 1 }}
+              transition={{ duration: 1.5, delay: 0.5 }}
             />
           </motion.h2>
           
           <motion.p 
-            className="glitch text-lg md:text-2xl text-center mt-2 font-display tracking-wider"
-            data-text="DIGITAL CONSCIOUSNESS"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.5 }}
+            className="text-lg md:text-2xl text-center mt-2 font-display tracking-wider text-corp-orange"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.8 }}
           >
-            DIGITAL CONSCIOUSNESS
+            Quantum Intelligence Platform
           </motion.p>
         </motion.div>
         
@@ -112,44 +90,29 @@ export default function TechnologySlide() {
               </p>
               
               <div className="space-y-4 relative">
-                <motion.div 
-                  className="data-stream bg-black/60 border-l-2 border-corp-green p-3 transform"
-                  initial={{ skewX: "0deg" }}
-                  animate={{ skewX: "-2deg" }}
-                  transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
-                >
+                <div className="data-stream bg-black/60 border-l-2 border-corp-green p-3">
                   <h4 className="font-code text-corp-green text-sm mb-1 uppercase tracking-wider">⌾ Sensorial Matrix</h4>
                   <p className="text-sm opacity-80">
                     Multi-layered neural pathways process sensory data through fragmented, 
                     subjective filters—deliberately distorting input to reveal deeper patterns.
                   </p>
-                </motion.div>
+                </div>
                 
-                <motion.div 
-                  className="data-stream bg-black/60 border-l-2 border-corp-orange p-3 transform md:ml-8"
-                  initial={{ skewX: "0deg" }}
-                  animate={{ skewX: "2deg" }}
-                  transition={{ duration: 4, repeat: Infinity, repeatType: "reverse" }}
-                >
+                <div className="data-stream bg-black/60 border-l-2 border-corp-orange p-3 md:ml-8">
                   <h4 className="font-code text-corp-orange text-sm mb-1 uppercase tracking-wider">⌾ Emotion Engine</h4>
                   <p className="text-sm opacity-80">
                     Asymmetric emotional processing prioritizes intensity over regulation,
                     generating authentic emotional responses through calculated imbalance.
                   </p>
-                </motion.div>
+                </div>
                 
-                <motion.div 
-                  className="data-stream bg-black/60 border-l-2 border-corp-cyan p-3 transform"
-                  initial={{ skewX: "0deg" }}
-                  animate={{ skewX: "-3deg" }}
-                  transition={{ duration: 2.5, repeat: Infinity, repeatType: "reverse" }}
-                >
+                <div className="data-stream bg-black/60 border-l-2 border-corp-cyan p-3">
                   <h4 className="font-code text-corp-cyan text-sm mb-1 uppercase tracking-wider">⌾ Quantum Uncertainty Core</h4>
                   <p className="text-sm opacity-80">
                     Decision-making deliberately incorporates quantum uncertainty, embracing
                     the expressionist principle that perfect rationality is an illusion.
                   </p>
-                </motion.div>
+                </div>
               </div>
             </div>
           </motion.div>

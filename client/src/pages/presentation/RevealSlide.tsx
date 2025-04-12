@@ -59,28 +59,13 @@ export default function RevealSlide() {
             
             <motion.div className="overflow-hidden inline-block">
               <motion.span 
-                className="inline-block glitch"
+                className="inline-block glitch text-corp-cyan"
                 data-text="functional_soup"
-                initial={{ y: 40 }}
-                animate={{ y: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
-                {/* Split into colorful characters for digital expressionism */}
-                <span className="text-corp-cyan">f</span>
-                <span className="text-white">u</span>
-                <span className="text-corp-orange">n</span>
-                <span className="text-corp-cyan">c</span>
-                <span className="text-corp-green">t</span>
-                <span className="text-white">i</span>
-                <span className="text-corp-orange">o</span>
-                <span className="text-corp-cyan">n</span>
-                <span className="text-corp-green">a</span>
-                <span className="text-white">l</span>
-                <span className="text-corp-orange">_</span>
-                <span className="text-corp-cyan">s</span>
-                <span className="text-corp-green">o</span>
-                <span className="text-white">u</span>
-                <span className="text-corp-orange">p</span>
+                functional_soup
               </motion.span>
             </motion.div>
             
@@ -214,11 +199,7 @@ export default function RevealSlide() {
                       transition={{ duration: 2, delay: 1.2 }}
                     />
                     
-                    <motion.div 
-                      className="md:col-span-2 bg-black/40 backdrop-blur-sm p-4 transform"
-                      animate={{ skewX: "-1deg" }}
-                      transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
-                    >
+                    <div className="md:col-span-2 bg-black/40 backdrop-blur-sm p-4">
                       <h5 className="text-corp-orange font-bold mb-2 uppercase tracking-wider text-sm">Performers</h5>
                       <ul className="space-y-1 text-sm">
                         <li className="flex items-start">
@@ -234,13 +215,9 @@ export default function RevealSlide() {
                           <span>Voice performers & vocalists</span>
                         </li>
                       </ul>
-                    </motion.div>
+                    </div>
                     
-                    <motion.div 
-                      className="md:col-span-3 bg-black/40 backdrop-blur-sm p-4 md:ml-4 transform"
-                      animate={{ skewX: "1deg" }}
-                      transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
-                    >
+                    <div className="md:col-span-3 bg-black/40 backdrop-blur-sm p-4 md:ml-4">
                       <h5 className="text-corp-cyan font-bold mb-2 uppercase tracking-wider text-sm">Creators & Technicians</h5>
                       <div className="grid grid-cols-2 gap-2 text-sm">
                         <ul className="space-y-1">
@@ -272,7 +249,7 @@ export default function RevealSlide() {
                           </li>
                         </ul>
                       </div>
-                    </motion.div>
+                    </div>
                   </div>
                 </div>
               </div>

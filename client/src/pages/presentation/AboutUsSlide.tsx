@@ -61,46 +61,15 @@ export default function AboutUsSlide() {
           
           {/* Main title with digital expressionist treatment */}
           <h2 className="text-4xl md:text-6xl font-display font-bold text-center relative overflow-visible">
-            <motion.span
-              className="absolute -top-6 -left-4 text-6xl md:text-8xl opacity-10 font-bold text-corp-cyan blur-sm"
-              animate={{ opacity: [0.05, 0.1, 0.05] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            >
+            <span className="absolute -top-6 -left-4 text-6xl md:text-8xl opacity-10 font-bold text-corp-cyan blur-sm">
               f_s
-            </motion.span>
+            </span>
             
-            <motion.span
-              animate={{
-                textShadow: [
-                  "0 0 15px rgba(0, 255, 255, 0.6), 0 0 30px rgba(0, 255, 255, 0.3)",
-                  "0 0 15px rgba(136, 255, 0, 0.6), 0 0 30px rgba(136, 255, 0, 0.3)",
-                  "0 0 15px rgba(255, 136, 0, 0.6), 0 0 30px rgba(255, 136, 0, 0.3)",
-                  "0 0 15px rgba(0, 102, 204, 0.6), 0 0 30px rgba(0, 102, 204, 0.3)"
-                ]
-              }}
-              transition={{
-                duration: 10,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              className="relative inline-block"
-            >
-              <span className="text-corp-cyan">F</span>
-              <span className="text-corp-cyan">u</span>
-              <span className="text-corp-cyan">n</span>
-              <span className="text-corp-cyan">c</span>
-              <span className="text-corp-cyan">t</span>
-              <span className="text-corp-cyan">i</span>
-              <span className="text-corp-cyan">o</span>
-              <span className="text-corp-cyan">n</span>
-              <span className="text-corp-cyan">a</span>
-              <span className="text-corp-cyan">l</span>
+            <span className="relative inline-block">
+              <span className="text-corp-cyan">Functional</span>
               <span className="text-white"> </span>
-              <span className="text-corp-orange">S</span>
-              <span className="text-corp-orange">o</span>
-              <span className="text-corp-orange">u</span>
-              <span className="text-corp-orange">p</span>
-            </motion.span>
+              <span className="text-corp-orange">Soup</span>
+            </span>
           </h2>
           
           {/* Fragmented subtitle with digital expressionist styling */}
@@ -117,19 +86,9 @@ export default function AboutUsSlide() {
               transition={{ duration: 1, delay: 0.8 }}
             />
             
-            <motion.p 
-              className="text-lg md:text-xl italic font-display tracking-wider"
-              animate={{
-                color: ["#00FFFF", "#88FF00", "#FF8800", "#0066CC"]
-              }}
-              transition={{
-                duration: 20,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            >
+            <p className="text-lg md:text-xl italic font-display tracking-wider text-corp-cyan">
               A Digital Expressionist Collective
-            </motion.p>
+            </p>
             
             <motion.div 
               className="h-px w-24 bg-corp-orange opacity-60 ml-4"
