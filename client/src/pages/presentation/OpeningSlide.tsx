@@ -3,14 +3,17 @@ import { usePresentationContext } from "@/lib/presentationContext";
 import NavigationButton from "@/components/presentation/NavigationButton";
 import { BackgroundParticles } from "@/components/presentation/BackgroundElements";
 import { RotatingMandelaBackground } from "@/components/presentation/RotatingMandelaBackground";
+import { CodeGibberish } from "@/components/presentation/CodeGibberish";
 import Timer from "@/components/presentation/Timer";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function OpeningSlide() {
   const { goToSlide, startTimer } = usePresentationContext();
   const [showCompanyName, setShowCompanyName] = useState(false);
   const [showTitle, setShowTitle] = useState(false);
   const [showButton, setShowButton] = useState(false);
+  const [scrollPercentage, setScrollPercentage] = useState(0);
+  const slideRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
     // Sequence the animations with precise timing
@@ -25,6 +28,26 @@ export default function OpeningSlide() {
     };
   }, []);
   
+  // Add scroll listener to track how far down the user has scrolled
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!slideRef.current) return;
+      
+      // Calculate how far the user has scrolled relative to the slide height
+      const slideHeight = slideRef.current.scrollHeight - window.innerHeight;
+      const scrollTop = window.scrollY;
+      
+      if (slideHeight > 0) {
+        // Calculate a value between 0 and 1 representing scroll progress
+        const newScrollPercentage = Math.min(1, Math.max(0, scrollTop / slideHeight));
+        setScrollPercentage(newScrollPercentage);
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  
   const handleBegin = () => {
     startTimer();
     goToSlide(1); // Now goes to the combined slide
@@ -32,7 +55,8 @@ export default function OpeningSlide() {
   
   return (
     <motion.div
-      className="slide flex flex-col items-center justify-center h-full relative bg-corp-dark"
+      ref={slideRef}
+      className="slide flex flex-col items-center justify-center min-h-screen relative bg-corp-dark"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -46,7 +70,8 @@ export default function OpeningSlide() {
         <BackgroundParticles count={20} pattern="mandala" colors="cyan-magenta" />
       </div>
       
-      <div className="flex flex-col items-center justify-center h-full max-w-4xl mx-auto px-4">
+      <div className="flex flex-col items-center justify-center min-h-screen max-w-4xl mx-auto px-4 pb-[120vh]">
+        {/* Added padding bottom to allow scrolling */}
         <motion.div
           className="mb-12 text-center relative"
           initial={{ opacity: 0, y: -10 }}
@@ -189,6 +214,13 @@ export default function OpeningSlide() {
             }}
           />
         </motion.div>
+        
+        {/* Code gibberish that intensifies on scroll */}
+        {showTitle && (
+          <div className="w-full px-4">
+            <CodeGibberish scrollPercentage={scrollPercentage} />
+          </div>
+        )}
         
         {/* BEGIN BUTTON */}
         <motion.div
