@@ -134,24 +134,26 @@ export default function OpeningSlide() {
             }}
           />
           
-          {/* Growing Mandela Symbol that fills the entire page */}
+          {/* Mandela Symbol that fills the page then shrinks */}
           <motion.div 
             className="fixed inset-0 flex items-center justify-center pointer-events-none overflow-hidden z-0"
-            initial={{ opacity: 0, scale: 0.2, rotate: 0 }}
+            initial={{ opacity: 0, scale: 2.5, rotate: 0 }}
             animate={{ 
-              opacity: showTitle ? 0.15 : 0,
-              scale: showTitle ? 2.5 : 0.2, // Much larger scale to fill the page
+              opacity: showTitle ? [0, 0.25, 0.15, 0.1] : 0,
+              scale: showTitle ? [2.5, 2.0, 1.5, 0.8] : 2.5, // Start large and shrink
               rotate: 360
             }}
             transition={{
               opacity: {
-                duration: 3,
-                ease: "easeOut",
+                duration: 15,
+                times: [0, 0.3, 0.6, 1],
+                ease: "easeInOut",
                 delay: 0.5
               },
               scale: {
-                duration: 15, // Slower growth to make it more dramatic
-                ease: "easeOut"
+                duration: 15,
+                times: [0, 0.3, 0.6, 1],
+                ease: "easeInOut"
               },
               rotate: {
                 duration: 25.5, // Matches the top Mandela rotation speed
@@ -172,9 +174,9 @@ export default function OpeningSlide() {
               className="relative inline-block text-white"
               animate={{
                 textShadow: [
-                  "0 0 20px rgba(255, 100, 50, 0.7), 0 0 30px rgba(255, 100, 50, 0.5), 0 0 40px rgba(255, 50, 150, 0.3)",
-                  "0 0 20px rgba(50, 255, 255, 0.7), 0 0 30px rgba(50, 255, 255, 0.5), 0 0 40px rgba(50, 100, 255, 0.3)",
-                  "0 0 20px rgba(255, 100, 50, 0.7), 0 0 30px rgba(255, 100, 50, 0.5), 0 0 40px rgba(255, 50, 150, 0.3)"
+                  "0 0 20px rgba(0, 255, 255, 0.7), 0 0 30px rgba(0, 255, 255, 0.5), 0 0 40px rgba(0, 102, 204, 0.3)", /* Turquoise to Deep Blue */
+                  "0 0 20px rgba(136, 255, 0, 0.7), 0 0 30px rgba(136, 255, 0, 0.5), 0 0 40px rgba(0, 102, 204, 0.3)", /* Lime Green to Deep Blue */
+                  "0 0 20px rgba(255, 136, 0, 0.7), 0 0 30px rgba(255, 136, 0, 0.5), 0 0 40px rgba(0, 255, 255, 0.3)" /* Gold/Orange to Turquoise */
                 ]
               }}
               transition={{
@@ -200,17 +202,17 @@ export default function OpeningSlide() {
             }}
           />
           
-          {/* Animated glow pulse under text */}
+          {/* Animated glow pulse under text - Using Mandela colors */}
           <motion.div
-            className="h-2 w-1/2 mx-auto rounded-full bg-gradient-to-r from-corp-burnt-orange to-corp-magenta relative z-5 opacity-70 mt-1"
+            className="h-2 w-1/2 mx-auto rounded-full bg-gradient-to-r from-corp-orange to-corp-cyan relative z-5 opacity-70 mt-1"
             initial={{ opacity: 0, width: "40%" }}
             animate={{ 
               opacity: showTitle ? [0.4, 0.7, 0.4] : 0,
               width: showTitle ? ["60%", "70%", "60%"] : "40%",
               boxShadow: showTitle ? [
-                "0 0 10px rgba(255, 100, 50, 0.5), 0 0 20px rgba(255, 50, 150, 0.3)",
-                "0 0 20px rgba(255, 100, 50, 0.7), 0 0 30px rgba(255, 50, 150, 0.5)",
-                "0 0 10px rgba(255, 100, 50, 0.5), 0 0 20px rgba(255, 50, 150, 0.3)"
+                "0 0 10px rgba(255, 136, 0, 0.5), 0 0 20px rgba(0, 255, 255, 0.3)", /* Gold/Orange to Turquoise */
+                "0 0 20px rgba(0, 102, 204, 0.7), 0 0 30px rgba(136, 255, 0, 0.5)", /* Deep Blue to Lime Green */
+                "0 0 10px rgba(255, 136, 0, 0.5), 0 0 20px rgba(0, 255, 255, 0.3)" /* Gold/Orange to Turquoise */
               ] : "none"
             }}
             transition={{
@@ -236,9 +238,9 @@ export default function OpeningSlide() {
           }}
           className="mt-16 relative"
         >
-          {/* Background glow effect that fades in behind the button */}
+          {/* Background glow effect that fades in behind the button - Using Mandela colors */}
           <motion.div
-            className="absolute inset-0 -top-4 -bottom-4 -left-10 -right-10 rounded-full bg-gradient-to-br from-corp-cyan/20 via-transparent to-corp-magenta/20 blur-2xl z-0"
+            className="absolute inset-0 -top-4 -bottom-4 -left-10 -right-10 rounded-full bg-gradient-to-br from-corp-cyan/20 via-corp-green/10 to-corp-orange/20 blur-2xl z-0"
             initial={{ opacity: 0, scale: 0.7 }}
             animate={{ 
               opacity: showButton ? [0.3, 0.6, 0.3] : 0,
@@ -257,9 +259,9 @@ export default function OpeningSlide() {
             className="relative z-10"
             animate={{ 
               boxShadow: showButton ? [
-                "0 0 0px rgba(0, 255, 255, 0), 0 0 0px rgba(255, 100, 150, 0)",
-                "0 0 40px rgba(0, 240, 255, 0.5), 0 0 20px rgba(255, 100, 150, 0.3)",
-                "0 0 10px rgba(0, 240, 255, 0.3), 0 0 30px rgba(255, 100, 150, 0.2)"
+                "0 0 0px rgba(0, 255, 255, 0), 0 0 0px rgba(136, 255, 0, 0)",
+                "0 0 40px rgba(0, 255, 255, 0.5), 0 0 20px rgba(136, 255, 0, 0.3)", /* Turquoise to Lime Green */
+                "0 0 10px rgba(0, 255, 255, 0.3), 0 0 30px rgba(0, 102, 204, 0.2)" /* Turquoise to Deep Blue */
               ] : "0 0 0px rgba(0, 255, 255, 0)"
             }}
             transition={{
@@ -278,8 +280,8 @@ export default function OpeningSlide() {
                 animate={{
                   textShadow: [
                     "0 0 5px rgba(255, 255, 255, 0.5)",
-                    "0 0 15px rgba(255, 255, 255, 0.8)",
-                    "0 0 5px rgba(255, 255, 255, 0.5)"
+                    "0 0 15px rgba(0, 255, 255, 0.8)", /* Turquoise glow */
+                    "0 0 5px rgba(255, 136, 0, 0.5)" /* Gold/Orange glow */
                   ]
                 }}
                 transition={{
