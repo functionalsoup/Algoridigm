@@ -115,15 +115,15 @@ export default function OpeningSlide() {
             }}
           />
           
-          {/* Mandela Symbol that fills the page then shrinks */}
+          {/* Mandela Symbol that fills the page then shrinks - simplified animation approach */}
           <RotatingMandelaBackground 
             direction="clockwise"
             speed="medium"
             opacity={0.7}
             isActive={showTitle}
             shrink={true}
-            initialDelay={0.5}
-            scale={2.5} // Explicitly setting scale for consistency
+            initialDelay={0.8} // Slightly longer initial delay for better sequencing
+            scale={2.5}
           />
           
           <h1 className="text-4xl sm:text-6xl md:text-8xl xl:text-9xl font-display font-bold tracking-wider relative z-10 px-2">
