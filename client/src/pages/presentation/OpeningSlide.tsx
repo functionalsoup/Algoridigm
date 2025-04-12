@@ -3,17 +3,14 @@ import { usePresentationContext } from "@/lib/presentationContext";
 import NavigationButton from "@/components/presentation/NavigationButton";
 import { BackgroundParticles } from "@/components/presentation/BackgroundElements";
 import { RotatingMandelaBackground } from "@/components/presentation/RotatingMandelaBackground";
-import { CodeGibberish } from "@/components/presentation/CodeGibberish";
 import Timer from "@/components/presentation/Timer";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 export default function OpeningSlide() {
   const { goToSlide, startTimer } = usePresentationContext();
   const [showCompanyName, setShowCompanyName] = useState(false);
   const [showTitle, setShowTitle] = useState(false);
   const [showButton, setShowButton] = useState(false);
-  const [scrollPercentage, setScrollPercentage] = useState(0);
-  const slideRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
     // Sequence the animations with precise timing
@@ -28,26 +25,6 @@ export default function OpeningSlide() {
     };
   }, []);
   
-  // Add scroll listener to track how far down the user has scrolled
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!slideRef.current) return;
-      
-      // Calculate how far the user has scrolled relative to the slide height
-      const slideHeight = slideRef.current.scrollHeight - window.innerHeight;
-      const scrollTop = window.scrollY;
-      
-      if (slideHeight > 0) {
-        // Calculate a value between 0 and 1 representing scroll progress
-        const newScrollPercentage = Math.min(1, Math.max(0, scrollTop / slideHeight));
-        setScrollPercentage(newScrollPercentage);
-      }
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-  
   const handleBegin = () => {
     startTimer();
     goToSlide(1); // Now goes to the combined slide
@@ -55,8 +32,7 @@ export default function OpeningSlide() {
   
   return (
     <motion.div
-      ref={slideRef}
-      className="slide flex flex-col items-center justify-center min-h-screen relative bg-corp-dark"
+      className="slide flex flex-col items-center justify-center h-full relative bg-corp-dark"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -70,8 +46,7 @@ export default function OpeningSlide() {
         <BackgroundParticles count={20} pattern="mandala" colors="cyan-magenta" />
       </div>
       
-      <div className="flex flex-col items-center justify-center min-h-screen max-w-4xl mx-auto px-4 pb-[120vh]">
-        {/* Added padding bottom to allow scrolling */}
+      <div className="flex flex-col items-center justify-center h-full max-w-4xl mx-auto px-4">
         <motion.div
           className="mb-12 text-center relative"
           initial={{ opacity: 0, y: -10 }}
@@ -215,13 +190,6 @@ export default function OpeningSlide() {
           />
         </motion.div>
         
-        {/* Code gibberish that intensifies on scroll */}
-        {showTitle && (
-          <div className="w-full px-4">
-            <CodeGibberish scrollPercentage={scrollPercentage} />
-          </div>
-        )}
-        
         {/* BEGIN BUTTON */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -293,6 +261,100 @@ export default function OpeningSlide() {
             </NavigationButton>
           </motion.div>
         </motion.div>
+        
+        {/* Error message hint at the bottom - with glitch effects */}
+        {showButton && (
+          <motion.div 
+            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center max-w-md w-full px-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ 
+              opacity: [0, 0.8, 0.5, 0.9, 0.6, 1],
+              y: 0,
+              x: [0, -2, 1, -1, 0]
+            }}
+            transition={{ 
+              opacity: { duration: 3, times: [0, 0.2, 0.3, 0.5, 0.8, 1] },
+              y: { duration: 1.5 },
+              x: { repeat: Infinity, duration: 0.5, repeatType: "mirror" }
+            }}
+          >
+            {/* First error */}
+            <motion.div 
+              className="text-red-500 font-mono text-xs sm:text-sm opacity-70 mb-2 animate-pulse"
+              animate={{ 
+                opacity: [0.7, 0.5, 0.8],
+                filter: ["blur(0px)", "blur(1px)", "blur(0px)"]
+              }}
+              transition={{ 
+                duration: 2, 
+                repeat: Infinity, 
+                repeatType: "mirror" 
+              }}
+            >
+              <span className="font-bold">SyntaxError:</span> Unexpected token at line 42
+            </motion.div>
+
+            {/* Second error that appears with delay */}
+            <motion.div 
+              className="text-red-500 font-mono text-xs sm:text-sm opacity-0 mb-2"
+              animate={{ 
+                opacity: [0, 0.7],
+                x: [5, 0]
+              }}
+              transition={{ 
+                opacity: { delay: 1.5, duration: 0.5 },
+                x: { delay: 1.5, duration: 0.5 }
+              }}
+            >
+              <span className="font-bold">TypeError:</span> Cannot read properties of undefined
+            </motion.div>
+
+            {/* Code blocks */}
+            <motion.div 
+              className="text-corp-green font-mono text-xs opacity-60 max-w-md mx-auto text-left border-l-2 border-corp-green/30 pl-2"
+              animate={{ 
+                opacity: [0.3, 0.6, 0.3],
+                borderLeftColor: ["rgba(0, 255, 128, 0.3)", "rgba(0, 255, 128, 0.5)", "rgba(0, 255, 128, 0.3)"]
+              }}
+              transition={{ 
+                duration: 4, 
+                repeat: Infinity, 
+                repeatType: "mirror" 
+              }}
+            >
+              <div className="mb-1">&gt; import { reality } from "@algoridigm/core";</div>
+              <div className="mb-1">&gt; const simulation = new reality.Simulation();</div>
+              <motion.div 
+                className="text-yellow-500"
+                animate={{ 
+                  color: ["#FFCC00", "#FF6600", "#FFCC00"]
+                }}
+                transition={{ 
+                  duration: 1.5, 
+                  repeat: Infinity, 
+                  repeatType: "mirror" 
+                }}
+              >
+                &gt; simulation.initialize(true);
+              </motion.div>
+            </motion.div>
+
+            {/* Final error that appears last */}
+            <motion.div 
+              className="mt-4 text-red-500 font-mono text-xs opacity-0"
+              animate={{ 
+                opacity: [0, 0.8],
+                scale: [0.95, 1]
+              }}
+              transition={{ 
+                opacity: { delay: 3, duration: 0.8 },
+                scale: { delay: 3, duration: 0.8 }
+              }}
+            >
+              <span className="font-bold">FATAL:</span> Memory corruption in neurological interface
+            </motion.div>
+          </motion.div>
+        )}
       </div>
     </motion.div>
   );
