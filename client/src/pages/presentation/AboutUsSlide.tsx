@@ -4,12 +4,10 @@ import { usePresentationContext } from "@/lib/presentationContext";
 import PresentationLayout from "@/components/presentation/PresentationLayout";
 import { RotatingMandelaBackground } from "@/components/presentation/RotatingMandelaBackground";
 import { Button } from "@/components/ui/button";
-import { HiMail } from "react-icons/hi";
 
 export default function AboutUsSlide() {
   const { goToSlide } = usePresentationContext();
   const [animateOut, setAnimateOut] = useState(false);
-  const [showContactTooltip, setShowContactTooltip] = useState(false);
   
   const handleRegisterClick = () => {
     setAnimateOut(true);
@@ -126,35 +124,7 @@ export default function AboutUsSlide() {
           <p className="opacity-70 mt-3 md:mt-4 mb-2 text-xs sm:text-sm">Join us in this ongoing endeavor of collective creation.</p>
         </div>
         
-        {/* Contact Us Small Button */}
-        <div className="absolute bottom-20 sm:bottom-4 right-4 z-20">
-          <div className="relative">
-            <Button
-              size="sm"
-              variant="outline"
-              className="border-corp-orange text-corp-orange hover:bg-corp-orange/10 rounded-full flex items-center gap-1 shadow-md"
-              onMouseEnter={() => setShowContactTooltip(true)}
-              onMouseLeave={() => setShowContactTooltip(false)}
-              onClick={() => {
-                window.location.href = "mailto:contact@functionalsoup.com";
-              }}
-            >
-              <HiMail className="w-4 h-4" />
-              <span className="text-xs">Contact</span>
-            </Button>
-            
-            {showContactTooltip && (
-              <motion.div 
-                className="absolute bottom-full right-0 mb-2 bg-corp-bg/60 backdrop-blur-md border border-corp-orange text-white p-2 rounded text-xs w-48"
-                initial={{ opacity: 0, y: 5 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 5 }}
-              >
-                Click to email us at contact@functionalsoup.com
-              </motion.div>
-            )}
-          </div>
-        </div>
+
       </motion.div>
     </PresentationLayout>
   );
