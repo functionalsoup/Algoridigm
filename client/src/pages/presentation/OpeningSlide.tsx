@@ -38,7 +38,7 @@ export default function OpeningSlide() {
       exit={{ opacity: 0 }}
       transition={{ duration: 1.5 }}
     >
-      <div className="absolute top-6 right-6 opacity-30 hover:opacity-80 transition-opacity duration-500">
+      <div className="absolute top-2 sm:top-6 right-2 sm:right-6 opacity-30 hover:opacity-80 transition-opacity duration-500 z-50">
         <Timer />
       </div>
       
@@ -89,7 +89,7 @@ export default function OpeningSlide() {
         
         {/* ALGORIDIGM */}
         <motion.div
-          className="text-center mb-20 relative"
+          className="text-center mb-10 sm:mb-16 md:mb-20 relative"
           initial={{ opacity: 0, scale: 0.97 }}
           animate={{ 
             opacity: showTitle ? 1 : 0,
@@ -125,7 +125,7 @@ export default function OpeningSlide() {
             initialDelay={0.5}
           />
           
-          <h1 className="text-6xl md:text-8xl xl:text-9xl font-display font-bold tracking-wider relative z-10">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl xl:text-9xl font-display font-bold tracking-wider relative z-10 px-2">
             <motion.span 
               className="relative inline-block text-white"
               animate={{
@@ -200,7 +200,7 @@ export default function OpeningSlide() {
             duration: 2,
             ease: "easeOut"
           }}
-          className="mt-16 relative"
+          className="mt-8 sm:mt-12 md:mt-16 relative"
         >
           {/* Background glow effect that fades in behind the button - Using Mandela colors */}
           <motion.div

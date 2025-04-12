@@ -22,7 +22,7 @@ export function Timer() {
 
   return (
     <motion.div 
-      className={`timer text-2xl font-display font-bold ${colorClass}`}
+      className={`timer text-lg sm:text-xl md:text-2xl font-display font-bold ${colorClass}`}
       animate={{ 
         scale: timerSpeed < 300 ? [1, 1.05, 1] : 1 
       }}

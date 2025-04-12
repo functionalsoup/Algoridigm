@@ -36,9 +36,9 @@ export function PresentationProvider({ children }: { children: ReactNode }) {
       setTimerSeconds(prev => {
         const newSeconds = prev + 1;
 
-        // Speed up timer based on progress
+        // Speed up timer based on progress - faster acceleration
         if (currentSlide >= 1) {
-          const newSpeed = Math.max(100, 1000 - (newSeconds * 5));
+          const newSpeed = Math.max(100, 1000 - (newSeconds * 10));
           setTimerSpeed(newSpeed);
         }
 
