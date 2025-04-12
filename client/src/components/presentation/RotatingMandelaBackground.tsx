@@ -79,7 +79,7 @@ export function RotatingMandelaBackground({
           transition={{
             opacity: { 
               duration: 1.5, 
-              ease: "steps(3)", // Stepped animation for glitch effect
+              ease: "linear", // Linear for digital effect
               delay: initialDelay,
               times: [0, 0.2, 0.3, 0.4, 0.6, 1] // Irregular timing for a glitch feel
             },
@@ -95,7 +95,7 @@ export function RotatingMandelaBackground({
             },
             filter: {
               duration: 1.2,
-              ease: "steps(4)", // Stepped filter changes for digital glitch look
+              ease: "anticipate", // Sharp ease that creates a digital feel
               delay: initialDelay
             }
           }}
@@ -139,7 +139,8 @@ export function RotatingMandelaBackground({
                       opacity: { 
                         duration: 1.8, 
                         delay: initialDelay + 0.3,
-                        ease: "steps(5)" // Stepped fade for digital glitch feel
+                        ease: "circIn", // Sharper motion curve
+                        times: [0, 0.2, 0.3, 0.6, 0.7, 0.8, 1] // Irregular timing for stepped effect
                       }
                     }}
                   >
@@ -159,7 +160,7 @@ export function RotatingMandelaBackground({
                       }}
                       transition={{
                         duration: 1.5,
-                        ease: "steps(6)",
+                        ease: "circOut", // Sharp directional changes
                         times: [0, 0.2, 0.3, 0.5, 0.7, 1],
                         delay: initialDelay
                       }}
