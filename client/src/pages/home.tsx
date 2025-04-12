@@ -69,7 +69,7 @@ export default function Home() {
       <RevealTransition isRevealing={showRevealTransition} />
       
       <div className="absolute bottom-6 left-6 text-xs opacity-50">
-        Algoridigm Playhouse © 2050
+        J-Tech Industries © 2050
       </div>
     </div>
   );

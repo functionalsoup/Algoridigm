@@ -60,7 +60,7 @@ export default function OpeningSlide() {
           }}
         >
           <h2 className="text-3xl md:text-4xl font-code uppercase tracking-[0.3em] text-corp-cyan font-bold">
-            <span className="relative text-shadow-subtle">Algoridigm Playhouse</span>
+            <span className="relative text-shadow-subtle">J-Tech Industries</span>
           </h2>
           
           <motion.div 
@@ -76,7 +76,7 @@ export default function OpeningSlide() {
           />
         </motion.div>
         
-        {/* PLAYHOUSE */}
+        {/* ALGORIDIGM */}
         <motion.div
           className="text-center mb-20"
           initial={{ opacity: 0, scale: 0.97 }}
@@ -90,7 +90,7 @@ export default function OpeningSlide() {
           }}
         >
           <h1 className="text-6xl md:text-8xl xl:text-9xl font-display font-bold tracking-wider">
-            <span className="text-shadow-glow relative inline-block text-white">PLAYHOUSE</span>
+            <span className="text-shadow-glow relative inline-block text-white">ALGORIDIGM</span>
           </h1>
           
           {/* Underline effect */}
