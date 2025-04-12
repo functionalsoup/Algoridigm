@@ -19,7 +19,7 @@ export function NavigationButton({ onClick, children, variant, disabled = false 
       case "begin":
         return "bg-gradient-to-r from-corp-cyan via-corp-blue to-corp-magenta text-white font-bold px-6 sm:px-12 py-4 sm:py-5 text-xl sm:text-2xl uppercase tracking-wider sm:tracking-[0.5em] letter-spacing-wide text-shadow-glow";
       case "about":
-        return "border border-corp-magenta/70 text-corp-magenta neo-button bg-corp-magenta/10 px-8 py-4 text-lg";
+        return "border-2 border-corp-magenta/80 text-corp-magenta neo-button bg-corp-magenta/20 px-8 py-4 text-lg font-bold uppercase tracking-wider";
       default:
         return "";
     }
@@ -44,7 +44,7 @@ export function NavigationButton({ onClick, children, variant, disabled = false 
             ? "0 0 20px rgba(0, 240, 255, 0.4)"
             : variant === "prev"
               ? "0 0 15px rgba(0, 101, 255, 0.3)"
-              : "0 0 20px rgba(255, 0, 245, 0.4)"
+              : "0 0 25px rgba(255, 0, 245, 0.6)"
       } : {}}
       whileTap={!disabled ? { scale: 0.95 } : {}}
       data-variant={variant}
