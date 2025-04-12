@@ -119,7 +119,7 @@ export default function OpeningSlide() {
           <RotatingMandelaBackground 
             direction="clockwise"
             speed="medium"
-            opacity={0.2}
+            opacity={0.7}
             isActive={showTitle}
             shrink={true}
             initialDelay={0.5}
