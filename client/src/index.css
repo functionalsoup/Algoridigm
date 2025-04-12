@@ -90,6 +90,15 @@
     background-color: #0066CC;
   }
   
+  .text-corp-deepblue, .border-corp-deepblue {
+    color: #0066CC; /* Deep blue from the Mandela - alias for clarity */
+    border-color: #0066CC;
+  }
+  
+  .bg-corp-deepblue {
+    background-color: #0066CC;
+  }
+  
   .text-corp-orange, .border-corp-orange {
     color: #FF8800; /* Gold/orange from the Mandela */
     border-color: #FF8800;
@@ -160,6 +169,10 @@
   .bg-corp-magenta\/20 { background-color: rgba(0, 102, 204, 0.2); }
   .bg-corp-magenta\/30 { background-color: rgba(0, 102, 204, 0.3); }
   
+  .bg-corp-green\/10 { background-color: rgba(136, 255, 0, 0.1); } /* Lime green */
+  .bg-corp-green\/20 { background-color: rgba(136, 255, 0, 0.2); }
+  .bg-corp-green\/30 { background-color: rgba(136, 255, 0, 0.3); }
+  
   .bg-corp-orange\/10 { background-color: rgba(255, 136, 0, 0.1); } /* Gold/orange */
   .bg-corp-orange\/20 { background-color: rgba(255, 136, 0, 0.2); }
   .bg-corp-orange\/30 { background-color: rgba(255, 136, 0, 0.3); }
@@ -184,13 +197,38 @@
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   }
   
-  .via-corp-blue\/20 {
+  .from-corp-green\/30 {
+    --tw-gradient-from: rgba(136, 255, 0, 0.3) var(--tw-gradient-from-position); /* Lime green */
+    --tw-gradient-to: rgba(136, 255, 0, 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
+  
+  .from-corp-orange\/30 {
+    --tw-gradient-from: rgba(255, 136, 0, 0.3) var(--tw-gradient-from-position); /* Gold/orange */
+    --tw-gradient-to: rgba(255, 136, 0, 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
+  
+  .via-corp-deepblue\/20 {
     --tw-gradient-via-position: rgba(0, 102, 204, 0.2) var(--tw-gradient-via-position); /* Deep blue */
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-via-position), var(--tw-gradient-to);
   }
   
-  .to-corp-magenta\/30 {
+  .via-corp-green\/20 {
+    --tw-gradient-via-position: rgba(136, 255, 0, 0.2) var(--tw-gradient-via-position); /* Lime green */
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-via-position), var(--tw-gradient-to);
+  }
+  
+  .to-corp-cyan\/30 {
+    --tw-gradient-to: rgba(0, 255, 255, 0.3) var(--tw-gradient-to-position); /* Bright turquoise */
+  }
+  
+  .to-corp-orange\/30 {
     --tw-gradient-to: rgba(255, 136, 0, 0.3) var(--tw-gradient-to-position); /* Gold/orange */
+  }
+  
+  .to-corp-deepblue\/30 {
+    --tw-gradient-to: rgba(0, 102, 204, 0.3) var(--tw-gradient-to-position); /* Deep blue */
   }
   
   /* Typography */

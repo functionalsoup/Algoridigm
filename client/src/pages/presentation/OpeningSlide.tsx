@@ -205,16 +205,24 @@ export default function OpeningSlide() {
             </motion.span>
           </h1>
           
-          {/* Underline effect */}
+          {/* Underline effect - Using Mandela colors */}
           <motion.div 
-            className="h-1 w-0 bg-gradient-to-r from-corp-cyan to-corp-magenta mx-auto mt-2 relative z-10"
+            className="h-1 w-0 bg-gradient-to-r from-corp-cyan via-corp-green to-corp-orange mx-auto mt-2 relative z-10"
             animate={{ 
-              width: showTitle ? "80%" : "0%"
+              width: showTitle ? "80%" : "0%",
+              boxShadow: showTitle ? "0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.4)" : "none"
             }}
             transition={{
-              duration: 1.5,
-              delay: 0.7,
-              ease: "easeInOut"
+              width: {
+                duration: 1.5,
+                delay: 0.7,
+                ease: "easeInOut"
+              },
+              boxShadow: {
+                duration: 2,
+                delay: 1.2,
+                ease: "easeInOut"
+              }
             }}
           />
           
