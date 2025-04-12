@@ -262,97 +262,25 @@ export default function OpeningSlide() {
           </motion.div>
         </motion.div>
         
-        {/* Error message hint at the bottom - with glitch effects */}
+        {/* Simple error messages at the bottom */}
         {showButton && (
-          <motion.div 
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center max-w-md w-full px-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ 
-              opacity: [0, 0.8, 0.5, 0.9, 0.6, 1],
-              y: 0,
-              x: [0, -2, 1, -1, 0]
-            }}
-            transition={{ 
-              opacity: { duration: 3, times: [0, 0.2, 0.3, 0.5, 0.8, 1] },
-              y: { duration: 1.5 },
-              x: { repeat: Infinity, duration: 0.5, repeatType: "mirror" }
-            }}
-          >
-            {/* First error */}
-            <motion.div 
-              className="text-red-500 font-mono text-xs sm:text-sm opacity-70 mb-2 animate-pulse"
-              animate={{ 
-                opacity: [0.7, 0.5, 0.8],
-                filter: ["blur(0px)", "blur(1px)", "blur(0px)"]
-              }}
-              transition={{ 
-                duration: 2, 
-                repeat: Infinity, 
-                repeatType: "mirror" 
-              }}
-            >
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center max-w-md w-full px-4">
+            <div className="text-red-500 font-mono text-xs sm:text-sm opacity-70 mb-2 animate-pulse">
               <span className="font-bold">SyntaxError:</span> Unexpected token at line 42
-            </motion.div>
-
-            {/* Second error that appears with delay */}
-            <motion.div 
-              className="text-red-500 font-mono text-xs sm:text-sm opacity-0 mb-2"
-              animate={{ 
-                opacity: [0, 0.7],
-                x: [5, 0]
-              }}
-              transition={{ 
-                opacity: { delay: 1.5, duration: 0.5 },
-                x: { delay: 1.5, duration: 0.5 }
-              }}
-            >
-              <span className="font-bold">TypeError:</span> Cannot read properties of undefined
-            </motion.div>
-
-            {/* Code blocks */}
-            <motion.div 
-              className="text-corp-green font-mono text-xs opacity-60 max-w-md mx-auto text-left border-l-2 border-corp-green/30 pl-2"
-              animate={{ 
-                opacity: [0.3, 0.6, 0.3]
-              }}
-              transition={{ 
-                duration: 4, 
-                repeat: Infinity, 
-                repeatType: "mirror" 
-              }}
-            >
+            </div>
+            
+            <div className="text-corp-green font-mono text-xs opacity-60 max-w-md mx-auto text-left border-l-2 border-corp-green/30 pl-2">
               <div className="mb-1">&gt; import { simulation } from "@algoridigm/core";</div>
               <div className="mb-1">&gt; const reality = new simulation.Reality();</div>
-              <motion.div 
-                className="text-yellow-500"
-                animate={{ 
-                  opacity: [0.7, 1, 0.7]
-                }}
-                transition={{ 
-                  duration: 1.5, 
-                  repeat: Infinity, 
-                  repeatType: "mirror" 
-                }}
-              >
+              <div className="text-yellow-500">
                 &gt; reality.initialize(true);
-              </motion.div>
-            </motion.div>
-
-            {/* Final error that appears last */}
-            <motion.div 
-              className="mt-4 text-red-500 font-mono text-xs opacity-0"
-              animate={{ 
-                opacity: [0, 0.8],
-                scale: [0.95, 1]
-              }}
-              transition={{ 
-                opacity: { delay: 3, duration: 0.8 },
-                scale: { delay: 3, duration: 0.8 }
-              }}
-            >
+              </div>
+            </div>
+            
+            <div className="mt-4 text-red-500 font-mono text-xs">
               <span className="font-bold">FATAL:</span> Memory corruption in neurological interface
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         )}
       </div>
     </motion.div>
