@@ -261,27 +261,6 @@ export default function OpeningSlide() {
             </NavigationButton>
           </motion.div>
         </motion.div>
-        
-        {/* Simple error messages at the bottom */}
-        {showButton && (
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center max-w-md w-full px-4">
-            <div className="text-red-500 font-mono text-xs sm:text-sm opacity-70 mb-2 animate-pulse">
-              <span className="font-bold">SyntaxError:</span> Unexpected token at line 42
-            </div>
-            
-            <div className="text-corp-green font-mono text-xs opacity-60 max-w-md mx-auto text-left border-l-2 border-corp-green/30 pl-2">
-              <div className="mb-1">&gt; import { simulation } from "@algoridigm/core";</div>
-              <div className="mb-1">&gt; const reality = new simulation.Reality();</div>
-              <div className="text-yellow-500">
-                &gt; reality.initialize(true);
-              </div>
-            </div>
-            
-            <div className="mt-4 text-red-500 font-mono text-xs">
-              <span className="font-bold">FATAL:</span> Memory corruption in neurological interface
-            </div>
-          </div>
-        )}
       </div>
     </motion.div>
   );
