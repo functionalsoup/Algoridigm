@@ -17,7 +17,7 @@ export function NavigationButton({ onClick, children, variant, disabled = false 
       case "next":
         return "border border-corp-cyan/70 text-corp-cyan neo-button bg-corp-cyan/10";
       case "begin":
-        return "bg-gradient-to-r from-corp-cyan via-corp-blue to-corp-magenta text-white font-bold px-12 py-5 text-2xl uppercase tracking-[0.5em] letter-spacing-wide text-shadow-glow";
+        return "bg-gradient-to-r from-corp-cyan via-corp-blue to-corp-magenta text-white font-bold px-6 sm:px-12 py-4 sm:py-5 text-xl sm:text-2xl uppercase tracking-wider sm:tracking-[0.5em] letter-spacing-wide text-shadow-glow";
       case "about":
         return "border border-corp-magenta/70 text-corp-magenta neo-button bg-corp-magenta/10 px-8 py-4 text-lg";
       default:

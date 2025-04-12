@@ -70,20 +70,20 @@ export default function TechnologySlide() {
             <h3 className="text-2xl font-display font-semibold mb-4 mt-8 text-corp-cyan">Key Capabilities</h3>
             <ul className="space-y-2">
               <li className="flex items-start">
-                <span className="text-corp-orange mr-2">→</span>
-                <span>Adaptive Consciousness Matrix with 98.7% human-alignment scoring</span>
+                <span className="text-corp-orange mr-2 shrink-0">→</span>
+                <span className="text-sm sm:text-base">Adaptive Consciousness Matrix with 98.7% human-alignment scoring</span>
               </li>
               <li className="flex items-start">
-                <span className="text-corp-green mr-2">→</span>
-                <span>Quantum-enabled processing at 450 quadrillion operations per second</span>
+                <span className="text-corp-green mr-2 shrink-0">→</span>
+                <span className="text-sm sm:text-base">Quantum-enabled processing at 450 quadrillion operations per second</span>
               </li>
               <li className="flex items-start">
-                <span className="text-corp-orange mr-2">→</span>
-                <span>Self-evolving architecture with integrated ethical frameworks</span>
+                <span className="text-corp-orange mr-2 shrink-0">→</span>
+                <span className="text-sm sm:text-base">Self-evolving architecture with integrated ethical frameworks</span>
               </li>
               <li className="flex items-start">
-                <span className="text-corp-green mr-2">→</span>
-                <span>Multimodal interface capabilities across 147 human languages</span>
+                <span className="text-corp-green mr-2 shrink-0">→</span>
+                <span className="text-sm sm:text-base">Multimodal interface capabilities across 147 human languages</span>
               </li>
             </ul>
           </motion.div>

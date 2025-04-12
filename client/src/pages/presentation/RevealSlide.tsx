@@ -114,23 +114,23 @@ export default function RevealSlide() {
               <h4 className="text-lg sm:text-xl font-display font-semibold mb-2 text-corp-cyan">What We Need</h4>
               <ul className="space-y-1 sm:space-y-2 text-sm sm:text-base">
                 <li className="flex items-start">
-                  <span className="text-corp-orange mr-2">→</span>
+                  <span className="text-corp-orange mr-2 shrink-0">→</span>
                   <span>Actors & Performers</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-corp-green mr-2">→</span>
+                  <span className="text-corp-green mr-2 shrink-0">→</span>
                   <span>Designers (set, costume, light, sound)</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-corp-orange mr-2">→</span>
+                  <span className="text-corp-orange mr-2 shrink-0">→</span>
                   <span>Technical crew</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-corp-green mr-2">→</span>
+                  <span className="text-corp-green mr-2 shrink-0">→</span>
                   <span>Visual artists</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-corp-orange mr-2">→</span>
+                  <span className="text-corp-orange mr-2 shrink-0">→</span>
                   <span>Writers & Dramaturgs</span>
                 </li>
               </ul>
@@ -140,19 +140,19 @@ export default function RevealSlide() {
               <h4 className="text-lg sm:text-xl font-display font-semibold mb-2 text-corp-cyan">Important Details</h4>
               <ul className="space-y-1 sm:space-y-2 text-sm sm:text-base">
                 <li className="flex items-start">
-                  <span className="text-corp-green mr-2">→</span>
+                  <span className="text-corp-green mr-2 shrink-0">→</span>
                   <span>18+ only due to mature themes</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-corp-orange mr-2">→</span>
+                  <span className="text-corp-orange mr-2 shrink-0">→</span>
                   <span>All experience levels welcome</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-corp-green mr-2">→</span>
+                  <span className="text-corp-green mr-2 shrink-0">→</span>
                   <span>Multiple roles and positions available</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-corp-orange mr-2">→</span>
+                  <span className="text-corp-orange mr-2 shrink-0">→</span>
                   <span>Flexible scheduling: we have lives but we make it work</span>
                 </li>
               </ul>
