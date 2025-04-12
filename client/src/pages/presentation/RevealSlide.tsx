@@ -33,154 +33,366 @@ export default function RevealSlide() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.8 }}
+        className="relative z-10 mx-auto max-w-7xl px-4 py-6"
       >
-        <motion.h2 
-          className="text-4xl md:text-6xl font-display font-bold mb-6 text-center"
-          data-text="functional_soup"
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+        {/* Digital Expressionism title with distortion and fragmentation */}
+        <motion.div
+          className="relative"
+          initial={{ scale: 0.95, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
         >
-          <span className="glitch relative z-10 inline-block" data-text="functional_soup">
-            functional_soup
-          </span>
-          
-          <motion.span
-            className="absolute inset-0 text-corp-burnt-orange opacity-0"
-            animate={{
-              x: [0, -3, 0, 3, 0],
-              opacity: [0, 0.3, 0, 0.3, 0],
-            }}
-            transition={{
-              duration: 0.3,
-              repeat: Infinity,
-              repeatType: "loop",
-              repeatDelay: 4,
-            }}
+          <motion.h2 
+            className="text-5xl md:text-7xl font-display font-bold text-center relative"
+            initial={{ letterSpacing: "0.05em" }}
+            animate={{ letterSpacing: "0.1em" }}
+            transition={{ duration: 2, ease: "easeOut" }}
           >
-            functional_soup
-          </motion.span>
-          
-          <motion.span
-            className="absolute inset-0 text-corp-magenta opacity-0"
-            animate={{
-              x: [0, 3, 0, -3, 0],
-              opacity: [0, 0.3, 0, 0.3, 0],
-            }}
-            transition={{
-              duration: 0.3,
-              repeat: Infinity,
-              repeatType: "loop",
-              repeatDelay: 4,
-              delay: 0.15,
-            }}
-          >
-            functional_soup
-          </motion.span>
-        </motion.h2>
-        
-        <motion.h3 
-          className="text-2xl font-display text-center mb-10 text-corp-cyan scanline"
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          Summer Devised Theatre Workshop
-        </motion.h3>
-        
-        <motion.div 
-          className="bg-corp-bg tech-panel rounded-lg border border-corp-cyan/40 p-8 mb-10 data-stream"
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ 
-            y: 0, 
-            opacity: 1,
-            transition: { delay: 0.2, duration: 0.5 }
-          }}
-          exit={{ 
-            y: -20, 
-            opacity: 0,
-            backgroundColor: "rgba(255, 77, 0, 0.2)",
-            filter: "brightness(1.5)",
-            transition: { duration: 0.5 }
-          }}
-        >
-          <h3 className="text-2xl font-display font-semibold mb-4 text-corp-magenta">Join Us for ALGORIDIGM</h3>
-          <p className="mb-6">We're beginning the process of devising an adaptation of Sophie Treadwell's expressionist masterpiece MACHINAL! We need Actor/Performers, Designers, Techs, Visual Artists, and more! All skill and experience levels are welcome. Innovation and collaboration are required.</p>
-          
-          <div className="flex flex-col md:flex-row gap-8">
-            <div className="md:w-1/2">
-              <h4 className="text-xl font-display font-semibold mb-2 text-corp-cyan">What We Need</h4>
-              <ul className="space-y-2">
-                <li className="flex items-start">
-                  <span className="text-corp-burnt-orange mr-2">→</span>
-                  <span>Actors & Performers</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-corp-magenta mr-2">→</span>
-                  <span>Designers (set, costume, light, sound)</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-corp-burnt-orange mr-2">→</span>
-                  <span>Technical crew</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-corp-magenta mr-2">→</span>
-                  <span>Visual artists</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-corp-burnt-orange mr-2">→</span>
-                  <span>Writers & Dramaturgs</span>
-                </li>
-              </ul>
-            </div>
+            <motion.span
+              className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-8xl opacity-20 font-bold text-corp-orange blur-sm"
+              animate={{ opacity: [0.1, 0.2, 0.1] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            >
+              FUNCTIONAL
+            </motion.span>
             
-            <div className="md:w-1/2">
-              <h4 className="text-xl font-display font-semibold mb-2 text-corp-cyan">Important Details</h4>
-              <ul className="space-y-2">
+            <motion.div className="overflow-hidden inline-block">
+              <motion.span 
+                className="inline-block glitch"
+                data-text="functional_soup"
+                initial={{ y: 40 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
+                {/* Split into colorful characters for digital expressionism */}
+                <span className="text-corp-cyan">f</span>
+                <span className="text-white">u</span>
+                <span className="text-corp-orange">n</span>
+                <span className="text-corp-cyan">c</span>
+                <span className="text-corp-green">t</span>
+                <span className="text-white">i</span>
+                <span className="text-corp-orange">o</span>
+                <span className="text-corp-cyan">n</span>
+                <span className="text-corp-green">a</span>
+                <span className="text-white">l</span>
+                <span className="text-corp-orange">_</span>
+                <span className="text-corp-cyan">s</span>
+                <span className="text-corp-green">o</span>
+                <span className="text-white">u</span>
+                <span className="text-corp-orange">p</span>
+              </motion.span>
+            </motion.div>
+            
+            {/* Expressionist slashes - diagonal lines that cut across */}
+            <motion.div 
+              className="absolute left-1/4 top-1/2 w-1/2 h-px bg-corp-orange opacity-80"
+              initial={{ rotate: 0, width: 0 }}
+              animate={{ rotate: -15, width: "50%" }}
+              transition={{ duration: 1, delay: 1 }}
+            />
+            
+            <motion.div 
+              className="absolute right-1/4 top-1/3 w-1/2 h-px bg-corp-cyan opacity-60"
+              initial={{ rotate: 0, width: 0 }}
+              animate={{ rotate: 20, width: "40%" }}
+              transition={{ duration: 1.2, delay: 1.2 }}
+            />
+          </motion.h2>
+          
+          <motion.h3 
+            className="text-xl md:text-3xl font-display text-center mt-8 mb-10"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            <motion.span
+              animate={{
+                color: ["#00FFFF", "#88FF00", "#FF8800", "#0066CC"],
+                textShadow: [
+                  "0 0 8px rgba(0, 255, 255, 0.7)",
+                  "0 0 8px rgba(136, 255, 0, 0.7)",
+                  "0 0 8px rgba(255, 136, 0, 0.7)",
+                  "0 0 8px rgba(0, 102, 204, 0.7)"
+                ]
+              }}
+              transition={{
+                duration: 10,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
+              Summer Devised Theatre Workshop
+            </motion.span>
+          </motion.h3>
+        </motion.div>
+        
+        {/* Workshop panel with digital expressionism style */}
+        <motion.div 
+          className="relative mt-6 overflow-hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
+        >
+          {/* Background distortion elements */}
+          <motion.div 
+            className="absolute inset-0 opacity-20"
+            animate={{
+              background: [
+                "radial-gradient(circle at 30% 20%, rgba(0,255,255,0.3) 0%, rgba(0,0,0,0) 70%)",
+                "radial-gradient(circle at 70% 80%, rgba(136,255,0,0.3) 0%, rgba(0,0,0,0) 70%)",
+                "radial-gradient(circle at 20% 80%, rgba(255,136,0,0.3) 0%, rgba(0,0,0,0) 70%)",
+                "radial-gradient(circle at 80% 30%, rgba(0,102,204,0.3) 0%, rgba(0,0,0,0) 70%)"
+              ]
+            }}
+            transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+          />
+          
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 relative">
+            {/* Left panel - Expressionist asymmetrical layout */}
+            <motion.div 
+              className="md:col-span-8 md:row-span-2 bg-black/60 backdrop-blur-md rounded-lg border-l-4 border-corp-cyan border p-6 shadow-lg"
+              initial={{ x: -30, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <div className="relative">
+                <motion.h3 
+                  className="text-2xl md:text-3xl font-display font-bold mb-4 tracking-wider"
+                  animate={{
+                    color: ["#00FFFF", "#0066CC", "#FF8800"],
+                  }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
+                  ALGORIDIGM // MACHINAL
+                </motion.h3>
+                
+                {/* Digital noise line */}
+                <motion.div 
+                  className="h-0.5 bg-corp-orange/60 w-40 mb-6"
+                  initial={{ width: 0 }}
+                  animate={{ width: "8rem" }}
+                  transition={{ duration: 1, delay: 0.6 }}
+                />
+                
+                <div className="prose prose-invert max-w-none">
+                  <p className="text-base md:text-lg leading-relaxed border-l-2 border-corp-green pl-4 mb-6">
+                    We're beginning the process of devising an <span className="text-corp-cyan font-semibold">expressionist adaptation</span> of 
+                    Sophie Treadwell's masterpiece MACHINAL. This project explores the <span className="text-corp-orange">fragmentation of self</span> and 
+                    the <span className="text-corp-green">distortion of reality</span> through digital and physical performance.
+                  </p>
+                  
+                  <p className="text-base leading-relaxed mb-4">
+                    Our approach combines classic expressionist techniques with emerging digital technologies to 
+                    create a unique theatrical language. The workshop embraces the principles of 
+                    <span className="text-corp-cyan font-semibold"> Digital Expressionism</span> — subjective distortion, 
+                    exaggeration, and abstraction in digital space.
+                  </p>
+                </div>
+                
+                {/* Contributors sections - Asymmetrical expressionist layout */}
+                <div className="mt-6 relative">
+                  <h4 className="text-xl font-display font-semibold mb-4 text-corp-cyan">Who We Need</h4>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative overflow-hidden">
+                    {/* Digital fragmentation lines */}
+                    <motion.div 
+                      className="absolute top-1/3 left-0 h-px w-full bg-corp-orange/40 transform -rotate-3"
+                      initial={{ width: 0 }}
+                      animate={{ width: "100%" }}
+                      transition={{ duration: 2, delay: 1 }}
+                    />
+                    
+                    <motion.div 
+                      className="absolute top-2/3 left-0 h-px w-full bg-corp-green/40 transform rotate-2"
+                      initial={{ width: 0 }}
+                      animate={{ width: "100%" }}
+                      transition={{ duration: 2, delay: 1.2 }}
+                    />
+                    
+                    <motion.div 
+                      className="md:col-span-2 bg-black/40 backdrop-blur-sm p-4 transform"
+                      animate={{ skewX: "-1deg" }}
+                      transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
+                    >
+                      <h5 className="text-corp-orange font-bold mb-2 uppercase tracking-wider text-sm">Performers</h5>
+                      <ul className="space-y-1 text-sm">
+                        <li className="flex items-start">
+                          <span className="text-corp-orange mr-2">→</span>
+                          <span>Actors willing to explore digital identity</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-corp-orange mr-2">→</span>
+                          <span>Movement artists & dancers</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-corp-orange mr-2">→</span>
+                          <span>Voice performers & vocalists</span>
+                        </li>
+                      </ul>
+                    </motion.div>
+                    
+                    <motion.div 
+                      className="md:col-span-3 bg-black/40 backdrop-blur-sm p-4 md:ml-4 transform"
+                      animate={{ skewX: "1deg" }}
+                      transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
+                    >
+                      <h5 className="text-corp-cyan font-bold mb-2 uppercase tracking-wider text-sm">Creators & Technicians</h5>
+                      <div className="grid grid-cols-2 gap-2 text-sm">
+                        <ul className="space-y-1">
+                          <li className="flex items-start">
+                            <span className="text-corp-cyan mr-2">→</span>
+                            <span>Digital designers</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-corp-cyan mr-2">→</span>
+                            <span>Sound artists</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-corp-cyan mr-2">→</span>
+                            <span>Visual artists</span>
+                          </li>
+                        </ul>
+                        <ul className="space-y-1">
+                          <li className="flex items-start">
+                            <span className="text-corp-cyan mr-2">→</span>
+                            <span>Projection specialists</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-corp-cyan mr-2">→</span>
+                            <span>Writers & dramaturgs</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-corp-cyan mr-2">→</span>
+                            <span>Technical crew</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </motion.div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+            
+            {/* Right panel split into two */}
+            <motion.div 
+              className="md:col-span-4 bg-black/60 backdrop-blur-md rounded-lg border-l-4 border-corp-orange border p-6 shadow-lg"
+              initial={{ x: 30, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <h4 className="text-lg font-display font-semibold mb-3 text-corp-orange tracking-wider">Important Details</h4>
+              <ul className="space-y-2 text-sm">
                 <li className="flex items-start">
-                  <span className="text-corp-magenta mr-2">→</span>
+                  <span className="text-corp-orange mr-2 font-bold">→</span>
                   <span>18+ only due to mature themes</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-corp-burnt-orange mr-2">→</span>
+                  <span className="text-corp-orange mr-2 font-bold">→</span>
                   <span>All experience levels welcome</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-corp-magenta mr-2">→</span>
-                  <span>Multiple roles and positions available</span>
+                  <span className="text-corp-orange mr-2 font-bold">→</span>
+                  <span>Multiple roles available</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-corp-burnt-orange mr-2">→</span>
-                  <span>Flexible scheduling: we have lives but we make it work</span>
+                  <span className="text-corp-orange mr-2 font-bold">→</span>
+                  <span>Flexible scheduling to accommodate work/life</span>
                 </li>
               </ul>
-            </div>
-          </div>
-          
-          <div className="mt-8 text-center">
-            <Button 
-              id="register-button"
-              onClick={() => window.location.href = "/register"}
-              className="bg-gradient-to-r from-corp-burnt-orange to-corp-magenta hover:bg-corp-magenta/90 text-white font-bold py-4 px-10 text-xl shadow-lg shadow-corp-burnt-orange/40 uppercase tracking-widest pulse-glow animate-pulse"
-              size="lg"
+            </motion.div>
+            
+            <motion.div 
+              className="md:col-span-4 bg-black/60 backdrop-blur-md rounded-lg border-l-4 border-corp-green border p-6 shadow-lg"
+              initial={{ x: 30, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.9 }}
             >
-              Register Now
-            </Button>
-            <p className="mt-4 text-sm opacity-80">
-              Join our collaborative theatre-making experience!
-            </p>
+              <div className="text-center">
+                <motion.div
+                  animate={{
+                    boxShadow: [
+                      "0 0 20px rgba(0, 255, 255, 0.3)",
+                      "0 0 20px rgba(136, 255, 0, 0.3)",
+                      "0 0 20px rgba(255, 136, 0, 0.3)",
+                      "0 0 20px rgba(0, 102, 204, 0.3)"
+                    ]
+                  }}
+                  transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="rounded-md overflow-hidden"
+                >
+                  <Button 
+                    id="register-button"
+                    onClick={() => window.location.href = "/register"}
+                    className="w-full bg-gradient-to-r from-corp-cyan via-corp-green to-corp-orange hover:opacity-90 text-white font-bold py-4 px-6 text-xl uppercase tracking-widest"
+                    size="lg"
+                  >
+                    <motion.span
+                      animate={{
+                        textShadow: [
+                          "0 0 8px rgba(0, 255, 255, 0.7)",
+                          "0 0 8px rgba(136, 255, 0, 0.7)",
+                          "0 0 8px rgba(255, 136, 0, 0.7)"
+                        ]
+                      }}
+                      transition={{
+                        duration: 6,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    >
+                      Register Now
+                    </motion.span>
+                  </Button>
+                </motion.div>
+                <p className="mt-4 text-sm opacity-80 font-code">
+                  Join our collaborative expressionist process
+                </p>
+              </div>
+            </motion.div>
           </div>
         </motion.div>
         
+        {/* About button with expressionist styling */}
         <motion.div 
-          className="text-center mt-10 mb-8"
+          className="text-center mt-12 mb-8 relative"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.5 }}
+          transition={{ delay: 1.5 }}
         >
+          {/* Expressionist line */}
+          <motion.div 
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-px bg-corp-cyan opacity-60"
+            animate={{ width: ["8rem", "12rem", "8rem"] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          />
+          
           <NavigationButton onClick={handleAboutClick} variant="about">
-            About functional_soup
+            <motion.span
+              animate={{
+                textShadow: [
+                  "0 0 8px rgba(0, 255, 255, 0.5)",
+                  "0 0 8px rgba(136, 255, 0, 0.5)",
+                  "0 0 8px rgba(255, 136, 0, 0.5)",
+                  "0 0 8px rgba(0, 102, 204, 0.5)"
+                ]
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
+              About functional_soup
+            </motion.span>
           </NavigationButton>
         </motion.div>
       </motion.div>
