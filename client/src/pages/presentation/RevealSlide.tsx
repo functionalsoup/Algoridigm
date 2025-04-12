@@ -107,7 +107,7 @@ export default function RevealSlide() {
           }}
         >
           <h3 className="text-xl sm:text-2xl font-display font-semibold mb-3 md:mb-4 text-corp-orange">Join Us for ALGORIDIGM</h3>
-          <p className="mb-4 md:mb-6 text-sm sm:text-base">We're beginning the process of devising an adaptation of Sophie Treadwell's expressionist masterpiece MACHINAL! We need Actor/Performers, Designers, Techs, Visual Artists, and more! All skill and experience levels are welcome. Innovation and collaboration are required.</p>
+          <p className="mb-4 md:mb-6 text-sm sm:text-base">We're beginning the process of devising an adaptation of Sophie Treadwell's MACHINAL! We need Actor/Performers, Designers, Techs, Visual Artists, and more! All skill and experience levels are welcome. Innovation and collaboration are required.</p>
           
           <div className="flex flex-col md:flex-row gap-4 md:gap-8">
             <div className="md:w-1/2">
