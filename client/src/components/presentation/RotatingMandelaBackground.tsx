@@ -17,7 +17,7 @@ export function RotatingMandelaBackground({
   direction = "clockwise", 
   speed = "medium",
   scale = 2.5,
-  opacity = 0.25, // Increased opacity by 10%
+  opacity = 0.4, // Increased opacity by 30% (from 0.25 to 0.4)
   initialDelay = 0.5,
   isActive = true,
   shrink = false,
@@ -46,7 +46,7 @@ export function RotatingMandelaBackground({
           rotate: 0 
         }}
         animate={{ 
-          opacity: isActive ? shrink ? [0, 0.5, 0.35, opacity] : opacity : 0,
+          opacity: isActive ? shrink ? [0, 0.65, 0.5, opacity] : opacity : 0, // Increased transition opacity values by ~30%
           scale: isActive ? shrink ? [8, 6, 4, scale] : scale : shrink ? 8 : scale,
           rotate: rotateTo
         }}
