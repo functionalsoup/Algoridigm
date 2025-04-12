@@ -47,7 +47,6 @@ export default function OpeningSlide() {
       </div>
       
       <div className="flex flex-col items-center justify-center h-full max-w-4xl mx-auto px-4">
-        {/* Rotating Mandela Image */}
         <motion.div
           className="mb-12 text-center relative"
           initial={{ opacity: 0, y: -10 }}
@@ -60,9 +59,9 @@ export default function OpeningSlide() {
             ease: "easeOut"
           }}
         >
-          {/* Background glow effect that fades in behind the image */}
+          {/* Background glow effect for text */}
           <motion.div
-            className="absolute inset-0 rounded-full bg-gradient-to-r from-corp-cyan/30 to-corp-magenta/30 blur-xl z-0"
+            className="absolute inset-0 rounded-full bg-gradient-to-r from-corp-cyan/30 via-corp-green/20 to-corp-orange/30 blur-xl z-0"
             initial={{ opacity: 0, scale: 0.7 }}
             animate={{ 
               opacity: showCompanyName ? 0.6 : 0,
@@ -74,24 +73,6 @@ export default function OpeningSlide() {
               ease: "easeOut"
             }}
           />
-          
-          {/* Rotating Mandela Image */}
-          <motion.div
-            className="w-36 h-36 md:w-48 md:h-48 mx-auto relative z-10"
-            initial={{ rotate: 0 }}
-            animate={{ rotate: 360 }}
-            transition={{
-              duration: 25.5, // Increased speed by 15% (30 / 1.15 = 25.5)
-              repeat: Infinity,
-              ease: "linear"
-            }}
-          >
-            <img 
-              src={mandelaImage} 
-              alt="Algoridigm Mandala" 
-              className="w-full h-full object-contain" 
-            />
-          </motion.div>
           
           <motion.div 
             className="h-0.5 w-0 bg-gradient-to-r from-transparent via-corp-cyan to-transparent mx-auto mt-4"
