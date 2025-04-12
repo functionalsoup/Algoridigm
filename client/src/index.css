@@ -71,49 +71,50 @@
     background-color: #0065FF;
   }
   
+  /* Mandela Symbol Colors */
   .text-corp-cyan, .border-corp-cyan {
-    color: #00F0FF;
-    border-color: #00F0FF;
+    color: #00FFFF; /* Bright turquoise from the Mandela */
+    border-color: #00FFFF;
   }
   
   .bg-corp-cyan {
-    background-color: #00F0FF;
+    background-color: #00FFFF;
   }
   
   .text-corp-magenta, .border-corp-magenta {
-    color: #FF00F5;
-    border-color: #FF00F5;
+    color: #0066CC; /* Deep blue from the Mandela */
+    border-color: #0066CC;
   }
   
   .bg-corp-magenta {
-    background-color: #FF00F5;
+    background-color: #0066CC;
   }
   
   .text-corp-orange, .border-corp-orange {
-    color: #FF6B00;
-    border-color: #FF6B00;
+    color: #FF8800; /* Gold/orange from the Mandela */
+    border-color: #FF8800;
   }
   
   .bg-corp-orange {
-    background-color: #FF6B00;
+    background-color: #FF8800;
   }
   
   .text-corp-burnt-orange, .border-corp-burnt-orange {
-    color: #FF4D00;
-    border-color: #FF4D00;
+    color: #FF6600; /* Darker orange from the Mandela */
+    border-color: #FF6600;
   }
   
   .bg-corp-burnt-orange {
-    background-color: #FF4D00;
+    background-color: #FF6600;
   }
   
   .text-corp-green, .border-corp-green {
-    color: #39FF14;
-    border-color: #39FF14;
+    color: #88FF00; /* Lime green from the Mandela */
+    border-color: #88FF00;
   }
   
   .bg-corp-green {
-    background-color: #39FF14;
+    background-color: #88FF00;
   }
   
   .text-corp-error, .border-corp-error {
@@ -121,9 +122,9 @@
     border-color: #FF3A3A;
   }
   
-  /* Hover states */
+  /* Hover states - Updated with Mandela symbol colors */
   .hover\:bg-corp-cyan:hover {
-    background-color: #00F0FF;
+    background-color: #00FFFF; /* Bright turquoise */
   }
   
   .hover\:bg-corp-blue:hover {
@@ -131,41 +132,41 @@
   }
   
   .hover\:bg-corp-magenta:hover {
-    background-color: #FF00F5;
+    background-color: #0066CC; /* Deep blue */
   }
   
   .hover\:bg-corp-green:hover {
-    background-color: #39FF14;
+    background-color: #88FF00; /* Lime green */
   }
   
   .hover\:bg-corp-orange:hover {
-    background-color: #FF6B00;
+    background-color: #FF8800; /* Gold/orange */
   }
   
   .hover\:bg-corp-burnt-orange:hover {
-    background-color: #FF4D00;
+    background-color: #FF6600; /* Darker orange */
   }
   
   .hover\:text-corp-dark:hover {
     color: #050508;
   }
   
-  /* Opacity variations */
-  .bg-corp-cyan\/10 { background-color: rgba(0, 240, 255, 0.1); }
-  .bg-corp-cyan\/20 { background-color: rgba(0, 240, 255, 0.2); }
-  .bg-corp-cyan\/30 { background-color: rgba(0, 240, 255, 0.3); }
+  /* Opacity variations - Updated with Mandela symbol colors */
+  .bg-corp-cyan\/10 { background-color: rgba(0, 255, 255, 0.1); } /* Bright turquoise */
+  .bg-corp-cyan\/20 { background-color: rgba(0, 255, 255, 0.2); }
+  .bg-corp-cyan\/30 { background-color: rgba(0, 255, 255, 0.3); }
   
-  .bg-corp-magenta\/10 { background-color: rgba(255, 0, 245, 0.1); }
-  .bg-corp-magenta\/20 { background-color: rgba(255, 0, 245, 0.2); }
-  .bg-corp-magenta\/30 { background-color: rgba(255, 0, 245, 0.3); }
+  .bg-corp-magenta\/10 { background-color: rgba(0, 102, 204, 0.1); } /* Deep blue */
+  .bg-corp-magenta\/20 { background-color: rgba(0, 102, 204, 0.2); }
+  .bg-corp-magenta\/30 { background-color: rgba(0, 102, 204, 0.3); }
   
-  .bg-corp-orange\/10 { background-color: rgba(255, 107, 0, 0.1); }
-  .bg-corp-orange\/20 { background-color: rgba(255, 107, 0, 0.2); }
-  .bg-corp-orange\/30 { background-color: rgba(255, 107, 0, 0.3); }
+  .bg-corp-orange\/10 { background-color: rgba(255, 136, 0, 0.1); } /* Gold/orange */
+  .bg-corp-orange\/20 { background-color: rgba(255, 136, 0, 0.2); }
+  .bg-corp-orange\/30 { background-color: rgba(255, 136, 0, 0.3); }
   
-  .bg-corp-burnt-orange\/10 { background-color: rgba(255, 77, 0, 0.1); }
-  .bg-corp-burnt-orange\/20 { background-color: rgba(255, 77, 0, 0.2); }
-  .bg-corp-burnt-orange\/30 { background-color: rgba(255, 77, 0, 0.3); }
+  .bg-corp-burnt-orange\/10 { background-color: rgba(255, 102, 0, 0.1); } /* Darker orange */
+  .bg-corp-burnt-orange\/20 { background-color: rgba(255, 102, 0, 0.2); }
+  .bg-corp-burnt-orange\/30 { background-color: rgba(255, 102, 0, 0.3); }
   
   /* Gradients */
   .bg-gradient-radial {
@@ -176,19 +177,20 @@
     background-image: conic-gradient(var(--tw-gradient-stops));
   }
   
+  /* Gradients - Updated with Mandela symbol colors */
   .from-corp-cyan\/30 {
-    --tw-gradient-from: rgba(0, 240, 255, 0.3) var(--tw-gradient-from-position);
-    --tw-gradient-to: rgba(0, 240, 255, 0) var(--tw-gradient-to-position);
+    --tw-gradient-from: rgba(0, 255, 255, 0.3) var(--tw-gradient-from-position); /* Bright turquoise */
+    --tw-gradient-to: rgba(0, 255, 255, 0) var(--tw-gradient-to-position);
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   }
   
   .via-corp-blue\/20 {
-    --tw-gradient-via-position: rgba(0, 101, 255, 0.2) var(--tw-gradient-via-position);
+    --tw-gradient-via-position: rgba(0, 102, 204, 0.2) var(--tw-gradient-via-position); /* Deep blue */
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-via-position), var(--tw-gradient-to);
   }
   
   .to-corp-magenta\/30 {
-    --tw-gradient-to: rgba(255, 0, 245, 0.3) var(--tw-gradient-to-position);
+    --tw-gradient-to: rgba(255, 136, 0, 0.3) var(--tw-gradient-to-position); /* Gold/orange */
   }
   
   /* Typography */
@@ -200,29 +202,29 @@
     font-family: 'JetBrains Mono', monospace;
   }
   
-  /* Futuristic elements */
+  /* Futuristic elements - Updated with Mandela symbol colors */
   .neo-button {
     backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
-    box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2); /* Bright turquoise */
   }
   
   .neo-button:hover {
-    box-shadow: 0 0 25px rgba(255, 0, 245, 0.3);
-    border-color: rgba(255, 0, 245, 0.5);
+    box-shadow: 0 0 25px rgba(0, 102, 204, 0.3); /* Deep blue */
+    border-color: rgba(0, 102, 204, 0.5);
   }
   
   .text-shadow-glow {
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
-                 0 0 15px rgba(0, 240, 255, 0.6),
-                 0 0 25px rgba(255, 0, 245, 0.5),
-                 0 0 40px rgba(0, 240, 255, 0.3);
+                 0 0 15px rgba(0, 255, 255, 0.6), /* Bright turquoise */
+                 0 0 25px rgba(255, 136, 0, 0.5), /* Gold/orange */
+                 0 0 40px rgba(136, 255, 0, 0.3); /* Lime green */
   }
   
   .text-shadow-subtle {
-    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5),
-                 0 0 20px rgba(0, 240, 255, 0.2);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5), /* Bright turquoise */
+                 0 0 20px rgba(0, 102, 204, 0.3); /* Deep blue */
   }
   
   .letter-spacing-wide {
@@ -230,13 +232,13 @@
   }
   
   .tech-panel {
-    border: 1px solid rgba(0, 240, 255, 0.2);
+    border: 1px solid rgba(0, 255, 255, 0.2); /* Bright turquoise */
     background: rgba(12, 12, 16, 0.7);
     backdrop-filter: blur(8px);
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1); /* Bright turquoise */
   }
   
-  /* Advanced animations */
+  /* Advanced animations - Updated with Mandela symbol colors */
   .glitch {
     position: relative;
     display: inline-block;
@@ -256,14 +258,14 @@
   .glitch::before {
     animation: glitch-effect 3s infinite;
     clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-    color: #FF00F5;
+    color: #0066CC; /* Deep blue */
     transform: translate(-2px, -2px);
   }
   
   .glitch::after {
     animation: glitch-effect 2s infinite reverse;
     clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
-    color: #00F0FF;
+    color: #00FFFF; /* Bright turquoise */
     transform: translate(2px, 2px);
   }
   
@@ -301,7 +303,7 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background: rgba(0, 240, 255, 0.3);
+    background: rgba(0, 255, 255, 0.3); /* Bright turquoise */
     opacity: 0.5;
     animation: scanline 6s linear infinite;
     pointer-events: none;
@@ -316,7 +318,7 @@
     }
   }
   
-  /* Data stream for backgrounds */
+  /* Data stream for backgrounds - Updated with Mandela symbol colors */
   .data-stream {
     position: relative;
   }
@@ -328,7 +330,7 @@
     right: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(to bottom, transparent, #00F0FF, transparent);
+    background: linear-gradient(to bottom, transparent, #00FFFF, transparent); /* Bright turquoise */
     animation: data-flow 8s linear infinite;
     opacity: 0.5;
   }
@@ -342,17 +344,17 @@
     }
   }
   
-  /* Pulsing glow */
+  /* Pulsing glow - Updated with Mandela symbol colors */
   .pulse-glow {
     animation: pulse-effect 4s ease infinite;
   }
   
   @keyframes pulse-effect {
     0%, 100% {
-      box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.4); /* Bright turquoise */
     }
     50% {
-      box-shadow: 0 0 30px rgba(255, 0, 245, 0.6);
+      box-shadow: 0 0 30px rgba(255, 136, 0, 0.6); /* Gold/orange */
     }
   }
   
