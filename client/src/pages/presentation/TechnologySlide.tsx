@@ -18,8 +18,9 @@ export default function TechnologySlide() {
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
+        className="p-2 md:p-0"
       >
-        <h2 className="text-4xl md:text-6xl font-display font-bold mb-8 relative text-corp-cyan" data-text="J-AI: General Intelligence">
+        <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-bold mb-6 md:mb-8 relative text-corp-cyan" data-text="J-AI: General Intelligence">
           J-AI: General Intelligence
           
           <motion.span

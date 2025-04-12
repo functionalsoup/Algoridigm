@@ -34,9 +34,10 @@ export default function RevealSlide() {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
+        className="px-2 md:px-0"
       >
         <motion.h2 
-          className="text-4xl md:text-6xl font-display font-bold mb-6 text-center"
+          className="text-3xl sm:text-4xl md:text-6xl font-display font-bold mb-4 md:mb-6 text-center"
           data-text="functional_soup"
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -81,7 +82,7 @@ export default function RevealSlide() {
         </motion.h2>
         
         <motion.h3 
-          className="text-2xl font-display text-center mb-10 text-corp-cyan"
+          className="text-xl sm:text-2xl font-display text-center mb-6 md:mb-10 text-corp-cyan"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
@@ -90,7 +91,7 @@ export default function RevealSlide() {
         </motion.h3>
         
         <motion.div 
-          className="bg-corp-bg/40 backdrop-blur-md rounded-lg border border-corp-cyan/40 p-8 mb-10"
+          className="bg-corp-bg/40 backdrop-blur-md rounded-lg border border-corp-cyan/40 p-4 sm:p-6 md:p-8 mb-6 md:mb-10"
           initial={{ y: 20, opacity: 0 }}
           animate={{ 
             y: 0, 
@@ -105,13 +106,13 @@ export default function RevealSlide() {
             transition: { duration: 0.5 }
           }}
         >
-          <h3 className="text-2xl font-display font-semibold mb-4 text-corp-orange">Join Us for ALGORIDIGM</h3>
-          <p className="mb-6">We're beginning the process of devising an adaptation of Sophie Treadwell's expressionist masterpiece MACHINAL! We need Actor/Performers, Designers, Techs, Visual Artists, and more! All skill and experience levels are welcome. Innovation and collaboration are required.</p>
+          <h3 className="text-xl sm:text-2xl font-display font-semibold mb-3 md:mb-4 text-corp-orange">Join Us for ALGORIDIGM</h3>
+          <p className="mb-4 md:mb-6 text-sm sm:text-base">We're beginning the process of devising an adaptation of Sophie Treadwell's expressionist masterpiece MACHINAL! We need Actor/Performers, Designers, Techs, Visual Artists, and more! All skill and experience levels are welcome. Innovation and collaboration are required.</p>
           
-          <div className="flex flex-col md:flex-row gap-8">
+          <div className="flex flex-col md:flex-row gap-4 md:gap-8">
             <div className="md:w-1/2">
-              <h4 className="text-xl font-display font-semibold mb-2 text-corp-cyan">What We Need</h4>
-              <ul className="space-y-2">
+              <h4 className="text-lg sm:text-xl font-display font-semibold mb-2 text-corp-cyan">What We Need</h4>
+              <ul className="space-y-1 sm:space-y-2 text-sm sm:text-base">
                 <li className="flex items-start">
                   <span className="text-corp-orange mr-2">→</span>
                   <span>Actors & Performers</span>
@@ -135,9 +136,9 @@ export default function RevealSlide() {
               </ul>
             </div>
             
-            <div className="md:w-1/2">
-              <h4 className="text-xl font-display font-semibold mb-2 text-corp-cyan">Important Details</h4>
-              <ul className="space-y-2">
+            <div className="md:w-1/2 mt-4 md:mt-0">
+              <h4 className="text-lg sm:text-xl font-display font-semibold mb-2 text-corp-cyan">Important Details</h4>
+              <ul className="space-y-1 sm:space-y-2 text-sm sm:text-base">
                 <li className="flex items-start">
                   <span className="text-corp-green mr-2">→</span>
                   <span>18+ only due to mature themes</span>
@@ -158,16 +159,16 @@ export default function RevealSlide() {
             </div>
           </div>
           
-          <div className="mt-8 text-center">
+          <div className="mt-6 md:mt-8 text-center">
             <Button 
               id="register-button"
               onClick={() => window.location.href = "/register"}
-              className="bg-gradient-to-r from-corp-cyan to-corp-orange hover:bg-corp-orange/90 text-white font-bold py-4 px-10 text-xl shadow-lg shadow-corp-orange/40 uppercase tracking-widest"
+              className="bg-gradient-to-r from-corp-cyan to-corp-orange hover:bg-corp-orange/90 text-white font-bold py-3 sm:py-4 px-6 sm:px-10 text-lg sm:text-xl shadow-lg shadow-corp-orange/40 uppercase tracking-widest"
               size="lg"
             >
               Register Now
             </Button>
-            <p className="mt-4 text-sm opacity-80">
+            <p className="mt-3 md:mt-4 text-xs sm:text-sm opacity-80">
               Join our collaborative theatre-making experience!
             </p>
           </div>
