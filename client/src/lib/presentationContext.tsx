@@ -84,7 +84,7 @@ export function PresentationProvider({ children }: { children: ReactNode }) {
 
   // Function to navigate to a specific slide
   const goToSlide = (slideIndex: number) => {
-    if (slideIndex >= 0 && slideIndex <= 4) {
+    if (slideIndex >= 0 && slideIndex <= 3) { // Updated from 4 to 3 since we removed a slide
       setCurrentSlide(slideIndex);
     }
   };

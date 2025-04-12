@@ -13,12 +13,12 @@ export default function RevealSlide() {
   const handleAboutClick = () => {
     setAnimateOut(true);
     setTimeout(() => {
-      goToSlide(4);
+      goToSlide(3); // Updated from 4 to 3 since we eliminated a slide
     }, 800);
   };
 
   return (
-    <PresentationLayout slideNumber={3} showNextButton={false}>
+    <PresentationLayout slideNumber={2} showNextButton={false}>
       {/* Rotating Mandela background with counterclockwise rotation */}
       <RotatingMandelaBackground 
         direction="counterclockwise"

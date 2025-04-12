@@ -27,7 +27,7 @@ export default function OpeningSlide() {
   
   const handleBegin = () => {
     startTimer();
-    goToSlide(1);
+    goToSlide(1); // Now goes to the combined slide
   };
   
   return (

@@ -17,7 +17,7 @@ export default function AboutUsSlide() {
   };
   
   return (
-    <PresentationLayout slideNumber={4} showNextButton={false}>
+    <PresentationLayout slideNumber={3} showNextButton={false}>
       {/* Rotating Mandela background with fast clockwise rotation */}
       <RotatingMandelaBackground 
         direction="clockwise"
