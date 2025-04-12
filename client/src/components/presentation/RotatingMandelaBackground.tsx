@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import mandelaImage from "@assets/Algoridigm Mandela Psy 3.png";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 
 interface RotatingMandelaBackgroundProps {
   direction?: "clockwise" | "counterclockwise";
@@ -17,7 +17,7 @@ export function RotatingMandelaBackground({
   direction = "clockwise", 
   speed = "medium",
   scale = 2.5,
-  opacity = 0.4, // Increased opacity by 30% (from 0.25 to 0.4)
+  opacity = 0.7, // Increased to 0.7 from 0.4
   initialDelay = 0.5,
   isActive = true,
   shrink = false,
@@ -25,49 +25,44 @@ export function RotatingMandelaBackground({
 }: RotatingMandelaBackgroundProps) {
   // Map speed names to rotation durations (in seconds)
   const speedMap = {
-    slow: 36,   // 20% faster (original: 45)
-    medium: 20, // 20% faster (original: 25)
-    fast: 9.6   // 20% faster (original: 12)
+    slow: 60,
+    medium: 45, 
+    fast: 30
   };
-  
-  // Calculate rotation based on direction
-  const rotateTo = direction === "clockwise" ? 360 : -360;
   
   // Calculate duration based on speed
   const duration = speedMap[speed];
   
+  // Store animation state to prevent jumps
+  const [animationState, setAnimationState] = useState({
+    rotateFrom: 0,
+    rotateTo: direction === "clockwise" ? 360 : -360
+  });
+  
+  // This ensures a continuous seamless rotation
+  useEffect(() => {
+    if (!isActive) return;
+    
+    // Create interval to update rotation values
+    const interval = setInterval(() => {
+      setAnimationState(prev => ({
+        rotateFrom: prev.rotateTo,
+        rotateTo: prev.rotateTo + (direction === "clockwise" ? 360 : -360)
+      }));
+    }, duration * 1000);
+    
+    return () => clearInterval(interval);
+  }, [isActive, direction, duration]);
+  
+  // The scale animation properties
+  const scaleStart = shrink ? 8 : scale;
+  const scaleEnd = isActive ? scale : shrink ? 8 : scale;
+  
   return (
     <>
-      <motion.div 
+      {/* Static container to maintain positioning */}
+      <div 
         className="fixed inset-0 flex items-center justify-center pointer-events-none overflow-hidden z-0"
-        initial={{ 
-          opacity: 0, 
-          scale: shrink ? 8 : scale, 
-          rotate: 0 
-        }}
-        animate={{ 
-          opacity: isActive ? opacity : 0,
-          scale: isActive ? scale : shrink ? 8 : scale,
-          rotate: rotateTo
-        }}
-        transition={{
-          opacity: {
-            duration: 3,
-            ease: "easeOut",
-            delay: initialDelay
-          },
-          scale: {
-            duration: shrink ? 5 : 3, // Longer duration for shrink animation to make it smoother
-            ease: shrink ? "easeInOut" : "easeOut", // Better easing for shrink animation
-            delay: initialDelay
-          },
-          rotate: {
-            duration,
-            repeat: Infinity,
-            ease: "linear",
-            repeatType: "loop" // Ensure smooth rotation looping
-          }
-        }}
         style={{
           position: 'fixed',
           top: 0,
@@ -80,18 +75,54 @@ export function RotatingMandelaBackground({
           zIndex: 0
         }}
       >
-        <img 
-          src={mandelaImage} 
-          alt="Background Mandala" 
-          className="w-full h-full object-contain"
-          style={{ 
-            maxWidth: '250vmin', 
-            maxHeight: '250vmin',
-            transformOrigin: 'center center',
-            opacity: opacity
+        {/* Separate animations for opacity/scale and rotation to prevent interruptions */}
+        <motion.div
+          initial={{ opacity: 0, scale: scaleStart }}
+          animate={{ opacity: isActive ? opacity : 0, scale: scaleEnd }}
+          transition={{
+            opacity: { duration: 3, ease: "easeInOut", delay: initialDelay },
+            scale: { 
+              duration: shrink ? 6 : 4,  // Even longer, smoother duration
+              ease: "easeInOut", 
+              delay: initialDelay 
+            }
           }}
-        />
-      </motion.div>
+          style={{
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          {/* Separate motion component for rotation only */}
+          <motion.div
+            initial={{ rotate: animationState.rotateFrom }}
+            animate={{ rotate: animationState.rotateTo }}
+            transition={{
+              rotate: { duration, ease: "linear" }
+            }}
+            style={{
+              width: '100%',
+              height: '100%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <img 
+              src={mandelaImage} 
+              alt="Background Mandala" 
+              className="w-full h-full object-contain"
+              style={{ 
+                maxWidth: '250vmin', 
+                maxHeight: '250vmin',
+                transformOrigin: 'center center'
+              }}
+            />
+          </motion.div>
+        </motion.div>
+      </div>
       {children}
     </>
   );

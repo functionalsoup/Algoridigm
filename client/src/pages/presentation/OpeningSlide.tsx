@@ -123,6 +123,7 @@ export default function OpeningSlide() {
             isActive={showTitle}
             shrink={true}
             initialDelay={0.5}
+            scale={2.5} // Explicitly setting scale for consistency
           />
           
           <h1 className="text-4xl sm:text-6xl md:text-8xl xl:text-9xl font-display font-bold tracking-wider relative z-10 px-2">
