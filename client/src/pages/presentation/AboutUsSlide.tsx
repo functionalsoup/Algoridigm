@@ -28,340 +28,133 @@ export default function AboutUsSlide() {
         opacity={0.08}
         initialDelay={0.3}
       />
-      
       <motion.div
         key="about-slide-content"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1 }}
-        className={`relative z-10 mx-auto max-w-7xl px-4 py-6 ${animateOut ? 'bg-corp-burnt-orange bg-opacity-10' : ''}`}
+        initial={{ 
+          y: 20, 
+          opacity: 0
+        }}
+        animate={{ 
+          y: 0, 
+          opacity: 1
+        }}
+        exit={{ 
+          y: -20, 
+          opacity: 0
+        }}
+        className={`transition-all duration-500 ${animateOut ? 'bg-corp-orange bg-opacity-10' : ''}`}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        {/* Digital Expressionist Title with fragmentation effects */}
-        <motion.div
-          className="relative mb-12"
-          initial={{ scale: 0.96 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-        >
-          {/* Expressionist background elements */}
-          <motion.div 
-            className="absolute top-0 left-1/4 h-px w-1/2 bg-corp-green opacity-50 transform -rotate-3"
-            initial={{ width: 0 }}
-            animate={{ width: "50%" }}
-            transition={{ duration: 1.2, delay: 0.5 }}
-          />
-          
-          <motion.div 
-            className="absolute bottom-0 right-1/4 h-px w-1/2 bg-corp-orange opacity-50 transform rotate-3"
-            initial={{ width: 0 }}
-            animate={{ width: "50%" }}
-            transition={{ duration: 1.2, delay: 0.7 }}
-          />
-          
-          {/* Main title with digital expressionist treatment */}
-          <h2 className="text-4xl md:text-6xl font-display font-bold text-center relative overflow-visible">
-            <span className="absolute -top-6 -left-4 text-6xl md:text-8xl opacity-10 font-bold text-corp-cyan blur-sm">
-              f_s
-            </span>
-            
-            <span className="relative inline-block">
-              <span className="text-corp-cyan">Functional</span>
-              <span className="text-white"> </span>
-              <span className="text-corp-orange">Soup</span>
-            </span>
-          </h2>
-          
-          {/* Fragmented subtitle with digital expressionist styling */}
-          <motion.div
-            className="relative mt-4 flex justify-center items-center overflow-visible"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <motion.div 
-              className="h-px w-24 bg-corp-green opacity-60 mr-4"
-              initial={{ width: 0 }}
-              animate={{ width: "6rem" }}
-              transition={{ duration: 1, delay: 0.8 }}
-            />
-            
-            <p className="text-lg md:text-xl italic font-display tracking-wider text-corp-cyan">
-              A Digital Expressionist Collective
-            </p>
-            
-            <motion.div 
-              className="h-px w-24 bg-corp-orange opacity-60 ml-4"
-              initial={{ width: 0 }}
-              animate={{ width: "6rem" }}
-              transition={{ duration: 1, delay: 0.8 }}
-            />
-          </motion.div>
-        </motion.div>
+        <h2 className="text-4xl md:text-6xl font-display font-bold mb-6 text-center text-corp-cyan">
+          Functional Soup: A Collective Creation
+        </h2>
         
-        {/* Main content with digital expressionism styling */}
-        <motion.div 
-          className="relative"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          {/* Background distortion elements */}
-          <motion.div 
-            className="absolute inset-0 opacity-10 pointer-events-none"
-            animate={{
-              background: [
-                "radial-gradient(circle at 20% 30%, rgba(0,255,255,0.3) 0%, rgba(0,0,0,0) 50%)",
-                "radial-gradient(circle at 70% 60%, rgba(136,255,0,0.3) 0%, rgba(0,0,0,0) 50%)",
-                "radial-gradient(circle at 40% 80%, rgba(255,136,0,0.3) 0%, rgba(0,0,0,0) 50%)",
-                "radial-gradient(circle at 80% 20%, rgba(0,102,204,0.3) 0%, rgba(0,0,0,0) 50%)"
-              ]
+        <div className="bg-corp-bg/40 backdrop-blur-md rounded-lg border border-corp-cyan/40 p-4 md:p-8 mb-10">
+          <p className="mb-4 italic text-base md:text-lg text-center">
+            Inspired by the revolutionary spirit of the Bauhaus, the critical engagement of Epic Theatre, and the dynamic collaboration inherent in devised practices.
+          </p>
+          
+          <h3 className="text-xl md:text-2xl font-display font-semibold mb-4 text-corp-cyan">
+            Core Principles
+          </h3>
+          
+          <div className="space-y-4 md:space-y-6">
+            <motion.div 
+              className="border-l-4 border-corp-orange pl-4"
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.2 }}
+            >
+              <h4 className="text-lg md:text-xl font-display font-semibold mb-1 md:mb-2">The Unity of Arts and Practice</h4>
+              <p className="text-xs md:text-sm">We embrace the dynamic interplay of diverse theatrical techniques and forms inherent in devised theatre, dissolving traditional hierarchies between artistic disciplines.</p>
+            </motion.div>
+            
+            <motion.div 
+              className="border-l-4 border-corp-cyan pl-4"
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.4 }}
+            >
+              <h4 className="text-lg md:text-xl font-display font-semibold mb-1 md:mb-2">Radical Inclusivity and Accessibility</h4>
+              <p className="text-xs md:text-sm">Functional Soup is founded on the principle of radical inclusivity, valuing all forms of artistic expression and levels of experience.</p>
+            </motion.div>
+            
+            <motion.div 
+              className="border-l-4 border-corp-orange pl-4"
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.6 }}
+            >
+              <h4 className="text-lg md:text-xl font-display font-semibold mb-1 md:mb-2">Collaborative Creation and Ensemble</h4>
+              <p className="text-xs md:text-sm">Our creative foundation lies in structured collective processes. Every participant is recognized as both creator and performer.</p>
+            </motion.div>
+            
+            <motion.div 
+              className="border-l-4 border-corp-cyan pl-4"
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.8 }}
+            >
+              <h4 className="text-lg md:text-xl font-display font-semibold mb-1 md:mb-2">Socially Conscious Engagement</h4>
+              <p className="text-xs md:text-sm">We are committed to deep engagement with our local context and the use of art as social practice, fostering dialogue around relevant themes.</p>
+            </motion.div>
+            
+            <motion.div 
+              className="border-l-4 border-corp-orange pl-4"
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 1 }}
+            >
+              <h4 className="text-lg md:text-xl font-display font-semibold mb-1 md:mb-2">Exploration, Experimentation, and Emergence</h4>
+              <p className="text-xs md:text-sm">Our process is constantly evolving and adapting, moving through cycles of proposal, exploration, development, and presentation.</p>
+            </motion.div>
+          </div>
+        </div>
+        
+        <div className="text-center mt-10 mb-12">
+          <motion.button
+            onClick={handleRegisterClick}
+            className="inline-block bg-gradient-to-r from-corp-cyan to-corp-orange text-white hover:opacity-90 px-10 py-4 rounded-md text-lg font-bold uppercase tracking-widest transition-all duration-300 transform hover:scale-105 mb-4 shadow-lg shadow-corp-orange/40"
+            whileHover={{ 
+              scale: 1.05,
+              boxShadow: "0 0 30px rgba(0, 255, 255, 0.5)"
             }}
-            transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-          />
-          
-          {/* Introductory quote - expressionist fragmentation */}
-          <motion.div 
-            className="max-w-4xl mx-auto mb-10 relative"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <div className="bg-black/50 backdrop-blur-sm rounded-md p-6 border-l-4 border-r-4 border-l-corp-cyan border-r-corp-orange relative overflow-hidden">
-              {/* Digital noise line */}
-              <motion.div 
-                className="absolute top-1/2 left-0 h-0.5 w-full bg-corp-green/30"
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 1.5, delay: 0.5 }}
-                style={{ transformOrigin: "left" }}
-              />
-              
-              <p className="text-base md:text-lg italic text-center relative z-10">
-                Inspired by the revolutionary spirit of the Bauhaus, the critical engagement of Epic Theatre, 
-                and the <span className="text-corp-cyan">digital fragmentation</span> of contemporary media. 
-                We distort the expected to reveal the <span className="text-corp-orange">expressive truth</span> beyond reality.
-              </p>
-            </div>
-          </motion.div>
-          
-          {/* Core principles - Asymmetric digital expressionist layout */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 relative">
-            <motion.div 
-              className="md:col-span-5 md:row-span-1 bg-black/50 backdrop-blur-sm p-6 border-l-4 border-corp-cyan rounded-tr-md"
-              initial={{ x: -20, opacity: 0, skewX: "-1deg" }}
-              animate={{ x: 0, opacity: 1, skewX: "0deg" }}
-              transition={{ duration: 0.7, delay: 0.5 }}
+            Register Now
+          </motion.button>
+          <p className="opacity-70 mt-4 mb-2">Join us in this ongoing endeavor of collective creation.</p>
+        </div>
+        
+        {/* Contact Us Small Button */}
+        <div className="absolute bottom-20 sm:bottom-4 right-4 z-20">
+          <div className="relative">
+            <Button
+              size="sm"
+              variant="outline"
+              className="border-corp-orange text-corp-orange hover:bg-corp-orange/10 rounded-full flex items-center gap-1 shadow-md"
+              onMouseEnter={() => setShowContactTooltip(true)}
+              onMouseLeave={() => setShowContactTooltip(false)}
+              onClick={() => {
+                window.location.href = "mailto:contact@functionalsoup.com";
+              }}
             >
-              <motion.h3 
-                className="text-xl md:text-2xl font-display font-semibold mb-4 relative"
-                animate={{
-                  color: ["#00FFFF", "#0066CC", "#00FFFF"]
-                }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                Digital Expressionist Principles
-                
-                <motion.div 
-                  className="absolute -bottom-2 left-0 h-0.5 w-20 bg-corp-cyan"
-                  initial={{ width: 0 }}
-                  animate={{ width: "5rem" }}
-                  transition={{ duration: 0.8, delay: 0.8 }}
-                />
-              </motion.h3>
-              
-              <p className="text-sm md:text-base leading-relaxed">
-                Our methodology embraces the fragmentation and distortion of traditional forms, 
-                allowing the <span className="text-corp-orange">subjective emotional experience</span> to shape both 
-                process and presentation. Digital expressionism rejects perfect representation 
-                in favor of <span className="text-corp-green">emotional intensity</span> and experiential truth.
-              </p>
-            </motion.div>
+              <HiMail className="w-4 h-4" />
+              <span className="text-xs">Contact</span>
+            </Button>
             
-            {/* Core principles cards with expressionist styling */}
-            <div className="md:col-span-7 md:row-span-2 grid grid-cols-1 md:grid-cols-2 gap-5">
+            {showContactTooltip && (
               <motion.div 
-                className="bg-black/50 backdrop-blur-sm p-5 border-t-2 border-corp-green rounded-br-md transform transition-all duration-300"
-                initial={{ y: 15, opacity: 0, skewY: "1deg" }}
-                animate={{ y: 0, opacity: 1, skewY: "0deg" }}
-                transition={{ duration: 0.7, delay: 0.6 }}
-                whileHover={{ skewY: "1deg", translateY: -5 }}
+                className="absolute bottom-full right-0 mb-2 bg-corp-bg/60 backdrop-blur-md border border-corp-orange text-white p-2 rounded text-xs w-48"
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 5 }}
               >
-                <h4 className="text-lg font-display font-semibold mb-2 text-corp-green">Fragmentation & Unity</h4>
-                <p className="text-sm">
-                  We embrace the tensions between fractured media and unified experience, revealing meaning through 
-                  deliberate distortion and reconfiguration of form and content.
-                </p>
+                Click to email us at contact@functionalsoup.com
               </motion.div>
-              
-              <motion.div 
-                className="bg-black/50 backdrop-blur-sm p-5 border-r-2 border-corp-orange rounded-bl-md transform transition-all duration-300"
-                initial={{ y: 15, opacity: 0, skewY: "-1deg" }}
-                animate={{ y: 0, opacity: 1, skewY: "0deg" }}
-                transition={{ duration: 0.7, delay: 0.7 }}
-                whileHover={{ skewY: "-1deg", translateY: -5 }}
-              >
-                <h4 className="text-lg font-display font-semibold mb-2 text-corp-orange">Radical Accessibility</h4>
-                <p className="text-sm">
-                  Digital expression democratizes creation, embracing technological disruption and non-traditional entry points
-                  for artists of all backgrounds and technical abilities.
-                </p>
-              </motion.div>
-              
-              <motion.div 
-                className="bg-black/50 backdrop-blur-sm p-5 border-l-2 border-corp-cyan rounded-tr-md transform transition-all duration-300"
-                initial={{ y: 15, opacity: 0, skewY: "-1deg" }}
-                animate={{ y: 0, opacity: 1, skewY: "0deg" }}
-                transition={{ duration: 0.7, delay: 0.8 }}
-                whileHover={{ skewY: "1deg", translateY: -5 }}
-              >
-                <h4 className="text-lg font-display font-semibold mb-2 text-corp-cyan">Collective Intelligence</h4>
-                <p className="text-sm">
-                  Our practice blurs the boundaries between creator and created, merging individual artistic voices
-                  into interconnected networks of expressive intelligence.
-                </p>
-              </motion.div>
-              
-              <motion.div 
-                className="bg-black/50 backdrop-blur-sm p-5 border-b-2 border-corp-green rounded-tl-md transform transition-all duration-300"
-                initial={{ y: 15, opacity: 0, skewY: "1deg" }}
-                animate={{ y: 0, opacity: 1, skewY: "0deg" }}
-                transition={{ duration: 0.7, delay: 0.9 }}
-                whileHover={{ skewY: "-1deg", translateY: -5 }}
-              >
-                <h4 className="text-lg font-display font-semibold mb-2 text-corp-green">Digital Materiality</h4>
-                <p className="text-sm">
-                  We treat digital media as physical material with its own properties and limitations,
-                  exploring glitches, latency, and compression as expressive elements rather than errors.
-                </p>
-              </motion.div>
-            </div>
-            
-            <motion.div 
-              className="md:col-span-5 md:row-span-1 bg-black/50 backdrop-blur-sm p-6 border-r-4 border-corp-orange rounded-bl-md mt-auto"
-              initial={{ x: 20, opacity: 0, skewX: "1deg" }}
-              animate={{ x: 0, opacity: 1, skewX: "0deg" }}
-              transition={{ duration: 0.7, delay: 1 }}
-            >
-              <h3 className="text-xl font-display font-semibold mb-3 text-corp-orange">
-                Beyond Representation
-                
-                <motion.div 
-                  className="absolute -bottom-2 right-0 h-0.5 w-20 bg-corp-orange"
-                  initial={{ width: 0 }}
-                  animate={{ width: "5rem" }}
-                  transition={{ duration: 0.8, delay: 1.2 }}
-                  style={{ transformOrigin: "right" }}
-                />
-              </h3>
-              
-              <p className="text-sm md:text-base leading-relaxed">
-                Our work exists at the intersection of physical performance and digital abstraction, 
-                using technology not to simulate reality but to <span className="text-corp-cyan">expose its limitations</span>.
-                We embrace technical "errors" as revelatory moments of expressive truth.
-              </p>
-            </motion.div>
+            )}
           </div>
-          
-          {/* Call to action - expressionist styling */}
-          <motion.div 
-            className="text-center mt-12 mb-8 relative"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-          >
-            {/* Digital expressionist decorative elements */}
-            <motion.div 
-              className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full opacity-20"
-              animate={{
-                background: [
-                  "radial-gradient(circle, rgba(0,255,255,0.2) 0%, rgba(0,0,0,0) 70%)",
-                  "radial-gradient(circle, rgba(136,255,0,0.2) 0%, rgba(0,0,0,0) 70%)",
-                  "radial-gradient(circle, rgba(255,136,0,0.2) 0%, rgba(0,0,0,0) 70%)",
-                  "radial-gradient(circle, rgba(0,102,204,0.2) 0%, rgba(0,0,0,0) 70%)"
-                ],
-                scale: [1, 1.1, 1]
-              }}
-              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            />
-            
-            <motion.button
-              onClick={handleRegisterClick}
-              className="relative z-10 bg-transparent border-2 border-corp-cyan hover:border-corp-orange text-white px-10 py-4 rounded-md text-lg font-bold uppercase tracking-widest transition-all duration-300"
-              whileHover={{ 
-                scale: 1.05,
-                textShadow: "0 0 15px rgba(0, 255, 255, 0.8)",
-                boxShadow: "0 0 25px rgba(0, 255, 255, 0.4)"
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <motion.span
-                animate={{
-                  color: ["#FFFFFF", "#00FFFF", "#FFFFFF"]
-                }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              >
-                Join the Collective
-              </motion.span>
-            </motion.button>
-            
-            <motion.p 
-              className="mt-4 text-sm opacity-80 font-code relative z-10"
-              animate={{
-                opacity: [0.6, 0.8, 0.6]
-              }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            >
-              Participate in the ongoing evolution of digital expressionism
-            </motion.p>
-          </motion.div>
-          
-          {/* Contact button with expressionist styling */}
-          <div className="absolute bottom-20 sm:bottom-4 right-4 z-20">
-            <div className="relative">
-              <Button
-                size="sm"
-                variant="outline"
-                className="border-corp-cyan text-corp-cyan hover:bg-corp-cyan/10 rounded-full flex items-center gap-1 shadow-md overflow-hidden"
-                onMouseEnter={() => setShowContactTooltip(true)}
-                onMouseLeave={() => setShowContactTooltip(false)}
-                onClick={() => {
-                  window.location.href = "mailto:contact@functionalsoup.com";
-                }}
-              >
-                <motion.div
-                  className="absolute inset-0 opacity-20"
-                  animate={{
-                    background: [
-                      "linear-gradient(45deg, rgba(0,255,255,0.2) 0%, rgba(0,0,0,0) 70%)",
-                      "linear-gradient(45deg, rgba(136,255,0,0.2) 0%, rgba(0,0,0,0) 70%)",
-                      "linear-gradient(45deg, rgba(255,136,0,0.2) 0%, rgba(0,0,0,0) 70%)"
-                    ]
-                  }}
-                  transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                />
-                
-                <HiMail className="w-4 h-4 relative z-10" />
-                <span className="text-xs relative z-10">Contact</span>
-              </Button>
-              
-              {showContactTooltip && (
-                <motion.div 
-                  className="absolute bottom-full right-0 mb-2 bg-black/70 backdrop-blur-sm border border-corp-cyan text-white p-2 rounded text-xs w-48 font-code"
-                  initial={{ opacity: 0, y: 5 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 5 }}
-                >
-                  <span className="text-corp-cyan">connect</span>@functionalsoup.com
-                </motion.div>
-              )}
-            </div>
-          </div>
-        </motion.div>
+        </div>
       </motion.div>
     </PresentationLayout>
   );
