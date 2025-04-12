@@ -313,8 +313,7 @@ export default function OpeningSlide() {
             <motion.div 
               className="text-corp-green font-mono text-xs opacity-60 max-w-md mx-auto text-left border-l-2 border-corp-green/30 pl-2"
               animate={{ 
-                opacity: [0.3, 0.6, 0.3],
-                borderLeftColor: ["rgba(0, 255, 128, 0.3)", "rgba(0, 255, 128, 0.5)", "rgba(0, 255, 128, 0.3)"]
+                opacity: [0.3, 0.6, 0.3]
               }}
               transition={{ 
                 duration: 4, 
@@ -322,12 +321,12 @@ export default function OpeningSlide() {
                 repeatType: "mirror" 
               }}
             >
-              <div className="mb-1">&gt; import { reality } from "@algoridigm/core";</div>
-              <div className="mb-1">&gt; const simulation = new reality.Simulation();</div>
+              <div className="mb-1">&gt; import { simulation } from "@algoridigm/core";</div>
+              <div className="mb-1">&gt; const reality = new simulation.Reality();</div>
               <motion.div 
                 className="text-yellow-500"
                 animate={{ 
-                  color: ["#FFCC00", "#FF6600", "#FFCC00"]
+                  opacity: [0.7, 1, 0.7]
                 }}
                 transition={{ 
                   duration: 1.5, 
@@ -335,7 +334,7 @@ export default function OpeningSlide() {
                   repeatType: "mirror" 
                 }}
               >
-                &gt; simulation.initialize(true);
+                &gt; reality.initialize(true);
               </motion.div>
             </motion.div>
 
