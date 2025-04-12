@@ -134,31 +134,27 @@ export default function OpeningSlide() {
             }}
           />
           
-          {/* Growing Mandela Symbol behind ALGORIDIGM */}
+          {/* Growing Mandela Symbol that fills the entire page */}
           <motion.div 
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 pointer-events-none z-0"
-            initial={{ opacity: 0, scale: 0.5, rotate: 0 }}
+            className="fixed inset-0 flex items-center justify-center pointer-events-none overflow-hidden z-0"
+            initial={{ opacity: 0, scale: 0.2, rotate: 0 }}
             animate={{ 
-              opacity: showTitle ? [0.15, 0.25, 0.15] : 0,
-              scale: showTitle ? [1.0, 1.15, 1.0] : 0.5,
+              opacity: showTitle ? 0.15 : 0,
+              scale: showTitle ? 2.5 : 0.2, // Much larger scale to fill the page
               rotate: 360
             }}
             transition={{
               opacity: {
-                duration: 5,
-                repeat: Infinity,
-                repeatType: "reverse",
-                ease: "easeInOut",
+                duration: 3,
+                ease: "easeOut",
                 delay: 0.5
               },
               scale: {
-                duration: 8,
-                repeat: Infinity,
-                repeatType: "reverse",
-                ease: "easeInOut"
+                duration: 15, // Slower growth to make it more dramatic
+                ease: "easeOut"
               },
               rotate: {
-                duration: 30,
+                duration: 25.5, // Matches the top Mandela rotation speed
                 repeat: Infinity,
                 ease: "linear"
               }
@@ -167,7 +163,7 @@ export default function OpeningSlide() {
             <img 
               src={mandelaImage} 
               alt="Background Mandala" 
-              className="w-full h-full object-contain opacity-30" 
+              className="min-w-[200%] min-h-[200%] object-contain opacity-20" 
             />
           </motion.div>
           
