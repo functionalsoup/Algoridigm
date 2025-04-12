@@ -61,21 +61,42 @@ export function RotatingMandelaBackground({
     <>
       {/* Fixed background container */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        {/* Opacity and Scale Animation */}
+        {/* Glitch and Scale Animation */}
         <motion.div
           className="w-full h-full flex items-center justify-center"
-          initial={{ opacity: 0, scale: scaleStart }}
-          animate={{ opacity: isActive ? opacity : 0, scale: scaleEnd }}
+          initial={{ 
+            opacity: 0,
+            scale: scaleStart,
+            x: 20, // Start slightly offset
+            filter: "blur(10px) hue-rotate(90deg) brightness(1.5)" // Start with heavy distortion
+          }}
+          animate={{ 
+            opacity: isActive ? opacity : 0,
+            scale: scaleEnd,
+            x: 0, // Center properly
+            filter: "blur(0px) hue-rotate(0deg) brightness(1)" // Remove distortion
+          }}
           transition={{
             opacity: { 
-              duration: 3, 
+              duration: 1.5, 
+              ease: "steps(3)", // Stepped animation for glitch effect
+              delay: initialDelay,
+              times: [0, 0.2, 0.3, 0.4, 0.6, 1] // Irregular timing for a glitch feel
+            },
+            scale: { 
+              duration: shrink ? 7 : 4, 
               ease: "easeInOut", 
               delay: initialDelay 
             },
-            scale: { 
-              duration: shrink ? 7 : 4,  // Even longer for the shrink animation
-              ease: "easeInOut", 
-              delay: initialDelay 
+            x: {
+              duration: 1,
+              ease: "backOut",
+              delay: initialDelay
+            },
+            filter: {
+              duration: 1.2,
+              ease: "steps(4)", // Stepped filter changes for digital glitch look
+              delay: initialDelay
             }
           }}
         >
@@ -94,6 +115,7 @@ export function RotatingMandelaBackground({
             }}
           >
             <div className="w-full h-full flex items-center justify-center">
+              {/* Main image */}
               <img 
                 src={mandelaImage} 
                 alt="Background Mandala" 
@@ -105,6 +127,81 @@ export function RotatingMandelaBackground({
                   userSelect: 'none'
                 }}
               />
+              
+              {/* Glitch overlay effect that disappears */}
+              {isActive && (
+                <>
+                  <motion.div 
+                    className="absolute inset-0 flex items-center justify-center overflow-hidden"
+                    initial={{ opacity: 0.7 }}
+                    animate={{ opacity: 0 }}
+                    transition={{ 
+                      opacity: { 
+                        duration: 1.8, 
+                        delay: initialDelay + 0.3,
+                        ease: "steps(5)" // Stepped fade for digital glitch feel
+                      }
+                    }}
+                  >
+                    <motion.img 
+                      src={mandelaImage} 
+                      alt=""
+                      className="w-full h-full object-contain"
+                      style={{ 
+                        maxWidth: '250vmin', 
+                        maxHeight: '250vmin',
+                        filter: "hue-rotate(90deg) contrast(1.5) brightness(1.5)",
+                        mixBlendMode: "overlay"
+                      }}
+                      animate={{ 
+                        x: [5, -10, 8, 0, -5, 0],
+                        y: [8, -5, 0, 10, 0]
+                      }}
+                      transition={{
+                        duration: 1.5,
+                        ease: "steps(6)",
+                        times: [0, 0.2, 0.3, 0.5, 0.7, 1],
+                        delay: initialDelay
+                      }}
+                    />
+                  </motion.div>
+                
+                  {/* Scan lines effect that fades out */}
+                  <motion.div 
+                    className="absolute inset-0 pointer-events-none z-10"
+                    initial={{ opacity: 0.8 }}
+                    animate={{ opacity: 0 }}
+                    transition={{ 
+                      opacity: { 
+                        duration: 2.5, 
+                        delay: initialDelay + 0.7 
+                      }
+                    }}
+                    style={{
+                      backgroundImage: `repeating-linear-gradient(
+                        0deg,
+                        rgba(0, 255, 255, 0.1),
+                        rgba(0, 255, 255, 0.1) 1px,
+                        transparent 1px,
+                        transparent 2px
+                      )`,
+                      backgroundSize: '100% 4px'
+                    }}
+                  />
+                  
+                  {/* Digital noise overlay */}
+                  <motion.div 
+                    className="absolute inset-0 pointer-events-none"
+                    initial={{ opacity: 0.25 }}
+                    animate={{ opacity: 0 }}
+                    transition={{ duration: 2, delay: initialDelay + 1 }}
+                    style={{
+                      backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+                      mixBlendMode: "overlay"
+                    }}
+                  />
+                </>
+              )}
             </div>
           </motion.div>
         </motion.div>
