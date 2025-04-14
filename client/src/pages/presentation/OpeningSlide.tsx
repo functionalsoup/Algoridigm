@@ -64,7 +64,22 @@ export default function OpeningSlide() {
         </div>
       )}
       
-      <div className="flex flex-col items-center justify-center h-full max-w-4xl mx-auto px-4">
+      {/* MANDALA BACKGROUND - Positioned before everything else */}
+      {animationPhase >= 1 && (
+        <div className="absolute inset-0 z-10 pointer-events-none">
+          <RotatingMandelaBackground 
+            direction="clockwise"
+            speed="medium"
+            opacity={0.7}
+            isActive={true} 
+            shrink={false}
+            initialDelay={0.1}
+            scale={2.5}
+          />
+        </div>
+      )}
+      
+      <div className="flex flex-col items-center justify-center h-full max-w-4xl mx-auto px-4 relative z-20">
         {/* Company name section */}
         <motion.div
           className="mb-12 text-center relative"
@@ -132,17 +147,6 @@ export default function OpeningSlide() {
               delay: 0.3,
               ease: "easeInOut"
             }}
-          />
-          
-          {/* Mandela Symbol that fills the page then shrinks - appears in phase 1 */}
-          <RotatingMandelaBackground 
-            direction="clockwise"
-            speed="medium"
-            opacity={0.7}
-            isActive={animationPhase >= 1} // Show in phase 1 or above
-            shrink={true}
-            initialDelay={0.3}
-            scale={2.5}
           />
           
           <h1 className="text-4xl sm:text-6xl md:text-8xl xl:text-9xl font-display font-bold tracking-wider relative z-10 px-2">
