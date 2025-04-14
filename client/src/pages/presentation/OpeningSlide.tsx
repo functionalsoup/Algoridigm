@@ -16,15 +16,19 @@ export default function OpeningSlide() {
   const [showBackground, setShowBackground] = useState(false);
   
   useEffect(() => {
-    // New sequence: background first, then text, then button
-    // Show background elements immediately
+    // First just show the background and nothing else - let it glitch and rotate
     setShowBackground(true);
-    // Short delay for company name to appear after background starts
-    const companyTimer = setTimeout(() => setShowCompanyName(true), 1500);
-    // Longer delay for main title
-    const titleTimer = setTimeout(() => setShowTitle(true), 2800);
-    // Final element is the button
-    const buttonTimer = setTimeout(() => setShowButton(true), 4000);
+    
+    // Then after a significant delay, start fading in other elements
+    
+    // Company name appears after a long delay (3 seconds)
+    const companyTimer = setTimeout(() => setShowCompanyName(true), 3000);
+    
+    // Main ALGORIDIGM title with even longer delay (5 seconds)
+    const titleTimer = setTimeout(() => setShowTitle(true), 5000);
+    
+    // Button appears last, with the longest delay (7.5 seconds)
+    const buttonTimer = setTimeout(() => setShowButton(true), 7500);
     
     return () => {
       clearTimeout(companyTimer);
@@ -50,10 +54,14 @@ export default function OpeningSlide() {
         <Timer />
       </div>
       
-      {/* Background particles - only appear after text is shown */}
+      {/* Background particles - appear with background */}
       {showBackground && (
-        <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-20">
-          <BackgroundParticles count={20} pattern="mandala" colors="cyan-magenta" />
+        <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
+          <BackgroundParticles 
+            count={35} 
+            pattern="mandala" 
+            colors="cyan-magenta" 
+          />
         </div>
       )}
       

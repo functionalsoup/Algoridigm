@@ -42,34 +42,77 @@ export function RotatingMandelaBackground({
   // Create a glitch effect animation with random frames
   useEffect(() => {
     if (isActive && imageLoaded) {
-      // Initial main glitch
+      // Initial main glitch - more intense
       setGlitchActive(true);
-      setGlitchOffset({ x: 5, y: 3 }); // Initial offset
+      setGlitchOffset({ x: 8, y: 5 }); // Stronger initial offset
       
-      // Create random glitches at specific times
-      const glitchInterval = setInterval(() => {
-        // Random on/off
-        const isOn = Math.random() > 0.5;
+      // Create more intense glitches at the beginning
+      const intensiveGlitchInterval = setInterval(() => {
+        // More likely to glitch in the beginning
+        const isOn = Math.random() > 0.2; // 80% chance of glitching
         
         if (isOn) {
-          const offsetX = Math.random() * 12 - 6; // Random between -6 and 6
-          const offsetY = Math.random() * 12 - 6; // Random between -6 and 6
+          const offsetX = Math.random() * 20 - 10; // Random between -10 and 10 (more extreme)
+          const offsetY = Math.random() * 20 - 10; // Random between -10 and 10 (more extreme)
           setGlitchOffset({ x: offsetX, y: offsetY });
           setGlitchActive(true);
         } else {
           setGlitchActive(false);
         }
-      }, 80); // Fast glitching
+      }, 60); // Very fast glitching
       
-      // Stop after a while
-      const stopGlitch = setTimeout(() => {
-        clearInterval(glitchInterval);
-        setGlitchActive(false);
-      }, 1800);
+      // After a period, transition to more subtle glitching
+      const subtleGlitchTimer = setTimeout(() => {
+        clearInterval(intensiveGlitchInterval);
+        
+        // Create random glitches at specific times - more subtle
+        const subtleGlitchInterval = setInterval(() => {
+          // Random on/off
+          const isOn = Math.random() > 0.6; // 40% chance of glitching
+          
+          if (isOn) {
+            const offsetX = Math.random() * 8 - 4; // Random between -4 and 4 (more subtle)
+            const offsetY = Math.random() * 8 - 4; // Random between -4 and 4 (more subtle) 
+            setGlitchOffset({ x: offsetX, y: offsetY });
+            setGlitchActive(true);
+          } else {
+            setGlitchActive(false);
+          }
+        }, 120); // Slower glitching
+        
+        // Eventually reduce to occasional glitches
+        const occasionalGlitchTimer = setTimeout(() => {
+          clearInterval(subtleGlitchInterval);
+          
+          // Just occasional glitches
+          const occasionalGlitchInterval = setInterval(() => {
+            // Random on/off - rare glitches
+            const isOn = Math.random() > 0.85; // Only 15% chance of glitching
+            
+            if (isOn) {
+              const offsetX = Math.random() * 5 - 2.5; // Random between -2.5 and 2.5 (subtle)
+              const offsetY = Math.random() * 5 - 2.5; // Random between -2.5 and 2.5 (subtle)
+              setGlitchOffset({ x: offsetX, y: offsetY });
+              setGlitchActive(true);
+            } else {
+              setGlitchActive(false);
+            }
+          }, 200); // Very slow glitching
+          
+          return () => {
+            clearInterval(occasionalGlitchInterval);
+          };
+        }, 4000); // After 4 seconds of subtle glitches
+        
+        return () => {
+          clearInterval(subtleGlitchInterval);
+          clearTimeout(occasionalGlitchTimer);
+        };
+      }, 2500); // First 2.5 seconds are intense glitches
       
       return () => {
-        clearInterval(glitchInterval);
-        clearTimeout(stopGlitch);
+        clearInterval(intensiveGlitchInterval);
+        clearTimeout(subtleGlitchTimer);
       };
     }
   }, [isActive, imageLoaded]);
