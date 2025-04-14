@@ -45,7 +45,7 @@ export function PresentationLayout({
           count={bacteriaCount} 
           maxBacteria={maxBacteria} 
           containerRef={containerRef}
-          isActive={isActive && slideNumber > 0}
+          isActive={isActive && slideNumber > 0 && slideNumber < 3}
         />
         
         {showErrors && (
