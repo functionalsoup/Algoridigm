@@ -7,6 +7,7 @@ import RevealSlide from "./presentation/RevealSlide";
 import AboutUsSlide from "./presentation/AboutUsSlide";
 import RevealTransition from "@/components/presentation/RevealTransition";
 import BackgroundMusic from "@/components/presentation/BackgroundMusic";
+import MusicControls from "@/components/presentation/MusicControls";
 
 export default function Home() {
   const { currentSlide, goToSlide } = usePresentationContext();
@@ -58,6 +59,9 @@ export default function Home() {
     <div className="presentation-container relative w-full min-h-screen bg-corp-dark">
       {/* Background music component */}
       <BackgroundMusic />
+      
+      {/* Music controls */}
+      <MusicControls />
       
       <div className="absolute inset-0">
         <AnimatePresence mode="wait">

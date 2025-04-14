@@ -1,11 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
+import { audioEvents } from './MusicControls';
 
 export function AudioGenerator() {
   const audioContextRef = useRef<AudioContext | null>(null);
   const oscillatorRef = useRef<OscillatorNode | null>(null);
   const gainNodeRef = useRef<GainNode | null>(null);
+  const intervalRef = useRef<number | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
   
+  // Effect for initializing audio
   useEffect(() => {
     // Initialize audio context on first user interaction
     const handleUserInteraction = () => {
@@ -33,7 +37,7 @@ export function AudioGenerator() {
           oscillatorRef.current.start();
           
           // Add frequency modulation for interest
-          setInterval(() => {
+          intervalRef.current = window.setInterval(() => {
             if (oscillatorRef.current && Math.random() > 0.7) {
               const newFreq = 180 + Math.random() * 80;
               oscillatorRef.current.frequency.setValueAtTime(
@@ -60,10 +64,19 @@ export function AudioGenerator() {
       document.removeEventListener('click', handleUserInteraction);
       document.removeEventListener('keydown', handleUserInteraction);
       
+      // Clear interval
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+      
       // Stop and disconnect audio nodes
       if (oscillatorRef.current) {
-        oscillatorRef.current.stop();
-        oscillatorRef.current.disconnect();
+        try {
+          oscillatorRef.current.stop();
+          oscillatorRef.current.disconnect();
+        } catch (e) {
+          console.error('Error stopping oscillator:', e);
+        }
       }
       
       if (gainNodeRef.current) {
@@ -71,10 +84,34 @@ export function AudioGenerator() {
       }
       
       if (audioContextRef.current) {
-        audioContextRef.current.close();
+        audioContextRef.current.close().catch(e => {
+          console.error('Error closing audio context:', e);
+        });
       }
     };
   }, [isPlaying]);
+  
+  // Effect for handling mute/unmute
+  useEffect(() => {
+    const handleToggleMute = () => {
+      setIsMuted(prevMuted => !prevMuted);
+    };
+    
+    // Listen for mute toggle events
+    document.addEventListener('audio:toggleMute', handleToggleMute);
+    
+    return () => {
+      document.removeEventListener('audio:toggleMute', handleToggleMute);
+    };
+  }, []);
+  
+  // Effect to apply mute state changes
+  useEffect(() => {
+    if (gainNodeRef.current) {
+      // When muted, set gain to 0, otherwise restore to original value
+      gainNodeRef.current.gain.value = isMuted ? 0 : 0.02;
+    }
+  }, [isMuted]);
   
   return null; // This component doesn't render anything
 }
