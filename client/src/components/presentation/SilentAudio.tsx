@@ -48,35 +48,63 @@ export function SilentAudio() {
         
         // Create oscillator
         if (!oscillatorRef.current && audioContext) {
+          // Create a compressor for better dynamics control
+          const compressor = audioContext.createDynamicsCompressor();
+          compressor.threshold.value = -24;
+          compressor.knee.value = 30;
+          compressor.ratio.value = 12;
+          compressor.attack.value = 0.003;
+          compressor.release.value = 0.25;
+          compressor.connect(audioContext.destination);
+          
           // Create gain node for volume control
           const gainNode = audioContext.createGain();
-          gainNode.gain.value = 0.04; // Set volume to 4% - very quiet
-          gainNode.connect(audioContext.destination);
+          gainNode.gain.value = 0.015; // Set volume to 1.5% - extremely quiet
+          gainNode.connect(compressor);
           
-          // Create oscillator for ambient drone
+          // Create filter for a more tech-like sound
+          const filter = audioContext.createBiquadFilter();
+          filter.type = 'lowpass';
+          filter.frequency.value = 800;
+          filter.Q.value = 1.0;
+          filter.connect(gainNode);
+          
+          // Create oscillator for ambient drone - more tech-like sound
           oscillatorRef.current = audioContext.createOscillator();
-          oscillatorRef.current.type = 'sine';
-          oscillatorRef.current.frequency.value = 220; // A3
+          oscillatorRef.current.type = 'triangle'; // Use triangle for a more tech sound
+          oscillatorRef.current.frequency.value = 80; // Lower bass note
           
           // Add a slight detune for interest
-          oscillatorRef.current.detune.value = -10;
+          oscillatorRef.current.detune.value = -5;
           
-          // Connect oscillator to gain node
-          oscillatorRef.current.connect(gainNode);
+          // Connect oscillator to filter
+          oscillatorRef.current.connect(filter);
           
-          // Create a second oscillator for richness
+          // Create a second oscillator for harmonic texture
           const osc2 = audioContext.createOscillator();
           osc2.type = 'sine';
-          osc2.frequency.value = 220 * 1.5; // Perfect fifth up
-          osc2.detune.value = 5; // Slight detune
+          osc2.frequency.value = 80 * 3; // Add a higher harmonic
+          osc2.detune.value = 2; // Slight detune
+          
+          // Create a slight delay for the second oscillator
+          const delay = audioContext.createDelay();
+          delay.delayTime.value = 0.25; // 250ms delay creates a tech echo feel
+          
+          // Create a filter for the second oscillator
+          const filter2 = audioContext.createBiquadFilter();
+          filter2.type = 'highpass';
+          filter2.frequency.value = 1000;
+          filter2.Q.value = 2.0;
+          filter2.connect(delay);
           
           // Create gain node for second oscillator
           const gain2 = audioContext.createGain();
-          gain2.gain.value = 0.02; // Lower volume for harmonic
-          gain2.connect(audioContext.destination);
+          gain2.gain.value = 0.01; // Very low volume for harmonic
+          delay.connect(gain2);
+          gain2.connect(compressor);
           
-          // Connect second oscillator
-          osc2.connect(gain2);
+          // Connect second oscillator to its filter
+          osc2.connect(filter2);
           
           // Store the gain nodes globally
           const audioContextObj = {
@@ -99,8 +127,8 @@ export function SilentAudio() {
             audioContextObj.isMuted = !audioContextObj.isMuted;
             
             // Apply mute/unmute
-            gainNode.gain.value = audioContextObj.isMuted ? 0 : 0.04;
-            gain2.gain.value = audioContextObj.isMuted ? 0 : 0.02;
+            gainNode.gain.value = audioContextObj.isMuted ? 0 : 0.015;
+            gain2.gain.value = audioContextObj.isMuted ? 0 : 0.01;
           };
           
           // Listen for mute toggle events
