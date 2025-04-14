@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { usePresentationContext } from "@/lib/presentationContext";
 import Timer from "./Timer";
 import NavigationButton from "./NavigationButton";
-import { Bacteria, ErrorMessages } from "./BackgroundElements";
+import { ErrorMessages } from "./BackgroundElements";
 
 type PresentationLayoutProps = {
   children: React.ReactNode;
@@ -20,12 +20,9 @@ export function PresentationLayout({
   slideNumber = 0,
   showErrors = false,
 }: PresentationLayoutProps) {
-  const { currentSlide, goToSlide, timerSeconds, timerSpeed } = usePresentationContext();
+  const { currentSlide, goToSlide } = usePresentationContext();
   const containerRef = useRef<HTMLDivElement>(null);
   const isActive = currentSlide === slideNumber;
-
-  const maxBacteria = 500;
-  const bacteriaCount = Math.min(timerSeconds * 5, maxBacteria);
 
   return (
     <motion.div
@@ -41,12 +38,7 @@ export function PresentationLayout({
       </div>
 
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <Bacteria 
-          count={bacteriaCount} 
-          maxBacteria={maxBacteria} 
-          containerRef={containerRef}
-          isActive={isActive && slideNumber > 0 && slideNumber < 3}
-        />
+        {/* Bacteria animation removed as requested */}
         
         {showErrors && (
           <ErrorMessages 
