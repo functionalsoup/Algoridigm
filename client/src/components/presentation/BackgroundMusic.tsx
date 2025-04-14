@@ -1,114 +1,40 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { audioEvents } from './MusicControls';
 
 export function BackgroundMusic() {
-  const audioRef = useRef<HTMLAudioElement>(null);
   const [isMuted, setIsMuted] = useState(false);
-  const [autoplayFailed, setAutoplayFailed] = useState(false);
 
+  // Handle mute/unmute from MusicControls
   useEffect(() => {
-    // Handle mute/unmute from MusicControls
     const handleToggleMute = () => {
       setIsMuted(prev => !prev);
     };
     
     document.addEventListener('audio:toggleMute', handleToggleMute);
     
-    // Attempt autoplay on first load
-    const attemptAutoPlay = () => {
-      if (audioRef.current) {
-        const playPromise = audioRef.current.play();
-        
-        if (playPromise !== undefined) {
-          playPromise
-            .then(() => {
-              console.log('Autoplay successful');
-            })
-            .catch(error => {
-              console.warn('Autoplay failed:', error);
-              setAutoplayFailed(true);
-            });
-        }
-      }
-    };
-    
-    // Try to autoplay when component mounts
-    if (audioRef.current) {
-      attemptAutoPlay();
-    }
-    
-    // Cleanup
     return () => {
       document.removeEventListener('audio:toggleMute', handleToggleMute);
     };
   }, []);
   
-  // Setup click handlers to start audio if autoplay fails
-  useEffect(() => {
-    if (!autoplayFailed) return;
-    
-    const startAudioOnInteraction = () => {
-      if (audioRef.current) {
-        audioRef.current.play()
-          .then(() => {
-            console.log('Audio started after user interaction');
-            document.removeEventListener('click', startAudioOnInteraction);
-          })
-          .catch(err => {
-            console.error('Failed to play even after interaction:', err);
-          });
-      }
-    };
-    
-    document.addEventListener('click', startAudioOnInteraction);
-    
-    return () => {
-      document.removeEventListener('click', startAudioOnInteraction);
-    };
-  }, [autoplayFailed]);
-  
+  // Simple method - just embed the audio with HTML
   return (
-    <>
-      {/* Visible audio element for diagnostic purposes */}
+    <div className="fixed bottom-14 right-4 z-50 bg-black/50 p-2 rounded">
+      <p className="text-white text-xs mb-1">Background Music:</p>
       <audio 
-        ref={audioRef}
-        src="/audio/background-music.mp3"
+        controls
         loop
         muted={isMuted}
-        controls
-        style={{
-          position: 'fixed',
-          bottom: '60px',
-          right: '10px',
-          width: '250px',
-          zIndex: 1000,
-          background: 'rgba(0,0,0,0.5)',
-          borderRadius: '4px',
-          padding: '5px'
-        }}
-      />
-      
-      {/* If autoplay fails, show explicit play button */}
-      {autoplayFailed && (
-        <button 
-          onClick={() => audioRef.current?.play()}
-          style={{
-            position: 'fixed',
-            bottom: '100px',
-            right: '10px',
-            zIndex: 1001,
-            background: 'rgba(255,255,255,0.9)',
-            color: 'black',
-            border: 'none',
-            borderRadius: '4px',
-            padding: '8px 12px',
-            cursor: 'pointer'
-          }}
-        >
-          Play Music
-        </button>
-      )}
-    </>
+        autoPlay={false}
+        preload="auto"
+        controlsList="nodownload"
+        style={{ width: '280px' }}
+      >
+        <source src="/audio/background-music.mp3" type="audio/mp3" />
+        <source src="/audio/background-music.wav" type="audio/wav" />
+        Your browser does not support the audio element.
+      </audio>
+    </div>
   );
 }
 
