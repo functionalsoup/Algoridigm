@@ -155,7 +155,7 @@ export default function AboutUsSlide() {
             }}
           />
           
-          <div className="relative z-10 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
+          <div className="relative z-10">
             <motion.button
               onClick={handleRegisterClick}
               className="inline-block bg-gradient-to-r from-corp-cyan via-corp-orange to-corp-cyan text-white px-8 sm:px-12 py-4 sm:py-5 rounded-md text-xl sm:text-2xl font-bold uppercase tracking-widest transition-all duration-300 border-2 border-corp-orange/50 backdrop-blur-sm mb-4 md:mb-0 shadow-lg shadow-corp-orange/40"
@@ -199,54 +199,7 @@ export default function AboutUsSlide() {
               </motion.span>
             </motion.button>
             
-            {/* Download Treatment Preview Button */}
-            <motion.a
-              href="/assets/AlgoridigmTreatmentPreview.pdf"
-              download="Algoridigm_Treatment_Preview.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-gradient-to-r from-corp-cyan/90 to-corp-cyan/90 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md text-lg sm:text-xl font-bold uppercase tracking-wider transition-all duration-300 border-2 border-corp-cyan/50 backdrop-blur-sm shadow-lg shadow-corp-cyan/40"
-              whileHover={{ 
-                scale: 1.05,
-                boxShadow: "0 0 30px rgba(0, 255, 255, 0.7), 0 0 15px rgba(0, 255, 255, 0.5)"
-              }}
-              whileTap={{ scale: 0.95 }}
-              animate={{
-                boxShadow: [
-                  "0 0 10px rgba(0, 255, 255, 0.3), 0 0 5px rgba(0, 255, 255, 0.2)",
-                  "0 0 20px rgba(0, 255, 255, 0.5), 0 0 10px rgba(0, 255, 255, 0.4)",
-                  "0 0 10px rgba(0, 255, 255, 0.3), 0 0 5px rgba(0, 255, 255, 0.2)"
-                ]
-              }}
-              transition={{
-                boxShadow: {
-                  duration: 2.5,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  ease: "easeInOut"
-                }
-              }}
-            >
-              <motion.span
-                animate={{
-                  textShadow: [
-                    "0 0 5px rgba(255, 255, 255, 0.5)",
-                    "0 0 10px rgba(0, 255, 255, 0.8)",
-                    "0 0 5px rgba(0, 255, 255, 0.5)"
-                  ]
-                }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  ease: "easeInOut"
-                }}
-              >
-                Download Treatment
-              </motion.span>
-            </motion.a>
-            
-            <p className="opacity-80 mt-4 md:mt-6 mb-2 text-sm sm:text-base font-semibold text-corp-cyan absolute -bottom-12 left-0 right-0">Join us in this ongoing endeavor of collective creation.</p>
+            <p className="opacity-80 mt-4 md:mt-6 mb-2 text-sm sm:text-base font-semibold text-corp-cyan">Join us in this ongoing endeavor of collective creation.</p>
           </div>
         </div>
         

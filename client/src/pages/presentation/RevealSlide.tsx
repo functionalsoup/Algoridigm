@@ -160,14 +160,63 @@ export default function RevealSlide() {
           </div>
           
           <div className="mt-6 md:mt-8 text-center">
-            <Button 
-              id="register-button"
-              onClick={() => window.location.href = "/register"}
-              className="bg-gradient-to-r from-corp-cyan to-corp-orange hover:bg-corp-orange/90 text-white font-bold py-3 sm:py-4 px-6 sm:px-10 text-lg sm:text-xl shadow-lg shadow-corp-orange/40 uppercase tracking-widest"
-              size="lg"
-            >
-              Register Now
-            </Button>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
+              <Button 
+                id="register-button"
+                onClick={() => window.location.href = "/register"}
+                className="bg-gradient-to-r from-corp-cyan to-corp-orange hover:bg-corp-orange/90 text-white font-bold py-3 sm:py-4 px-6 sm:px-10 text-lg sm:text-xl shadow-lg shadow-corp-orange/40 uppercase tracking-widest"
+                size="lg"
+              >
+                Register Now
+              </Button>
+              
+              {/* Download Treatment Preview Button */}
+              <motion.a
+                href="/assets/AlgoridigmTreatmentPreview.pdf"
+                download="Algoridigm_Treatment_Preview.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-gradient-to-r from-corp-cyan/90 to-corp-cyan/90 hover:from-corp-cyan hover:to-corp-cyan text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md text-lg sm:text-xl font-bold uppercase tracking-wider transition-all duration-300 border-2 border-corp-cyan/50 backdrop-blur-sm shadow-lg shadow-corp-cyan/40"
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 0 30px rgba(0, 255, 255, 0.7), 0 0 15px rgba(0, 255, 255, 0.5)"
+                }}
+                whileTap={{ scale: 0.95 }}
+                animate={{
+                  boxShadow: [
+                    "0 0 10px rgba(0, 255, 255, 0.3), 0 0 5px rgba(0, 255, 255, 0.2)",
+                    "0 0 20px rgba(0, 255, 255, 0.5), 0 0 10px rgba(0, 255, 255, 0.4)",
+                    "0 0 10px rgba(0, 255, 255, 0.3), 0 0 5px rgba(0, 255, 255, 0.2)"
+                  ]
+                }}
+                transition={{
+                  boxShadow: {
+                    duration: 2.5,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    ease: "easeInOut"
+                  }
+                }}
+              >
+                <motion.span
+                  animate={{
+                    textShadow: [
+                      "0 0 5px rgba(255, 255, 255, 0.5)",
+                      "0 0 10px rgba(0, 255, 255, 0.8)",
+                      "0 0 5px rgba(0, 255, 255, 0.5)"
+                    ]
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    ease: "easeInOut"
+                  }}
+                >
+                  Download Treatment Preview
+                </motion.span>
+              </motion.a>
+            </div>
             <p className="mt-3 md:mt-4 text-xs sm:text-sm opacity-80">
               Join our collaborative theatre-making experience!
             </p>
