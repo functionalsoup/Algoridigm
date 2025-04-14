@@ -6,8 +6,8 @@ import CombinedSlide from "./presentation/CombinedSlide";
 import RevealSlide from "./presentation/RevealSlide";
 import AboutUsSlide from "./presentation/AboutUsSlide";
 import RevealTransition from "@/components/presentation/RevealTransition";
-import BackgroundMusic from "@/components/presentation/BackgroundMusic";
 import MusicControls from "@/components/presentation/MusicControls";
+import SilentAudio from "@/components/presentation/SilentAudio";
 
 export default function Home() {
   const { currentSlide, goToSlide } = usePresentationContext();
@@ -57,8 +57,8 @@ export default function Home() {
   
   return (
     <div className="presentation-container relative w-full min-h-screen bg-corp-dark">
-      {/* Background music component */}
-      <BackgroundMusic />
+      {/* Background music component that plays automatically */}
+      <SilentAudio />
       
       {/* Music controls */}
       <MusicControls />

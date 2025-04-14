@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import { Volume2, VolumeX } from 'lucide-react';
 import { motion } from 'framer-motion';
 
+// Create a custom global audio state
+let isMutedGlobal = false;
+
 // Create a custom event for controlling audio globally
 export const audioEvents = {
   toggleMute: new Event('audio:toggleMute'),
@@ -11,9 +14,32 @@ export function MusicControls() {
   const [isMuted, setIsMuted] = useState(false);
   
   const toggleMute = () => {
-    setIsMuted(!isMuted);
+    // Update local state
+    const newMutedState = !isMuted;
+    setIsMuted(newMutedState);
+    
+    // Update global state
+    isMutedGlobal = newMutedState;
+    
     // Dispatch the event for audio components to listen to
     document.dispatchEvent(audioEvents.toggleMute);
+    
+    // Attempt to find and control global AudioContext if it exists
+    try {
+      // This accesses the singleton AudioContext created in SilentAudio
+      const audioContexts = (window as any).__AUDIO_CONTEXTS__;
+      
+      if (audioContexts && audioContexts.length > 0) {
+        for (const ctx of audioContexts) {
+          if (ctx.gainNode) {
+            // Mute by setting gain to 0, or restore to default
+            ctx.gainNode.gain.value = newMutedState ? 0 : 0.04;
+          }
+        }
+      }
+    } catch (err) {
+      console.warn("Could not directly control audio context:", err);
+    }
   };
   
   return (
