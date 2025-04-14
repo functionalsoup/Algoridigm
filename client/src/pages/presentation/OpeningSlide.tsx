@@ -16,17 +16,19 @@ export default function OpeningSlide() {
   const [showBackground, setShowBackground] = useState(false);
   
   useEffect(() => {
-    // Sequence the animations with precise timing
-    const companyTimer = setTimeout(() => setShowCompanyName(true), 1000);
-    const titleTimer = setTimeout(() => setShowTitle(true), 3000);
-    // Add longer delay before showing the background to ensure text is visible first
-    const backgroundTimer = setTimeout(() => setShowBackground(true), 4200);
-    const buttonTimer = setTimeout(() => setShowButton(true), 5500);
+    // New sequence: background first, then text, then button
+    // Show background elements immediately
+    setShowBackground(true);
+    // Short delay for company name to appear after background starts
+    const companyTimer = setTimeout(() => setShowCompanyName(true), 1500);
+    // Longer delay for main title
+    const titleTimer = setTimeout(() => setShowTitle(true), 2800);
+    // Final element is the button
+    const buttonTimer = setTimeout(() => setShowButton(true), 4000);
     
     return () => {
       clearTimeout(companyTimer);
       clearTimeout(titleTimer);
-      clearTimeout(backgroundTimer);
       clearTimeout(buttonTimer);
     };
   }, []);
