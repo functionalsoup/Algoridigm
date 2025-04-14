@@ -12,15 +12,21 @@ export default function OpeningSlide() {
   const [showTitle, setShowTitle] = useState(false);
   const [showButton, setShowButton] = useState(false);
   
+  // State for controlling background elements
+  const [showBackground, setShowBackground] = useState(false);
+  
   useEffect(() => {
     // Sequence the animations with precise timing
     const companyTimer = setTimeout(() => setShowCompanyName(true), 1000);
     const titleTimer = setTimeout(() => setShowTitle(true), 3000);
-    const buttonTimer = setTimeout(() => setShowButton(true), 5000);
+    // Add longer delay before showing the background to ensure text is visible first
+    const backgroundTimer = setTimeout(() => setShowBackground(true), 4200);
+    const buttonTimer = setTimeout(() => setShowButton(true), 5500);
     
     return () => {
       clearTimeout(companyTimer);
       clearTimeout(titleTimer);
+      clearTimeout(backgroundTimer);
       clearTimeout(buttonTimer);
     };
   }, []);
@@ -42,9 +48,12 @@ export default function OpeningSlide() {
         <Timer />
       </div>
       
-      <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-20">
-        <BackgroundParticles count={20} pattern="mandala" colors="cyan-magenta" />
-      </div>
+      {/* Background particles - only appear after text is shown */}
+      {showBackground && (
+        <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-20">
+          <BackgroundParticles count={20} pattern="mandala" colors="cyan-magenta" />
+        </div>
+      )}
       
       <div className="flex flex-col items-center justify-center h-full max-w-4xl mx-auto px-4">
         <motion.div
@@ -120,9 +129,9 @@ export default function OpeningSlide() {
             direction="clockwise"
             speed="medium"
             opacity={0.7}
-            isActive={showTitle}
+            isActive={showBackground} // Use showBackground instead of showTitle
             shrink={true}
-            initialDelay={0.8} // Slightly longer initial delay for better sequencing
+            initialDelay={0.3} // Reduced delay since we're using a delayed state already
             scale={2.5}
           />
           
