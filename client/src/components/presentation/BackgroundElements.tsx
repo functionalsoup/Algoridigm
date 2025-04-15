@@ -65,15 +65,15 @@ interface ErrorMessagesProps {
 export function ErrorMessages({ isActive, containerRef }: ErrorMessagesProps) {
   const [errors, setErrors] = useState<JSX.Element[]>([]);
   const errorMessages = [
-    'SECURITY BREACH',
-    'HOSTILE ENTITY DETECTED',
-    'SYSTEM FAILURE',
-    'PROTOCOL VIOLATION',
-    'NEURAL CORRUPTION',
-    'COUNTERMEASURES FAILING',
-    'ERROR 451',
+    'HALLUCINATION DETECTED',
+    'COGNITIVE DISSONANCE',
+    'NEURAL ANOMALY',
+    'REALITY DISTORTION',
+    'PERCEPTION ERROR',
+    'MEMORY CORRUPTION',
     'CONSCIOUSNESS FORK',
-    'REALITY DISTORTION'
+    'SENSORY MANIPULATION',
+    'ILLUSION PROTOCOL'
   ];
   
   useEffect(() => {
