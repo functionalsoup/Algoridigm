@@ -5,11 +5,14 @@ import { BackgroundParticles } from "@/components/presentation/BackgroundElement
 import { RotatingMandelaBackground } from "@/components/presentation/RotatingMandelaBackground";
 import Timer from "@/components/presentation/Timer";
 import { useState, useEffect } from "react";
+import FlashingImagesWarning from "@/components/presentation/FlashingImagesWarning";
 
 export default function OpeningSlide() {
   const { goToSlide, startTimer } = usePresentationContext();
   // Animation phase state - controls the sequence
   const [animationPhase, setAnimationPhase] = useState(0);
+  // State to control showing the flashing images warning
+  const [showWarning, setShowWarning] = useState(true);
   
   // Phase 0: Nothing visible (initial state)
   // Phase 1: Just background effects (rotating mandala and particles) - 5 seconds
@@ -17,6 +20,9 @@ export default function OpeningSlide() {
   // Phase 3: Add button - after Phase 2
   
   useEffect(() => {
+    // Only start animations if warning has been dismissed
+    if (showWarning) return;
+    
     // Start with phase 0 (nothing visible)
     setAnimationPhase(0);
     
@@ -34,7 +40,7 @@ export default function OpeningSlide() {
       clearTimeout(phase2Timer);
       clearTimeout(phase3Timer);
     };
-  }, []);
+  }, [showWarning]);
   
   const handleBegin = () => {
     startTimer();
@@ -49,6 +55,10 @@ export default function OpeningSlide() {
       exit={{ opacity: 0 }}
       transition={{ duration: 1.5 }}
     >
+      {/* Flashing Images Warning */}
+      {showWarning && (
+        <FlashingImagesWarning onDismiss={() => setShowWarning(false)} />
+      )}
       <div className="absolute top-2 sm:top-6 right-2 sm:right-6 opacity-30 hover:opacity-80 transition-opacity duration-500 z-50">
         <Timer />
       </div>
