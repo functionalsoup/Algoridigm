@@ -9,7 +9,7 @@ type TransitionType =
   | 'slide-right'
   | 'scale' 
   | 'glitch' 
-  | 'system-breach' 
+  | 'hallucination-detected' 
   | 'orange-flash';
 
 interface DynamicTransitionProps {
@@ -82,7 +82,7 @@ export function DynamicTransition({
       };
       break;
       
-    case 'system-breach':
+    case 'hallucination-detected':
       initial = { opacity: 0 };
       animate = { opacity: 1 };
       exit = { 

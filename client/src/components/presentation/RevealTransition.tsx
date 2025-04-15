@@ -50,9 +50,9 @@ export function RevealTransition({ isRevealing }: RevealTransitionProps) {
             animate={{ scale: 1, filter: "blur(0px)" }}
             exit={{ scale: 1.2, filter: "blur(20px)" }}
             transition={{ duration: 0.6 }}
-            data-text="SYSTEM BREACH"
+            data-text="HALLUCINATION DETECTED"
           >
-            <span className="glitch relative z-10 inline-block">SYSTEM BREACH</span>
+            <span className="glitch relative z-10 inline-block">HALLUCINATION DETECTED</span>
             
             <motion.span
               className="absolute inset-0 text-corp-cyan"
@@ -66,7 +66,7 @@ export function RevealTransition({ isRevealing }: RevealTransitionProps) {
                 repeatType: "loop",
               }}
             >
-              SYSTEM BREACH
+              HALLUCINATION DETECTED
             </motion.span>
             
             <motion.span
@@ -82,7 +82,7 @@ export function RevealTransition({ isRevealing }: RevealTransitionProps) {
                 delay: 0.1,
               }}
             >
-              SYSTEM BREACH
+              HALLUCINATION DETECTED
             </motion.span>
           </motion.div>
           
@@ -93,21 +93,21 @@ export function RevealTransition({ isRevealing }: RevealTransitionProps) {
               animate={{ opacity: [0, 1, 0] }}
               transition={{ duration: 1.5, delay: 0.3 }}
             >
-              ERROR: Security breach detected_
+              ERROR: Neural pattern anomaly detected_
             </motion.div>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: [0, 1, 0] }}
               transition={{ duration: 1.5, delay: 0.8 }}
             >
-              WARNING: System firewall compromised_
+              WARNING: Reality distortion field activated_
             </motion.div>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: [0, 1, 0] }}
               transition={{ duration: 1.5, delay: 1.3 }}
             >
-              ALERT: Access protocol function_soup activated_
+              ALERT: Cognitive desynchronization in progress_
             </motion.div>
           </div>
         </motion.div>
