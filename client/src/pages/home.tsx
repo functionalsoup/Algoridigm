@@ -6,6 +6,8 @@ import CombinedSlide from "./presentation/CombinedSlide";
 import RevealSlide from "./presentation/RevealSlide";
 import AboutUsSlide from "./presentation/AboutUsSlide";
 import RevealTransition from "@/components/presentation/RevealTransition";
+import SpectreMusicPlayer from "@/components/presentation/SpectreMusicPlayer";
+import MusicControls from "@/components/presentation/MusicControls";
 
 export default function Home() {
   const { currentSlide, goToSlide } = usePresentationContext();
