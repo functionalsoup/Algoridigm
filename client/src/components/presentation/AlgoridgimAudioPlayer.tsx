@@ -23,9 +23,37 @@ export function AlgoridgimAudioPlayer({
   useEffect(() => {
     // Create audio element if it doesn't exist
     if (!audioRef.current) {
+      console.log('Creating audio element for algoridgim.wav');
+      
+      // Check if file exists
+      fetch('/audio/algoridgim.wav')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          console.log('Audio file exists and is accessible');
+        })
+        .catch(error => {
+          console.error('Audio file check failed:', error);
+        });
+      
       audioRef.current = new Audio('/audio/algoridgim.wav');
       audioRef.current.loop = true;
-      audioRef.current.volume = 0.15; // Set to 15% volume
+      audioRef.current.volume = 0.4; // Set to 40% volume for better audibility
+      
+      // Log when loaded
+      audioRef.current.addEventListener('canplaythrough', () => {
+        console.log('Audio file loaded and ready to play');
+      });
+      
+      // Log errors
+      audioRef.current.addEventListener('error', (e) => {
+        console.error('Audio error occurred:', e);
+        if (audioRef.current && audioRef.current.error) {
+          console.error('Error code:', audioRef.current.error.code);
+          console.error('Error message:', audioRef.current.error.message);
+        }
+      });
     }
     
     // Cleanup on unmount
@@ -121,41 +149,57 @@ export function AlgoridgimAudioPlayer({
   
   return (
     <motion.div
-      className={`fixed z-50 bg-corp-dark bg-opacity-50 backdrop-blur-sm border border-corp-cyan/50 p-3 rounded-lg flex gap-3 items-center ${getPositionClasses()}`}
+      className={`fixed z-50 bg-corp-dark bg-opacity-80 backdrop-blur-sm border-2 border-corp-cyan p-3 rounded-lg flex gap-3 items-center ${getPositionClasses()}`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.5 }}
+      whileHover={{ scale: 1.02 }}
     >
       <div className="text-xs text-corp-cyan flex-1">
-        <p className="font-bold">Wojciech Golczewski</p>
+        <p className="font-bold text-sm">Wojciech Golczewski</p>
         <p className="opacity-80">Algoridgim</p>
       </div>
       
       <motion.div 
-        className="cursor-pointer p-1 rounded-full bg-corp-dark/80"
+        className="cursor-pointer p-2 rounded-full bg-corp-dark hover:bg-corp-cyan/20"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         onClick={togglePlay}
       >
         {isPlaying ? (
-          <Pause className="w-5 h-5 text-corp-cyan" />
+          <Pause className="w-6 h-6 text-corp-cyan" />
         ) : (
-          <Play className="w-5 h-5 text-corp-cyan" />
+          <Play className="w-6 h-6 text-corp-cyan" />
         )}
       </motion.div>
       
       <motion.div 
-        className="cursor-pointer p-1 rounded-full bg-corp-dark/80"
+        className="cursor-pointer p-2 rounded-full bg-corp-dark hover:bg-corp-cyan/20"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         onClick={toggleMute}
       >
         {isMuted ? (
-          <VolumeX className="w-5 h-5 text-corp-orange" />
+          <VolumeX className="w-6 h-6 text-corp-orange" />
         ) : (
-          <Volume2 className="w-5 h-5 text-corp-cyan" />
+          <Volume2 className="w-6 h-6 text-corp-cyan" />
         )}
       </motion.div>
+      
+      {/* Fallback HTML audio element (hidden) */}
+      <audio 
+        className="hidden"
+        src="/audio/algoridgim.wav"
+        ref={(element) => {
+          // Only set this if our Audio API approach is not working
+          if (!audioRef.current && element) {
+            console.log('Using HTML5 audio element as fallback');
+            audioRef.current = element;
+          }
+        }}
+        loop
+        preload="auto"
+      />
     </motion.div>
   );
 }

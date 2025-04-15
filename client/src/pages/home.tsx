@@ -6,7 +6,7 @@ import CombinedSlide from "./presentation/CombinedSlide";
 import RevealSlide from "./presentation/RevealSlide";
 import AboutUsSlide from "./presentation/AboutUsSlide";
 import RevealTransition from "@/components/presentation/RevealTransition";
-import AlgoridgimAudioPlayer from "@/components/presentation/AlgoridgimAudioPlayer";
+import BasicAudioPlayer from "@/components/presentation/BasicAudioPlayer";
 
 export default function Home() {
   const { currentSlide, goToSlide } = usePresentationContext();
@@ -67,13 +67,8 @@ export default function Home() {
       
       <RevealTransition isRevealing={showRevealTransition} />
       
-      {/* Algoridgim Audio Player */}
-      <AlgoridgimAudioPlayer 
-        showControls={true}
-        position="bottom-right"
-        autoplayOnSlide={2}
-        currentSlide={currentSlide}
-      />
+      {/* Basic Audio Player */}
+      <BasicAudioPlayer position="bottom-right" />
       
       <div className="absolute bottom-6 left-6 text-xs opacity-50">
         J-Tech Industries © 2050
