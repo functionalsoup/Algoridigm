@@ -13,6 +13,7 @@ export default function Home() {
   const { currentSlide, goToSlide } = usePresentationContext();
   const [isRevealing, setIsRevealing] = useState(false);
   const [showRevealTransition, setShowRevealTransition] = useState(false);
+  const [autoplaySpectreMusic, setAutoplaySpectreMusic] = useState(false);
   
   // Handle the reveal transition when moving from slide 1 to 2
   useEffect(() => {
@@ -30,6 +31,9 @@ export default function Home() {
           
           // Show the transition effect
           setShowRevealTransition(true);
+          
+          // Start playing the Spectre music during the reveal transition
+          setAutoplaySpectreMusic(true);
           
           // After a short delay, show the reveal slide content
           setTimeout(() => {
@@ -55,6 +59,14 @@ export default function Home() {
     }
   }, [currentSlide, isRevealing, goToSlide]);
   
+  // Effect to control spectre music based on current slide
+  useEffect(() => {
+    // Start playing Spectre music on the reveal slide (slide 2)
+    if (currentSlide === 2 && !autoplaySpectreMusic) {
+      setAutoplaySpectreMusic(true);
+    }
+  }, [currentSlide, autoplaySpectreMusic]);
+  
   return (
     <div className="presentation-container relative w-full min-h-screen bg-corp-dark">
       <div className="absolute inset-0">
@@ -67,6 +79,16 @@ export default function Home() {
       </div>
       
       <RevealTransition isRevealing={showRevealTransition} />
+      
+      {/* Music controls */}
+      <MusicControls />
+      
+      {/* Spectre music player */}
+      <SpectreMusicPlayer 
+        autoplay={autoplaySpectreMusic}
+        showControls={true}
+        position="bottom-right"
+      />
       
       <div className="absolute bottom-6 left-6 text-xs opacity-50">
         J-Tech Industries © 2050

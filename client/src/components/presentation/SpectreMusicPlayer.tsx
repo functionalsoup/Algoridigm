@@ -49,9 +49,6 @@ export function SpectreMusicPlayer({
       // Log when audio is loaded
       audioRef.current.addEventListener('canplaythrough', () => {
         console.log('Spectre audio file loaded and ready to play');
-        if (autoplay) {
-          playAudio();
-        }
       });
       
       // Error handling
@@ -67,6 +64,17 @@ export function SpectreMusicPlayer({
         audioRef.current = null;
       }
     };
+  }, []);
+  
+  // Handle autoplay changes
+  useEffect(() => {
+    if (autoplay && audioRef.current) {
+      // Try to play the audio when autoplay is set to true
+      playAudio();
+    } else if (!autoplay && audioRef.current && isPlaying) {
+      // Pause the audio when autoplay is set to false and it's currently playing
+      pauseAudio();
+    }
   }, [autoplay]);
   
   // Play/pause functions
