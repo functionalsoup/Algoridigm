@@ -170,52 +170,40 @@ export default function RevealSlide() {
                 Register Now
               </Button>
               
-              {/* Download Treatment Preview Button */}
-              <motion.a
-                href="/assets/AlgoridigmTreatmentPreview.pdf"
-                download="Algoridigm_Treatment_Preview.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-gradient-to-r from-corp-cyan/90 to-corp-cyan/90 hover:from-corp-cyan hover:to-corp-cyan text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md text-lg sm:text-xl font-bold uppercase tracking-wider transition-all duration-300 border-2 border-corp-cyan/50 backdrop-blur-sm shadow-lg shadow-corp-cyan/40"
-                whileHover={{ 
-                  scale: 1.05,
-                  boxShadow: "0 0 30px rgba(0, 255, 255, 0.7), 0 0 15px rgba(0, 255, 255, 0.5)"
-                }}
-                whileTap={{ scale: 0.95 }}
-                animate={{
-                  boxShadow: [
-                    "0 0 10px rgba(0, 255, 255, 0.3), 0 0 5px rgba(0, 255, 255, 0.2)",
-                    "0 0 20px rgba(0, 255, 255, 0.5), 0 0 10px rgba(0, 255, 255, 0.4)",
-                    "0 0 10px rgba(0, 255, 255, 0.3), 0 0 5px rgba(0, 255, 255, 0.2)"
-                  ]
-                }}
-                transition={{
-                  boxShadow: {
-                    duration: 2.5,
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    ease: "easeInOut"
-                  }
-                }}
-              >
-                <motion.span
+              {/* Download Treatment Preview Button - Disabled with Coming Soon */}
+              <div className="flex flex-col items-center">
+                <motion.div 
+                  className="text-corp-cyan text-xs sm:text-sm font-medium mb-1 sm:mb-2"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  COMING SOON
+                </motion.div>
+                <motion.button
+                  disabled
+                  className="inline-block bg-gradient-to-r from-corp-cyan/30 to-corp-cyan/30 text-white/70 px-6 sm:px-8 py-3 sm:py-4 rounded-md text-lg sm:text-xl font-bold uppercase tracking-wider transition-all duration-300 border-2 border-corp-cyan/20 backdrop-blur-sm shadow-lg shadow-corp-cyan/20 cursor-not-allowed opacity-80"
                   animate={{
-                    textShadow: [
-                      "0 0 5px rgba(255, 255, 255, 0.5)",
-                      "0 0 10px rgba(0, 255, 255, 0.8)",
-                      "0 0 5px rgba(0, 255, 255, 0.5)"
+                    boxShadow: [
+                      "0 0 5px rgba(0, 255, 255, 0.1), 0 0 3px rgba(0, 255, 255, 0.1)",
+                      "0 0 10px rgba(0, 255, 255, 0.2), 0 0 5px rgba(0, 255, 255, 0.2)",
+                      "0 0 5px rgba(0, 255, 255, 0.1), 0 0 3px rgba(0, 255, 255, 0.1)"
                     ]
                   }}
                   transition={{
-                    duration: 1.5,
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    ease: "easeInOut"
+                    boxShadow: {
+                      duration: 2.5,
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      ease: "easeInOut"
+                    }
                   }}
                 >
-                  Download Treatment Preview
-                </motion.span>
-              </motion.a>
+                  <motion.span>
+                    Download Treatment Preview
+                  </motion.span>
+                </motion.button>
+              </div>
             </div>
             <p className="mt-3 md:mt-4 text-xs sm:text-sm opacity-80">
               Join our collaborative theatre-making experience!
