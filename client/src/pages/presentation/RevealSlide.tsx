@@ -4,7 +4,7 @@ import { usePresentationContext } from "@/lib/presentationContext";
 import PresentationLayout from "@/components/presentation/PresentationLayout";
 import NavigationButton from "@/components/presentation/NavigationButton";
 import { RotatingMandelaBackground } from "@/components/presentation/RotatingMandelaBackground";
-import { Button } from "@/components/ui/button";
+import { ArrowRight, Calendar, HelpCircle, Users, Zap } from "lucide-react";
 
 export default function RevealSlide() {
   const { goToSlide } = usePresentationContext();
@@ -13,20 +13,35 @@ export default function RevealSlide() {
   const handleAboutClick = () => {
     setAnimateOut(true);
     setTimeout(() => {
-      goToSlide(3); // Updated from 4 to 3 since we eliminated a slide
+      goToSlide(3); // Go to About slide
     }, 800);
   };
 
   return (
-    <PresentationLayout slideNumber={2} showNextButton={false}>
-      {/* Rotating Mandela background with counterclockwise rotation */}
+    <PresentationLayout slideNumber={2} showNextButton={false} showErrors={true}>
+      {/* Rotating Mandela background as a simulated AI hallucination */}
       <RotatingMandelaBackground 
-        direction="counterclockwise"
+        direction="clockwise"
         speed="slow"
-        scale={2}
-        opacity={0.1}
+        scale={2.2}
+        opacity={0.2}
         initialDelay={0.5}
+        isActive={true}
       />
+      
+      {/* Background Grid Pattern */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJncmlkIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0gMjAgMCBMIDAgMCAwIDIwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMCwxNjIsMjU1LDAuMDIpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')]
+         mix-blend-mode-multiply pointer-events-none opacity-60"></div>
+      
+      {/* Warning Banner - AI Hallucination */}
+      <motion.div
+        className="absolute top-0 left-0 right-0 bg-gradient-to-r from-[#ff2a6d]/90 to-[#ff2a6d]/70 text-black py-1.5 text-xs font-medium text-center"
+        initial={{ y: -30 }}
+        animate={{ y: 0 }}
+        transition={{ delay: 0.2, duration: 0.4 }}
+      >
+        <span className="tracking-wider">⚠️ HALLUCINATION DETECTED IN NEURAL FRAMEWORK ⚠️</span>
+      </motion.div>
       
       <motion.div
         id="reveal-slide"
@@ -34,191 +49,220 @@ export default function RevealSlide() {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
-        className="px-2 md:px-0"
+        className="px-4 md:px-6 py-6 relative z-20 max-w-5xl mx-auto"
       >
-        <motion.h2 
-          className="text-3xl sm:text-4xl md:text-6xl font-display font-bold mb-4 md:mb-6 text-center"
-          data-text="functional_soup"
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <span className="glitch relative z-10 inline-block text-corp-cyan" data-text="functional_soup">
-            functional_soup
-          </span>
-          
-          <motion.span
-            className="absolute inset-0 text-corp-orange opacity-0"
-            animate={{
-              x: [0, -3, 0, 3, 0],
-              opacity: [0, 0.3, 0, 0.3, 0],
-            }}
-            transition={{
-              duration: 0.3,
-              repeat: Infinity,
-              repeatType: "loop",
-              repeatDelay: 4,
-            }}
-          >
-            functional_soup
-          </motion.span>
-          
-          <motion.span
-            className="absolute inset-0 text-corp-green opacity-0"
-            animate={{
-              x: [0, 3, 0, -3, 0],
-              opacity: [0, 0.3, 0, 0.3, 0],
-            }}
-            transition={{
-              duration: 0.3,
-              repeat: Infinity,
-              repeatType: "loop",
-              repeatDelay: 4,
-              delay: 0.15,
-            }}
-          >
-            functional_soup
-          </motion.span>
-        </motion.h2>
-        
-        <motion.h3 
-          className="text-xl sm:text-2xl font-display text-center mb-6 md:mb-10 text-corp-cyan"
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          Summer Devised Theatre Workshop
-        </motion.h3>
-        
+        {/* "Glitching" J-Tech Industries Header */}
         <motion.div 
-          className="bg-corp-bg/40 backdrop-blur-md rounded-lg border border-corp-cyan/40 p-4 sm:p-6 md:p-8 mb-6 md:mb-10"
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ 
-            y: 0, 
-            opacity: 1,
-            transition: { delay: 0.2, duration: 0.5 }
-          }}
-          exit={{ 
-            y: -20, 
-            opacity: 0,
-            backgroundColor: "rgba(255, 77, 0, 0.2)",
-            filter: "brightness(1.5)",
-            transition: { duration: 0.5 }
-          }}
+          className="text-center mb-10"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <h3 className="text-xl sm:text-2xl font-display font-semibold mb-3 md:mb-4 text-corp-orange">Join Us for ALGORIDIGM</h3>
-          <p className="mb-4 md:mb-6 text-sm sm:text-base">We're beginning the process of devising an adaptation of Sophie Treadwell's MACHINAL! We need Actor/Performers, Designers, Techs, Visual Artists, and more! All skill and experience levels are welcome. Innovation and collaboration are required.</p>
+          <div className="relative inline-block">
+            <motion.div
+              className="absolute -top-1 -left-1 text-[#ff2a6d]/80 opacity-70 blur-[0.3px]"
+              animate={{
+                opacity: [0.5, 0.7, 0.5],
+                x: [0, -1, 0],
+                y: [0, 1, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
+            >
+              J-TECH INDUSTRIES
+            </motion.div>
+            <h2 className="text-4xl md:text-5xl font-display font-bold tracking-wider text-[#00a2ff]">
+              J-TECH INDUSTRIES
+            </h2>
+          </div>
           
-          <div className="flex flex-col md:flex-row gap-4 md:gap-8">
-            <div className="md:w-1/2">
-              <h4 className="text-lg sm:text-xl font-display font-semibold mb-2 text-corp-cyan">What We Need</h4>
-              <ul className="space-y-1 sm:space-y-2 text-sm sm:text-base">
-                <li className="flex items-start">
-                  <span className="text-corp-orange mr-2 shrink-0">→</span>
-                  <span>Actors & Performers</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-corp-green mr-2 shrink-0">→</span>
-                  <span>Designers (set, costume, light, sound)</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-corp-orange mr-2 shrink-0">→</span>
-                  <span>Technical crew</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-corp-green mr-2 shrink-0">→</span>
-                  <span>Visual artists</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-corp-orange mr-2 shrink-0">→</span>
-                  <span>Writers & Dramaturgs</span>
-                </li>
-              </ul>
+          <div className="h-0.5 bg-gradient-to-r from-transparent via-[#00a2ff] to-transparent w-full max-w-lg mx-auto my-3"></div>
+          
+          <div className="text-xl text-white/80 mt-2 font-display">NEURAL PATTERN: ALGORIDIGM</div>
+        </motion.div>
+        
+        {/* Main Content Panel with Futuristic Design */}
+        <motion.div 
+          className="bg-[#0c0c14]/80 border border-[#1a3a59] rounded-2xl p-5 sm:p-7 backdrop-blur-md mb-8 relative"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+        >
+          {/* Simulated hologram effect */}
+          <div className="absolute inset-0 pointer-events-none">
+            <motion.div 
+              className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00a2ff]/80 to-transparent"
+              animate={{ opacity: [0.3, 0.7, 0.3] }}
+              transition={{ duration: 3, repeat: Infinity }}
+            />
+            <motion.div 
+              className="absolute top-0 bottom-0 left-0 w-px bg-gradient-to-b from-transparent via-[#00a2ff]/80 to-transparent"
+              animate={{ opacity: [0.3, 0.7, 0.3] }}
+              transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
+            />
+          </div>
+          
+          {/* Content Header */}
+          <div className="mb-6">
+            <div className="flex items-center mb-1">
+              <div className="h-4 w-4 bg-[#00a2ff] rounded-full mr-3 animate-pulse"></div>
+              <h3 className="text-xl sm:text-2xl font-display font-semibold text-white">
+                THEATRE WORKSHOP TRAINING SEQUENCE
+              </h3>
             </div>
-            
-            <div className="md:w-1/2 mt-4 md:mt-0">
-              <h4 className="text-lg sm:text-xl font-display font-semibold mb-2 text-corp-cyan">Important Details</h4>
-              <ul className="space-y-1 sm:space-y-2 text-sm sm:text-base">
-                <li className="flex items-start">
-                  <span className="text-corp-green mr-2 shrink-0">→</span>
-                  <span>18+ only due to mature themes</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-corp-orange mr-2 shrink-0">→</span>
-                  <span>All experience levels welcome</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-corp-green mr-2 shrink-0">→</span>
-                  <span>Multiple roles and positions available</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-corp-orange mr-2 shrink-0">→</span>
-                  <span>Flexible scheduling: we have lives but we make it work</span>
-                </li>
-              </ul>
+            <div className="pl-7 text-white/60 text-sm border-l border-[#1a3a59] ml-[7px]">
+              Adaptation of Sophie Treadwell's "MACHINAL" | Summer 2025
             </div>
           </div>
           
-          <div className="mt-6 md:mt-8 text-center">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
-              <Button 
-                id="register-button"
-                onClick={() => window.location.href = "/register"}
-                className="bg-gradient-to-r from-corp-cyan to-corp-orange hover:bg-corp-orange/90 text-white font-bold py-3 sm:py-4 px-6 sm:px-10 text-lg sm:text-xl shadow-lg shadow-corp-orange/40 uppercase tracking-widest"
-                size="lg"
-              >
-                Register Now
-              </Button>
+          <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
+            <div className="lg:w-3/5">
+              <div className="text-white/90 space-y-4 mb-6">
+                <p>
+                  We're beginning the process of devising an experimental adaptation of Sophie Treadwell's MACHINAL. This creative collaboration requires diverse talent working together in an innovative environment.
+                </p>
+                <p>
+                  Those selected will be invited to an <span className="text-[#00a2ff] font-medium">in-person pitch meeting</span> to discuss the project in detail and explore collaborative possibilities.
+                </p>
+              </div>
               
-              {/* Download Treatment Preview Button - Disabled with Coming Soon */}
-              <div className="flex flex-col items-center">
-                <motion.div 
-                  className="text-corp-cyan text-xs sm:text-sm font-medium mb-1 sm:mb-2"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.2 }}
-                >
-                  COMING SOON
-                </motion.div>
-                <motion.button
-                  disabled
-                  className="inline-block bg-gradient-to-r from-corp-cyan/30 to-corp-cyan/30 text-white/70 px-6 sm:px-8 py-3 sm:py-4 rounded-md text-lg sm:text-xl font-bold uppercase tracking-wider transition-all duration-300 border-2 border-corp-cyan/20 backdrop-blur-sm shadow-lg shadow-corp-cyan/20 cursor-not-allowed opacity-80"
-                  animate={{
-                    boxShadow: [
-                      "0 0 5px rgba(0, 255, 255, 0.1), 0 0 3px rgba(0, 255, 255, 0.1)",
-                      "0 0 10px rgba(0, 255, 255, 0.2), 0 0 5px rgba(0, 255, 255, 0.2)",
-                      "0 0 5px rgba(0, 255, 255, 0.1), 0 0 3px rgba(0, 255, 255, 0.1)"
-                    ]
-                  }}
-                  transition={{
-                    boxShadow: {
-                      duration: 2.5,
-                      repeat: Infinity,
-                      repeatType: "reverse",
-                      ease: "easeInOut"
-                    }
-                  }}
-                >
-                  <motion.span>
-                    Download Treatment Preview
-                  </motion.span>
-                </motion.button>
+              {/* Features Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <div className="bg-[#0a0a14] border border-[#1a3a59] p-4 rounded-xl">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="bg-[#00a2ff]/20 p-2 rounded-lg">
+                      <Users size={18} className="text-[#00a2ff]" />
+                    </div>
+                    <h4 className="text-[#00a2ff] font-medium">Creative Team</h4>
+                  </div>
+                  <ul className="space-y-2 text-sm text-white/80">
+                    <li className="flex items-start">
+                      <span className="text-[#ff2a6d] mr-2 mt-1">■</span>
+                      <span>Actors & Performers</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#00a2ff] mr-2 mt-1">■</span>
+                      <span>Designers (set, costume, light)</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#ff2a6d] mr-2 mt-1">■</span>
+                      <span>Technical crew</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#00a2ff] mr-2 mt-1">■</span>
+                      <span>Writers & Dramaturgs</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="bg-[#0a0a14] border border-[#1a3a59] p-4 rounded-xl">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="bg-[#00a2ff]/20 p-2 rounded-lg">
+                      <Calendar size={18} className="text-[#00a2ff]" />
+                    </div>
+                    <h4 className="text-[#00a2ff] font-medium">Program Details</h4>
+                  </div>
+                  <ul className="space-y-2 text-sm text-white/80">
+                    <li className="flex items-start">
+                      <span className="text-[#00a2ff] mr-2 mt-1">■</span>
+                      <span>18+ only (mature themes)</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#ff2a6d] mr-2 mt-1">■</span>
+                      <span>All experience levels welcome</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#00a2ff] mr-2 mt-1">■</span>
+                      <span>Flexible scheduling available</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#ff2a6d] mr-2 mt-1">■</span>
+                      <span>In-person creative collaboration</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-            <p className="mt-3 md:mt-4 text-xs sm:text-sm opacity-80">
-              Join our collaborative theatre-making experience!
-            </p>
+            
+            {/* Registration Panel */}
+            <div className="lg:w-2/5 flex flex-col justify-start">
+              <div className="bg-gradient-to-b from-[#0c1623] to-[#07080f] border border-[#1a3a59] rounded-xl p-5 relative overflow-hidden">
+                {/* Simulated data stream background effect */}
+                <motion.div 
+                  className="absolute inset-0 opacity-10 pointer-events-none"
+                  animate={{ 
+                    backgroundPosition: ["0% 0%", "100% 100%"],
+                  }}
+                  transition={{ 
+                    duration: 15,
+                    repeat: Infinity,
+                    repeatType: "reverse"
+                  }}
+                  style={{
+                    backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCI+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzAwMDAxMCIvPgogIDxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwYTJmZiIgc3Ryb2tlLXdpZHRoPSIwLjUiPgogICAgPHBhdGggZD0iTTEyLDUgTDEyLDE1IiBvcGFjaXR5PSIwLjQiIC8+CiAgICA8cGF0aCBkPSJNMjUsMTAgTDM1LDEwIiBvcGFjaXR5PSIwLjQiIC8+CiAgICA8cGF0aCBkPSJNMTMsMzAgTDEzLDQwIiBvcGFjaXR5PSIwLjQiIC8+CiAgICA8cGF0aCBkPSJNNDMsMjUgTDQzLDQ1IiBvcGFjaXR5PSIwLjQiIC8+CiAgICA8cGF0aCBkPSJNMzMsMzAgTDQwLDMwIiBvcGFjaXR5PSIwLjQiIC8+CiAgICA8cGF0aCBkPSJNNSwzNSBMMTAsMzUiIG9wYWNpdHk9IjAuNCIgLz4KICA8L2c+Cjwvc3ZnPg==')",
+                  }}
+                />
+                
+                <h3 className="text-xl font-display text-[#00a2ff] mb-4 flex items-center">
+                  <Zap size={20} className="mr-2" />
+                  REGISTRATION PORTAL
+                </h3>
+                
+                <div className="flex flex-col justify-center p-3 bg-[#000a14]/40 border border-[#1a3a59]/50 rounded-lg mb-5">
+                  <div className="text-white/80 text-sm mb-3">
+                    Register now to be considered for the ALGORIDIGM workshop and to receive an invitation to our in-person pitch meeting.
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="w-2 h-2 rounded-full bg-[#00a2ff] animate-pulse"></div>
+                    <div className="text-xs text-white/50">AWAITING USER INPUT</div>
+                  </div>
+                </div>
+                
+                <motion.button
+                  onClick={() => window.location.href = "/register"}
+                  className="w-full bg-gradient-to-r from-[#00a2ff] to-[#0076be] text-white font-bold py-3 px-6 rounded-lg shadow-lg shadow-[#00a2ff]/20 uppercase tracking-wider flex items-center justify-center gap-2"
+                  whileHover={{ 
+                    scale: 1.03,
+                    boxShadow: "0 0 20px rgba(0, 162, 255, 0.4)"
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <span>Register for Pitch Meeting</span>
+                  <ArrowRight size={18} />
+                </motion.button>
+                
+                {/* Download Preview - Coming Soon */}
+                <div className="mt-5">
+                  <div className="text-[#00a2ff] text-xs font-medium mb-2 text-center">
+                    COMING SOON
+                  </div>
+                  <button
+                    disabled
+                    className="w-full bg-[#0c1623] border border-[#1a3a59] text-white/60 font-medium py-2.5 px-4 rounded-lg tracking-wide cursor-not-allowed flex items-center justify-center gap-2"
+                  >
+                    <span>Download Treatment Preview</span>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </motion.div>
         
         <motion.div 
-          className="text-center mt-10 mb-8"
+          className="text-center mt-10 mb-4"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.5 }}
+          transition={{ delay: 0.7 }}
         >
           <NavigationButton onClick={handleAboutClick} variant="about">
-            About functional_soup
+            <div className="flex items-center gap-2">
+              <HelpCircle size={16} />
+              <span>About functional_soup</span>
+            </div>
           </NavigationButton>
         </motion.div>
       </motion.div>
