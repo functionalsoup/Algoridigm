@@ -125,7 +125,7 @@ export default function RevealSlide() {
                   We're beginning the process of devising an experimental adaptation of Sophie Treadwell's MACHINAL. This creative collaboration requires diverse talent working together in an innovative environment.
                 </p>
                 <p>
-                  Those selected will be invited to an <span className="text-[#00a2ff] font-medium">in-person pitch meeting</span> to discuss the project in detail and explore collaborative possibilities.
+                  <span className="text-[#00a2ff] font-medium">Registration is not a commitment</span> to the workshop but simply expresses your interest. Registered individuals will be invited to an <span className="text-[#ff2a6d] font-medium">in-person pitch meeting</span> for a fuller description of MACHINAL and our planned adaptation.
                 </p>
               </div>
               
@@ -213,12 +213,16 @@ export default function RevealSlide() {
                 
                 <div className="flex flex-col justify-center p-3 bg-[#000a14]/40 border border-[#1a3a59]/50 rounded-lg mb-5">
                   <div className="text-white/80 text-sm mb-3">
-                    Register now to be considered for the ALGORIDIGM workshop and to receive an invitation to our in-person pitch meeting.
+                    Register for our <span className="text-[#ff2a6d] font-medium">in-person pitch meeting</span> to learn more about MACHINAL and our adaptation plan. Registration is only a sign of interest, not a commitment to the full workshop.
                   </div>
                   
-                  <div className="flex items-center gap-2 mb-4">
+                  <div className="flex items-center gap-2 mb-1">
                     <div className="w-2 h-2 rounded-full bg-[#00a2ff] animate-pulse"></div>
                     <div className="text-xs text-white/50">AWAITING USER INPUT</div>
+                  </div>
+                  
+                  <div className="text-white/50 text-xs italic">
+                    All registered participants will receive details for the pitch meeting.
                   </div>
                 </div>
                 
