@@ -156,7 +156,7 @@ function renderSymbol(symbol: RotatingSymbol) {
               backgroundColor: color,
               position: 'absolute',
               left: '35%',
-              boxShadow: `0 0 ${size/8}px ${color}`
+              boxShadow: `0 0 ${size/5}px ${color}, 0 0 ${size/3}px ${color.replace(/[^,]+\)/, '0.3)')}`
             }}
           />
           <div 
@@ -182,7 +182,7 @@ function renderSymbol(symbol: RotatingSymbol) {
               clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)',
               backgroundColor: color,
               border: `1px solid ${color.replace(/[^,]+\)/, '1)')}`,
-              boxShadow: `0 0 ${size/8}px ${color}`
+              boxShadow: `0 0 ${size/5}px ${color}, 0 0 ${size/3}px ${color.replace(/[^,]+\)/, '0.3)')}`
             }}
           />
         </div>
