@@ -99,7 +99,28 @@ export default function CEOSlide() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6 }}
             >
-              <h3 className="text-2xl font-display font-semibold mb-4 text-corp-cyan">Relentless Innovation</h3>
+              <h3 className="text-2xl font-display font-semibold mb-4 text-corp-cyan">Relentless 
+                <motion.span 
+                  className="text-[#ff2a6d]/80 text-lg inline-block ml-1 relative" 
+                  style={{ fontFamily: 'monospace' }}
+                  animate={{ 
+                    x: [0, -2, 1, -1, 0],
+                    opacity: [0.7, 0.8, 0.5, 0.9, 0.7],
+                    textShadow: [
+                      "0 0 3px rgba(255, 42, 109, 0.6), 0 0 6px rgba(255, 42, 109, 0.3)",
+                      "0 0 5px rgba(255, 42, 109, 0.8), 0 0 10px rgba(255, 42, 109, 0.4)",
+                      "0 0 3px rgba(255, 42, 109, 0.6), 0 0 6px rgba(255, 42, 109, 0.3)",
+                    ]
+                  }}
+                  transition={{
+                    duration: 0.3,
+                    repeat: Infinity,
+                    repeatType: "loop",
+                  }}
+                >
+                  *@#$!^ &lt;NEURAL_ANOMALY_DETECTED&gt; %^&*!@
+                </motion.span>
+              </h3>
               <p className="mb-4">George H. Jones abandoned a promising academic career to found J-Tech Industries in 2032. His controversial approach to quantum neural networks and consciousness mapping has divided the scientific community while attracting billions in venture capital.</p>
             </motion.div>
             
