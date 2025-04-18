@@ -106,10 +106,7 @@ export default function OpeningSlide() {
         <Timer />
       </div>
       
-      {/* Error/Hallucination Messages in the background - appear in phase 3 */}
-      {animationPhase >= 3 && (
-        <ErrorMessages isActive={true} containerRef={containerRef} />
-      )}
+      {/* Error/Hallucination Messages removed as requested */}
       
       {/* ROTATING MANDALA - Positioned behind everything - appears in phase 3 */}
       {animationPhase >= 3 && (
