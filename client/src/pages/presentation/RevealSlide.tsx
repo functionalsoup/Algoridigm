@@ -222,12 +222,12 @@ export default function RevealSlide() {
                   <h4 className="text-[#00a2ff] font-medium">Next Steps</h4>
                 </div>
                 <p className="text-white/80 text-sm mb-0">
-                  Register for our <span className="text-[#ff2a6d] font-medium">in-person pitch meeting</span> to learn more about MACHINAL and our adaptation plans. Registration simply expresses interest and is not a commitment to the workshop.
+                  Contact us about our <span className="text-[#ff2a6d] font-medium">in-person pitch meeting</span> to learn more about MACHINAL and our adaptation plans. Reaching out simply expresses interest and is not a commitment to the workshop.
                 </p>
               </div>
             </div>
             
-            {/* Registration Panel */}
+            {/* Contact Panel */}
             <div className="lg:w-2/5 flex flex-col justify-start">
               <div className="bg-gradient-to-b from-[#0c1623] to-[#07080f] border border-[#1a3a59] rounded-xl p-5 relative overflow-hidden">
                 {/* Simulated data stream background effect */}
@@ -248,13 +248,13 @@ export default function RevealSlide() {
                 
                 <h3 className="text-xl font-display text-[#00a2ff] mb-4 flex items-center">
                   <Zap size={20} className="mr-2" />
-                  REGISTRATION
+                  CONTACT INFO
                 </h3>
                 
                 <div className="flex flex-col justify-center p-3 bg-[#000a14]/40 border border-[#1a3a59]/50 rounded-lg mb-5">
                   <div className="text-white/80 text-sm space-y-3">
                     <p className="mb-2">
-                      Registration portal is active for the <span className="text-[#ff2a6d] font-medium">in-person pitch meeting</span>. Express your interest today.
+                      Contact portal is active for the <span className="text-[#ff2a6d] font-medium">in-person pitch meeting</span>. Express your interest today.
                     </p>
                     
                     <div className="flex items-center justify-between">
@@ -276,7 +276,7 @@ export default function RevealSlide() {
                   }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <span>Register for Pitch Meeting</span>
+                  <span>Contact Us</span>
                   <ArrowRight size={18} />
                 </motion.button>
                 
