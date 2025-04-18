@@ -209,7 +209,7 @@ export default function CEOSlide() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#0066cc] mr-2">→</span>
-                    <span>@UHØR ØF "3X!NC!ØN ØR R@N$C3ND3NC3: WH¥ W3 MU$ B3CØM3 PØ$-HUM@N"</span>
+                    <span>@UHØR ØF "3X!NC!ØN ØR 3VØ1U!ØN: WH¥ W3 MU$ B3CØM3 PØ$-HUM@N"</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#0066cc] mr-2">→</span>
