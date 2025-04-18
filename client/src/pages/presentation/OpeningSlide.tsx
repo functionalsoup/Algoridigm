@@ -159,7 +159,7 @@ export default function OpeningSlide() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            {/* J-Tech Logo */}
+            {/* Updated Autonomous Training Module Header */}
             <motion.div 
               className="mb-4"
               initial={{ opacity: 0, scale: 0.9 }}
@@ -167,9 +167,28 @@ export default function OpeningSlide() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-wider text-[#00a2ff]">
-                J-TECH INDUSTRIES
+                AUTONOMOUS TRAINING MODULE
               </h1>
-              <div className="text-white/40 text-sm mt-1">AUTONOMOUS TRAINING DIVISION • EST. 2050</div>
+              <div className="text-white/40 text-sm mt-1 font-mono tracking-wide">J-TECH INDUSTRIES • EST. 2050</div>
+              
+              <motion.div 
+                className="mt-4"
+                animate={{ 
+                  y: [0, -5, 0],
+                  filter: [
+                    "drop-shadow(0 0 8px rgba(128, 255, 0, 0.5))",
+                    "drop-shadow(0 0 12px rgba(128, 255, 0, 0.7))",
+                    "drop-shadow(0 0 8px rgba(128, 255, 0, 0.5))"
+                  ]
+                }}
+                transition={{ 
+                  duration: 3, 
+                  repeat: Infinity,
+                  ease: "easeInOut" 
+                }}
+              >
+                <span className="text-xl md:text-2xl font-display font-bold text-[#80ff00]">ALGORIDIGM</span>
+              </motion.div>
             </motion.div>
             
             {/* Loading bar */}
@@ -243,7 +262,8 @@ export default function OpeningSlide() {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <div className="text-white/80 text-lg sm:text-xl mb-1">INITIALIZING NEURAL PATTERN</div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#00a2ff] font-display tracking-wide mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#80ff00] font-display tracking-wide mb-4" 
+                style={{ textShadow: "0 0 10px rgba(128, 255, 0, 0.5)" }}>
                 ALGORIDIGM
               </h2>
               

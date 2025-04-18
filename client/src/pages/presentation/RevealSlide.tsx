@@ -51,7 +51,7 @@ export default function RevealSlide() {
         transition={{ duration: 0.5 }}
         className="px-4 md:px-6 py-6 relative z-20 max-w-5xl mx-auto"
       >
-        {/* "Glitching" J-Tech Industries Header */}
+        {/* Updated Autonomous Training Module Header */}
         <motion.div 
           className="text-center mb-10"
           initial={{ opacity: 0, y: -10 }}
@@ -72,16 +72,35 @@ export default function RevealSlide() {
                 repeatType: "reverse",
               }}
             >
-              J-TECH INDUSTRIES
+              AUTONOMOUS TRAINING MODULE
             </motion.div>
             <h2 className="text-4xl md:text-5xl font-display font-bold tracking-wider text-[#00a2ff]">
-              J-TECH INDUSTRIES
+              AUTONOMOUS TRAINING MODULE
             </h2>
           </div>
           
           <div className="h-0.5 bg-gradient-to-r from-transparent via-[#00a2ff] to-transparent w-full max-w-lg mx-auto my-3"></div>
           
-          <div className="text-xl text-white/80 mt-2 font-display">NEURAL PATTERN: ALGORIDIGM</div>
+          <div className="text-sm text-white/60 mt-1 font-mono tracking-wide">J-TECH INDUSTRIES • EST. 2050</div>
+          
+          <motion.div 
+            className="mt-4"
+            animate={{ 
+              y: [0, -5, 0],
+              filter: [
+                "drop-shadow(0 0 8px rgba(128, 255, 0, 0.5))",
+                "drop-shadow(0 0 12px rgba(128, 255, 0, 0.7))",
+                "drop-shadow(0 0 8px rgba(128, 255, 0, 0.5))"
+              ]
+            }}
+            transition={{ 
+              duration: 3, 
+              repeat: Infinity,
+              ease: "easeInOut" 
+            }}
+          >
+            <span className="text-xl md:text-2xl font-display font-bold text-[#80ff00]">ALGORIDIGM</span>
+          </motion.div>
         </motion.div>
         
         {/* Main Content Panel with Futuristic Design */}
