@@ -164,7 +164,46 @@ export default function CEOSlide() {
                   />
                 </div>
               </h3>
-              <p className="mb-4">George H. Jones abandoned a promising academic career to found J-Tech Industries in 2032. His controversial approach to quantum neural networks and consciousness mapping has divided the scientific community while attracting billions in venture capital.</p>
+              <motion.div className="mb-4 relative">
+                {/* Initially visible text that will be replaced */}
+                <motion.p
+                  className="text-white/80 relative"
+                  initial={{ opacity: 1 }}
+                  animate={{ opacity: 0 }}
+                  transition={{ duration: 0.5, delay: 2 }}
+                >
+                  George H. Jones abandoned a promising academic career to found J-Tech Industries in 2032. His controversial approach to quantum neural networks and consciousness mapping has divided the scientific community while attracting billions in venture capital.
+                </motion.p>
+                
+                {/* Glitchy code/gibberish that replaces the text */}
+                <motion.pre
+                  className="text-[#ff2a6d]/90 font-mono text-sm absolute top-0 left-0 right-0 overflow-x-hidden"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 2.5 }}
+                >
+                  <motion.span
+                    animate={{ 
+                      x: [0, -2, 1, -1, 0],
+                      filter: ["blur(0px)", "blur(1px)", "blur(0px)"]
+                    }}
+                    transition={{ 
+                      duration: 0.3, 
+                      repeat: Infinity, 
+                      repeatType: "reverse" 
+                    }}
+                  >
+                    {`01100101 ERROR [REDACTED] //#define &lt;neural.h&gt;
+void* consciousness_map(uint64_t* id) {
+  if(id == NULL) return SEGFAULT;
+  //@#$ RUNTIME ERROR: CONSCIOUSNESS NOT FOUND $#@!/
+  return neural::pattern::corrupt(id);
+} 
+&lt;NEURAL_ANOMALY_DETECTED&gt; &lt;SESSION_CORRUPTED&gt;
+*&%!$@# CRITICAL SYSTEM FAILURE @!%^&*$`}
+                  </motion.span>
+                </motion.pre>
+              </motion.div>
             </motion.div>
             
             <motion.div
@@ -172,29 +211,96 @@ export default function CEOSlide() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.8 }}
             >
-              <h3 className="text-2xl font-display font-semibold mb-4 mt-8 text-corp-cyan">Achievements</h3>
-              <ul className="space-y-2">
-                <li className="flex items-start">
-                  <span className="text-corp-magenta mr-2">→</span>
-                  <span>Time Person of the Year (2041)</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-corp-magenta mr-2">→</span>
-                  <span>Pioneered Autonomous Colony Systems on Mars</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-corp-magenta mr-2">→</span>
-                  <span>Author of "Extinction or Transcendence: Why We Must Become Post-Human"</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-corp-magenta mr-2">→</span>
-                  <span>Launched first commercial neural lace after self-experimenting with prototypes</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-corp-magenta mr-2">→</span>
-                  <span>Known for working 20-hour days and sleeping on the factory floor</span>
-                </li>
-              </ul>
+              <motion.div>
+                {/* Initially visible header and list that will be replaced */}
+                <motion.div
+                  initial={{ opacity: 1 }}
+                  animate={{ opacity: 0 }}
+                  transition={{ duration: 0.7, delay: 3 }}
+                >
+                  <h3 className="text-2xl font-display font-semibold mb-4 mt-8 text-corp-cyan">Achievements</h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-start">
+                      <span className="text-corp-magenta mr-2">→</span>
+                      <span>Time Person of the Year (2041)</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-corp-magenta mr-2">→</span>
+                      <span>Pioneered Autonomous Colony Systems on Mars</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-corp-magenta mr-2">→</span>
+                      <span>Author of "Extinction or Transcendence: Why We Must Become Post-Human"</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-corp-magenta mr-2">→</span>
+                      <span>Launched first commercial neural lace after self-experimenting with prototypes</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-corp-magenta mr-2">→</span>
+                      <span>Known for working 20-hour days and sleeping on the factory floor</span>
+                    </li>
+                  </ul>
+                </motion.div>
+                
+                {/* Corrupted glitchy content that replaces it */}
+                <motion.div 
+                  className="absolute top-0 left-0 right-0 mt-8"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 3.5 }}
+                >
+                  <div className="border border-[#ff2a6d]/30 bg-[#ff2a6d]/5 rounded-md p-3 mb-4">
+                    <div className="flex items-center mb-2">
+                      <div className="h-3 w-3 rounded-full bg-[#ff2a6d] animate-pulse mr-2"></div>
+                      <span className="text-[#ff2a6d] text-sm font-mono">CRITICAL_ERROR.LOG</span>
+                    </div>
+                    
+                    <motion.div 
+                      className="font-mono text-[#ff2a6d]/80 text-xs space-y-1 overflow-hidden"
+                      animate={{ 
+                        y: [-5, 0, -3], 
+                        filter: ["blur(0.7px)", "blur(0px)", "blur(0.5px)"] 
+                      }}
+                      transition={{ 
+                        duration: 2, 
+                        repeat: Infinity, 
+                        repeatType: "mirror" 
+                      }}
+                    >
+                      <div>[ERROR:0x8F21] Memory corruption detected</div>
+                      <div>[FATAL:0xA1C3] Neural pattern desync</div>
+                      <div>[WARN:0x7B29] Consciousness integrity: 27%</div>
+                      <div className="bg-[#ff2a6d]/20 px-1">Segmentation fault: core dumped</div>
+                      <div>@$&amp;#%!* [REDACTED] *!%&amp;$@</div>
+                      <div>...</div>
+                      <div>Attempting to restore founder profile [FAILED]</div>
+                      <div className="bg-[#ff2a6d]/20 px-1">HALLUCINATION CONTAINMENT PROTOCOL INITIATED</div>
+                      <div>01001000 01100101 01101100 01110000</div>
+                    </motion.div>
+                  </div>
+                  
+                  {/* Random lines and glitchy elements */}
+                  <div className="space-y-3">
+                    {Array.from({ length: 4 }).map((_, i) => (
+                      <motion.div 
+                        key={i}
+                        className="h-px w-full bg-[#ff2a6d]/50"
+                        animate={{ 
+                          scaleX: [0.3, 1, 0.7, 0.9],
+                          opacity: [0.2, 0.7, 0.4, 0.6],
+                          x: [10, 0, 5, -2]
+                        }}
+                        transition={{ 
+                          duration: 1.5 + i * 0.5, 
+                          repeat: Infinity,
+                          repeatType: "mirror"
+                        }}
+                      />
+                    ))}
+                  </div>
+                </motion.div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
