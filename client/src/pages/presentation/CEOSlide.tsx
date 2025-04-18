@@ -3,12 +3,12 @@ import PresentationLayout from "@/components/presentation/PresentationLayout";
 import { useEffect, useState } from "react";
 
 export default function CEOSlide() {
-  const [showGlitch, setShowGlitch] = useState(false);
+  const [showGlitchEffects, setShowGlitchEffects] = useState(false);
   
   useEffect(() => {
     // Start glitch effect shortly after component mounts
     const timer = setTimeout(() => {
-      setShowGlitch(true);
+      setShowGlitchEffects(true);
     }, 1500);
     
     return () => clearTimeout(timer);
@@ -117,7 +117,7 @@ export default function CEOSlide() {
             <div className="mb-8">
               <h3 className="text-2xl font-display font-semibold mb-4 text-[#00ffff]">
                 Relentless
-                {showGlitch && (
+                {showGlitchEffects && (
                   <motion.span 
                     className="text-[#ff2a6d] text-lg ml-2 font-mono inline-block"
                     animate={{ 
@@ -147,16 +147,14 @@ export default function CEOSlide() {
                 )}
               </h3>
               
-              {/* Normal bio text that gets replaced with glitch */}
-              {!showGlitch && (
-                <p className="text-white/80">
-                  GEORGE K. JON&*S AB@#D0N3D @ PRØM!S!NG @C@D£MIC C@R33R TØ FØUND J-T3CH !NDUS%R!3S !N 2032. H!$ CØNTROV3R$!@L APPRØ@CH TØ QU@N%µM N3UR@L N3TWØRK$ @ND CØN$C!ØU$N3$$ M@PP!NG H@$ D!V!D3D TH3 $C!3N%!F!C CØMMUN!†¥ WH!L3 @††R@C†!NG billions in venture capital.
-                </p>
-              )}
+              {/* Always show glitched bio text */}
+              <p className="text-white/80 font-mono">
+                GEORGE K. JON&*S AB@#D0N3D @ PRØM!S!NG @C@D£MIC C@R33R TØ FØUND J-T3CH !NDUS%R!3S !N 2032. H!$ CØNTROV3R$!@L APPRØ@CH TØ QU@N%µM N3UR@L N3TWØRK$ @ND CØN$C!ØU$N3$$ M@PP!NG H@$ D!V!D3D TH3 $C!3N%!F!C CØMMUN!†¥ WH!L3 @††R@C†!NG billions in venture capital.
+              </p>
               
-              {/* Glitchy code/gibberish that replaces normal text */}
-              {showGlitch && (
-                <div className="relative">
+              {/* Glitchy code/gibberish that appears with glitch effect */}
+              {showGlitchEffects && (
+                <div className="relative mt-4">
                   <motion.div
                     className="text-[#ff2a6d]/90 font-mono text-sm overflow-x-hidden p-2 border border-[#ff2a6d]/30 rounded-md bg-[#ff2a6d]/5"
                     animate={{ 
@@ -197,31 +195,29 @@ export default function CEOSlide() {
               )}
             </div>
             
-            {/* Achievements section */}
+            {/* Achievements section with glitched text regardless of effects */}
             <div className="mt-8">
-              {!showGlitch && (
-                <div>
-                  <h3 className="text-2xl font-display font-semibold mb-4 text-[#00ffff]">ACH!3V3M3N†$</h3>
-                  <ul className="space-y-2">
-                    <li className="flex items-start">
-                      <span className="text-[#0066cc] mr-2">→</span>
-                      <span>†!M3 P3R$ØN ØF TH3 ¥3@R (2Ø41)</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[#0066cc] mr-2">→</span>
-                      <span>@U†HØR ØF "3X†!NC†!ØN ØR †R@N$C3ND3NC3: WH¥ W3 MU$† B3CØM3 PØ$†-HUM@N"</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[#0066cc] mr-2">→</span>
-                      <span>KNØWN FØR WØRK!NG 2Ø-HØUR D@¥$ @ND $L33P!NG ØN †H3 F@C†ØR¥ FLØØR</span>
-                    </li>
-                  </ul>
-                </div>
-              )}
+              <div>
+                <h3 className="text-2xl font-display font-semibold mb-4 text-[#00ffff]">ACH!3V3M3N†$</h3>
+                <ul className="space-y-2 font-mono">
+                  <li className="flex items-start">
+                    <span className="text-[#0066cc] mr-2">→</span>
+                    <span>†!M3 P3R$ØN ØF TH3 ¥3@R (2Ø41)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#0066cc] mr-2">→</span>
+                    <span>@U†HØR ØF "3X†!NC†!ØN ØR †R@N$C3ND3NC3: WH¥ W3 MU$† B3CØM3 PØ$†-HUM@N"</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#0066cc] mr-2">→</span>
+                    <span>KNØWN FØR WØRK!NG 2Ø-HØUR D@¥$ @ND $L33P!NG ØN †H3 F@C†ØR¥ FLØØR</span>
+                  </li>
+                </ul>
+              </div>
               
-              {/* Error log that replaces achievements */}
-              {showGlitch && (
-                <div className="border border-[#ff2a6d]/30 bg-[#ff2a6d]/5 rounded-md p-3">
+              {/* Error log that appears with glitch effects */}
+              {showGlitchEffects && (
+                <div className="border border-[#ff2a6d]/30 bg-[#ff2a6d]/5 rounded-md p-3 mt-4">
                   <div className="flex items-center mb-2">
                     <div className="h-3 w-3 rounded-full bg-[#ff2a6d] animate-pulse mr-2"></div>
                     <span className="text-[#ff2a6d] text-sm font-mono">CRITICAL_ERROR.LOG</span>
@@ -276,7 +272,7 @@ export default function CEOSlide() {
         </div>
         
         {/* Full screen glitch overlay effect */}
-        {showGlitch && (
+        {showGlitchEffects && (
           <motion.div 
             className="fixed inset-0 pointer-events-none z-50 opacity-20"
             animate={{ 
@@ -304,7 +300,7 @@ export default function CEOSlide() {
         )}
         
         {/* Occasional screen flicker effect */}
-        {showGlitch && (
+        {showGlitchEffects && (
           <motion.div 
             className="fixed inset-0 bg-[#ff2a6d]/5 pointer-events-none z-50"
             initial={{ opacity: 0 }}
