@@ -68,9 +68,16 @@ export default function CEOSlide() {
               <div className="w-full h-full bg-gradient-to-br from-[#050508] via-[#0c0c10] to-[#050508] relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-20">
-                    <circle cx="100" cy="100" r="90" stroke="url(#paint0_linear)" strokeWidth="2"/>
-                    <circle cx="100" cy="100" r="60" stroke="url(#paint1_linear)" strokeWidth="2"/>
-                    <circle cx="100" cy="100" r="30" fill="url(#paint2_radial)"/>
+                    {/* Abstract tech pattern with no religious symbols */}
+                    <rect x="50" y="50" width="100" height="100" stroke="url(#paint0_linear)" strokeWidth="2" />
+                    <rect x="70" y="70" width="60" height="60" stroke="url(#paint1_linear)" strokeWidth="2" />
+                    <rect x="40" y="40" width="120" height="120" stroke="url(#paint0_linear)" strokeWidth="1" strokeDasharray="4 4" />
+                    <line x1="0" y1="100" x2="200" y2="100" stroke="url(#paint1_linear)" strokeWidth="1" strokeDasharray="5 5" />
+                    <line x1="100" y1="0" x2="100" y2="200" stroke="url(#paint1_linear)" strokeWidth="1" strokeDasharray="5 5" />
+                    <path d="M40,40 L70,70" stroke="url(#paint0_linear)" strokeWidth="1" />
+                    <path d="M160,40 L130,70" stroke="url(#paint0_linear)" strokeWidth="1" />
+                    <path d="M40,160 L70,130" stroke="url(#paint0_linear)" strokeWidth="1" />
+                    <path d="M160,160 L130,130" stroke="url(#paint0_linear)" strokeWidth="1" />
                     <defs>
                       <linearGradient id="paint0_linear" x1="100" y1="10" x2="100" y2="190" gradientUnits="userSpaceOnUse">
                         <stop stopColor="#00F0FF"/>
@@ -80,10 +87,6 @@ export default function CEOSlide() {
                         <stop stopColor="#FF00F5"/>
                         <stop offset="1" stopColor="#FF00F5" stopOpacity="0.2"/>
                       </linearGradient>
-                      <radialGradient id="paint2_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(100 100) rotate(90) scale(30)">
-                        <stop stopColor="#00F0FF" stopOpacity="0.3"/>
-                        <stop offset="1" stopColor="#FF00F5" stopOpacity="0.3"/>
-                      </radialGradient>
                     </defs>
                   </svg>
                 </div>
@@ -149,7 +152,7 @@ export default function CEOSlide() {
               
               {/* Always show glitched bio text */}
               <p className="text-white/80 font-mono">
-                GEORGE K. JON&*S AB@#D0N3D @ PRØM!S!NG @C@D£MIC C@R33R TØ FØUND J-T3CH !NDUS%R!3S !N 2032. H!$ CØNTROV3R$!@L APPRØ@CH TØ QU@N%µM N3UR@L N3TWØRK$ @ND CØN$C!ØU$N3$$ M@PP!NG H@$ D!V!D3D TH3 $C!3N%!F!C CØMMUN!†¥ WH!L3 @††R@C†!NG billions in venture capital.
+                GEORGE K. JON&*S @B@ND0N3D @ PR0M!$!NG @C@D3M!C C@R33R %0 F0UND J-%3CH !NDU$%R!3$ !N 2032. H!$ C0N%R0V3R$!@L @PPR0@CH %0 QU@N%UM N3UR@L N3%W0RK$ @ND C0N$C!0U$N3$$ M@PP!NG H@$ D!V!D3D %H3 $C!3N%!F!C C0MMUN!%¥ WH!L3 @%%R@C%!NG billions in venture capital.
               </p>
               
               {/* Glitchy code/gibberish that appears with glitch effect */}
@@ -198,19 +201,19 @@ export default function CEOSlide() {
             {/* Achievements section with glitched text regardless of effects */}
             <div className="mt-8">
               <div>
-                <h3 className="text-2xl font-display font-semibold mb-4 text-[#00ffff]">ACH!3V3M3N†$</h3>
+                <h3 className="text-2xl font-display font-semibold mb-4 text-[#00ffff]">ACH!3V3M3N%$</h3>
                 <ul className="space-y-2 font-mono">
                   <li className="flex items-start">
                     <span className="text-[#0066cc] mr-2">→</span>
-                    <span>†!M3 P3R$ØN ØF TH3 ¥3@R (2Ø41)</span>
+                    <span>%!M3 P3R$ØN ØF %H3 ¥3@R (2Ø41)</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#0066cc] mr-2">→</span>
-                    <span>@U†HØR ØF "3X†!NC†!ØN ØR †R@N$C3ND3NC3: WH¥ W3 MU$† B3CØM3 PØ$†-HUM@N"</span>
+                    <span>@U%HØR ØF "3X%!NC%!ØN ØR %R@N$FØRM@%!ØN: WH¥ W3 MU$% B3CØM3 PØ$%-HUM@N"</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#0066cc] mr-2">→</span>
-                    <span>KNØWN FØR WØRK!NG 2Ø-HØUR D@¥$ @ND $L33P!NG ØN †H3 F@C†ØR¥ FLØØR</span>
+                    <span>KNØWN FØR WØRK!NG 2Ø-HØUR D@¥$ @ND $L33P!NG !N %H3 L@B</span>
                   </li>
                 </ul>
               </div>
