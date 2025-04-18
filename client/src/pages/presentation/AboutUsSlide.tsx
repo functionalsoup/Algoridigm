@@ -156,7 +156,7 @@ export default function AboutUsSlide() {
             transition={{ delay: 1.4 }}
           >
             <p className="text-xs md:text-sm">
-              <strong>Stuart Campbell</strong> was born in Odessa, TX, and developed a love for theatre through early influences like classic films, TV, and Cirque du Soleil productions, which inspired his passion for storytelling and physical theatre. Growing up in Woodward, OK, he found a creative outlet and lifelong connections through the Woodward Community Theatre and Woodward Lite Opera Group.
+              <strong>Stuart Campbell</strong> was born in Odessa, TX, and developed a love for theatre through early influences like classic films, TV, and Cirque du Soleil productions, which inspired his passion for storytelling and physical theatre. Growing up in Woodward, OK, he found a creative outlet through the Woodward Community Theatre and Woodward Lite Opera Group.
             </p>
             
             <p className="text-xs md:text-sm">
