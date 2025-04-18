@@ -110,11 +110,11 @@ export default function RevealSlide() {
             <div className="flex items-center mb-1">
               <div className="h-4 w-4 bg-[#00a2ff] rounded-full mr-3 animate-pulse"></div>
               <h3 className="text-xl sm:text-2xl font-display font-semibold text-white">
-                THEATRE WORKSHOP TRAINING SEQUENCE
+                Theatre Workshop: MACHINAL Adaptation - Summer 2025
               </h3>
             </div>
             <div className="pl-7 text-white/60 text-sm border-l border-[#1a3a59] ml-[7px]">
-              Adaptation of Sophie Treadwell's "MACHINAL" | Summer 2025
+              ALGORIDIGM: A Devised Theatre Experience
             </div>
           </div>
           
@@ -122,10 +122,7 @@ export default function RevealSlide() {
             <div className="lg:w-3/5">
               <div className="text-white/90 space-y-4 mb-6">
                 <p>
-                  We're beginning the process of devising an experimental adaptation of Sophie Treadwell's MACHINAL. This creative collaboration requires diverse talent working together in an innovative environment.
-                </p>
-                <p>
-                  <span className="text-[#00a2ff] font-medium">Registration is not a commitment</span> to the workshop but simply expresses your interest. Registered individuals will be invited to an <span className="text-[#ff2a6d] font-medium">in-person pitch meeting</span> for a fuller description of MACHINAL and our planned adaptation.
+                  We're seeking creative collaborators for our experimental adaptation of Sophie Treadwell's "MACHINAL." This innovative project welcomes participants of all experience levels to join our collective process.
                 </p>
               </div>
               
@@ -136,7 +133,7 @@ export default function RevealSlide() {
                     <div className="bg-[#00a2ff]/20 p-2 rounded-lg">
                       <Users size={18} className="text-[#00a2ff]" />
                     </div>
-                    <h4 className="text-[#00a2ff] font-medium">Creative Team</h4>
+                    <h4 className="text-[#00a2ff] font-medium">Creative Team Opportunities</h4>
                   </div>
                   <ul className="space-y-2 text-sm text-white/80">
                     <li className="flex items-start">
@@ -145,7 +142,7 @@ export default function RevealSlide() {
                     </li>
                     <li className="flex items-start">
                       <span className="text-[#00a2ff] mr-2 mt-1">■</span>
-                      <span>Designers (set, costume, light)</span>
+                      <span>Designers (set, costume, light, sound)</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-[#ff2a6d] mr-2 mt-1">■</span>
@@ -153,7 +150,15 @@ export default function RevealSlide() {
                     </li>
                     <li className="flex items-start">
                       <span className="text-[#00a2ff] mr-2 mt-1">■</span>
+                      <span>Visual artists</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#ff2a6d] mr-2 mt-1">■</span>
                       <span>Writers & Dramaturgs</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#00a2ff] mr-2 mt-1">■</span>
+                      <span>Creatives of all varieties</span>
                     </li>
                   </ul>
                 </div>
@@ -180,10 +185,26 @@ export default function RevealSlide() {
                     </li>
                     <li className="flex items-start">
                       <span className="text-[#ff2a6d] mr-2 mt-1">■</span>
+                      <span>Multiple roles and positions</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#00a2ff] mr-2 mt-1">■</span>
                       <span>In-person creative collaboration</span>
                     </li>
                   </ul>
                 </div>
+              </div>
+              
+              <div className="bg-[#0a0a14] border border-[#1a3a59] p-4 rounded-xl mb-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="bg-[#00a2ff]/20 p-2 rounded-lg">
+                    <ArrowRight size={18} className="text-[#00a2ff]" />
+                  </div>
+                  <h4 className="text-[#00a2ff] font-medium">Next Steps</h4>
+                </div>
+                <p className="text-white/80 text-sm mb-0">
+                  Register for our <span className="text-[#ff2a6d] font-medium">in-person pitch meeting</span> to learn more about MACHINAL and our adaptation plans. Registration simply expresses interest and is not a commitment to the workshop.
+                </p>
               </div>
             </div>
             
@@ -208,21 +229,22 @@ export default function RevealSlide() {
                 
                 <h3 className="text-xl font-display text-[#00a2ff] mb-4 flex items-center">
                   <Zap size={20} className="mr-2" />
-                  REGISTRATION PORTAL
+                  REGISTRATION
                 </h3>
                 
                 <div className="flex flex-col justify-center p-3 bg-[#000a14]/40 border border-[#1a3a59]/50 rounded-lg mb-5">
-                  <div className="text-white/80 text-sm mb-3">
-                    Register for our <span className="text-[#ff2a6d] font-medium">in-person pitch meeting</span> to learn more about MACHINAL and our adaptation plan. Registration is only a sign of interest, not a commitment to the full workshop.
-                  </div>
-                  
-                  <div className="flex items-center gap-2 mb-1">
-                    <div className="w-2 h-2 rounded-full bg-[#00a2ff] animate-pulse"></div>
-                    <div className="text-xs text-white/50">AWAITING USER INPUT</div>
-                  </div>
-                  
-                  <div className="text-white/50 text-xs italic">
-                    All registered participants will receive details for the pitch meeting.
+                  <div className="text-white/80 text-sm space-y-3">
+                    <p className="mb-2">
+                      Registration portal is active for the <span className="text-[#ff2a6d] font-medium">in-person pitch meeting</span>. Express your interest today.
+                    </p>
+                    
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-[#00a2ff] animate-pulse"></div>
+                        <div className="text-xs text-white/50">PORTAL STATUS: ACTIVE</div>
+                      </div>
+                      <div className="text-xs text-[#00a2ff]">SEC.LEVEL: OPEN</div>
+                    </div>
                   </div>
                 </div>
                 
