@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import mandelaImage from "@assets/Algoridigm Mandela Psy 3.png";
+import mandelaImage from "@assets/Untitled design.zip - 1.jpeg";
 import { ReactNode, useState, useEffect } from "react";
 
 interface RotatingMandelaBackgroundProps {
