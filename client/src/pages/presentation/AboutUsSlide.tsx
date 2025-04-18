@@ -160,7 +160,7 @@ export default function AboutUsSlide() {
             </p>
             
             <p className="text-xs md:text-sm">
-              Stuart pursued Theatre professionally, beginning at Northwestern Oklahoma State University (NWOSU) before transferring to the University of Arkansas – Fort Smith (UAFS) in 2011 to focus on physical and collaborative productions. At UAFS, he acted in <em>Burn This</em> and <em>South Pacific</em>, co-designed <em>A Midsummer Night's Dream</em>, and directed diverse works like Yasmina Reza's <em>God of Carnage</em> and the dance theatre piece <em>Memorandum of Love Lost</em>.
+              Stuart pursued Theatre professionally, beginning at Northwestern Oklahoma State University (NWOSU) before transferring to the University of Arkansas – Fort Smith (UAFS) in 2011 to focus on physical and collaborative productions. His most impactful experience in college was devising, choreographing, and performing a highly physical Cirque-inspired show entitled <em>Dromnium</em>, which he co-wrote the initial treatment with Ashley Behm. The show had the opportunity to travel to Region 6 KCACTF (Kennedy Center American Collegiate Theatre Festival), where the group received national awards for their efforts. At UAFS, he also acted in <em>Burn This</em> and <em>South Pacific</em>, co-designed <em>A Midsummer Night's Dream</em>, and directed diverse works like Yasmina Reza's <em>God of Carnage</em> and the dance theatre piece <em>Memorandum of Love Lost</em>.
             </p>
             
             <p className="text-xs md:text-sm">
