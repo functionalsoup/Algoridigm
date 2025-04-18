@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { usePresentationContext } from "@/lib/presentationContext";
 import { RotatingMandelaBackground } from "@/components/presentation/RotatingMandelaBackground";
+import RotatingSymbolsBackground from "@/components/presentation/RotatingSymbolsBackground";
 import { ErrorMessages } from "@/components/presentation/BackgroundElements";
 import Timer from "@/components/presentation/Timer";
 import { useState, useEffect, useRef } from "react";
@@ -90,7 +91,7 @@ export default function OpeningSlide() {
   
   return (
     <motion.div
-      className="slide flex flex-col items-center justify-center h-full relative bg-black overflow-hidden"
+      className="slide flex flex-col items-center justify-center h-full relative bg-[#050507] overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -107,6 +108,9 @@ export default function OpeningSlide() {
       </div>
       
       {/* Error/Hallucination Messages removed as requested */}
+      
+      {/* Rotating Symbols Background - Always present */}
+      <RotatingSymbolsBackground symbolCount={20} isActive={true} />
       
       {/* ROTATING MANDALA - Positioned behind everything - appears in phase 3 */}
       {animationPhase >= 3 && (
