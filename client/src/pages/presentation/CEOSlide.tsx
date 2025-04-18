@@ -175,11 +175,11 @@ export default function CEOSlide() {
                     <div className="mb-1">//#define &lt;neural.h&gt;</div>
                     <div>void* consciousness_map(uint64_t* id) {'{'}</div>
                     <div className="ml-2">if(id == NULL) return SEGFAULT;</div>
-                    <div className="ml-2">//@#$ RUNTIME ERROR: CONSCIOUSNESS NOT FOUND $#@!/</div>
+                    <div className="ml-2">//@@$ RUNTIME ERROR: CONSCIOUSNESS NOT FOUND $@@//</div>
                     <div className="ml-2">return neural::pattern::corrupt(id);</div>
                     <div>{'}'}</div>
                     <div className="mt-2 bg-[#ff2a6d]/20 p-1">&lt;NEURAL_ANOMALY_DETECTED&gt; &lt;SESSION_CORRUPTED&gt;</div>
-                    <div className="mt-1">*&%!$@# CRITICAL SYSTEM FAILURE @!%^&*$</div>
+                    <div className="mt-1">*&%!$@// CRITICAL SYSTEM FAILURE //!%^&*$</div>
                   </motion.div>
                   
                   {/* Random error flash effect */}
