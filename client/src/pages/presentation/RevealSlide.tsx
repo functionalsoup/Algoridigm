@@ -74,7 +74,7 @@ export default function RevealSlide() {
             >
               AUTONOMOUS TRAINING MODULE
             </motion.div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold tracking-wider text-[#00a2ff]">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold tracking-wider text-[#00a2ff]">
               AUTONOMOUS TRAINING MODULE
             </h2>
           </div>

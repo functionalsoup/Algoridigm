@@ -166,7 +166,7 @@ export default function OpeningSlide() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-wider text-[#00a2ff]">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold tracking-wider text-[#00a2ff]">
                 AUTONOMOUS TRAINING MODULE
               </h1>
               <div className="text-white/40 text-sm mt-2 font-mono tracking-wide">J-TECH INDUSTRIES • EST. 2050</div>
