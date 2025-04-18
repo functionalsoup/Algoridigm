@@ -138,6 +138,36 @@ export default function AboutUsSlide() {
             </motion.div>
           </div>
         </div>
+
+        <div className="bg-corp-bg/40 backdrop-blur-md rounded-lg border border-corp-cyan/40 p-4 sm:p-5 md:p-8 mb-6 md:mb-10">
+          <motion.h3
+            className="text-lg sm:text-xl md:text-2xl font-display font-semibold mb-4 md:mb-5 text-corp-cyan"
+            initial={{ x: -10, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 1.2 }}
+          >
+            About the Director
+          </motion.h3>
+
+          <motion.div
+            className="space-y-3"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.4 }}
+          >
+            <p className="text-xs md:text-sm">
+              <strong>Stuart Campbell</strong> was born in Odessa, TX, and developed a love for theatre through early influences like classic films, TV, and Cirque du Soleil productions, which inspired his passion for storytelling and physical theatre. Growing up in Woodward, OK, he found a creative outlet and lifelong connections through the Woodward Community Theatre and Woodward Lite Opera Group.
+            </p>
+            
+            <p className="text-xs md:text-sm">
+              Stuart pursued Theatre professionally, beginning at Northwestern Oklahoma State University (NWOSU) before transferring to the University of Arkansas – Fort Smith (UAFS) in 2011 to focus on physical and collaborative productions. At UAFS, he acted in <em>Burn This</em> and <em>South Pacific</em>, co-designed <em>A Midsummer Night's Dream</em>, and directed diverse works like Yasmina Reza's <em>God of Carnage</em> and the dance theatre piece <em>Memorandum of Love Lost</em>.
+            </p>
+            
+            <p className="text-xs md:text-sm">
+              Post-college, Stuart has continued exploring his craft, workshopping the devised piece <em>Privacy Settings</em> and participating in the ATX One Minute Play Festival. His work emphasizes ensemble collaboration, creating safe spaces for artists, and pushing creative boundaries to produce compelling narratives.
+            </p>
+          </motion.div>
+        </div>
         
         <div className="text-center mt-8 sm:mt-10 md:mt-12 mb-8 md:mb-12 relative">
           {/* Animated glow effect behind the button */}
@@ -195,7 +225,7 @@ export default function AboutUsSlide() {
                   ease: "easeInOut"
                 }}
               >
-                Register Now
+                Contact Us
               </motion.span>
             </motion.button>
             
