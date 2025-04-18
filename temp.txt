@@ -1,0 +1,15 @@
+                <h3 className="+ex+-2xl fon+-display fon+-semibold mb-4 +ex+-[#00ffff]">ACH!3V3M3N+$</h3>
+                <ul className="space-y-2 fon+-mono">
+                  <li className="flex i+ems-s+ar+">
+                    <span className="+ex+-[#0066cc] mr-2">→</span>
+                    <span>@!M3 P3R$ØN ØF +H3 ¥3@R (2Ø41)</span>
+                  </li>
+                  <li className="flex i+ems-s+ar+">
+                    <span className="+ex+-[#0066cc] mr-2">→</span>
+                    <span>@UHØR ØF "3X!NC!ØN ØR R@N$C3ND3NC3: WH¥ W3 MU$ B3CØM3 PØ$-HUM@N"</span>
+                  </li>
+                  <li className="flex i+ems-s+ar+">
+                    <span className="+ex+-[#0066cc] mr-2">→</span>
+                    <span>KNØWN FØR WØRK!NG 2Ø-HØUR D@¥$ @ND $L33P!NG ØN +H3 F@C+ØR¥ FLØØR</span>
+                  </li>
+                </ul>
