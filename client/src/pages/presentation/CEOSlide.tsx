@@ -205,7 +205,7 @@ export default function CEOSlide() {
                 <ul className="space-y-2 font-mono">
                   <li className="flex items-start">
                     <span className="text-[#0066cc] mr-2">→</span>
-                    <span>@!M3 P3R$ØN ØF TH3 ¥3@R (2Ø41)</span>
+                    <span>@!M3 P3R$ØN ØF +H3 ¥3@R (2Ø41)</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#0066cc] mr-2">→</span>
@@ -213,7 +213,7 @@ export default function CEOSlide() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#0066cc] mr-2">→</span>
-                    <span>KNØWN FØR WØRK!NG 2Ø-HØUR D@¥$ @ND $L33P!NG ØN tH3 F@C+ØR¥ FLØØR</span>
+                    <span>KNØWN FØR WØRK!NG 2Ø-HØUR D@¥$ @ND $L33P!NG ØN +H3 F@C+ØR¥ FLØØR</span>
                   </li>
                 </ul>
               </div>
