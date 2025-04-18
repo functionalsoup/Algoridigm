@@ -184,11 +184,12 @@ export default function OpeningSlide() {
                     "drop-shadow(0 0 8px rgba(128, 255, 0, 0.5))",
                     "drop-shadow(0 0 12px rgba(128, 255, 0, 0.7))",
                     "drop-shadow(0 0 8px rgba(128, 255, 0, 0.5))"
-                  ]
+                  ],
+                  opacity: animationPhase >= 3 ? [1, 0.7, 0.5, 0.3, 0] : 1
                 }}
                 transition={{ 
-                  duration: 3, 
-                  repeat: Infinity,
+                  duration: animationPhase >= 3 ? 1.5 : 3, 
+                  repeat: animationPhase >= 3 ? 0 : Infinity,
                   ease: "easeInOut" 
                 }}
               >
@@ -267,10 +268,32 @@ export default function OpeningSlide() {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <div className="text-white/80 text-base sm:text-lg md:text-xl mb-1">INITIALIZING NEURAL PATTERN</div>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#80ff00] font-display tracking-wide mb-2 sm:mb-4" 
-                style={{ textShadow: "0 0 10px rgba(128, 255, 0, 0.5)" }}>
+              <motion.h2 
+                className="text-xl sm:text-2xl md:text-3xl font-bold text-[#80ff00] font-display tracking-wide mb-2 sm:mb-4"
+                style={{ textShadow: "0 0 10px rgba(128, 255, 0, 0.5)" }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ 
+                  opacity: 1, 
+                  scale: 1,
+                  filter: [
+                    "drop-shadow(0 0 10px rgba(128, 255, 0, 0.5))",
+                    "drop-shadow(0 0 20px rgba(128, 255, 0, 0.8))",
+                    "drop-shadow(0 0 10px rgba(128, 255, 0, 0.5))"
+                  ]
+                }}
+                transition={{ 
+                  opacity: { duration: 1.2 },
+                  scale: { duration: 1.5 },
+                  filter: { 
+                    duration: 3,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    ease: "easeInOut"
+                  }
+                }}
+              >
                 ALGORIDIGM
-              </h2>
+              </motion.h2>
               
               <motion.div 
                 className="text-white/60 text-xs sm:text-sm max-w-xl mx-auto px-3 sm:px-6"
