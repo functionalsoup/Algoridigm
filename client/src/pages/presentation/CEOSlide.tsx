@@ -72,8 +72,8 @@ export default function CEOSlide() {
                     <rect x="50" y="50" width="100" height="100" stroke="url(#paint0_linear)" strokeWidth="2" />
                     <rect x="70" y="70" width="60" height="60" stroke="url(#paint1_linear)" strokeWidth="2" />
                     <rect x="40" y="40" width="120" height="120" stroke="url(#paint0_linear)" strokeWidth="1" strokeDasharray="4 4" />
-                    <line x1="0" y1="100" x2="200" y2="100" stroke="url(#paint1_linear)" strokeWidth="1" strokeDasharray="5 5" />
-                    <line x1="100" y1="0" x2="100" y2="200" stroke="url(#paint1_linear)" strokeWidth="1" strokeDasharray="5 5" />
+                    <line x1="0" y1="70" x2="200" y2="70" stroke="url(#paint1_linear)" strokeWidth="1" strokeDasharray="5 5" />
+                    <line x1="130" y1="0" x2="130" y2="200" stroke="url(#paint1_linear)" strokeWidth="1" strokeDasharray="5 5" />
                     <path d="M40,40 L70,70" stroke="url(#paint0_linear)" strokeWidth="1" />
                     <path d="M160,40 L130,70" stroke="url(#paint0_linear)" strokeWidth="1" />
                     <path d="M40,160 L70,130" stroke="url(#paint0_linear)" strokeWidth="1" />
@@ -93,7 +93,7 @@ export default function CEOSlide() {
                 <div className="absolute top-0 left-0 right-0 h-1/4 bg-gradient-to-b from-[#0065ff]/10 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#050508] to-transparent p-4">
                   <h3 className="text-2xl font-display font-bold">GEORGE K. JON&*S</h3>
-                  <p className="text-[#00ffff]">FØUND3R & C3Ø</p>
+                  <p className="text-[#00ffff]">FØUND3R // C3Ø</p>
                 </div>
               </div>
             </div>
@@ -170,7 +170,7 @@ export default function CEOSlide() {
                       repeatType: "reverse" 
                     }}
                   >
-                    <div className="mb-1"># FATAL ERROR: NEURAL PATTERN CORRUPTION</div>
+                    <div className="mb-1">// FATAL ERROR: NEURAL PATTERN CORRUPTION</div>
                     <div className="mb-2">01100101 01110010 01110010 01101111 01110010</div>
                     <div className="mb-1">//#define &lt;neural.h&gt;</div>
                     <div>void* consciousness_map(uint64_t* id) {'{'}</div>
