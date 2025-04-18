@@ -135,11 +135,15 @@ export default function OpeningSlide() {
       <div className="w-full max-w-5xl mx-auto px-4 relative z-20 flex flex-col items-center justify-center h-full">
         
         {/* Boot sequence terminal - Phase 1 */}
-        {animationPhase >= 1 && (
+        {animationPhase >= 1 && animationPhase <= 3 && (
           <motion.div 
             className="absolute top-4 sm:top-8 left-2 sm:left-8 w-[calc(100%-16px)] sm:w-full max-w-md bg-[#0c0c14]/90 border border-[#1a3a59] rounded-xl p-3 sm:p-4 backdrop-blur-sm"
             initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: animationPhase >= 2 ? 0.7 : 1, y: 0 }}
+            animate={{ 
+              opacity: animationPhase === 1 ? 1 : animationPhase === 2 ? 0.7 : animationPhase === 3 ? 0.3 : 0,
+              y: 0 
+            }}
+            exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.5 }}
           >
             <div className="flex items-center mb-2 border-b border-[#1a3a59] pb-1 sm:pb-2">
