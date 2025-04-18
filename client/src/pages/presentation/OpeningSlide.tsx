@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { usePresentationContext } from "@/lib/presentationContext";
 import { RotatingMandelaBackground } from "@/components/presentation/RotatingMandelaBackground";
-import MultipleRotatingMandelas from "@/components/presentation/MultipleRotatingMandelas";
+import RotatingSymbolsBackground from "@/components/presentation/RotatingSymbolsBackground";
 import { ErrorMessages } from "@/components/presentation/BackgroundElements";
 import Timer from "@/components/presentation/Timer";
 import { useState, useEffect, useRef } from "react";
@@ -109,10 +109,10 @@ export default function OpeningSlide() {
       
       {/* Error/Hallucination Messages removed as requested */}
       
-      {/* Multiple rotating mandelas with different sizes and speeds */}
-      <MultipleRotatingMandelas count={8} isActive={true} largeBackgroundOpacity={0.15} />
+      {/* Rotating Symbols Background - Always present */}
+      <RotatingSymbolsBackground symbolCount={20} isActive={true} />
       
-      {/* ROTATING MANDALA - Additional large one appears in phase 3 */}
+      {/* ROTATING MANDALA - Positioned behind everything - appears in phase 3 */}
       {animationPhase >= 3 && (
         <div className="absolute inset-0 z-10 pointer-events-none">
           <RotatingMandelaBackground 
