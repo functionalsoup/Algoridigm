@@ -145,7 +145,7 @@ export default function CEOSlide() {
                       repeatType: "reverse",
                     }}
                   >
-                    I*@#$!^vation &lt;NEURAL_ANOMALY&gt; %^&*!@
+                    I*@&&$!^vation &lt;NEURAL_ANOMALY&gt; %^&&*!@
                   </motion.span>
                 )}
               </h3>
@@ -242,7 +242,7 @@ export default function CEOSlide() {
                     <div>[FATAL:0xA1C3] Neural pattern desync</div>
                     <div>[WARN:0x7B29] Consciousness integrity: 27%</div>
                     <div className="bg-[#ff2a6d]/20 px-1">Segmentation fault: core dumped</div>
-                    <div>@$&amp;#%!* [REDACTED] *!%&amp;$@</div>
+                    <div>@$&amp;&amp;%!* [REDACTED] *!%&amp;&amp;$@</div>
                     <div>...</div>
                     <div>Attempting to restore founder profile [FAILED]</div>
                     <div className="bg-[#ff2a6d]/20 px-1">HALLUCINATION CONTAINMENT PROTOCOL INITIATED</div>
