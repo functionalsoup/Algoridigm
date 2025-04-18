@@ -46,58 +46,58 @@ export function RotatingMandelaBackground({
       setGlitchActive(true);
       setGlitchOffset({ x: 8, y: 5 }); // Stronger initial offset
       
-      // Create more intense glitches at the beginning
+      // Create more intense glitches at the beginning (reduced by 40%)
       const intensiveGlitchInterval = setInterval(() => {
-        // More likely to glitch in the beginning
-        const isOn = Math.random() > 0.2; // 80% chance of glitching
+        // Reduced chance of glitching by 40%
+        const isOn = Math.random() > 0.52; // 48% chance of glitching (reduced from 80%)
         
         if (isOn) {
-          const offsetX = Math.random() * 20 - 10; // Random between -10 and 10 (more extreme)
-          const offsetY = Math.random() * 20 - 10; // Random between -10 and 10 (more extreme)
+          const offsetX = Math.random() * 12 - 6; // Random between -6 and 6 (reduced from -10 to 10)
+          const offsetY = Math.random() * 12 - 6; // Random between -6 and 6 (reduced from -10 to 10)
           setGlitchOffset({ x: offsetX, y: offsetY });
           setGlitchActive(true);
         } else {
           setGlitchActive(false);
         }
-      }, 60); // Very fast glitching
+      }, 90); // Slower glitching (increased from 60ms)
       
       // After a period, transition to more subtle glitching
       const subtleGlitchTimer = setTimeout(() => {
         clearInterval(intensiveGlitchInterval);
         
-        // Create random glitches at specific times - more subtle
+        // Create random glitches at specific times - more subtle (reduced by 40%)
         const subtleGlitchInterval = setInterval(() => {
-          // Random on/off
-          const isOn = Math.random() > 0.6; // 40% chance of glitching
+          // Random on/off (reduced by 40%)
+          const isOn = Math.random() > 0.76; // 24% chance of glitching (reduced from 40%)
           
           if (isOn) {
-            const offsetX = Math.random() * 8 - 4; // Random between -4 and 4 (more subtle)
-            const offsetY = Math.random() * 8 - 4; // Random between -4 and 4 (more subtle) 
+            const offsetX = Math.random() * 4.8 - 2.4; // Random between -2.4 and 2.4 (reduced from -4 to 4)
+            const offsetY = Math.random() * 4.8 - 2.4; // Random between -2.4 and 2.4 (reduced from -4 to 4)
             setGlitchOffset({ x: offsetX, y: offsetY });
             setGlitchActive(true);
           } else {
             setGlitchActive(false);
           }
-        }, 120); // Slower glitching
+        }, 160); // Even slower glitching (increased from 120ms)
         
         // Eventually reduce to occasional glitches
         const occasionalGlitchTimer = setTimeout(() => {
           clearInterval(subtleGlitchInterval);
           
-          // Just occasional glitches
+          // Just occasional glitches (reduced by 40%)
           const occasionalGlitchInterval = setInterval(() => {
-            // Random on/off - rare glitches
-            const isOn = Math.random() > 0.85; // Only 15% chance of glitching
+            // Random on/off - very rare glitches (reduced by 40%)
+            const isOn = Math.random() > 0.91; // Only 9% chance of glitching (reduced from 15%)
             
             if (isOn) {
-              const offsetX = Math.random() * 5 - 2.5; // Random between -2.5 and 2.5 (subtle)
-              const offsetY = Math.random() * 5 - 2.5; // Random between -2.5 and 2.5 (subtle)
+              const offsetX = Math.random() * 3 - 1.5; // Random between -1.5 and 1.5 (reduced from -2.5 to 2.5)
+              const offsetY = Math.random() * 3 - 1.5; // Random between -1.5 and 1.5 (reduced from -2.5 to 2.5)
               setGlitchOffset({ x: offsetX, y: offsetY });
               setGlitchActive(true);
             } else {
               setGlitchActive(false);
             }
-          }, 200); // Very slow glitching
+          }, 280); // Even slower glitching (increased from 200ms)
           
           return () => {
             clearInterval(occasionalGlitchInterval);
@@ -205,14 +205,14 @@ export function RotatingMandelaBackground({
               {/* Glitch overlay */}
               {glitchActive && (
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                  {/* Slice effect 1 */}
+                  {/* Slice effect 1 (reduced by 40%) */}
                   <div 
                     className="absolute w-full overflow-hidden" 
                     style={{
-                      height: '33%',
-                      top: `${Math.random() * 67}%`,
-                      transform: `translateX(${Math.random() * 10 - 5}px)`,
-                      opacity: 0.8,
+                      height: '20%', // Reduced from 33%
+                      top: `${Math.random() * 80}%`,
+                      transform: `translateX(${Math.random() * 6 - 3}px)`, // Reduced from 10-5 to 6-3
+                      opacity: 0.48, // Reduced from 0.8
                       mixBlendMode: "screen"
                     }}
                   >
@@ -221,19 +221,19 @@ export function RotatingMandelaBackground({
                       alt="" 
                       className="w-full h-[300%] object-contain"
                       style={{
-                        transform: `translateY(-${Math.random() * 67}%)`
+                        transform: `translateY(-${Math.random() * 40}%)` // Reduced from 67%
                       }}
                     />
                   </div>
                   
-                  {/* Slice effect 2 */}
+                  {/* Slice effect 2 (reduced by 40%) */}
                   <div 
                     className="absolute w-full overflow-hidden" 
                     style={{
-                      height: '20%',
-                      top: `${Math.random() * 80}%`,
-                      transform: `translateX(${Math.random() * 10 - 5}px)`,
-                      opacity: 0.5,
+                      height: '12%', // Reduced from 20%
+                      top: `${Math.random() * 88}%`,
+                      transform: `translateX(${Math.random() * 6 - 3}px)`, // Reduced from 10-5 to 6-3
+                      opacity: 0.3, // Reduced from 0.5
                       filter: "hue-rotate(180deg)",
                       mixBlendMode: "exclusion"
                     }}
