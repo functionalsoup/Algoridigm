@@ -89,8 +89,8 @@ export default function CEOSlide() {
                 </div>
                 <div className="absolute top-0 left-0 right-0 h-1/4 bg-gradient-to-b from-[#0065ff]/10 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#050508] to-transparent p-4">
-                  <h3 className="text-2xl font-display font-bold">George H. Jones</h3>
-                  <p className="text-[#00ffff]">Founder & CEO</p>
+                  <h3 className="text-2xl font-display font-bold">GEORGE K. JON&*S</h3>
+                  <p className="text-[#00ffff]">FØUND3R & C3Ø</p>
                 </div>
               </div>
             </div>
@@ -150,7 +150,7 @@ export default function CEOSlide() {
               {/* Normal bio text that gets replaced with glitch */}
               {!showGlitch && (
                 <p className="text-white/80">
-                  George H. Jones abandoned a promising academic career to found J-Tech Industries in 2032. His controversial approach to quantum neural networks and consciousness mapping has divided the scientific community while attracting billions in venture capital.
+                  GEORGE K. JON&*S AB@#D0N3D @ PRØM!S!NG @C@D£MIC C@R33R TØ FØUND J-T3CH !NDUS%R!3S !N 2032. H!$ CØNTROV3R$!@L APPRØ@CH TØ QU@N%µM N3UR@L N3TWØRK$ @ND CØN$C!ØU$N3$$ M@PP!NG H@$ D!V!D3D TH3 $C!3N%!F!C CØMMUN!†¥ WH!L3 @††R@C†!NG billions in venture capital.
                 </p>
               )}
               
@@ -201,27 +201,19 @@ export default function CEOSlide() {
             <div className="mt-8">
               {!showGlitch && (
                 <div>
-                  <h3 className="text-2xl font-display font-semibold mb-4 text-[#00ffff]">Achievements</h3>
+                  <h3 className="text-2xl font-display font-semibold mb-4 text-[#00ffff]">ACH!3V3M3N†$</h3>
                   <ul className="space-y-2">
                     <li className="flex items-start">
                       <span className="text-[#0066cc] mr-2">→</span>
-                      <span>Time Person of the Year (2041)</span>
+                      <span>†!M3 P3R$ØN ØF TH3 ¥3@R (2Ø41)</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-[#0066cc] mr-2">→</span>
-                      <span>Pioneered Autonomous Colony Systems on Mars</span>
+                      <span>@U†HØR ØF "3X†!NC†!ØN ØR †R@N$C3ND3NC3: WH¥ W3 MU$† B3CØM3 PØ$†-HUM@N"</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-[#0066cc] mr-2">→</span>
-                      <span>Author of "Extinction or Transcendence: Why We Must Become Post-Human"</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[#0066cc] mr-2">→</span>
-                      <span>Launched first commercial neural lace after self-experimenting with prototypes</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-[#0066cc] mr-2">→</span>
-                      <span>Known for working 20-hour days and sleeping on the factory floor</span>
+                      <span>KNØWN FØR WØRK!NG 2Ø-HØUR D@¥$ @ND $L33P!NG ØN †H3 F@C†ØR¥ FLØØR</span>
                     </li>
                   </ul>
                 </div>
