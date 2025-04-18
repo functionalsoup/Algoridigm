@@ -222,7 +222,7 @@ export default function RevealSlide() {
                   <h4 className="text-[#00a2ff] font-medium">Next Steps</h4>
                 </div>
                 <p className="text-white/80 text-sm mb-0">
-                  Contact us about our <span className="text-[#ff2a6d] font-medium">in-person pitch meeting</span> to learn more about MACHINAL and our adaptation plans. Reaching out simply expresses interest and is not a commitment to the workshop.
+                  Contact us to learn more about MACHINAL and our adaptation plans. Reaching out simply <span className="text-[#ff2a6d] font-medium">expresses interest</span> and is not a commitment to the workshop.
                 </p>
               </div>
             </div>
@@ -254,7 +254,7 @@ export default function RevealSlide() {
                 <div className="flex flex-col justify-center p-3 bg-[#000a14]/40 border border-[#1a3a59]/50 rounded-lg mb-5">
                   <div className="text-white/80 text-sm space-y-3">
                     <p className="mb-2">
-                      Contact portal is active for the <span className="text-[#ff2a6d] font-medium">in-person pitch meeting</span>. Express your interest today.
+                      Contact portal is active. <span className="text-[#ff2a6d] font-medium">Express your interest</span> in our MACHINAL adaptation today.
                     </p>
                     
                     <div className="flex items-center justify-between">
