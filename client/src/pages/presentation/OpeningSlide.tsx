@@ -169,10 +169,10 @@ export default function OpeningSlide() {
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-wider text-[#00a2ff]">
                 AUTONOMOUS TRAINING MODULE
               </h1>
-              <div className="text-white/40 text-sm mt-1 font-mono tracking-wide">J-TECH INDUSTRIES • EST. 2050</div>
+              <div className="text-white/40 text-sm mt-2 font-mono tracking-wide">J-TECH INDUSTRIES • EST. 2050</div>
               
               <motion.div 
-                className="mt-4"
+                className="mt-6"
                 animate={{ 
                   y: [0, -5, 0],
                   filter: [

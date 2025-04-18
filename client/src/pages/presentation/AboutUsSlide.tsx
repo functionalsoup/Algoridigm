@@ -58,7 +58,7 @@ export default function AboutUsSlide() {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <motion.h2 
-          className="text-3xl sm:text-4xl md:text-6xl font-display font-bold mb-6 md:mb-8 text-center relative"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 md:mb-8 text-center relative"
           animate={{ 
             color: ["#00FFFF", "#88FF00", "#FF8800", "#00FFFF"],
             textShadow: [
@@ -77,12 +77,12 @@ export default function AboutUsSlide() {
           Functional Soup: A Collective Creation
         </motion.h2>
         
-        <div className="bg-corp-bg/40 backdrop-blur-md rounded-lg border border-corp-cyan/40 p-3 sm:p-4 md:p-8 mb-6 md:mb-10">
-          <p className="mb-3 md:mb-4 italic text-sm sm:text-base md:text-lg text-center">
+        <div className="bg-corp-bg/40 backdrop-blur-md rounded-lg border border-corp-cyan/40 p-4 sm:p-5 md:p-8 mb-6 md:mb-10">
+          <p className="mb-4 md:mb-5 italic text-sm sm:text-base md:text-lg text-center">
             Inspired by the revolutionary spirit of the Bauhaus, the critical engagement of Epic Theatre, and the dynamic collaboration inherent in devised practices.
           </p>
           
-          <h3 className="text-lg sm:text-xl md:text-2xl font-display font-semibold mb-3 md:mb-4 text-corp-cyan">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-display font-semibold mb-4 md:mb-5 text-corp-cyan">
             Core Principles
           </h3>
           
@@ -139,7 +139,7 @@ export default function AboutUsSlide() {
           </div>
         </div>
         
-        <div className="text-center mt-6 md:mt-10 mb-8 md:mb-12 relative">
+        <div className="text-center mt-8 sm:mt-10 md:mt-12 mb-8 md:mb-12 relative">
           {/* Animated glow effect behind the button */}
           <motion.div 
             className="absolute inset-0 top-[-30px] left-[-30px] right-[-30px] bottom-[-30px] rounded-full bg-gradient-to-r from-corp-cyan/30 via-corp-orange/20 to-corp-cyan/30 blur-xl z-0"

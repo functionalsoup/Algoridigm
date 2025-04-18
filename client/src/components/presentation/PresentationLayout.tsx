@@ -27,13 +27,13 @@ export function PresentationLayout({
   return (
     <motion.div
       ref={containerRef}
-      className="slide p-8 md:p-16 relative w-full h-full overflow-auto"
+      className="slide p-6 sm:p-8 md:p-12 lg:p-16 relative w-full h-full overflow-auto"
       initial={{ opacity: 0 }}
       animate={{ opacity: isActive ? 1 : 0 }}
       exit={{ opacity: 0 }}
       style={{ pointerEvents: isActive ? "all" : "none" }}
     >
-      <div className="absolute top-6 right-6">
+      <div className="absolute top-6 sm:top-8 right-6 sm:right-8 z-50">
         <Timer />
       </div>
 
@@ -52,8 +52,8 @@ export function PresentationLayout({
         {children}
       </div>
 
-      <div className="flex justify-between mt-12 max-w-5xl mx-auto">
-        <div>
+      <div className="flex justify-between mt-10 sm:mt-12 md:mt-14 max-w-5xl mx-auto pt-4 sm:pt-6">
+        <div className="flex-1">
           {showPrevButton && (
             <NavigationButton
               onClick={() => goToSlide(slideNumber - 1)}
@@ -65,7 +65,7 @@ export function PresentationLayout({
           )}
         </div>
         
-        <div>
+        <div className="flex-1 flex justify-end">
           {showNextButton && (
             <NavigationButton
               onClick={() => goToSlide(slideNumber + 1)}

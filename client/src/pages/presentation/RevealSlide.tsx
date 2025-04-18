@@ -53,7 +53,7 @@ export default function RevealSlide() {
       >
         {/* Updated Autonomous Training Module Header */}
         <motion.div 
-          className="text-center mb-10"
+          className="text-center mb-8 sm:mb-10"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
@@ -74,17 +74,17 @@ export default function RevealSlide() {
             >
               AUTONOMOUS TRAINING MODULE
             </motion.div>
-            <h2 className="text-4xl md:text-5xl font-display font-bold tracking-wider text-[#00a2ff]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold tracking-wider text-[#00a2ff]">
               AUTONOMOUS TRAINING MODULE
             </h2>
           </div>
           
-          <div className="h-0.5 bg-gradient-to-r from-transparent via-[#00a2ff] to-transparent w-full max-w-lg mx-auto my-3"></div>
+          <div className="h-0.5 bg-gradient-to-r from-transparent via-[#00a2ff] to-transparent w-full max-w-lg mx-auto my-4"></div>
           
-          <div className="text-sm text-white/60 mt-1 font-mono tracking-wide">J-TECH INDUSTRIES • EST. 2050</div>
+          <div className="text-sm text-white/60 mt-2 font-mono tracking-wide">J-TECH INDUSTRIES • EST. 2050</div>
           
           <motion.div 
-            className="mt-4"
+            className="mt-5"
             animate={{ 
               y: [0, -5, 0],
               filter: [
@@ -105,7 +105,7 @@ export default function RevealSlide() {
         
         {/* Main Content Panel with Futuristic Design */}
         <motion.div 
-          className="bg-[#0c0c14]/80 border border-[#1a3a59] rounded-2xl p-5 sm:p-7 backdrop-blur-md mb-8 relative"
+          className="bg-[#0c0c14]/80 border border-[#1a3a59] rounded-2xl p-5 sm:p-6 md:p-7 backdrop-blur-md mb-8 relative"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.6 }}
@@ -298,7 +298,7 @@ export default function RevealSlide() {
         </motion.div>
         
         <motion.div 
-          className="text-center mt-10 mb-4"
+          className="text-center mt-8 sm:mt-10 mb-4"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.7 }}
