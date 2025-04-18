@@ -83,10 +83,10 @@ export default function OpeningSlide() {
   
   // Animated stats for HUD-like display
   const stats = [
-    { label: "NEURAL NETWORK", value: "98.7%", icon: <Cpu size={16} /> },
-    { label: "MEMORY ALLOCATION", value: "3.8TB", icon: <Database size={16} /> },
-    { label: "SYSTEM INTEGRITY", value: "100%", icon: <Shield size={16} /> },
-    { label: "QUANTUM NODES", value: "ONLINE", icon: <Server size={16} /> }
+    { label: "NEURAL NETWORK", value: "98.7%", icon: <Cpu size={14} className="sm:w-4 sm:h-4 md:w-[16px] md:h-[16px]" /> },
+    { label: "MEMORY ALLOCATION", value: "3.8TB", icon: <Database size={14} className="sm:w-4 sm:h-4 md:w-[16px] md:h-[16px]" /> },
+    { label: "SYSTEM INTEGRITY", value: "100%", icon: <Shield size={14} className="sm:w-4 sm:h-4 md:w-[16px] md:h-[16px]" /> },
+    { label: "QUANTUM NODES", value: "ONLINE", icon: <Server size={14} className="sm:w-4 sm:h-4 md:w-[16px] md:h-[16px]" /> }
   ];
   
   return (
@@ -137,16 +137,16 @@ export default function OpeningSlide() {
         {/* Boot sequence terminal - Phase 1 */}
         {animationPhase >= 1 && (
           <motion.div 
-            className="absolute top-8 left-4 sm:left-8 w-full max-w-md bg-[#0c0c14]/90 border border-[#1a3a59] rounded-xl p-4 backdrop-blur-sm"
+            className="absolute top-4 sm:top-8 left-2 sm:left-8 w-[calc(100%-16px)] sm:w-full max-w-md bg-[#0c0c14]/90 border border-[#1a3a59] rounded-xl p-3 sm:p-4 backdrop-blur-sm"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: animationPhase >= 2 ? 0.7 : 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="flex items-center mb-2 border-b border-[#1a3a59] pb-2">
-              <Terminal size={16} className="text-[#00a2ff] mr-2" />
+            <div className="flex items-center mb-2 border-b border-[#1a3a59] pb-1 sm:pb-2">
+              <Terminal size={14} className="text-[#00a2ff] mr-2" />
               <span className="text-[#00a2ff] text-xs font-mono">SYSTEM BOOT SEQUENCE</span>
             </div>
-            <div className="font-mono text-xs space-y-1">
+            <div className="font-mono text-[10px] sm:text-xs space-y-1 max-h-[25vh] sm:max-h-none overflow-y-auto">
               {renderConsoleMessages()}
             </div>
           </motion.div>
@@ -167,13 +167,13 @@ export default function OpeningSlide() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold tracking-wider text-[#00a2ff]">
+              <h1 className="text-xl sm:text-2xl md:text-4xl font-display font-bold tracking-wider text-[#00a2ff] px-1">
                 AUTONOMOUS TRAINING MODULE
               </h1>
-              <div className="text-white/40 text-sm mt-2 font-mono tracking-wide">J-TECH INDUSTRIES • EST. 2050</div>
+              <div className="text-white/40 text-xs sm:text-sm mt-2 font-mono tracking-wide">J-TECH INDUSTRIES • EST. 2050</div>
               
               <motion.div 
-                className="mt-6"
+                className="mt-4 sm:mt-6"
                 animate={{ 
                   y: [0, -5, 0],
                   filter: [
@@ -188,7 +188,7 @@ export default function OpeningSlide() {
                   ease: "easeInOut" 
                 }}
               >
-                <span className="text-xl md:text-2xl font-display font-bold text-[#80ff00]">ALGORIDIGM</span>
+                <span className="text-lg sm:text-xl md:text-2xl font-display font-bold text-[#80ff00]">ALGORIDIGM</span>
               </motion.div>
             </motion.div>
             
@@ -209,7 +209,7 @@ export default function OpeningSlide() {
             
             {/* Stats indicators */}
             <motion.div 
-              className="flex flex-wrap justify-center gap-3 sm:gap-6 mt-6"
+              className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-6 mt-4 sm:mt-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 1.2 }}
@@ -217,15 +217,15 @@ export default function OpeningSlide() {
               {stats.map((stat, index) => (
                 <motion.div
                   key={`stat-${index}`}
-                  className="bg-[#0c0c14]/80 border border-[#1a3a59] rounded-lg px-3 py-2 flex items-center"
+                  className="bg-[#0c0c14]/80 border border-[#1a3a59] rounded-lg px-2 sm:px-3 py-1 sm:py-2 flex items-center"
                   initial={{ y: 10, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.3, delay: 1.4 + index * 0.15 }}
                 >
-                  <div className="text-[#00a2ff] mr-2">{stat.icon}</div>
+                  <div className="text-[#00a2ff] mr-1 sm:mr-2">{stat.icon}</div>
                   <div>
-                    <div className="text-[10px] text-white/50 uppercase tracking-wider">{stat.label}</div>
-                    <div className="text-xs font-semibold text-white/90">{stat.value}</div>
+                    <div className="text-[8px] sm:text-[10px] text-white/50 uppercase tracking-wider">{stat.label}</div>
+                    <div className="text-[10px] sm:text-xs font-semibold text-white/90">{stat.value}</div>
                   </div>
                 </motion.div>
               ))}
@@ -236,7 +236,7 @@ export default function OpeningSlide() {
         {/* AI Initialization - Phase 3 */}
         {animationPhase >= 3 && (
           <motion.div
-            className="flex flex-col items-center text-center max-w-xl mx-auto relative mt-4"
+            className="flex flex-col items-center text-center max-w-xl mx-auto relative mt-2 sm:mt-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
@@ -257,29 +257,29 @@ export default function OpeningSlide() {
             
             {/* AI Status Text */}
             <motion.div 
-              className="text-center mb-6 relative z-10"
+              className="text-center mb-3 sm:mb-6 relative z-10"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <div className="text-white/80 text-lg sm:text-xl mb-1">INITIALIZING NEURAL PATTERN</div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#80ff00] font-display tracking-wide mb-4" 
+              <div className="text-white/80 text-base sm:text-lg md:text-xl mb-1">INITIALIZING NEURAL PATTERN</div>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#80ff00] font-display tracking-wide mb-2 sm:mb-4" 
                 style={{ textShadow: "0 0 10px rgba(128, 255, 0, 0.5)" }}>
                 ALGORIDIGM
               </h2>
               
               <motion.div 
-                className="text-white/60 text-sm max-w-xl mx-auto px-6"
+                className="text-white/60 text-xs sm:text-sm max-w-xl mx-auto px-3 sm:px-6"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
               >
-                <p className="mb-4">
+                <p className="mb-2 sm:mb-4">
                   Neural pattern visualization active. Training module activated for authorized personnel.
                   <br />Proceed with caution: potential hallucination anomalies detected in neural framework.
                 </p>
                 
-                <div className="inline-block px-4 py-1 bg-[#ff2a6d]/10 border border-[#ff2a6d]/30 rounded-lg text-[#ff2a6d] text-xs font-medium mb-2">
+                <div className="inline-block px-2 sm:px-4 py-1 bg-[#ff2a6d]/10 border border-[#ff2a6d]/30 rounded-lg text-[#ff2a6d] text-[10px] sm:text-xs font-medium mb-2">
                   HALLUCINATION PROTOCOL ACTIVE
                 </div>
               </motion.div>
@@ -290,14 +290,14 @@ export default function OpeningSlide() {
         {/* Begin button - Phase 4 */}
         {animationPhase >= 4 && (
           <motion.div
-            className="mt-8 relative z-10"
+            className="mt-4 sm:mt-6 md:mt-8 relative z-10"
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             {/* Animated glow behind button */}
             <motion.div
-              className="absolute inset-0 -top-6 -bottom-6 -left-8 -right-8 rounded-full bg-gradient-to-r from-[#00a2ff]/10 to-[#ff2a6d]/10 blur-xl"
+              className="absolute inset-0 -top-4 sm:-top-6 -bottom-4 sm:-bottom-6 -left-4 sm:-left-8 -right-4 sm:-right-8 rounded-full bg-gradient-to-r from-[#00a2ff]/10 to-[#ff2a6d]/10 blur-xl"
               animate={{ 
                 opacity: [0.3, 0.7, 0.3],
                 scale: [1, 1.1, 1]
@@ -312,15 +312,15 @@ export default function OpeningSlide() {
             
             <motion.button
               onClick={handleBegin}
-              className="relative bg-gradient-to-r from-[#00a2ff] to-[#0088e0] text-black font-bold py-3 px-6 sm:px-8 rounded-full tracking-wider flex items-center gap-2 shadow-lg shadow-[#00a2ff]/20"
+              className="relative bg-gradient-to-r from-[#00a2ff] to-[#0088e0] text-black font-bold text-sm sm:text-base py-2 sm:py-3 px-4 sm:px-6 md:px-8 rounded-full tracking-wider flex items-center gap-1 sm:gap-2 shadow-lg shadow-[#00a2ff]/20"
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 0 25px rgba(0, 162, 255, 0.4)"
               }}
               whileTap={{ scale: 0.98 }}
             >
-              <span>ENTER TRAINING SEQUENCE</span>
-              <ArrowRight size={18} />
+              <span>ENTER TRAINING</span>
+              <ArrowRight size={16} />
             </motion.button>
           </motion.div>
         )}
