@@ -7,6 +7,8 @@ import { RotatingMandelaBackground } from "@/components/presentation/RotatingMan
 import { ArrowRight, Calendar, HelpCircle, Users, Zap, AlertTriangle, ChevronRight, Layers, Info } from "lucide-react";
 import { GeometricBackground } from "@/components/presentation/GeometricBackground";
 import { ErrorMessages } from "@/components/presentation/BackgroundElements";
+import attachmentImage from "@assets/IMG_2437.jpeg";
+import contactImage from "@assets/Untitled design.zip - 1.jpeg";
 
 export default function RevealSlide() {
   const { goToSlide } = usePresentationContext();
@@ -260,7 +262,19 @@ export default function RevealSlide() {
                 transition={{ duration: 0.8, delay: 0.6 }}
               />
               
-              <div className="text-sm text-white/60 mb-4 font-mono tracking-wide">J-TECH INDUSTRIES • EST. 2050</div>
+              {/* Main artwork/attachment at the top */}
+              <motion.div
+                className="max-w-md mx-auto mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+              >
+                <img 
+                  src={attachmentImage} 
+                  alt="ALGORIDIGM Artwork" 
+                  className="w-full h-auto rounded-xl shadow-[0_0_30px_rgba(0,162,255,0.3)] border border-[#1a3a59]/50"
+                />
+              </motion.div>
               
               <motion.div
                 className="relative"
@@ -486,6 +500,24 @@ export default function RevealSlide() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.2, duration: 0.5 }}
                   >
+                    {/* Image above contact info */}
+                    <motion.div
+                      className="mb-5 rounded-lg overflow-hidden"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.6, delay: 1.3 }}
+                      whileHover={{ 
+                        scale: 1.03,
+                        boxShadow: "0 0 20px rgba(0, 162, 255, 0.3)"
+                      }}
+                    >
+                      <img 
+                        src={contactImage} 
+                        alt="ALGORIDIGM Design" 
+                        className="w-full h-auto border border-[#1a3a59]"
+                      />
+                    </motion.div>
+                    
                     <motion.h3 
                       className="text-xl sm:text-2xl font-display text-[#00a2ff] mb-5 flex items-center"
                       animate={{ y: [-1, 1, -1] }}
