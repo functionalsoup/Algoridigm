@@ -55,16 +55,16 @@ export default function OpeningSlide() {
     goToSlide(1); // Go to the reveal slide
   };
   
-  // Function to generate console messages - Updated for training module theme
+  // Function to generate console messages - Restored original boot sequence
   const renderConsoleMessages = () => {
     const messages = [
-      { text: "INITIALIZING J-TECH PERSONNEL TRAINING MODULE v5.23.7...", delay: 0 },
-      { text: "LOADING EDUCATIONAL OBJECTIVES...", delay: 0.6 },
-      { text: "INSTRUCTIONAL PROTOCOLS: ACTIVATED", delay: 1.2 },
-      { text: "LEARNING METRICS: INITIALIZED", delay: 1.6 },
-      { text: "TRAINEE INTERFACE: CALIBRATED", delay: 2.0 },
-      { text: "CERTIFICATION PROTOCOLS: READY", delay: 2.4 },
-      { text: "LOADING SIMULATION: ALGORIDIGM", delay: 2.8 }
+      { text: "INITIALIZING J-TECH AUTONOMOUS TRAINING SYSTEM v3.11.2...", delay: 0 },
+      { text: "LOADING CORE MODULES...", delay: 0.6 },
+      { text: "NEURAL NETWORK CALIBRATION: OK", delay: 1.2 },
+      { text: "ENVIRONMENT SENSOR ARRAY: ONLINE", delay: 1.6 },
+      { text: "BIOMETRIC INTERFACE: INITIALIZED", delay: 2.0 },
+      { text: "SECURITY PROTOCOLS: ACTIVE", delay: 2.4 },
+      { text: "LOADING TRAINING SEQUENCE: ALGORIDIGM", delay: 2.8 }
     ];
     
     return messages.map((msg, index) => (
@@ -81,12 +81,12 @@ export default function OpeningSlide() {
     ));
   };
   
-  // Animated stats for HUD-like display - Updated for training module theme
+  // Animated stats for HUD-like display - Restoring system-focused stats
   const stats = [
-    { label: "LEARNING ALGORITHM", value: "ACTIVE", icon: <Cpu size={14} className="sm:w-4 sm:h-4 md:w-[16px] md:h-[16px]" /> },
-    { label: "TRAINING MODULES", value: "12 OF 12", icon: <Database size={14} className="sm:w-4 sm:h-4 md:w-[16px] md:h-[16px]" /> },
-    { label: "PARTICIPANT SYNC", value: "OPTIMAL", icon: <Shield size={14} className="sm:w-4 sm:h-4 md:w-[16px] md:h-[16px]" /> },
-    { label: "SIMULATION LEVEL", value: "ADVANCED", icon: <Server size={14} className="sm:w-4 sm:h-4 md:w-[16px] md:h-[16px]" /> }
+    { label: "NEURAL NETWORK", value: "ONLINE", icon: <Cpu size={14} className="sm:w-4 sm:h-4 md:w-[16px] md:h-[16px]" /> },
+    { label: "MEMORY ALLOCATION", value: "84.3%", icon: <Database size={14} className="sm:w-4 sm:h-4 md:w-[16px] md:h-[16px]" /> },
+    { label: "SECURITY LEVEL", value: "ALPHA", icon: <Shield size={14} className="sm:w-4 sm:h-4 md:w-[16px] md:h-[16px]" /> },
+    { label: "SYSTEM INTEGRITY", value: "NOMINAL", icon: <Server size={14} className="sm:w-4 sm:h-4 md:w-[16px] md:h-[16px]" /> }
   ];
   
   return (
