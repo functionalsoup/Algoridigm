@@ -260,12 +260,7 @@ export default function RevealSlide() {
                 transition={{ duration: 0.8, delay: 0.6 }}
               />
               
-              <h2 className="text-2xl md:text-3xl font-display font-semibold text-white mb-2">
-                Theatre Workshop: Devising MACHINAL
-              </h2>
-              <div className="text-[#80ff00] text-lg font-medium mb-4">
-                ALGORIDIGM <span className="text-white/50 text-sm">(Working Title)</span>
-              </div>
+
 
             </motion.div>
             
