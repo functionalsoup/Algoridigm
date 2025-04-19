@@ -129,11 +129,8 @@ export default function RevealSlide() {
             <div className="flex items-center mb-1">
               <div className="h-4 w-4 bg-[#00a2ff] rounded-full mr-3 animate-pulse"></div>
               <h3 className="text-xl sm:text-2xl font-display font-semibold text-white">
-                Theatre Workshop: MACHINAL Adaptation - Summer 2025
+                Theatre Workshop: Devising <em>MACHINAL</em> adaptation - ALGORIDIGM (working title)
               </h3>
-            </div>
-            <div className="pl-7 text-white/60 text-sm border-l border-[#1a3a59] ml-[7px]">
-              ALGORIDIGM: A Devised Theatre Experience
             </div>
           </div>
           
@@ -141,7 +138,10 @@ export default function RevealSlide() {
             <div className="lg:w-3/5">
               <div className="text-white/90 space-y-4 mb-6">
                 <p>
-                  We're seeking creative collaborators for our experimental adaptation of Sophie Treadwell's "MACHINAL." This innovative project welcomes participants of all experience levels to join our collective process.
+                  Step into a world where mechanization becomes digitization, and the fight for autonomy takes place not on factory floors but inside algorithmic corporate data centers. This devised theatre workshop invites participants to collaboratively reimagine Sophie Treadwell's <em>Machinal</em>—an iconic expressionist drama about a woman crushed by patriarchal systems and based of the real case of Ruth Snyder—through the lens of today's AI-focused, data-obsessed society.
+                </p>
+                <p>
+                  The purpose of the workshop is to experiment with the text, collaborate on script and design, and by the end come to a decision whether to move on to a full production. Just to be clear, <span className="font-bold">this is not a performance this is a purely pre-production based event</span>. Please just shoot me a message from the contact us form if you're interested in participating and I'll reach back out to you shortly.
                 </p>
               </div>
               
