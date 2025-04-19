@@ -156,11 +156,7 @@ export default function AboutUsSlide() {
             transition={{ delay: 1.4 }}
           >
             <p className="text-xs md:text-sm">
-              <strong>Stewart Campbell</strong> is an award-winning director whose relentless experimentation has established him as a formidable presence in contemporary theatre. His unique vision seamlessly blends technological innovation with classical theatrical traditions to create immersive experiences that challenge conventional narrative structures.
-            </p>
-            
-            <p className="text-xs md:text-sm">
-              Mr. Campbell's groundbreaking work includes <em>Dromnium</em>, which received critical acclaim at the Kennedy Center American College Theater Festival where it garnered multiple awards including Distinguished Direction and Outstanding Ensemble Performance. His professional repertoire spans from avant-garde interpretations of classic texts to pioneering work in immersive and site-specific productions. His methodology is characterized by rigorous research, collaborative development, and an unwavering commitment to artistic integrity.
+              <strong>Stuart Campbell</strong> is a director and theatre-maker based in Longview, TX, with a background in devised performance, ensemble-driven storytelling, and experimental theatre. A graduate of the University of Arkansas – Fort Smith, he has directed and performed in a range of works spanning classical texts, new writing, and movement-based pieces, including nationally recognized devised productions. Stuart's work emphasizes collaborative creation, and the intersection of technology and live performance.
             </p>
           </motion.div>
         </div>
