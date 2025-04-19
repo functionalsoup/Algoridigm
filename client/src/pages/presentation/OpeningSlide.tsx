@@ -304,6 +304,21 @@ export default function OpeningSlide() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
+            {/* Important Notice */}
+            <motion.div 
+              className="mb-6 sm:mb-8 max-w-xl mx-auto"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              <div className="bg-[#0c0c14]/80 border border-[#1a3a59] rounded-lg p-4 backdrop-blur-md">
+                <h3 className="text-[#00a2ff] text-center font-bold mb-2">IMPORTANT NOTICE</h3>
+                <p className="text-white/90 text-center text-sm sm:text-base">
+                  <strong>What you are about to see is not set in stone.</strong> If you find this intriguing, please hit the contact us button and shoot us an email.
+                </p>
+              </div>
+            </motion.div>
+            
             {/* Animated glow behind button */}
             <motion.div
               className="absolute inset-0 -top-4 sm:-top-6 -bottom-4 sm:-bottom-6 -left-4 sm:-left-8 -right-4 sm:-right-8 rounded-full bg-gradient-to-r from-[#00a2ff]/10 to-[#ff2a6d]/10 blur-xl"
@@ -328,7 +343,7 @@ export default function OpeningSlide() {
               }}
               whileTap={{ scale: 0.98 }}
             >
-              <span>ENTER TRAINING</span>
+              <span>BEGIN</span>
               <ArrowRight size={16} />
             </motion.button>
           </motion.div>

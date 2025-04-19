@@ -15,6 +15,32 @@ export default function Home() {
   // Handle the reveal transition when moving from slide 1 to 2
   useEffect(() => {
     if (currentSlide === 1 && !isRevealing) {
+      let autoProgressTimer: NodeJS.Timeout | null = null;
+      
+      // Function to handle transition to reveal slide
+      const triggerRevealTransition = () => {
+        console.log("Triggering reveal transition");
+        
+        // Show the transition effect
+        setShowRevealTransition(true);
+        
+        // After a short delay, show the reveal slide content
+        setTimeout(() => {
+          setIsRevealing(true);
+          
+          // Move to the next slide
+          setTimeout(() => {
+            setShowRevealTransition(false);
+            
+            // This actually updates the slide number
+            setTimeout(() => {
+              // Use the goToSlide from the outer scope
+              goToSlide(2);
+            }, 100);
+          }, 2000);
+        }, 300);
+      };
+      
       // Create handler for the next button click
       const handler = (e: MouseEvent) => {
         const target = e.target as HTMLElement;
@@ -26,30 +52,30 @@ export default function Home() {
           
           console.log("Next button clicked on combined slide - starting transition");
           
-          // Show the transition effect
-          setShowRevealTransition(true);
+          // Clear auto progress timer if it exists
+          if (autoProgressTimer) {
+            clearTimeout(autoProgressTimer);
+          }
           
-          // After a short delay, show the reveal slide content
-          setTimeout(() => {
-            setIsRevealing(true);
-            
-            // Move to the next slide
-            setTimeout(() => {
-              setShowRevealTransition(false);
-              
-              // This actually updates the slide number
-              setTimeout(() => {
-                // Use the goToSlide from the outer scope
-                goToSlide(2);
-              }, 100);
-            }, 2000);
-          }, 300);
+          triggerRevealTransition();
         }
       };
       
+      // Set auto progress timer to automatically advance after 10 seconds
+      autoProgressTimer = setTimeout(() => {
+        console.log("Auto progressing after 10 seconds of inactivity");
+        triggerRevealTransition();
+      }, 10000);
+      
       // Add click event to the entire document to catch button clicks
       document.addEventListener('click', handler, true);
-      return () => document.removeEventListener('click', handler, true);
+      
+      return () => {
+        document.removeEventListener('click', handler, true);
+        if (autoProgressTimer) {
+          clearTimeout(autoProgressTimer);
+        }
+      };
     }
   }, [currentSlide, isRevealing, goToSlide]);
   

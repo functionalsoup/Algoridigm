@@ -73,7 +73,7 @@ export function FlashingImagesWarning({ onDismiss }: FlashingImagesWarningProps)
                     IMPORTANT NOTICE
                   </h3>
                   <p className="text-white/70 text-xs sm:text-sm">
-                    What you are about to see is not set in stone. If you find this interesting, please register at the end to be added to the list for an in-person pitch meeting.
+                    <strong>What you are about to see is not set in stone.</strong> If you find this intriguing, please hit the contact us button and shoot us an email.
                   </p>
                 </div>
               </div>
