@@ -12,7 +12,7 @@ export default function AboutUsSlide() {
   const handleRegisterClick = () => {
     setAnimateOut(true);
     setTimeout(() => {
-      window.location.href = "/register";
+      window.location.href = "/contact";
     }, 500);
   };
   
