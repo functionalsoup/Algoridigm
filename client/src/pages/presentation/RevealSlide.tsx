@@ -214,17 +214,7 @@ export default function RevealSlide() {
                 </div>
               </div>
               
-              <div className="bg-[#0a0a14] border border-[#1a3a59] p-4 rounded-xl mb-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="bg-[#00a2ff]/20 p-2 rounded-lg">
-                    <ArrowRight size={18} className="text-[#00a2ff]" />
-                  </div>
-                  <h4 className="text-[#00a2ff] font-medium">Next Steps</h4>
-                </div>
-                <p className="text-white/80 text-sm mb-0">
-                  Contact us to learn more about MACHINAL and our adaptation plans. Reaching out simply <span className="text-[#ff2a6d] font-medium">expresses interest</span> and is not a commitment to the workshop.
-                </p>
-              </div>
+
             </div>
             
             {/* Contact Panel */}
