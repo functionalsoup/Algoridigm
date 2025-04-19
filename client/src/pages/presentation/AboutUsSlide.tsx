@@ -222,7 +222,7 @@ export default function AboutUsSlide() {
                     Professional Summary
                   </h4>
                   <p className="text-xs text-white/90">
-                    Theatre director and collaborative artist with a focus on devised performance, ensemble-generated work, and interdisciplinary storytelling. Experienced in directing, design, and ensemble development across regional and academic settings.
+                    Theatre director and collaborative artist with a focus on devised performance, ensemble-generated work, and interdisciplinary storytelling. Founder of Functional Soup Productions, dedicated to exploring empathy, identity, and technology through experimental performance. Experienced in directing, design, and ensemble development across regional and academic settings.
                   </p>
                 </div>
                 
@@ -241,13 +241,17 @@ export default function AboutUsSlide() {
                       <span className="text-[#80ff00] font-medium">Plethora Theatre Company – Ft. Smith, AR</span> | 2014–2015
                       <br />
                       <span className="text-white/90">Director:</span> <em>The Woman in Black</em>
+                      <br />
+                      <span className="text-white/90">Workshop Leader:</span> Devised Performance and Movement (Northwestern Oklahoma State University)
                     </li>
                     <li>
                       <span className="text-[#80ff00] font-medium">University of Arkansas – Fort Smith Theatre</span> | 2011–2014
                       <br />
                       <span className="text-white/90">Directed:</span> <em>God of Carnage, Memorandum of Love Lost</em> (Original devised piece)
                       <br />
-                      <span className="text-white/90">Performance:</span> <em>Dromnium</em> (Writer/Performer – KCACTF Selection)
+                      <span className="text-white/90">Performance:</span> <em>Dromnium</em> (Writer/Performer – KCACTF Regional & National Selection)
+                      <br />
+                      <span className="text-white/90">Other Roles:</span> <em>Aqua Vita</em> (Devised Movement), <em>Midsummer Night's Dream</em> (Actor – Bottom)
                     </li>
                   </ul>
                 </div>
@@ -262,11 +266,15 @@ export default function AboutUsSlide() {
                       <span className="text-[#80ff00] font-medium">University of Arkansas – Fort Smith</span> | 2011–2014
                       <br />
                       <span className="text-white/90">B.A. Theatre: Acting & Directing</span>
+                      <br />
+                      <span className="text-white/90">Graduated with Academic Achievement in Theatre</span>
                     </li>
                     <li>
                       <span className="text-[#80ff00] font-medium">Northwestern Oklahoma State University</span> | 2009–2011
                       <br />
-                      <span className="text-white/90">Theatre Program, KCACTF Region 6 – Student Director</span>
+                      <span className="text-white/90">Theatre Program, KCACTF Region 6 – Student Director for 10-Minute Play Festival</span>
+                      <br />
+                      <span className="text-white/90">Theatre Shop Assistant and Technical Support</span>
                     </li>
                   </ul>
                 </div>
@@ -283,6 +291,10 @@ export default function AboutUsSlide() {
                     <span className="px-2 py-1 bg-corp-cyan/20 rounded-full text-white/90">Collaborative Writing</span>
                     <span className="px-2 py-1 bg-corp-cyan/20 rounded-full text-white/90">Scenic Design</span>
                     <span className="px-2 py-1 bg-corp-cyan/20 rounded-full text-white/90">Technical Direction</span>
+                    <span className="px-2 py-1 bg-corp-cyan/20 rounded-full text-white/90">Digital Storytelling</span>
+                    <span className="px-2 py-1 bg-corp-cyan/20 rounded-full text-white/90">Interdisciplinary Art</span>
+                    <span className="px-2 py-1 bg-corp-cyan/20 rounded-full text-white/90">Technology Integration</span>
+                    <span className="px-2 py-1 bg-corp-cyan/20 rounded-full text-white/90">Workshop Facilitation</span>
                   </div>
                 </div>
               </motion.div>
