@@ -194,7 +194,8 @@ export default function CombinedSlide() {
             >
               <div className="w-full h-full bg-gradient-to-br from-corp-dark via-corp-bg to-corp-dark relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-20">
+                  {/* Circular background */}
+                  <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-20 absolute">
                     <circle cx="100" cy="100" r="90" stroke="url(#paint3_linear)" strokeWidth="2"/>
                     <circle cx="100" cy="100" r="60" stroke="url(#paint4_linear)" strokeWidth="2"/>
                     <circle cx="100" cy="100" r="30" fill="url(#paint5_radial)"/>
@@ -212,6 +213,32 @@ export default function CombinedSlide() {
                         <stop offset="1" stopColor="#FF00F5" stopOpacity="0.3"/>
                       </radialGradient>
                     </defs>
+                  </svg>
+                  
+                  {/* Male silhouette - George H. Jones */}
+                  <svg width="140" height="180" viewBox="0 0 140 180" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-80 relative z-10 mt-4">
+                    <defs>
+                      <linearGradient id="silhouetteGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#00F0FF" stopOpacity="0.7" />
+                        <stop offset="100%" stopColor="#FF00F5" stopOpacity="0.7" />
+                      </linearGradient>
+                    </defs>
+                    {/* Head */}
+                    <circle cx="70" cy="40" r="25" fill="black" />
+                    {/* Neck */}
+                    <rect x="65" y="65" width="10" height="10" fill="black" />
+                    {/* Shoulders */}
+                    <rect x="40" y="75" width="60" height="10" fill="black" />
+                    {/* Torso */}
+                    <rect x="50" y="85" width="40" height="55" fill="black" />
+                    {/* Arms */}
+                    <rect x="35" y="75" width="5" height="45" fill="black" />
+                    <rect x="100" y="75" width="5" height="45" fill="black" />
+                    {/* Legs */}
+                    <rect x="55" y="140" width="10" height="40" fill="black" />
+                    <rect x="75" y="140" width="10" height="40" fill="black" />
+                    {/* Overlay gradient for cybernetic effect */}
+                    <rect x="35" y="15" width="70" height="165" fill="url(#silhouetteGradient)" fillOpacity="0.2" />
                   </svg>
                 </div>
                 <div className="absolute top-0 left-0 right-0 h-1/4 bg-gradient-to-b from-corp-blue/10 to-transparent"></div>
