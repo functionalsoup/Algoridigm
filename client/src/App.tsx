@@ -15,6 +15,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/contact" component={ContactPage} />
       <Route path="/register" component={ContactPage} />
+      <Route path="/video" component={VideoOpeningSlide} />
       <Route component={NotFound} />
     </Switch>
   );
