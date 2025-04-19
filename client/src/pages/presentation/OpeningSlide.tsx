@@ -193,7 +193,7 @@ export default function OpeningSlide() {
                   ease: "easeInOut" 
                 }}
               >
-                <span className="text-lg sm:text-xl md:text-2xl font-display font-bold text-[#80ff00]">ALGORIDIGM</span>
+                <span className="text-base sm:text-lg md:text-xl font-display font-bold text-[#80ff00]">ALGORIDIGM</span>
               </motion.div>
             </motion.div>
             
@@ -269,7 +269,7 @@ export default function OpeningSlide() {
             >
               <div className="text-white/80 text-base sm:text-lg md:text-xl mb-1">INITIALIZING NEURAL PATTERN</div>
               <motion.h2 
-                className="text-xl sm:text-2xl md:text-3xl font-bold text-[#80ff00] font-display tracking-wide mb-2 sm:mb-4"
+                className="text-lg sm:text-xl md:text-2xl font-bold text-[#80ff00] font-display tracking-wide mb-2 sm:mb-4"
                 style={{ textShadow: "0 0 10px rgba(128, 255, 0, 0.5)" }}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ 
