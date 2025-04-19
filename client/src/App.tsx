@@ -6,6 +6,7 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import RegistrationPage from "@/pages/RegistrationPage";
 import ContactPage from "@/pages/ContactPage";
+import VideoOpeningSlide from "@/pages/presentation/VideoOpeningSlide";
 import { PresentationProvider } from "@/lib/presentationContext";
 
 function Router() {

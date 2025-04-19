@@ -17,11 +17,13 @@ interface RotatingSymbol {
 interface RotatingSymbolsBackgroundProps {
   symbolCount?: number;
   isActive?: boolean;
+  customOpacity?: number;
 }
 
 export function RotatingSymbolsBackground({ 
   symbolCount = 15,
-  isActive = true
+  isActive = true,
+  customOpacity
 }: RotatingSymbolsBackgroundProps) {
   const [symbols, setSymbols] = useState<RotatingSymbol[]>([]);
   
@@ -54,12 +56,12 @@ export function RotatingSymbolsBackground({
         direction: Math.random() > 0.5 ? "clockwise" : "counterclockwise",
         color,
         type,
-        opacity: 0.3 + Math.random() * 0.5 // Random opacity between 0.3 and 0.8
+        opacity: customOpacity !== undefined ? customOpacity : 0.3 + Math.random() * 0.5 // Use custom opacity if provided, otherwise random between 0.3 and 0.8
       });
     }
     
     setSymbols(newSymbols);
-  }, [isActive, symbolCount]);
+  }, [isActive, symbolCount, customOpacity]);
   
   if (!isActive || symbols.length === 0) return null;
   
