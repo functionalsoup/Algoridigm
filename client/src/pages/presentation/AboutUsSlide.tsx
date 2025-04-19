@@ -156,11 +156,11 @@ export default function AboutUsSlide() {
             transition={{ delay: 1.4 }}
           >
             <p className="text-xs md:text-sm">
-              <strong>Stuart Campbell</strong> is a theatre professional specializing in physical theatre and innovative narrative development. Mr. Campbell's formative education was completed at the University of Arkansas – Fort Smith, where he concentrated on collaborative theatrical methodologies and interdisciplinary performance techniques.
+              <strong>Stewart Campbell</strong> is an award-winning director whose relentless experimentation has established him as a formidable presence in contemporary theatre. His unique vision seamlessly blends technological innovation with classical theatrical traditions to create immersive experiences that challenge conventional narrative structures.
             </p>
             
             <p className="text-xs md:text-sm">
-              Mr. Campbell's distinguished work includes <em>Dromnium</em>, an acclaimed physical theatre production selected for presentation at Region 6 of the Kennedy Center American Collegiate Theatre Festival (KCACTF), where it earned national commendation. His professional portfolio encompasses directing (<em>God of Carnage</em>), design (<em>A Midsummer Night's Dream</em>), and devised theatre (<em>Privacy Settings</em>). Mr. Campbell's methodology emphasizes collaborative creation processes and rigorous artistic exploration within structured ensemble frameworks.
+              Mr. Campbell's groundbreaking work includes <em>Dromnium</em>, which received critical acclaim at the Kennedy Center American College Theater Festival where it garnered multiple awards including Distinguished Direction and Outstanding Ensemble Performance. His professional repertoire spans from avant-garde interpretations of classic texts to pioneering work in immersive and site-specific productions. His methodology is characterized by rigorous research, collaborative development, and an unwavering commitment to artistic integrity.
             </p>
           </motion.div>
         </div>
