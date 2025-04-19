@@ -4,6 +4,9 @@ import { ArrowLeft, Mail, MapPin, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GeometricBackground } from "@/components/presentation/GeometricBackground";
 
+// Force React Router to recognize this is a route component
+export const routeComponent = true;
+
 export default function ResumePage() {
   return (
     <div className="min-h-screen bg-[#060c18] text-white">
@@ -35,15 +38,13 @@ export default function ResumePage() {
       <div className="max-w-5xl mx-auto px-4 py-10 relative z-10">
         {/* Back button */}
         <div className="mb-8">
-          <Link href="/presentation/about-us">
-            <Button 
-              variant="ghost" 
-              className="font-display text-[#00a2ff] hover:text-white hover:bg-[#00a2ff]/20 transition-all"
-            >
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to About Us
-            </Button>
-          </Link>
+          <button
+            onClick={() => window.close()}
+            className="font-display text-[#00a2ff] hover:text-white hover:bg-[#00a2ff]/20 transition-all px-4 py-2 rounded flex items-center"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Close and Return
+          </button>
         </div>
         
         {/* Header with animated title */}

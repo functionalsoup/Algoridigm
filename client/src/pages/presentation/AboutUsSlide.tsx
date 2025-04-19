@@ -172,7 +172,9 @@ export default function AboutUsSlide() {
                 className="inline-block px-4 py-2 bg-gradient-to-r from-corp-cyan/30 to-corp-cyan/10 border border-corp-cyan/50 rounded-md text-corp-cyan hover:bg-corp-cyan/20 transition-all duration-300 text-sm"
                 onClick={(e) => {
                   e.preventDefault();
-                  window.open('/resume', '_blank', 'noopener,noreferrer');
+                  // Get the current origin (domain) to construct the full URL
+                  const origin = window.location.origin;
+                  window.open(`${origin}/resume`, '_blank', 'noopener,noreferrer');
                 }}
               >
                 <span className="flex items-center justify-center">
