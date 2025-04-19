@@ -141,9 +141,9 @@ export default function RegistrationPage() {
               <label htmlFor="interest" className="block text-sm font-medium mb-1">Interest Area</label>
               <select
                 id="interest"
-                name="interest"
+                name="role"
                 className="w-full p-3 bg-corp-bg border border-corp-magenta/70 focus:border-corp-magenta focus:outline-none rounded-md text-white text-base"
-                value={formData.interest}
+                value={formData.role}
                 onChange={handleInputChange}
                 required
               >
