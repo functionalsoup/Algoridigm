@@ -4,16 +4,22 @@ import { usePresentationContext } from "@/lib/presentationContext";
 import PresentationLayout from "@/components/presentation/PresentationLayout";
 import { RotatingMandelaBackground } from "@/components/presentation/RotatingMandelaBackground";
 import { Button } from "@/components/ui/button";
+import { ArrowLeft, Mail, MapPin, Globe } from "lucide-react";
 
 export default function AboutUsSlide() {
   const { goToSlide } = usePresentationContext();
   const [animateOut, setAnimateOut] = useState(false);
+  const [showResume, setShowResume] = useState(false);
   
   const handleRegisterClick = () => {
     setAnimateOut(true);
     setTimeout(() => {
       window.location.href = "/contact";
     }, 500);
+  };
+  
+  const toggleResume = () => {
+    setShowResume(!showResume);
   };
   
   return (
@@ -165,17 +171,9 @@ export default function AboutUsSlide() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.8 }}
             >
-              <a 
-                href="/resume"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button 
                 className="inline-block px-4 py-2 bg-gradient-to-r from-corp-cyan/30 to-corp-cyan/10 border border-corp-cyan/50 rounded-md text-corp-cyan hover:bg-corp-cyan/20 transition-all duration-300 text-sm"
-                onClick={(e) => {
-                  e.preventDefault();
-                  // Get the current origin (domain) to construct the full URL
-                  const origin = window.location.origin;
-                  window.open(`${origin}/resume`, '_blank', 'noopener,noreferrer');
-                }}
+                onClick={toggleResume}
               >
                 <span className="flex items-center justify-center">
                   <svg 
@@ -188,10 +186,107 @@ export default function AboutUsSlide() {
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
-                  Stuart's Resume
+                  {showResume ? "Hide Resume" : "Stuart's Resume"}
                 </span>
-              </a>
+              </button>
             </motion.div>
+            
+            {showResume && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.5 }}
+                className="mt-4 max-h-[60vh] overflow-y-auto bg-[#0c1623]/80 border border-[#1a3a59] rounded-2xl p-4 backdrop-blur-sm"
+              >
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl md:text-3xl font-display font-bold mb-2 text-[#00a2ff]">
+                    Stuart Campbell
+                  </h3>
+                  
+                  <div className="flex flex-wrap justify-center gap-4 text-xs text-white/80">
+                    <div className="flex items-center">
+                      <MapPin size={14} className="mr-1 text-[#ff2a6d]" />
+                      <span>Longview, TX</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Mail size={14} className="mr-1 text-[#ff2a6d]" />
+                      <span>functional_soup@outlook.com</span>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Professional Summary */}
+                <div className="mb-4">
+                  <h4 className="text-sm md:text-base font-semibold mb-1 text-[#00a2ff] border-b border-[#1a3a59] pb-1">
+                    Professional Summary
+                  </h4>
+                  <p className="text-xs text-white/90">
+                    Theatre director and collaborative artist with a focus on devised performance, ensemble-generated work, and interdisciplinary storytelling. Experienced in directing, design, and ensemble development across regional and academic settings.
+                  </p>
+                </div>
+                
+                {/* Experience - Keep it very brief */}
+                <div className="mb-4">
+                  <h4 className="text-sm md:text-base font-semibold mb-1 text-[#00a2ff] border-b border-[#1a3a59] pb-1">
+                    Selected Experience
+                  </h4>
+                  <ul className="text-xs space-y-2">
+                    <li>
+                      <span className="text-[#80ff00] font-medium">The Vortex Theatre – Austin, TX</span> | 2015–2016
+                      <br />
+                      <span className="text-white/90">Deviser:</span> <em>Privacy Settings</em> (Workshop)
+                    </li>
+                    <li>
+                      <span className="text-[#80ff00] font-medium">Plethora Theatre Company – Ft. Smith, AR</span> | 2014–2015
+                      <br />
+                      <span className="text-white/90">Director:</span> <em>The Woman in Black</em>
+                    </li>
+                    <li>
+                      <span className="text-[#80ff00] font-medium">University of Arkansas – Fort Smith Theatre</span> | 2011–2014
+                      <br />
+                      <span className="text-white/90">Directed:</span> <em>God of Carnage, Memorandum of Love Lost</em> (Original devised piece)
+                      <br />
+                      <span className="text-white/90">Performance:</span> <em>Dromnium</em> (Writer/Performer – KCACTF Selection)
+                    </li>
+                  </ul>
+                </div>
+                
+                {/* Education */}
+                <div className="mb-4">
+                  <h4 className="text-sm md:text-base font-semibold mb-1 text-[#00a2ff] border-b border-[#1a3a59] pb-1">
+                    Education
+                  </h4>
+                  <ul className="text-xs space-y-2">
+                    <li>
+                      <span className="text-[#80ff00] font-medium">University of Arkansas – Fort Smith</span> | 2011–2014
+                      <br />
+                      <span className="text-white/90">B.A. Theatre: Acting & Directing</span>
+                    </li>
+                    <li>
+                      <span className="text-[#80ff00] font-medium">Northwestern Oklahoma State University</span> | 2009–2011
+                      <br />
+                      <span className="text-white/90">Theatre Program, KCACTF Region 6 – Student Director</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                {/* Skills - Very brief */}
+                <div>
+                  <h4 className="text-sm md:text-base font-semibold mb-1 text-[#00a2ff] border-b border-[#1a3a59] pb-1">
+                    Skills
+                  </h4>
+                  <div className="flex flex-wrap gap-1 text-xs">
+                    <span className="px-2 py-1 bg-corp-cyan/20 rounded-full text-white/90">Devised Performance</span>
+                    <span className="px-2 py-1 bg-corp-cyan/20 rounded-full text-white/90">Ensemble Direction</span>
+                    <span className="px-2 py-1 bg-corp-cyan/20 rounded-full text-white/90">Movement</span>
+                    <span className="px-2 py-1 bg-corp-cyan/20 rounded-full text-white/90">Collaborative Writing</span>
+                    <span className="px-2 py-1 bg-corp-cyan/20 rounded-full text-white/90">Scenic Design</span>
+                    <span className="px-2 py-1 bg-corp-cyan/20 rounded-full text-white/90">Technical Direction</span>
+                  </div>
+                </div>
+              </motion.div>
+            )}
           </motion.div>
         </div>
         
