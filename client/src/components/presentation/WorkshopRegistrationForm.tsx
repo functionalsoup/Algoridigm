@@ -10,7 +10,10 @@ export function WorkshopRegistrationForm() {
     name: "",
     email: "",
     phone: "",
-    interest: "general",
+    role: "general", // Changed from interest to role to match the database schema
+    secondaryRole: "",
+    experience: "",
+    availability: "",
     message: ""
   });
   const { toast } = useToast();
@@ -121,9 +124,9 @@ export function WorkshopRegistrationForm() {
             <label htmlFor="interest" className="block text-sm font-medium mb-1">Interest Area</label>
             <select
               id="interest"
-              name="interest"
+              name="role"
               className="w-full p-2 bg-corp-bg border border-corp-magenta/40 focus:border-corp-magenta rounded-md text-white"
-              value={formData.interest}
+              value={formData.role}
               onChange={handleInputChange}
               required
             >

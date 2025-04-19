@@ -10,7 +10,10 @@ export default function RegistrationPage() {
     name: "",
     email: "",
     phone: "",
-    interest: "general",
+    role: "general", // Changed from interest to role to match the database schema
+    secondaryRole: "",
+    experience: "",
+    availability: "",
     message: ""
   });
   const { toast } = useToast();
