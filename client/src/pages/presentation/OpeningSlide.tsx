@@ -155,93 +155,11 @@ export default function OpeningSlide() {
             </div>
           </motion.div>
         )}
-        
-        {/* J-Tech Logo and loading - Phase 2 */}
+
+        {/* AI Initialization (NEURAL PATTERN) - TOP PRIORITY POSITIONING */}
         {animationPhase >= 2 && (
           <motion.div
-            className="text-center mb-6 relative"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            {/* Updated Autonomous Training Module Header */}
-            <motion.div 
-              className="mb-4"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <motion.div 
-                className="mb-4 sm:mb-6"
-                animate={{ 
-                  y: [0, -5, 0],
-                  filter: [
-                    "drop-shadow(0 0 8px rgba(128, 255, 0, 0.5))",
-                    "drop-shadow(0 0 12px rgba(128, 255, 0, 0.7))",
-                    "drop-shadow(0 0 8px rgba(128, 255, 0, 0.5))"
-                  ],
-                  opacity: animationPhase >= 3 ? [1, 0.7, 0.5, 0.3, 0] : 1
-                }}
-                transition={{ 
-                  duration: animationPhase >= 3 ? 1.5 : 3, 
-                  repeat: animationPhase >= 3 ? 0 : Infinity,
-                  ease: "easeInOut" 
-                }}
-              >
-                <span className="text-base sm:text-lg md:text-xl font-display font-bold text-[#80ff00]">ALGORIDIGM</span>
-              </motion.div>
-              
-              <h1 className="text-xl sm:text-2xl md:text-4xl font-display font-bold tracking-wider text-[#00a2ff] px-1">
-                AUTONOMOUS TRAINING MODULE
-              </h1>
-              <div className="text-white/40 text-xs sm:text-sm mt-2 font-mono tracking-wide">J-TECH INDUSTRIES • EST. 2050</div>
-            </motion.div>
-            
-            {/* Loading bar */}
-            <motion.div
-              className="w-full max-w-xl mx-auto h-1 bg-[#131320] rounded-full overflow-hidden mt-8 mb-2"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-            >
-              <motion.div
-                className="h-full bg-gradient-to-r from-[#0054a6] via-[#00a2ff] to-[#0054a6]"
-                initial={{ width: "0%" }}
-                animate={{ width: "100%" }}
-                transition={{ duration: 2.5, delay: 0.8, ease: "easeInOut" }}
-              />
-            </motion.div>
-            
-            {/* Stats indicators */}
-            <motion.div 
-              className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-6 mt-4 sm:mt-6"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 1.2 }}
-            >
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={`stat-${index}`}
-                  className="bg-[#0c0c14]/80 border border-[#1a3a59] rounded-lg px-2 sm:px-3 py-1 sm:py-2 flex items-center"
-                  initial={{ y: 10, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.3, delay: 1.4 + index * 0.15 }}
-                >
-                  <div className="text-[#00a2ff] mr-1 sm:mr-2">{stat.icon}</div>
-                  <div>
-                    <div className="text-[8px] sm:text-[10px] text-white/50 uppercase tracking-wider">{stat.label}</div>
-                    <div className="text-[10px] sm:text-xs font-semibold text-white/90">{stat.value}</div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </motion.div>
-        )}
-        
-        {/* AI Initialization - Phase 3 */}
-        {animationPhase >= 3 && (
-          <motion.div
-            className="flex flex-col items-center text-center max-w-xl mx-auto relative mt-2 sm:mt-4"
+            className="text-center mb-8 sm:mb-10 relative"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
@@ -260,7 +178,7 @@ export default function OpeningSlide() {
               }}
             />
             
-            {/* AI Status Text */}
+            {/* AI Status Text - POSITIONED AT TOP */}
             <motion.div 
               className="text-center mb-3 sm:mb-6 relative z-10"
               initial={{ opacity: 0, y: 10 }}
@@ -310,6 +228,70 @@ export default function OpeningSlide() {
                   HALLUCINATION PROTOCOL ACTIVE
                 </div>
               </motion.div>
+            </motion.div>
+          </motion.div>
+        )}
+        
+        {/* Loading bar - Middle */}
+        {animationPhase >= 2 && (
+          <motion.div
+            className="w-full max-w-xl mx-auto h-1 bg-[#131320] rounded-full overflow-hidden mt-2 mb-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
+            <motion.div
+              className="h-full bg-gradient-to-r from-[#0054a6] via-[#00a2ff] to-[#0054a6]"
+              initial={{ width: "0%" }}
+              animate={{ width: "100%" }}
+              transition={{ duration: 2.5, delay: 0.8, ease: "easeInOut" }}
+            />
+          </motion.div>
+        )}
+        
+        {/* J-Tech Logo and Module info - MOVED TO BOTTOM */}
+        {animationPhase >= 2 && (
+          <motion.div
+            className="text-center mt-4 mb-4 relative"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.4 }}
+          >
+            {/* Updated Autonomous Training Module Header */}
+            <motion.div 
+              className="mb-4"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >  
+              <h1 className="text-xl sm:text-2xl md:text-4xl font-display font-bold tracking-wider text-[#00a2ff] px-1">
+                AUTONOMOUS TRAINING MODULE
+              </h1>
+              <div className="text-white/40 text-xs sm:text-sm mt-2 font-mono tracking-wide">J-TECH INDUSTRIES • EST. 2050</div>
+            </motion.div>
+            
+            {/* Stats indicators */}
+            <motion.div 
+              className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-6 mt-4 sm:mt-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 1.2 }}
+            >
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={`stat-${index}`}
+                  className="bg-[#0c0c14]/80 border border-[#1a3a59] rounded-lg px-2 sm:px-3 py-1 sm:py-2 flex items-center"
+                  initial={{ y: 10, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.3, delay: 1.4 + index * 0.15 }}
+                >
+                  <div className="text-[#00a2ff] mr-1 sm:mr-2">{stat.icon}</div>
+                  <div>
+                    <div className="text-[8px] sm:text-[10px] text-white/50 uppercase tracking-wider">{stat.label}</div>
+                    <div className="text-[10px] sm:text-xs font-semibold text-white/90">{stat.value}</div>
+                  </div>
+                </motion.div>
+              ))}
             </motion.div>
           </motion.div>
         )}
