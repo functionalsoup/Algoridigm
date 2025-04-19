@@ -225,7 +225,7 @@ export default function OpeningSlide() {
                 </p>
                 
                 <div className="inline-block px-2 sm:px-4 py-1 bg-[#ff2a6d]/10 border border-[#ff2a6d]/30 rounded-lg text-[#ff2a6d] text-[10px] sm:text-xs font-medium mb-2">
-                  LEARNING ASSESSMENT ACTIVE
+                  HALLUCINATION PROBABILITY 63%
                 </div>
               </motion.div>
             </motion.div>
