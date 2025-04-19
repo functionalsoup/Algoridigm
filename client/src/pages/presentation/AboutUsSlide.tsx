@@ -158,6 +158,32 @@ export default function AboutUsSlide() {
             <p className="text-xs md:text-sm">
               <strong>Stuart Campbell</strong> is a director and theatre-maker based in Longview, TX, with a background in devised performance, ensemble-driven storytelling, and experimental theatre. A graduate of the University of Arkansas – Fort Smith, he has directed and performed in a range of works spanning classical texts, new writing, and movement-based pieces, including nationally recognized devised productions. Stuart's work emphasizes collaborative creation, and the intersection of technology and live performance.
             </p>
+            
+            <motion.div 
+              className="mt-4 text-center"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.8 }}
+            >
+              <a 
+                href="/resume"
+                className="inline-block px-4 py-2 bg-gradient-to-r from-corp-cyan/30 to-corp-cyan/10 border border-corp-cyan/50 rounded-md text-corp-cyan hover:bg-corp-cyan/20 transition-all duration-300 text-sm"
+              >
+                <span className="flex items-center justify-center">
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    className="h-4 w-4 mr-2" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor" 
+                    strokeWidth={2}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  Stuart's Resume
+                </span>
+              </a>
+            </motion.div>
           </motion.div>
         </div>
         

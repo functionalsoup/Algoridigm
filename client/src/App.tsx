@@ -6,6 +6,7 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import RegistrationPage from "@/pages/RegistrationPage";
 import ContactPage from "@/pages/ContactPage";
+import ResumePage from "@/pages/ResumePage";
 import { PresentationProvider } from "@/lib/presentationContext";
 
 function Router() {
@@ -14,6 +15,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/contact" component={ContactPage} />
       <Route path="/register" component={ContactPage} />
+      <Route path="/resume" component={ResumePage} />
       <Route component={NotFound} />
     </Switch>
   );
