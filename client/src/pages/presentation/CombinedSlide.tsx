@@ -148,8 +148,8 @@ export default function CombinedSlide() {
         transition={{ duration: 0.5, delay: 0.7 }}
         className="mt-16 border-t border-corp-cyan/20 pt-16"
       >
-        <h2 className="text-4xl md:text-6xl font-display font-bold mb-8 glitch relative" data-text="About the Founder">
-          About the Founder
+        <h2 className="text-4xl md:text-6xl font-display font-bold mb-8 glitch relative" data-text="About the Director">
+          About the Director
           <motion.span
             className="absolute inset-0 text-corp-cyan opacity-0"
             animate={{
@@ -163,7 +163,7 @@ export default function CombinedSlide() {
               repeatDelay: 5,
             }}
           >
-            About the Founder
+            About the Director
           </motion.span>
           
           <motion.span
@@ -180,7 +180,7 @@ export default function CombinedSlide() {
               delay: 0.15,
             }}
           >
-            About the Founder
+            About the Director
           </motion.span>
         </h2>
         
@@ -243,8 +243,8 @@ export default function CombinedSlide() {
                 </div>
                 <div className="absolute top-0 left-0 right-0 h-1/4 bg-gradient-to-b from-corp-blue/10 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-corp-dark to-transparent p-4">
-                  <h3 className="text-2xl font-display font-bold">GEORGE H. JON&*S</h3>
-                  <p className="text-corp-cyan">FØUND3R // C3Ø</p>
+                  <h3 className="text-2xl font-display font-bold">THEATRE DIRECTOR</h3>
+                  <p className="text-corp-cyan">MFA // AWARD WINNER</p>
                 </div>
               </div>
             </motion.div>
@@ -257,7 +257,7 @@ export default function CombinedSlide() {
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 1.1 }}
             >
-              <p className="italic text-lg opacity-80">"Humanity's destiny isn't just waiting for us in the stars—we're going to build it ourselves. J-AI isn't just disruptive technology, it's the fork in the evolutionary road that will make us a multi-planetary species with immortal consciousness."</p>
+              <p className="italic text-lg opacity-80">"Theatre is at its most powerful when it holds a mirror to our present while imagining new possibilities for our future. With ALGORIDIGM, we're exploring how technology both frees and constrains us, just as the machinery did in Treadwell's original Machinal. I'm excited to create this experience together with a community of diverse artists."</p>
             </motion.div>
             
             <motion.div
@@ -265,8 +265,13 @@ export default function CombinedSlide() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 1.3 }}
             >
-              <h3 className="text-2xl font-display font-semibold mb-4 text-corp-cyan">Relentless</h3>
-              <p className="mb-4 font-mono">GEORGE H. JON&*S AB@//D0N3D @ PRØM!S!NG @C@D£MIC C@R33R TØ FØUND J-T3CH !NDUS%R!3S !N 2032. H!$ CØNTROV3R$!@L APPRØ@CH TØ QU@N%µM N3UR@L N3TWØRK$ @ND CØN$C!ØU$N3$$ M@PP!NG H@$ D!V!D3D +H3 $C!3N%!F!C CØMMUN!%¥ WH!L3 @%%R@C%!NG billions in venture capital.</p>
+              <h3 className="text-2xl font-display font-semibold mb-4 text-corp-cyan">About the Theatre Director</h3>
+              <p className="mb-4">
+                Hi! I'm an award-winning theatre director with a passion for experimental works that blend technology and performance. My previous production, <span className="text-corp-magenta font-medium">Dromnium</span>, was nominated for two KCACTF awards, including Outstanding Direction. 
+              </p>
+              <p className="mb-4">
+                My approach combines traditional theatrical elements with new media, creating immersive experiences that challenge audiences to see the world differently. I believe theatre should be both intellectually stimulating and emotionally moving.
+              </p>
             </motion.div>
             
             <motion.div
@@ -274,19 +279,19 @@ export default function CombinedSlide() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 1.5 }}
             >
-              <h3 className="text-2xl font-display font-semibold mb-4 mt-8 text-corp-cyan">ACH!3V3M3N+$</h3>
-              <ul className="space-y-2 font-mono">
+              <h3 className="text-2xl font-display font-semibold mb-4 mt-8 text-corp-cyan">Experience & Education</h3>
+              <ul className="space-y-2">
                 <li className="flex items-start">
                   <span className="text-corp-magenta mr-2 shrink-0">→</span>
-                  <span>@!M3 P3R$ØN ØF +H3 ¥3@R (2Ø41)</span>
+                  <span>MFA in Directing for Stage and Screen</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-corp-magenta mr-2 shrink-0">→</span>
-                  <span>@UHØR ØF "3X!NC!ØN ØR 3VØ1U!ØN: WH¥ W3 MU$ B3CØM3 PØ$-HUM@N"</span>
+                  <span>Artistic Director of <span className="italic">The Liminal Space</span> theatre collective</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-corp-magenta mr-2 shrink-0">→</span>
-                  <span>KNØWN FØR WØRK!NG 2Ø-HØUR D@¥$ @ND $L33P!NG ØN +H3 F@C+ØR¥ FLØØR</span>
+                  <span>Guest lecturer on experimental theatre and digital performance</span>
                 </li>
               </ul>
             </motion.div>
