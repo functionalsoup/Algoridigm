@@ -14,16 +14,16 @@ export default function RevealSlide() {
   const [showRealContent, setShowRealContent] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   
-  // Control animation sequence - Faster timing
+  // Control animation sequence - Ultra-fast timing
   useEffect(() => {
-    // Start with the "system error" phase - reduced from 800ms to 600ms
-    const phase1Timer = setTimeout(() => setAnimationPhase(1), 600);
+    // Start with the "system error" phase - super short, just 400ms
+    const phase1Timer = setTimeout(() => setAnimationPhase(1), 400);
     
-    // Glitch effect phase - reduced from 2000ms to 1300ms
-    const phase2Timer = setTimeout(() => setAnimationPhase(2), 1300);
+    // Glitch effect phase - extremely brief at just 850ms
+    const phase2Timer = setTimeout(() => setAnimationPhase(2), 850);
     
-    // Reveal the real content with a dramatic transition - reduced from 3200ms to 2000ms
-    const revealTimer = setTimeout(() => setShowRealContent(true), 2000);
+    // Reveal the real content with a dramatic transition - only 1400ms total
+    const revealTimer = setTimeout(() => setShowRealContent(true), 1400);
     
     return () => {
       clearTimeout(phase1Timer);
@@ -74,8 +74,9 @@ export default function RevealSlide() {
             initial={{ opacity: 1 }}
             exit={{ 
               opacity: 0,
-              filter: "brightness(1.8) contrast(2.5)",
-              transition: { duration: 0.5, ease: [0.19, 1, 0.22, 1] } 
+              filter: "brightness(2.2) contrast(3) saturate(1.5)",
+              scale: 1.1,
+              transition: { duration: 0.35, ease: [0.19, 1, 0.22, 1] } 
             }}
           >
             <motion.div
@@ -96,7 +97,7 @@ export default function RevealSlide() {
                       className="h-full bg-[#00a2ff]"
                       initial={{ width: "0%" }}
                       animate={{ width: "100%" }}
-                      transition={{ duration: 0.8, ease: "easeInOut" }}
+                      transition={{ duration: 0.4, ease: "easeInOut" }}
                     />
                   </div>
                   <div className="text-white/60 text-sm">LOADING NEURAL CONTENT...</div>
@@ -170,11 +171,11 @@ export default function RevealSlide() {
                   <motion.div
                     className="text-center relative"
                     animate={{ 
-                      x: [0, -5, 8, -3, 10, -8, 0],
-                      y: [0, 3, -5, 2, -7, 4, 0],
-                      scale: [1, 1.02, 0.98, 1.03, 0.95, 1.01, 1],
-                      rotate: [0, 1, -1, 0.5, -0.5, 0],
-                      filter: ["hue-rotate(0deg)", "hue-rotate(180deg)", "hue-rotate(0deg)"],
+                      x: [0, -8, 12, -6, 15, -12, 0],
+                      y: [0, 5, -8, 4, -9, 6, 0],
+                      scale: [1, 1.03, 0.97, 1.05, 0.93, 1.02, 1],
+                      rotate: [0, 2, -2, 1, -1, 0],
+                      filter: ["hue-rotate(0deg) brightness(1)", "hue-rotate(270deg) brightness(1.5)", "hue-rotate(0deg) brightness(1)"],
                     }}
                     transition={{ 
                       duration: 0.5, 
