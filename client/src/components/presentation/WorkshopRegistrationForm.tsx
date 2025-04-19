@@ -10,10 +10,7 @@ export function WorkshopRegistrationForm() {
     name: "",
     email: "",
     phone: "",
-    role: "actor",
-    secondaryRole: "",
-    experience: "",
-    availability: "",
+    interest: "general",
     message: ""
   });
   const { toast } = useToast();
@@ -34,18 +31,18 @@ export function WorkshopRegistrationForm() {
     try {
       await apiRequest("POST", "/api/workshop-registration", formData);
       toast({
-        title: "Registration Successful!",
-        description: "Thank you for registering for our workshop. We'll be in touch soon!",
+        title: "Message Sent Successfully!",
+        description: "Thank you for contacting us about ALGORIDIGM. We'll be in touch soon!",
         variant: "default",
       });
       setIsSubmitted(true);
     } catch (error) {
       toast({
-        title: "Registration Failed",
-        description: "There was a problem submitting your registration. Please try again.",
+        title: "Message Failed to Send",
+        description: "There was a problem submitting your contact information. Please try again.",
         variant: "destructive",
       });
-      console.error("Registration error:", error);
+      console.error("Contact form error:", error);
     } finally {
       setIsPending(false);
     }
@@ -60,8 +57,8 @@ export function WorkshopRegistrationForm() {
         className="p-6 bg-corp-bg rounded-lg border border-corp-cyan/40 text-center"
       >
         <h3 className="text-2xl font-display font-semibold text-corp-cyan mb-4">Thank You!</h3>
-        <p className="mb-4">Your registration has been submitted successfully.</p>
-        <p>We'll contact you soon with more details about the workshop.</p>
+        <p className="mb-4">Your message has been submitted successfully.</p>
+        <p>We'll contact you soon with more information about ALGORIDIGM.</p>
       </motion.div>
     );
   }
@@ -73,7 +70,7 @@ export function WorkshopRegistrationForm() {
       transition={{ duration: 0.5 }}
       className="p-6 bg-corp-bg rounded-lg border border-corp-magenta/40"
     >
-      <h3 className="text-xl font-display font-semibold mb-4 text-corp-magenta">Register for the Workshop</h3>
+      <h3 className="text-xl font-display font-semibold mb-4 text-corp-magenta">Contact Us</h3>
       
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -121,81 +118,36 @@ export function WorkshopRegistrationForm() {
           </div>
           
           <div className="form-group">
-            <label htmlFor="role" className="block text-sm font-medium mb-1">Primary Role</label>
+            <label htmlFor="interest" className="block text-sm font-medium mb-1">Interest Area</label>
             <select
-              id="role"
-              name="role"
+              id="interest"
+              name="interest"
               className="w-full p-2 bg-corp-bg border border-corp-magenta/40 focus:border-corp-magenta rounded-md text-white"
-              value={formData.role}
+              value={formData.interest}
               onChange={handleInputChange}
               required
             >
-              <option value="actor">Actor/Performer</option>
-              <option value="designer">Designer</option>
-              <option value="tech">Technical Crew</option>
-              <option value="artist">Visual Artist</option>
-              <option value="writer">Writer/Dramaturg</option>
-              <option value="director">Director</option>
+              <option value="general">General Information</option>
+              <option value="acting">Acting Opportunities</option>
+              <option value="design">Design Opportunities</option>
+              <option value="tech">Technical Opportunities</option>
+              <option value="donation">Support/Donations</option>
+              <option value="collaboration">Artistic Collaboration</option>
               <option value="other">Other</option>
             </select>
           </div>
         </div>
         
         <div className="form-group">
-          <label htmlFor="secondaryRole" className="block text-sm font-medium mb-1">Secondary Role (optional)</label>
-          <select
-            id="secondaryRole"
-            name="secondaryRole"
-            className="w-full p-2 bg-corp-bg border border-corp-magenta/40 focus:border-corp-magenta rounded-md text-white"
-            value={formData.secondaryRole}
-            onChange={handleInputChange}
-          >
-            <option value="">Select secondary role (optional)</option>
-            <option value="actor">Actor/Performer</option>
-            <option value="designer">Designer</option>
-            <option value="tech">Technical Crew</option>
-            <option value="artist">Visual Artist</option>
-            <option value="writer">Writer/Dramaturg</option>
-            <option value="director">Director</option>
-            <option value="production">Production Manager</option>
-            <option value="stage">Stage Manager</option>
-            <option value="none">None - Just Primary Role</option>
-          </select>
-        </div>
-        
-        <div className="form-group">
-          <label htmlFor="experience" className="block text-sm font-medium mb-1">Experience</label>
-          <textarea
-            id="experience"
-            name="experience"
-            className="w-full p-2 bg-transparent border border-corp-magenta/40 focus:border-corp-magenta rounded-md text-white min-h-[80px]"
-            placeholder="Briefly describe your relevant experience"
-            value={formData.experience}
-            onChange={handleInputChange}
-          ></textarea>
-        </div>
-        
-        <div className="form-group">
-          <label htmlFor="availability" className="block text-sm font-medium mb-1">Summer Availability</label>
-          <textarea
-            id="availability"
-            name="availability"
-            className="w-full p-2 bg-transparent border border-corp-magenta/40 focus:border-corp-magenta rounded-md text-white min-h-[80px]"
-            placeholder="Please describe your availability during summer"
-            value={formData.availability}
-            onChange={handleInputChange}
-          ></textarea>
-        </div>
-        
-        <div className="form-group">
-          <label htmlFor="message" className="block text-sm font-medium mb-1">Additional Information (optional)</label>
+          <label htmlFor="message" className="block text-sm font-medium mb-1">Message</label>
           <textarea
             id="message"
             name="message"
-            className="w-full p-2 bg-transparent border border-corp-magenta/40 focus:border-corp-magenta rounded-md text-white min-h-[80px]"
-            placeholder="Anything else you'd like to share"
+            className="w-full p-2 bg-transparent border border-corp-magenta/40 focus:border-corp-magenta rounded-md text-white min-h-[120px]"
+            placeholder="Please share your message, questions, or how you'd like to get involved with ALGORIDIGM"
             value={formData.message}
             onChange={handleInputChange}
+            required
           ></textarea>
         </div>
         
@@ -205,7 +157,7 @@ export function WorkshopRegistrationForm() {
             disabled={isPending}
             className="bg-corp-cyan hover:bg-corp-cyan/80 text-black font-semibold py-2 px-6"
           >
-            {isPending ? "Submitting..." : "Submit Registration"}
+            {isPending ? "Sending..." : "Send Message"}
           </Button>
         </div>
       </form>

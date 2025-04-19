@@ -10,10 +10,7 @@ export default function RegistrationPage() {
     name: "",
     email: "",
     phone: "",
-    role: "actor",
-    secondaryRole: "",
-    experience: "",
-    availability: "",
+    interest: "general",
     message: ""
   });
   const { toast } = useToast();
@@ -34,18 +31,18 @@ export default function RegistrationPage() {
     try {
       await apiRequest("POST", "/api/workshop-registration", formData);
       toast({
-        title: "Registration Successful!",
-        description: "Thank you for registering for our workshop. We'll be in touch soon!",
+        title: "Message Sent Successfully!",
+        description: "Thank you for contacting us about ALGORIDIGM. We'll be in touch soon!",
         variant: "default",
       });
       setIsSubmitted(true);
     } catch (error) {
       toast({
-        title: "Registration Failed",
-        description: "There was a problem submitting your registration. Please try again.",
+        title: "Message Failed to Send",
+        description: "There was a problem submitting your contact information. Please try again.",
         variant: "destructive",
       });
-      console.error("Registration error:", error);
+      console.error("Contact form error:", error);
     } finally {
       setIsPending(false);
     }
@@ -61,8 +58,8 @@ export default function RegistrationPage() {
           className="p-4 sm:p-6 bg-corp-bg rounded-lg border border-corp-cyan/40 text-center max-w-lg w-full"
         >
           <h3 className="text-xl sm:text-2xl font-display font-semibold text-corp-cyan mb-3 sm:mb-4">Thank You!</h3>
-          <p className="mb-3 sm:mb-4">Your registration has been submitted successfully.</p>
-          <p>We'll contact you soon with more details about the workshop.</p>
+          <p className="mb-3 sm:mb-4">Your message has been submitted successfully.</p>
+          <p>We'll contact you soon with more information about ALGORIDIGM.</p>
           <div className="mt-6 sm:mt-8">
             <Button 
               onClick={() => window.location.href = "/"}
@@ -84,7 +81,7 @@ export default function RegistrationPage() {
         transition={{ duration: 0.5 }}
         className="p-4 sm:p-6 bg-corp-bg rounded-lg border border-corp-magenta/40 max-w-2xl w-full"
       >
-        <h3 className="text-xl sm:text-2xl font-display font-bold mb-6 sm:mb-8 text-center text-corp-magenta">Register for ALGORIDIGM Workshop</h3>
+        <h3 className="text-xl sm:text-2xl font-display font-bold mb-6 sm:mb-8 text-center text-corp-magenta">Contact Us About ALGORIDIGM</h3>
         
         <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
@@ -138,84 +135,37 @@ export default function RegistrationPage() {
             </div>
             
             <div className="form-group">
-              <label htmlFor="role" className="block text-sm font-medium mb-1">Primary Role</label>
+              <label htmlFor="interest" className="block text-sm font-medium mb-1">Interest Area</label>
               <select
-                id="role"
-                name="role"
+                id="interest"
+                name="interest"
                 className="w-full p-3 bg-corp-bg border border-corp-magenta/70 focus:border-corp-magenta focus:outline-none rounded-md text-white text-base"
-                value={formData.role}
+                value={formData.interest}
                 onChange={handleInputChange}
                 required
               >
-                <option value="actor">Actor/Performer</option>
-                <option value="designer">Designer</option>
-                <option value="tech">Technical Crew</option>
-                <option value="artist">Visual Artist</option>
-                <option value="writer">Writer/Dramaturg</option>
-                <option value="director">Director</option>
+                <option value="general">General Information</option>
+                <option value="acting">Acting Opportunities</option>
+                <option value="design">Design Opportunities</option>
+                <option value="tech">Technical Opportunities</option>
+                <option value="donation">Support/Donations</option>
+                <option value="collaboration">Artistic Collaboration</option>
                 <option value="other">Other</option>
               </select>
             </div>
           </div>
           
           <div className="form-group">
-            <label htmlFor="secondaryRole" className="block text-sm font-medium mb-1">Secondary Role (optional)</label>
-            <select
-              id="secondaryRole"
-              name="secondaryRole"
-              className="w-full p-3 bg-corp-bg border border-corp-magenta/70 focus:border-corp-magenta focus:outline-none rounded-md text-white text-base"
-              value={formData.secondaryRole}
-              onChange={handleInputChange}
-            >
-              <option value="">Select secondary role (optional)</option>
-              <option value="actor">Actor/Performer</option>
-              <option value="designer">Designer</option>
-              <option value="tech">Technical Crew</option>
-              <option value="artist">Visual Artist</option>
-              <option value="writer">Writer/Dramaturg</option>
-              <option value="director">Director</option>
-              <option value="production">Production Manager</option>
-              <option value="stage">Stage Manager</option>
-              <option value="none">None - Just Primary Role</option>
-            </select>
-          </div>
-          
-          <div className="form-group">
-            <label htmlFor="experience" className="block text-sm font-medium mb-1">Experience</label>
-            <textarea
-              id="experience"
-              name="experience"
-              className="w-full p-3 bg-corp-bg border border-corp-magenta/70 focus:border-corp-magenta focus:outline-none rounded-md text-white text-base min-h-[80px] sm:min-h-[100px]"
-              placeholder="Briefly describe your relevant experience"
-              value={formData.experience}
-              onChange={handleInputChange}
-              rows={3}
-            ></textarea>
-          </div>
-          
-          <div className="form-group">
-            <label htmlFor="availability" className="block text-sm font-medium mb-1">Summer Availability</label>
-            <textarea
-              id="availability"
-              name="availability"
-              className="w-full p-3 bg-corp-bg border border-corp-magenta/70 focus:border-corp-magenta focus:outline-none rounded-md text-white text-base min-h-[80px] sm:min-h-[100px]"
-              placeholder="Please describe your availability during summer"
-              value={formData.availability}
-              onChange={handleInputChange}
-              rows={3}
-            ></textarea>
-          </div>
-          
-          <div className="form-group">
-            <label htmlFor="message" className="block text-sm font-medium mb-1">Additional Information (optional)</label>
+            <label htmlFor="message" className="block text-sm font-medium mb-1">Message</label>
             <textarea
               id="message"
               name="message"
-              className="w-full p-3 bg-corp-bg border border-corp-magenta/70 focus:border-corp-magenta focus:outline-none rounded-md text-white text-base min-h-[80px] sm:min-h-[100px]"
-              placeholder="Anything else you'd like to share"
+              className="w-full p-3 bg-corp-bg border border-corp-magenta/70 focus:border-corp-magenta focus:outline-none rounded-md text-white text-base min-h-[120px] sm:min-h-[150px]"
+              placeholder="Please share your message, questions, or how you'd like to get involved with ALGORIDIGM"
               value={formData.message}
               onChange={handleInputChange}
-              rows={3}
+              rows={5}
+              required
             ></textarea>
           </div>
           
@@ -225,7 +175,7 @@ export default function RegistrationPage() {
               disabled={isPending}
               className="bg-gradient-to-r from-corp-burnt-orange to-corp-magenta hover:opacity-90 text-white font-bold py-3 px-8 text-base sm:text-lg tracking-wide rounded-md shadow-lg w-full md:w-auto md:px-12 touch-manipulation"
             >
-              {isPending ? "Submitting..." : "Submit Registration"}
+              {isPending ? "Sending..." : "Send Message"}
             </Button>
             
             <button
