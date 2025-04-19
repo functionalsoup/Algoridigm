@@ -502,6 +502,24 @@ export default function RevealSlide() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.2, duration: 0.5 }}
                   >
+                    {/* Image above contact info */}
+                    <motion.div
+                      className="mb-5 rounded-lg overflow-hidden"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.6, delay: 1.3 }}
+                      whileHover={{ 
+                        scale: 1.03,
+                        boxShadow: "0 0 20px rgba(0, 162, 255, 0.3)"
+                      }}
+                    >
+                      <img 
+                        src={attachmentImage} 
+                        alt="ALGORIDIGM Design" 
+                        className="w-full h-auto border border-[#1a3a59]"
+                      />
+                    </motion.div>
+                    
                     <motion.h3 
                       className="text-xl sm:text-2xl font-display text-[#00a2ff] mb-5 flex items-center"
                       animate={{ y: [-1, 1, -1] }}
