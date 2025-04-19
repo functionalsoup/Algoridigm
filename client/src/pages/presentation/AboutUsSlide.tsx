@@ -156,15 +156,11 @@ export default function AboutUsSlide() {
             transition={{ delay: 1.4 }}
           >
             <p className="text-xs md:text-sm">
-              <strong>Stuart Campbell</strong> was born in Odessa, TX, and developed a love for theatre through early influences like classic films, TV, and Cirque du Soleil productions, which inspired his passion for storytelling and physical theatre. Growing up in Woodward, OK, he found a creative outlet through the Woodward Community Theatre and Woodward Lite Opera Group.
+              <strong>Stuart Campbell</strong> developed a passion for physical theatre and innovative storytelling through early influences of classic films and Cirque du Soleil productions. His artistic journey began in Oklahoma before focusing on collaborative theatre at the University of Arkansas – Fort Smith.
             </p>
             
             <p className="text-xs md:text-sm">
-              Stuart pursued Theatre professionally, beginning at Northwestern Oklahoma State University (NWOSU) before transferring to the University of Arkansas – Fort Smith (UAFS) in 2011 to focus on physical and collaborative productions. His most impactful experience in college was devising, choreographing, and performing a highly physical Cirque-inspired show entitled <em>Dromnium</em>, which he co-wrote the initial treatment with Ashley Behm. The show had the opportunity to travel to Region 6 KCACTF (Kennedy Center American Collegiate Theatre Festival), where the group received national awards for their efforts. At UAFS, he also acted in <em>Burn This</em> and <em>South Pacific</em>, co-designed <em>A Midsummer Night's Dream</em>, and directed diverse works like Yasmina Reza's <em>God of Carnage</em> and the dance theatre piece <em>Memorandum of Love Lost</em>.
-            </p>
-            
-            <p className="text-xs md:text-sm">
-              Post-college, Stuart has continued exploring his craft, workshopping the devised piece <em>Privacy Settings</em> and participating in the ATX One Minute Play Festival. His work emphasizes ensemble collaboration, creating safe spaces for artists, and pushing creative boundaries to produce compelling narratives.
+              His breakthrough came with <em>Dromnium</em>, a Cirque-inspired physical theatre piece he co-developed, which traveled to Region 6 KCACTF (Kennedy Center American Collegiate Theatre Festival) and received national recognition and awards. Stuart's work spans acting, directing, and devising, with credits including <em>God of Carnage</em>, <em>A Midsummer Night's Dream</em>, and the experimental piece <em>Privacy Settings</em>. His approach centers on ensemble collaboration and creating environments where artists can push creative boundaries.
             </p>
           </motion.div>
         </div>
