@@ -10,7 +10,10 @@ export function ContactForm() {
     name: "",
     email: "",
     phone: "",
-    interest: "general",
+    role: "general",  // Match schema field name from workshopRegistrations
+    secondaryRole: "",
+    experience: "",
+    availability: "",
     message: ""
   });
   const { toast } = useToast();
@@ -118,12 +121,12 @@ export function ContactForm() {
           </div>
           
           <div className="form-group">
-            <label htmlFor="interest" className="block text-sm font-medium mb-1">Interest Area</label>
+            <label htmlFor="role" className="block text-sm font-medium mb-1">Interest Area</label>
             <select
-              id="interest"
-              name="interest"
+              id="role"
+              name="role"
               className="w-full p-2 bg-corp-bg border border-corp-magenta/40 focus:border-corp-magenta rounded-md text-white"
-              value={formData.interest}
+              value={formData.role}
               onChange={handleInputChange}
               required
             >
@@ -137,6 +140,23 @@ export function ContactForm() {
             </select>
           </div>
         </div>
+        
+        {/* Hidden fields for schema compatibility */}
+        <input 
+          type="hidden" 
+          name="secondaryRole" 
+          value={formData.secondaryRole || "None"} 
+        />
+        <input 
+          type="hidden" 
+          name="experience" 
+          value={formData.experience || "Not specified"} 
+        />
+        <input 
+          type="hidden" 
+          name="availability" 
+          value={formData.availability || "Not specified"} 
+        />
         
         <div className="form-group">
           <label htmlFor="message" className="block text-sm font-medium mb-1">Message</label>
