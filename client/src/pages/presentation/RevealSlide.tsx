@@ -14,16 +14,16 @@ export default function RevealSlide() {
   const [showRealContent, setShowRealContent] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   
-  // Control animation sequence
+  // Control animation sequence - Faster timing
   useEffect(() => {
-    // Start with the "system error" phase
-    const phase1Timer = setTimeout(() => setAnimationPhase(1), 800);
+    // Start with the "system error" phase - reduced from 800ms to 600ms
+    const phase1Timer = setTimeout(() => setAnimationPhase(1), 600);
     
-    // Glitch effect phase
-    const phase2Timer = setTimeout(() => setAnimationPhase(2), 2000);
+    // Glitch effect phase - reduced from 2000ms to 1300ms
+    const phase2Timer = setTimeout(() => setAnimationPhase(2), 1300);
     
-    // Reveal the real content with a dramatic transition
-    const revealTimer = setTimeout(() => setShowRealContent(true), 3200);
+    // Reveal the real content with a dramatic transition - reduced from 3200ms to 2000ms
+    const revealTimer = setTimeout(() => setShowRealContent(true), 2000);
     
     return () => {
       clearTimeout(phase1Timer);
@@ -74,8 +74,8 @@ export default function RevealSlide() {
             initial={{ opacity: 1 }}
             exit={{ 
               opacity: 0,
-              filter: "brightness(1.5) contrast(2)",
-              transition: { duration: 0.8, ease: [0.19, 1, 0.22, 1] } 
+              filter: "brightness(1.8) contrast(2.5)",
+              transition: { duration: 0.5, ease: [0.19, 1, 0.22, 1] } 
             }}
           >
             <motion.div
@@ -160,7 +160,7 @@ export default function RevealSlide() {
                       rotate: [0, 5, -2, 3, 0],
                     }}
                     transition={{ 
-                      duration: 1.2, 
+                      duration: 0.7, 
                       ease: "easeInOut",
                     }}
                   >
@@ -177,7 +177,7 @@ export default function RevealSlide() {
                       filter: ["hue-rotate(0deg)", "hue-rotate(180deg)", "hue-rotate(0deg)"],
                     }}
                     transition={{ 
-                      duration: 0.8, 
+                      duration: 0.5, 
                       ease: "easeInOut", 
                     }}
                   >
@@ -236,9 +236,9 @@ export default function RevealSlide() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ 
-              duration: 0.8, 
+              duration: 0.6, 
               ease: [0.19, 1, 0.22, 1],
-              delay: 0.2
+              delay: 0.15
             }}
             className="px-4 md:px-6 py-6 relative z-20 max-w-6xl mx-auto"
           >
