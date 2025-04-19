@@ -7,6 +7,7 @@ import { RotatingMandelaBackground } from "@/components/presentation/RotatingMan
 import { ArrowRight, Calendar, HelpCircle, Users, Zap, AlertTriangle, ChevronRight, Layers, Info } from "lucide-react";
 import { GeometricBackground } from "@/components/presentation/GeometricBackground";
 import { ErrorMessages } from "@/components/presentation/BackgroundElements";
+import attachmentImage from "@assets/IMG_2437.jpeg";
 
 export default function RevealSlide() {
   const { goToSlide } = usePresentationContext();
@@ -260,7 +261,19 @@ export default function RevealSlide() {
                 transition={{ duration: 0.8, delay: 0.6 }}
               />
               
-              <div className="text-sm text-white/60 mb-4 font-mono tracking-wide">J-TECH INDUSTRIES • EST. 2050</div>
+              {/* Main artwork/attachment at the top */}
+              <motion.div
+                className="max-w-md mx-auto mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+              >
+                <img 
+                  src={attachmentImage} 
+                  alt="ALGORIDIGM Artwork" 
+                  className="w-full h-auto rounded-xl shadow-[0_0_30px_rgba(0,162,255,0.3)] border border-[#1a3a59]/50"
+                />
+              </motion.div>
               
               <motion.div
                 className="relative"
@@ -333,20 +346,23 @@ export default function RevealSlide() {
                         <Info size={22} className="text-[#00a2ff]" />
                       </div>
                       <h3 className="text-xl sm:text-2xl font-display font-semibold text-white">
-                        Theatre Workshop: Devising <em>MACHINAL</em>
+                        Theatre Workshop: Devising MACHINAL
                       </h3>
                     </div>
                     <div className="pl-11 text-[#80ff00] text-lg font-medium">
-                      ALGORIDIGM <span className="text-white/50 text-sm">(working title)</span>
+                      ALGORIDIGM <span className="text-white/50 text-sm">(Working Title)</span>
                     </div>
                   </motion.div>
                   
                   <div className="text-white/90 space-y-4 mb-6 leading-relaxed relative">
                     <p>
-                      Step into a world where mechanization becomes digitization, and the fight for autonomy takes place not on factory floors but inside algorithmic corporate data centers. This devised theatre workshop invites participants to collaboratively reimagine Sophie Treadwell's <em>Machinal</em>—an iconic expressionist drama about a woman crushed by patriarchal systems and based of the real case of Ruth Snyder—through the lens of today's AI-focused, data-obsessed society.
+                      Explore a world where mechanization has evolved into digitization, and the struggle for personal autonomy unfolds not on factory floors, but within the algorithm-driven data centers of modern corporations. This collaborative theatre workshop invites participants to reimagine Sophie Treadwell's Machinal—the iconic expressionist play inspired by the real-life case of Ruth Snyder and centered on a woman oppressed by patriarchal systems—through the lens of today's AI-driven, data-centric society.
                     </p>
                     <p>
-                      The purpose of the workshop is to experiment with the text, collaborate on script and design, and by the end come to a decision whether to move on to a full production. Just to be clear, <span className="font-bold text-[#80ff00]">this is not a performance this is a purely pre-production based event</span>. Please just shoot me a message from the contact us form if you're interested in participating and I'll reach back out to you shortly.
+                      The primary aim of this workshop is to experiment with the play's text, collaboratively develop new script elements and design concepts, and ultimately determine whether to proceed with a full production. Please note: <span className="font-bold text-[#80ff00]">this is not a public performance, but a pre-production workshop focused on exploration and development</span>.
+                    </p>
+                    <p>
+                      If you are interested in participating, please contact me via the "Contact Us" form. I will follow up with you shortly.
                     </p>
                   </div>
                 </div>
