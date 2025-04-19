@@ -260,37 +260,13 @@ export default function RevealSlide() {
                 transition={{ duration: 0.8, delay: 0.6 }}
               />
               
+              <h2 className="text-2xl md:text-3xl font-display font-semibold text-white mb-2">
+                Theatre Workshop: Devising MACHINAL
+              </h2>
+              <div className="text-[#80ff00] text-lg font-medium mb-4">
+                ALGORIDIGM <span className="text-white/50 text-sm">(Working Title)</span>
+              </div>
 
-              
-              <motion.div
-                className="relative"
-                animate={{ 
-                  y: [0, -5, 0],
-                }}
-                transition={{ 
-                  duration: 4, 
-                  repeat: Infinity,
-                  ease: "easeInOut" 
-                }}
-              >
-                <motion.div 
-                  className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-[#80ff00]"
-                  animate={{ 
-                    filter: [
-                      "drop-shadow(0 0 8px rgba(128, 255, 0, 0.5))",
-                      "drop-shadow(0 0 12px rgba(128, 255, 0, 0.7))",
-                      "drop-shadow(0 0 8px rgba(128, 255, 0, 0.5))"
-                    ]
-                  }}
-                  transition={{ 
-                    duration: 3, 
-                    repeat: Infinity,
-                    ease: "easeInOut" 
-                  }}
-                >
-                  ALGORIDIGM
-                </motion.div>
-              </motion.div>
             </motion.div>
             
             {/* Content Cards - Staggered reveal */}
