@@ -196,7 +196,7 @@ export default function RevealSlide() {
                       }}
                       transition={{ duration: 1, repeat: 1 }}
                     >
-                      ALGORIDIGM
+                      
                     </motion.div>
                     
                     <motion.div
