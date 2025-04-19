@@ -171,13 +171,8 @@ export default function OpeningSlide() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <h1 className="text-xl sm:text-2xl md:text-4xl font-display font-bold tracking-wider text-[#00a2ff] px-1">
-                AUTONOMOUS TRAINING MODULE
-              </h1>
-              <div className="text-white/40 text-xs sm:text-sm mt-2 font-mono tracking-wide">J-TECH INDUSTRIES • EST. 2050</div>
-              
               <motion.div 
-                className="mt-4 sm:mt-6"
+                className="mb-4 sm:mb-6"
                 animate={{ 
                   y: [0, -5, 0],
                   filter: [
@@ -195,6 +190,11 @@ export default function OpeningSlide() {
               >
                 <span className="text-base sm:text-lg md:text-xl font-display font-bold text-[#80ff00]">ALGORIDIGM</span>
               </motion.div>
+              
+              <h1 className="text-xl sm:text-2xl md:text-4xl font-display font-bold tracking-wider text-[#00a2ff] px-1">
+                AUTONOMOUS TRAINING MODULE
+              </h1>
+              <div className="text-white/40 text-xs sm:text-sm mt-2 font-mono tracking-wide">J-TECH INDUSTRIES • EST. 2050</div>
             </motion.div>
             
             {/* Loading bar */}
