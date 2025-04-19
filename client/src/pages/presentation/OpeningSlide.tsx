@@ -55,16 +55,16 @@ export default function OpeningSlide() {
     goToSlide(1); // Go to the reveal slide
   };
   
-  // Function to generate console messages
+  // Function to generate console messages - Updated for training module theme
   const renderConsoleMessages = () => {
     const messages = [
-      { text: "INITIALIZING J-TECH AUTONOMOUS TRAINING SYSTEM v3.11.2...", delay: 0 },
-      { text: "LOADING CORE MODULES...", delay: 0.6 },
-      { text: "NEURAL NETWORK CALIBRATION: OK", delay: 1.2 },
-      { text: "ENVIRONMENT SENSOR ARRAY: ONLINE", delay: 1.6 },
-      { text: "BIOMETRIC INTERFACE: INITIALIZED", delay: 2.0 },
-      { text: "SECURITY PROTOCOLS: ACTIVE", delay: 2.4 },
-      { text: "LOADING TRAINING SEQUENCE: ALGORIDIGM", delay: 2.8 }
+      { text: "INITIALIZING J-TECH PERSONNEL TRAINING MODULE v5.23.7...", delay: 0 },
+      { text: "LOADING EDUCATIONAL OBJECTIVES...", delay: 0.6 },
+      { text: "INSTRUCTIONAL PROTOCOLS: ACTIVATED", delay: 1.2 },
+      { text: "LEARNING METRICS: INITIALIZED", delay: 1.6 },
+      { text: "TRAINEE INTERFACE: CALIBRATED", delay: 2.0 },
+      { text: "CERTIFICATION PROTOCOLS: READY", delay: 2.4 },
+      { text: "LOADING SIMULATION: ALGORIDIGM", delay: 2.8 }
     ];
     
     return messages.map((msg, index) => (
@@ -81,12 +81,12 @@ export default function OpeningSlide() {
     ));
   };
   
-  // Animated stats for HUD-like display
+  // Animated stats for HUD-like display - Updated for training module theme
   const stats = [
-    { label: "NEURAL NETWORK", value: "98.7%", icon: <Cpu size={14} className="sm:w-4 sm:h-4 md:w-[16px] md:h-[16px]" /> },
-    { label: "MEMORY ALLOCATION", value: "3.8TB", icon: <Database size={14} className="sm:w-4 sm:h-4 md:w-[16px] md:h-[16px]" /> },
-    { label: "SYSTEM INTEGRITY", value: "100%", icon: <Shield size={14} className="sm:w-4 sm:h-4 md:w-[16px] md:h-[16px]" /> },
-    { label: "QUANTUM NODES", value: "ONLINE", icon: <Server size={14} className="sm:w-4 sm:h-4 md:w-[16px] md:h-[16px]" /> }
+    { label: "LEARNING ALGORITHM", value: "ACTIVE", icon: <Cpu size={14} className="sm:w-4 sm:h-4 md:w-[16px] md:h-[16px]" /> },
+    { label: "TRAINING MODULES", value: "12 OF 12", icon: <Database size={14} className="sm:w-4 sm:h-4 md:w-[16px] md:h-[16px]" /> },
+    { label: "PARTICIPANT SYNC", value: "OPTIMAL", icon: <Shield size={14} className="sm:w-4 sm:h-4 md:w-[16px] md:h-[16px]" /> },
+    { label: "SIMULATION LEVEL", value: "ADVANCED", icon: <Server size={14} className="sm:w-4 sm:h-4 md:w-[16px] md:h-[16px]" /> }
   ];
   
   return (
@@ -185,7 +185,7 @@ export default function OpeningSlide() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <div className="text-white/80 text-base sm:text-lg md:text-xl mb-1">INITIALIZING NEURAL PATTERN</div>
+              <div className="text-white/80 text-base sm:text-lg md:text-xl mb-1">INITIALIZING TRAINING SEQUENCE</div>
               <motion.h2 
                 className="text-lg sm:text-xl md:text-2xl font-bold text-[#80ff00] font-display tracking-wide mb-2 sm:mb-4"
                 style={{ textShadow: "0 0 10px rgba(128, 255, 0, 0.5)" }}
@@ -220,12 +220,12 @@ export default function OpeningSlide() {
                 transition={{ duration: 0.5, delay: 0.8 }}
               >
                 <p className="mb-2 sm:mb-4">
-                  Neural pattern visualization active. Training module activated for authorized personnel.
-                  <br />Proceed with caution: potential hallucination anomalies detected in neural framework.
+                  Performance optimization sequence initiated. Educational content prepared for authorized personnel.
+                  <br />Proceed with caution: simulation may contain instructional anomalies for learning assessment.
                 </p>
                 
                 <div className="inline-block px-2 sm:px-4 py-1 bg-[#ff2a6d]/10 border border-[#ff2a6d]/30 rounded-lg text-[#ff2a6d] text-[10px] sm:text-xs font-medium mb-2">
-                  HALLUCINATION PROTOCOL ACTIVE
+                  LEARNING ASSESSMENT ACTIVE
                 </div>
               </motion.div>
             </motion.div>
