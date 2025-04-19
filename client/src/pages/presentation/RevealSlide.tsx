@@ -512,18 +512,7 @@ export default function RevealSlide() {
                       <ArrowRight size={18} />
                     </motion.button>
                     
-                    {/* Download Preview - Coming Soon */}
-                    <div className="mt-6">
-                      <div className="text-[#00a2ff] text-xs font-medium mb-2 text-center">
-                        COMING SOON
-                      </div>
-                      <button
-                        disabled
-                        className="w-full bg-[#0c1623] border border-[#1a3a59] text-white/60 font-medium py-2.5 px-4 rounded-lg tracking-wide cursor-not-allowed flex items-center justify-center gap-2"
-                      >
-                        <span>Download Treatment Preview</span>
-                      </button>
-                    </div>
+
                   </motion.div>
                 </div>
               </motion.div>

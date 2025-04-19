@@ -162,7 +162,7 @@ export default function AboutUsSlide() {
             transition={{ delay: 1.4 }}
           >
             <p className="text-xs md:text-sm">
-              <strong>Stuart Campbell</strong> is a director and theatre-maker based in Longview, TX, with a background in devised performance, ensemble-driven storytelling, and experimental theatre. A graduate of the University of Arkansas – Fort Smith, he has directed and performed in a range of works spanning classical texts, new writing, and movement-based pieces, including nationally recognized devised productions. Stuart's work emphasizes collaborative creation, and the intersection of technology and live performance.
+              <strong>Stuart Campbell</strong> is a director and theatre-maker based in Longview, TX, with a background in devised performance, ensemble-driven storytelling, and experimental theatre. A graduate of the University of Arkansas – Fort Smith, he has directed and acted in a range of works spanning classical texts, new writing, and movement-based pieces, including a nationally recognized devised production. Stuart's work emphasizes collaborative creation, and the intersection of technology and live performance.
             </p>
             
             <motion.div 
@@ -234,24 +234,27 @@ export default function AboutUsSlide() {
                   <ul className="text-xs space-y-2">
                     <li>
                       <span className="text-[#80ff00] font-medium">The Vortex Theatre – Austin, TX</span> | 2015–2016
-                      <br />
-                      <span className="text-white/90">Deviser:</span> <em>Privacy Settings</em> (Workshop)
+                      <ul className="text-white/90 list-disc ml-5 mt-1 space-y-1">
+                        <li><span className="text-white/90">Deviser:</span> <em>Privacy Settings</em> (Workshop)</li>
+                      </ul>
                     </li>
                     <li>
                       <span className="text-[#80ff00] font-medium">Plethora Theatre Company – Ft. Smith, AR</span> | 2014–2015
-                      <br />
-                      <span className="text-white/90">Director:</span> <em>The Woman in Black</em>
-                      <br />
-                      <span className="text-white/90">Workshop Leader:</span> Devised Performance and Movement (Northwestern Oklahoma State University)
+                      <ul className="text-white/90 list-disc ml-5 mt-1 space-y-1">
+                        <li><span className="text-white/90">Director:</span> <em>The Woman in Black</em></li>
+                        <li><span className="text-white/90">Workshop Leader:</span> Devised Performance and Movement (Northwestern Oklahoma State University)</li>
+                      </ul>
                     </li>
                     <li>
                       <span className="text-[#80ff00] font-medium">University of Arkansas – Fort Smith Theatre</span> | 2011–2014
-                      <br />
-                      <span className="text-white/90">Directed:</span> <em>God of Carnage, Memorandum of Love Lost</em> (Original devised piece)
-                      <br />
-                      <span className="text-white/90">Performance:</span> <em>Dromnium</em> (Writer/Performer – KCACTF Regional & National Selection)
-                      <br />
-                      <span className="text-white/90">Other Roles:</span> <em>Aqua Vita</em> (Devised Movement), <em>Midsummer Night's Dream</em> (Actor – Bottom)
+                      <ul className="text-white/90 list-disc ml-5 mt-1 space-y-1">
+                        <li><span className="text-white/90">Directed:</span> <em>God of Carnage</em></li>
+                        <li><span className="text-white/90">Directed:</span> <em>Memorandum of Love Lost</em> (Original devised piece)</li>
+                        <li><span className="text-white/90">Actor:</span> <em>Burn This by Lanford Wilson</em> (Larry)</li>
+                        <li><span className="text-white/90">Performance:</span> <em>Dromnium</em> (Writer/Performer – KCACTF Regional & National Selection)</li>
+                        <li><span className="text-white/90">Other Roles:</span> <em>Aqua Vita</em> (Devised Movement)</li>
+                        <li><span className="text-white/90">Actor:</span> <em>Midsummer Night's Dream</em> (Bottom)</li>
+                      </ul>
                     </li>
                   </ul>
                 </div>
@@ -264,17 +267,17 @@ export default function AboutUsSlide() {
                   <ul className="text-xs space-y-2">
                     <li>
                       <span className="text-[#80ff00] font-medium">University of Arkansas – Fort Smith</span> | 2011–2014
-                      <br />
-                      <span className="text-white/90">B.A. Theatre: Acting & Directing</span>
-                      <br />
-                      <span className="text-white/90">Graduated with Academic Achievement in Theatre</span>
+                      <ul className="text-white/90 list-disc ml-5 mt-1 space-y-1">
+                        <li><span className="text-white/90">B.A. Theatre: Acting & Directing</span></li>
+                        <li><span className="text-white/90">Graduated with Academic Achievement in Theatre</span></li>
+                      </ul>
                     </li>
                     <li>
                       <span className="text-[#80ff00] font-medium">Northwestern Oklahoma State University</span> | 2009–2011
-                      <br />
-                      <span className="text-white/90">Theatre Program, KCACTF Region 6 – Student Director for 10-Minute Play Festival</span>
-                      <br />
-                      <span className="text-white/90">Theatre Shop Assistant and Technical Support</span>
+                      <ul className="text-white/90 list-disc ml-5 mt-1 space-y-1">
+                        <li><span className="text-white/90">Theatre Program, KCACTF Region 6 – Student Director for 10-Minute Play Festival</span></li>
+                        <li><span className="text-white/90">Theatre Shop Assistant and Technical Support</span></li>
+                      </ul>
                     </li>
                   </ul>
                 </div>
