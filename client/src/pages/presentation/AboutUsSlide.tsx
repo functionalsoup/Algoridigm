@@ -156,11 +156,11 @@ export default function AboutUsSlide() {
             transition={{ delay: 1.4 }}
           >
             <p className="text-xs md:text-sm">
-              <strong>Stuart Campbell</strong> developed a passion for physical theatre and innovative storytelling through early influences of classic films and Cirque du Soleil productions. His artistic journey began in Oklahoma before focusing on collaborative theatre at the University of Arkansas – Fort Smith.
+              <strong>Stuart Campbell</strong> is a theatre professional specializing in physical theatre and innovative narrative development. Mr. Campbell's formative education was completed at the University of Arkansas – Fort Smith, where he concentrated on collaborative theatrical methodologies and interdisciplinary performance techniques.
             </p>
             
             <p className="text-xs md:text-sm">
-              His breakthrough came with <em>Dromnium</em>, a Cirque-inspired physical theatre piece he co-developed, which traveled to Region 6 KCACTF (Kennedy Center American Collegiate Theatre Festival) and received national recognition and awards. Stuart's work spans acting, directing, and devising, with credits including <em>God of Carnage</em>, <em>A Midsummer Night's Dream</em>, and the experimental piece <em>Privacy Settings</em>. His approach centers on ensemble collaboration and creating environments where artists can push creative boundaries.
+              Mr. Campbell's distinguished work includes <em>Dromnium</em>, an acclaimed physical theatre production selected for presentation at Region 6 of the Kennedy Center American Collegiate Theatre Festival (KCACTF), where it earned national commendation. His professional portfolio encompasses directing (<em>God of Carnage</em>), design (<em>A Midsummer Night's Dream</em>), and devised theatre (<em>Privacy Settings</em>). Mr. Campbell's methodology emphasizes collaborative creation processes and rigorous artistic exploration within structured ensemble frameworks.
             </p>
           </motion.div>
         </div>
