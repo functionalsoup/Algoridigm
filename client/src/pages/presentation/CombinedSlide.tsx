@@ -243,7 +243,7 @@ export default function CombinedSlide() {
                 </div>
                 <div className="absolute top-0 left-0 right-0 h-1/4 bg-gradient-to-b from-corp-blue/10 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-corp-dark to-transparent p-4">
-                  <h3 className="text-2xl font-display font-bold">GEORGE K. JON&*S</h3>
+                  <h3 className="text-2xl font-display font-bold">GEORGE H. JON&*S</h3>
                   <p className="text-corp-cyan">FØUND3R // C3Ø</p>
                 </div>
               </div>
@@ -266,7 +266,7 @@ export default function CombinedSlide() {
               transition={{ delay: 1.3 }}
             >
               <h3 className="text-2xl font-display font-semibold mb-4 text-corp-cyan">Relentless</h3>
-              <p className="mb-4 font-mono">GEORGE K. JON&*S AB@//D0N3D @ PRØM!S!NG @C@D£MIC C@R33R TØ FØUND J-T3CH !NDUS%R!3S !N 2032. H!$ CØNTROV3R$!@L APPRØ@CH TØ QU@N%µM N3UR@L N3TWØRK$ @ND CØN$C!ØU$N3$$ M@PP!NG H@$ D!V!D3D +H3 $C!3N%!F!C CØMMUN!%¥ WH!L3 @%%R@C%!NG billions in venture capital.</p>
+              <p className="mb-4 font-mono">GEORGE H. JON&*S AB@//D0N3D @ PRØM!S!NG @C@D£MIC C@R33R TØ FØUND J-T3CH !NDUS%R!3S !N 2032. H!$ CØNTROV3R$!@L APPRØ@CH TØ QU@N%µM N3UR@L N3TWØRK$ @ND CØN$C!ØU$N3$$ M@PP!NG H@$ D!V!D3D +H3 $C!3N%!F!C CØMMUN!%¥ WH!L3 @%%R@C%!NG billions in venture capital.</p>
             </motion.div>
             
             <motion.div
