@@ -242,7 +242,7 @@ export default function RevealSlide() {
             }}
             className="px-4 md:px-6 py-6 relative z-20 max-w-6xl mx-auto"
           >
-            {/* Autonomous Training Module Header - With more dramatic reveal */}
+            {/* Main title - With dramatic reveal effect */}
             <motion.div 
               className="text-center mb-8 sm:mb-10"
               initial={{ opacity: 0, y: -20 }}
@@ -253,53 +253,43 @@ export default function RevealSlide() {
                 ease: "easeOut"
               }}
             >
-              <div className="relative inline-block">
-                <motion.div
-                  className="absolute -top-1 -left-1 text-[#ff2a6d]/80 opacity-70 blur-[0.3px]"
-                  animate={{
-                    opacity: [0.5, 0.7, 0.5],
-                    x: [0, -1, 0],
-                    y: [0, 1, 0],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                  }}
-                >
-                  AUTONOMOUS TRAINING MODULE
-                </motion.div>
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display font-bold tracking-wider text-[#00a2ff]">
-                  AUTONOMOUS TRAINING MODULE
-                </h2>
-              </div>
-              
               <motion.div 
-                className="h-0.5 bg-gradient-to-r from-transparent via-[#00a2ff] to-transparent w-full max-w-xl mx-auto my-4"
+                className="h-0.5 bg-gradient-to-r from-transparent via-[#00a2ff] to-transparent w-full max-w-xl mx-auto mb-6"
                 initial={{ width: "0%" }}
                 animate={{ width: "100%" }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               />
               
-              <div className="text-sm text-white/60 mt-2 font-mono tracking-wide">J-TECH INDUSTRIES • EST. 2050</div>
+              <div className="text-sm text-white/60 mb-4 font-mono tracking-wide">J-TECH INDUSTRIES • EST. 2050</div>
               
-              <motion.div 
-                className="mt-5"
+              <motion.div
+                className="relative"
                 animate={{ 
                   y: [0, -5, 0],
-                  filter: [
-                    "drop-shadow(0 0 8px rgba(128, 255, 0, 0.5))",
-                    "drop-shadow(0 0 12px rgba(128, 255, 0, 0.7))",
-                    "drop-shadow(0 0 8px rgba(128, 255, 0, 0.5))"
-                  ]
                 }}
                 transition={{ 
-                  duration: 3, 
+                  duration: 4, 
                   repeat: Infinity,
                   ease: "easeInOut" 
                 }}
               >
-                <span className="text-xl md:text-2xl lg:text-3xl font-display font-bold text-[#80ff00]">ALGORIDIGM</span>
+                <motion.div 
+                  className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-[#80ff00]"
+                  animate={{ 
+                    filter: [
+                      "drop-shadow(0 0 8px rgba(128, 255, 0, 0.5))",
+                      "drop-shadow(0 0 12px rgba(128, 255, 0, 0.7))",
+                      "drop-shadow(0 0 8px rgba(128, 255, 0, 0.5))"
+                    ]
+                  }}
+                  transition={{ 
+                    duration: 3, 
+                    repeat: Infinity,
+                    ease: "easeInOut" 
+                  }}
+                >
+                  ALGORIDIGM
+                </motion.div>
               </motion.div>
             </motion.div>
             
